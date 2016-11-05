@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,12 +6,33 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1 className="App-title">Emotion Visualization</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="App-content">
+          <form className="content-form">
+            <div className="form-field">
+              <label>Arousal</label>
+              <input type="range" name="q1" min="1" max="5" defaultValue="3" />
+            </div>
+            <div className="form-field">
+              <label>Conduciveness</label>
+              <input type="range" name="q2" min="1" max="5" defaultValue="3" />
+            </div>
+            <div className="form-field">
+              <label>Controllability</label>
+              <input type="range" name="q3" min="1" max="5" defaultValue="3" />
+            </div>
+            <div className="form-field">
+              <label>Intensity</label>
+              <input type="range" name="q4" min="1" max="5" defaultValue="3" />
+            </div>
+            <div className="form-field">
+              <label>Valence</label>
+              <input type="range" name="q5" min="1" max="5" defaultValue="3" />
+            </div>
+            <button className="form-submit" type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     );
   }
