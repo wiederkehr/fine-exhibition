@@ -1,4 +1,4 @@
-# Emotion Visualization
+# Emotion Tracker
 Simple tool to track emotions for the design research project by Anna and Benjamin Wiederkehr.
 
 ## Motivation
