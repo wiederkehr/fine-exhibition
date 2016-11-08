@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
+
 .App {
   background-color: #eee;
   color: #222;
   display: flex;
-  font-family: Roboto;
+  font-family: 'Roboto Mono', monospace;
   flex-direction: column;
   height: 100vh;
 }
