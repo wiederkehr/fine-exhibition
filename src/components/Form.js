@@ -10,14 +10,14 @@ class Form extends Component {
     super(props);
 
     this.state={
-      name: 'Benjamin',
+      name: 'Anna',
       emotion: 'Emotion',
       event: 'Event',
       arousal: '1',
-      conduciveness: '2',
-      controllability: '3',
-      intensity: '4',
-      valence: '5',
+      conduciveness: '1',
+      controllability: '1',
+      intensity: '1',
+      valence: '1',
       status: 'Submit',
       disabled: false,
     }
