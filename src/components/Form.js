@@ -42,7 +42,6 @@ class Form extends Component {
   onFormChange(field, event) {
     var stateUpdate = {};
     stateUpdate[field] = event.target.value;
-    console.log(field, event.target.value);
     this.setState(stateUpdate);
   }
 
@@ -94,7 +93,6 @@ class Form extends Component {
   }
 
   render() {
-
     return (
       <form className="Form" onSubmit={this.onFormSubmit}>
         <div className="Input-group">

@@ -1,18 +1,17 @@
 .Button {
-  background-color: #666;
+  background-color: #ccc;
   background-clip: padding-box;
   border: none;
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
-  font-family: 'Roboto Mono', monospace;
+  display: block;
+  font-family: 'Nunito', sans-serif;
   font-size: 18px;
-  font-weight: 500;
   padding: 15px;
-  width: 100%;
   outline: none !important;
   box-shadow: none !important;
+  text-align: center;
   text-decoration: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -31,4 +30,5 @@
 .Button:disabled {
   background-color: #ddd;
   cursor: default;
+  color: #eee;
 }

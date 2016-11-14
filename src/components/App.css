@@ -1,31 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
-
 .App {
-  background-color: #eee;
-  color: #222;
   display: flex;
-  font-family: 'Roboto Mono', monospace;
   flex-direction: column;
   height: 100vh;
 }
 
-.App-header {
-  padding: 10px 10px 0;
-  text-align: center;
-}
-
-.App-title {
-  font-weight: 400;
-  font-size: 1.5em;
-  margin: 5px 0 5px;
-}
-
 .App-content {
-  background-color: #fff;
-  box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 10px;
   padding: 20px;
 }
