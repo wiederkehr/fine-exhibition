@@ -13,6 +13,7 @@ class Form extends Component {
       name: 'Anna',
       emotion: 'Emotion',
       event: 'Event',
+      date: '',
       arousal: '1',
       conduciveness: '1',
       controllability: '1',
@@ -22,20 +23,30 @@ class Form extends Component {
       disabled: false,
     }
 
-    this.updateState=this.updateState.bind(this);
-    this.onSubmit=this.onSubmit.bind(this);
+    this.onFormChange=this.onFormChange.bind(this);
+    this.onFormSubmit=this.onFormSubmit.bind(this);
     this.sendRecord=this.sendRecord.bind(this);
     this.getResponse=this.getResponse.bind(this);
 
   };
 
-  updateState(field, event) {
+  componentDidMount() {
+    Date.prototype.toDateInputValue = (function() {
+      var local = new Date(this);
+      local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+      return local.toJSON().slice(0,10);
+    });
+    this.setState({date: new Date().toDateInputValue()})
+  }
+
+  onFormChange(field, event) {
     var stateUpdate = {};
     stateUpdate[field] = event.target.value;
+    console.log(field, event.target.value);
     this.setState(stateUpdate);
   }
 
-  onSubmit(event) {
+  onFormSubmit(event) {
     event.preventDefault();
     this.setState({ status: 'Sending…' }, this.sendRecord);
   }
@@ -46,23 +57,8 @@ class Form extends Component {
     var baseUrl = 'https://api.fieldbook.com/v1/';
     var url = baseUrl + bookId + '/' + sheetId;
 
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-
-    if(dd<10) {
-        dd='0'+dd
-    }
-
-    if(mm<10) {
-        mm='0'+mm
-    }
-
-    today = dd+'/'+mm+'/'+yyyy;
-
     var record = {
-      date: today,
+      date: this.state.date,
       name: this.state.name,
       emotion: this.state.emotion,
       event: this.state.event,
@@ -98,36 +94,42 @@ class Form extends Component {
   }
 
   render() {
+
     return (
-      <form className="Form" onSubmit={this.onSubmit}>
+      <form className="Form" onSubmit={this.onFormSubmit}>
         <div className="Input-group">
           <input  className="Input-text"
                   id="emotion"
                   type="text"
                   placeholder="Emotion"
-                  onChange={this.updateState.bind(null, "emotion")} />
+                  onChange={this.onFormChange.bind(null, "emotion")} />
           <input  className="Input-text"
                   id="event"
                   type="text"
                   placeholder="Event"
-                  onChange={this.updateState.bind(null, "event")} />
+                  onChange={this.onFormChange.bind(null, "event")} />
+          <input  className="Input-date"
+                  id="text"
+                  type="date"
+                  value={this.state.date}
+                  onChange={this.onFormChange.bind(null, "date")} />
         </div>
         <div className="Slider-group">
           <Slider name="Arousal"
                   value={this.state.arousal}
-                  onChange={this.updateState.bind(null, "arousal")} />
+                  onChange={this.onFormChange.bind(null, "arousal")} />
           <Slider name="Conduciveness"
                   value={this.state.conduciveness}
-                  onChange={this.updateState.bind(null, "conduciveness")} />
+                  onChange={this.onFormChange.bind(null, "conduciveness")} />
           <Slider name="Controllability"
                   value={this.state.controllability}
-                  onChange={this.updateState.bind(null, "controllability")} />
+                  onChange={this.onFormChange.bind(null, "controllability")} />
           <Slider name="Intensity"
                   value={this.state.intensity}
-                  onChange={this.updateState.bind(null, "intensity")} />
+                  onChange={this.onFormChange.bind(null, "intensity")} />
           <Slider name="Valence"
                   value={this.state.valence}
-                  onChange={this.updateState.bind(null, "valence")} />
+                  onChange={this.onFormChange.bind(null, "valence")} />
         </div>
         <Button type="submit" disabled={this.state.disabled} label={this.state.status} />
       </form>

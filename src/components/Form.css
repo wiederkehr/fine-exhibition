@@ -11,6 +11,7 @@
   background: none;
   border: none;
   border-bottom: 2px solid #ddd;
+  border-radius: 0;
   font-family: 'Roboto Mono', monospace;
   outline: 0;
   padding: 5px 0;
@@ -19,4 +20,16 @@
 
 .Input-text:focus {
   border-color: #bbb;
+}
+
+.Input-date {
+  font-family: 'Roboto Mono', monospace;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-radius: 0;
+  margin: 0 0 10px;
+  outline: 0;
+  padding: 5px 0;
+  width: 100%;
 }
