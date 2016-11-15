@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 import BackLink from './BackLink';
 
-import './AppHeader.css';
+import './Header.css';
 
-class AppHeader extends Component {
+class Header extends Component {
   render() {
     return (
-      <div className="AppHeader">
+      <div className="Header">
         { this.props.back ? <BackLink to="/" /> : null }
-        <span className="AppHeaderTitle">{this.props.title}</span>
+        <span className="HeaderTitle">{this.props.title}</span>
       </div>
     );
   }
 }
 
-export default AppHeader;
+export default Header;

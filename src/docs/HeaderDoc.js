@@ -1,15 +1,15 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
 
-import AppHeader from '../components/AppHeader';
+import Header from '../components/Header';
 
 export default () => (
   <Page>
     <ReactSpecimen>
-      <AppHeader back={false} title='Title'/>
+      <Header back={false} title='Title'/>
     </ReactSpecimen>
     <ReactSpecimen>
-      <AppHeader back={true} title='Title With Button'/>
+      <Header back={true} title='Title With Button'/>
     </ReactSpecimen>
   </Page>
 );

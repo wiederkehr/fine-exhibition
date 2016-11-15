@@ -1,4 +1,4 @@
-.AppHeader {
+.Header {
   background: #fff;
   border-bottom: 1px solid #eee;
   line-height: 30px;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.AppHeaderTitle {
+.HeaderTitle {
   display: block;
   text-align: center;
   text-transform: uppercase;
