@@ -1,4 +1,8 @@
 .BackLink {
-  position: absolute;
+  color: #999;
+  font-size: 12px;
   left: 20px;
+  position: absolute;
+  text-transform: uppercase;
+  text-decoration: none;
 }
