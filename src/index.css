@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
 
 body {
   background-color: #fff;
   color: #222;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
 }
