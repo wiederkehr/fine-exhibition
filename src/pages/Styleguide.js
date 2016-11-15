@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
 import IntroductionDoc from '../docs/IntroductionDoc';
+import AppHeaderDoc from '../docs/AppHeaderDoc';
 import ButtonDoc from '../docs/ButtonDoc';
+import BackLinkDoc from '../docs/BackLinkDoc';
 import SliderDoc from '../docs/SliderDoc';
 import ColorsDoc from '../docs/ColorsDoc';
 import FontsDoc from '../docs/FontsDoc';
@@ -44,9 +46,19 @@ class Styleguide extends Component {
           title: 'Components',
           pages: [
             {
+              path: '/appheader',
+              title: 'AppHeader',
+              component: AppHeaderDoc
+            },
+            {
               path: '/button',
               title: 'Button',
               component: ButtonDoc
+            },
+            {
+              path: '/backlink',
+              title: 'BackLink',
+              component: BackLinkDoc
             },
             {
               path: '/slider',

@@ -3,17 +3,19 @@ import { Link } from 'react-router';
 
 import './HomePage.css';
 
-class Home extends Component {
+class HomePage extends Component {
 
   render() {
     const style = {marginBottom: '10px'}
     return (
-      <div className="App-content">
-        <Link className="Button" style={style} to="/edit">Track Emotion</Link>
-        <Link className="Button" to="/view" disabled={true}>View History</Link>
+      <div className="AppContainer">
+        <div className="HomePage AppContent">
+          <Link className="Button" style={style} to="/edit">Track Emotion</Link>
+          <Link className="Button" to="/view" disabled={true}>View History</Link>
+        </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default HomePage;

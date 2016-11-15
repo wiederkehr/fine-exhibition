@@ -16,13 +16,42 @@ const NotFound = () => (<div className="App-content"><p>404.. This page is not f
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route component={App}>
-      <Route path="/" component={HomePage} onEnter={(location, replaceWith) => {}} onLeave={() => {}} />
-      <IndexRoute component={HomePage} onEnter={(location, replaceWith) => {}} onLeave={() => {}} />
-      <Route path="/edit" component={EditPage} onEnter={() => {}} onLeave={() => {}} />
-      <Route path="/view" component={ViewPage} onEnter={() => {}} onLeave={() => {}} />
+      <Route
+        path="/"
+        title="Welcome"
+        component={HomePage}
+        onEnter={(location, replaceWith) => {}}
+        onLeave={() => {}}
+      />
+      <IndexRoute
+        component={HomePage}
+        title="Welcome"
+        onEnter={(location, replaceWith) => {}}
+        onLeave={() => {}}
+      />
+      <Route
+        path="/edit"
+        title="Edit"
+        component={EditPage}
+        onEnter={() => {}}
+        onLeave={() => {}}
+      />
+      <Route
+        path="/view"
+        title="View"
+        component={ViewPage}
+        onEnter={() => {}}
+        onLeave={() => {}}
+      />
     </Route>
-    <Route path="/docs" component={Styleguide} />
-    <Route path='*' component={NotFound} />
+    <Route
+      path="/docs"
+      component={Styleguide}
+    />
+    <Route
+      path='*'
+      component={NotFound}
+    />
   </Router>,
   document.getElementById('root')
 );

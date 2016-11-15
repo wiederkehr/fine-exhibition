@@ -4,7 +4,13 @@
   height: 100vh;
 }
 
-.App-content {
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.AppContent {
   display: flex;
   flex-direction: column;
   flex-grow: 1;

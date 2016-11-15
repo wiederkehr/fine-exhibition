@@ -1,0 +1,13 @@
+.AppHeader {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  line-height: 30px;
+  padding: 10px 20px 8px;
+  position: relative;
+}
+
+.AppHeaderTitle {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
