@@ -6,6 +6,7 @@ import App from './components/App';
 import HomePage from './pages/HomePage';
 import EditPage from './pages/EditPage';
 import ViewPage from './pages/ViewPage';
+import Styleguide from './pages/Styleguide';
 
 import 'normalize.css';
 import './index.css';
@@ -19,8 +20,9 @@ ReactDOM.render(
       <IndexRoute component={HomePage} onEnter={(location, replaceWith) => {}} onLeave={() => {}} />
       <Route path="/edit" component={EditPage} onEnter={() => {}} onLeave={() => {}} />
       <Route path="/view" component={ViewPage} onEnter={() => {}} onLeave={() => {}} />
-      <Route path='*' component={NotFound} />
     </Route>
+    <Route path="/docs" component={Styleguide} />
+    <Route path='*' component={NotFound} />
   </Router>,
   document.getElementById('root')
 );
