@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
 import IntroductionDoc from '../docs/IntroductionDoc';
-import AppHeaderDoc from '../docs/AppHeaderDoc';
+import HeaderDoc from '../docs/HeaderDoc';
 import ButtonDoc from '../docs/ButtonDoc';
 import BackLinkDoc from '../docs/BackLinkDoc';
 import SliderDoc from '../docs/SliderDoc';
@@ -48,7 +48,7 @@ class Styleguide extends Component {
             {
               path: '/appheader',
               title: 'AppHeader',
-              component: AppHeaderDoc
+              component: HeaderDoc
             },
             {
               path: '/button',

@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-import App from './components/App';
+import App from './modules/App';
+import Styleguide from './modules/Styleguide';
+
 import HomePage from './pages/HomePage';
 import EditPage from './pages/EditPage';
 import ViewPage from './pages/ViewPage';
-import Styleguide from './pages/Styleguide';
 
 import 'normalize.css';
 import './index.css';
