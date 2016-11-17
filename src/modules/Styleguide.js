@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
-import IntroductionDoc from '../docs/IntroductionDoc';
-import HeaderDoc from '../docs/HeaderDoc';
 import ButtonDoc from '../docs/ButtonDoc';
-import BackLinkDoc from '../docs/BackLinkDoc';
-import SliderDoc from '../docs/SliderDoc';
 import ColorsDoc from '../docs/ColorsDoc';
 import FontsDoc from '../docs/FontsDoc';
+import HeaderDoc from '../docs/HeaderDoc';
 import IconsDoc from '../docs/IconsDoc';
+import IntroductionDoc from '../docs/IntroductionDoc';
+import SliderDoc from '../docs/SliderDoc';
 
 class Styleguide extends Component {
 
@@ -46,19 +45,14 @@ class Styleguide extends Component {
           title: 'Components',
           pages: [
             {
-              path: '/appheader',
-              title: 'AppHeader',
+              path: '/header',
+              title: 'Header',
               component: HeaderDoc
             },
             {
               path: '/button',
               title: 'Button',
               component: ButtonDoc
-            },
-            {
-              path: '/backlink',
-              title: 'BackLink',
-              component: BackLinkDoc
             },
             {
               path: '/slider',
