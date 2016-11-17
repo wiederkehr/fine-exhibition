@@ -7,6 +7,7 @@ import FontsDoc from '../docs/FontsDoc';
 import HeaderDoc from '../docs/HeaderDoc';
 import IconsDoc from '../docs/IconsDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
+import LayoutDoc from '../docs/LayoutDoc';
 import SliderDoc from '../docs/SliderDoc';
 
 class Styleguide extends Component {
@@ -20,6 +21,11 @@ class Styleguide extends Component {
           path: '/',
           title: 'Introduction',
           component: IntroductionDoc
+        },
+        {
+          path: '/layout',
+          title: 'Layout',
+          component: LayoutDoc
         },
         {
           title: 'Theme',

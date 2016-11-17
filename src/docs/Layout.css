@@ -1,0 +1,51 @@
+/*IMPORTANT*/
+
+.Layout {
+  height: 100%;
+  background: #fff;
+}
+
+.LayoutContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.LayoutContent {
+  overflow: scroll;
+  flex-grow: 1;
+  padding: 0 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.LayoutBar {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 20px;
+  vertical-align: middle;
+}
+
+/*NOT IMPORTANT*/
+
+.Viewport {
+  height: 667px;
+  width: 375px;
+  overflow: auto;
+}
+
+.LayoutHeader {
+  background-color: #ddd;
+}
+
+.LayoutFooter {
+  background-color: #ddd;
+}
+
+.ContentBlock-1 {
+  background-color: #90f;
+  height: 500px;
+}
+.ContentBlock-2 {
+  background-color: #2bb;
+  height: 500px;
+}
