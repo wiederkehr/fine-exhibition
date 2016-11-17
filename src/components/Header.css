@@ -11,3 +11,8 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+.HeaderAction {
+  position: absolute;
+  left: 20px;
+}

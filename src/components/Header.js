@@ -8,7 +8,9 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
+        <span className="HeaderAction">
         { this.props.back ? <BackLink to="/" /> : null }
+        </span>
         <span className="HeaderTitle">{this.props.title}</span>
       </div>
     );
