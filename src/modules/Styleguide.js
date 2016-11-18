@@ -5,6 +5,7 @@ import InterfaceDoc from '../docs/InterfaceDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
 import ThemeDoc from '../docs/ThemeDoc';
+import SwiperDoc from '../docs/SwiperDoc';
 
 class Styleguide extends Component {
 
@@ -28,6 +29,10 @@ class Styleguide extends Component {
           title: 'Interface',
           component: InterfaceDoc
         },
+        {
+          path: '/swiper',
+          title: 'Swiper',
+          component: SwiperDoc
         },
         {
           path: '/layout',
