@@ -5,6 +5,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Swiper.css';
 
+// Documentation slick-carousel: https://github.com/kenwheeler/slick/
+// Documentation react-slick: https://github.com/akiran/react-slick
+
+
 class Swiper extends Component {
   render() {
     var settings = {
