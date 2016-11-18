@@ -15,7 +15,7 @@
   text-decoration: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  transition: background-color 300ms;
+  transition: background-color 100ms;
 }
 
 .Button:hover,
