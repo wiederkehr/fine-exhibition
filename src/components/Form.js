@@ -31,6 +31,7 @@ class Form extends Component {
   };
 
   componentDidMount() {
+    // eslint-disable-next-line
     Date.prototype.toDateInputValue = (function() {
       var local = new Date(this);
       local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
