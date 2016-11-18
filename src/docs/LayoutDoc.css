@@ -27,7 +27,7 @@
 
 /*NOT IMPORTANT*/
 
-.Viewport {
+.LayoutViewport {
   height: 667px;
   width: 375px;
   overflow: auto;
@@ -42,10 +42,10 @@
 }
 
 .ContentBlock-1 {
-  background-color: #90f;
+  background-color: #4AD9E2;
   height: 500px;
 }
 .ContentBlock-2 {
-  background-color: #2bb;
+  background-color: #2FA3AA;
   height: 500px;
 }

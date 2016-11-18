@@ -1,13 +1,13 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
 
-import './Layout.css';
+import './LayoutDoc.css';
 
 export default () => (
   <Page>
-    <h2>Application Layouts</h2>
-    <ReactSpecimen>
-      <div className="Viewport">
+    <h2>Application Layout</h2>
+    <ReactSpecimen noSource={true}>
+      <div className="LayoutViewport">
         <div className="Layout">
           <div className="LayoutContainer">
             <div className="LayoutBar LayoutHeader">
