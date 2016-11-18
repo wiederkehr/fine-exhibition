@@ -1,3 +1,11 @@
+.Slider {
+}
+
+.Slider-label {
+  display: block;
+  position: relative;
+}
+
 .Slider-label-key {
   color: #AAA;
 }
