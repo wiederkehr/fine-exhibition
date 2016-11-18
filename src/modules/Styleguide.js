@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
-import ButtonDoc from '../docs/ButtonDoc';
-import ColorsDoc from '../docs/ColorsDoc';
-import FontsDoc from '../docs/FontsDoc';
-import HeaderDoc from '../docs/HeaderDoc';
-import IconsDoc from '../docs/IconsDoc';
+import InterfaceDoc from '../docs/InterfaceDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
-import SliderDoc from '../docs/SliderDoc';
+import ThemeDoc from '../docs/ThemeDoc';
 
 class Styleguide extends Component {
 
@@ -23,50 +19,21 @@ class Styleguide extends Component {
           component: IntroductionDoc
         },
         {
+          path: '/theme',
+          title: 'Theme',
+          component: ThemeDoc
+        },
+        {
+          path: '/interface',
+          title: 'Interface',
+          component: InterfaceDoc
+        },
+        },
+        {
           path: '/layout',
           title: 'Layout',
           component: LayoutDoc
         },
-        {
-          title: 'Theme',
-          pages: [
-            {
-              path: '/colors',
-              title: 'Colors',
-              component: ColorsDoc
-            },
-            {
-              path: '/icons',
-              title: 'Icons',
-              component: IconsDoc
-            },
-            {
-              path: '/fonts',
-              title: 'Fonts',
-              component: FontsDoc
-            }
-          ]
-        },
-        {
-          title: 'Components',
-          pages: [
-            {
-              path: '/header',
-              title: 'Header',
-              component: HeaderDoc
-            },
-            {
-              path: '/button',
-              title: 'Button',
-              component: ButtonDoc
-            },
-            {
-              path: '/slider',
-              title: 'Slider',
-              component: SliderDoc
-            },
-          ]
-        }
       ]}
       />
     );

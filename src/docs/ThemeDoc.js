@@ -24,5 +24,9 @@ export default () => (
               ]
             }
           />
+        <h2>Fonts</h2>
+        <p>Here we will document the typography.</p>
+        <h2>Icons</h2>
+        <p>Here we will document the iconography.</p>
       </Page>
 );
