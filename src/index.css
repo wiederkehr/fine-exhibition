@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
+@font-face {
+  font-family: 'Roboto Mono Regular';
+  src: url('/assets/fonts/roboto/roboto-mono_regular.woff') format('woff'),
+       url('/assets/fonts/roboto/roboto-mono_regular.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto Mono Medium';
+  src: url('/assets/fonts/roboto/roboto-mono_medium.woff') format('woff'),
+       url('/assets/fonts/roboto/roboto-mono_medium.ttf')  format('truetype')
+}
 
 body {
   background: #fff;
   color: #222;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono Regular', monospace;
   margin: 0;
   padding: 0;
 }
