@@ -11,7 +11,7 @@ class Header extends Component {
         <span className="HeaderAction">
         { this.props.back ? <BackLink to="/" /> : null }
         </span>
-        <span className="HeaderTitle">{this.props.title}</span>
+        <span className="HeaderTitle">{this.props.children}</span>
       </div>
     );
   }
