@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { LayoutContainer, LayoutContent, LayoutHeader } from '../components/Layout';
 import Header from '../components/Header';
 
 import './ViewPage.css';
@@ -8,12 +8,14 @@ class ViewPage extends Component {
 
   render() {
     return (
-      <div className="AppContainer">
-        <Header back={true} title='View'/>
-        <div className="ViewPage AppContent">
+      <LayoutContainer>
+        <LayoutHeader>
+          <Header back={true}>View</Header>
+        </LayoutHeader>
+        <LayoutContent>
           <p>The visualization history will show up here.</p>
-        </div>
-      </div>
+        </LayoutContent>
+      </LayoutContainer>
     );
   }
 }

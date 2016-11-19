@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-
+import { LayoutContainer, LayoutContent, LayoutHeader, LayoutFooter } from '../components/Layout';
 import Header from '../components/Header';
-import Form from '../components/Form.js';
+import Form from '../components/Form';
 
 import './EditPage.css';
 
 class EditPage extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state={
+    }
+
+  };
+
   render() {
     return (
-      <div className="AppContainer">
-        <Header back={true} title='Edit'/>
-        <div className="EditPage AppContent">
+      <LayoutContainer>
+        <LayoutHeader>
+          <Header back={true}>Edit</Header>
+        </LayoutHeader>
+        <LayoutContent>
           <Form />
-        </div>
-      </div>
+        </LayoutContent>
+      </LayoutContainer>
     );
   }
 }

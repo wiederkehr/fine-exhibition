@@ -1,27 +1,44 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
 
-import './LayoutDoc.css';
+import { Layout, LayoutContainer, LayoutContent, LayoutHeader, LayoutFooter } from '../components/Layout';
+
+const LayoutViewport = {
+  height: '667px',
+  width: '375px',
+  overflow: 'auto'
+}
+
+const ContentBlock1 = {
+  backgroundColor: '#4AD9E2',
+  height: '500px'
+}
+
+const ContentBlock2 = {
+  backgroundColor: '#2FA3AA',
+  height: '500px'
+}
+
 
 export default () => (
   <Page>
     <h2>Application Layout</h2>
     <ReactSpecimen noSource={true}>
-      <div className="LayoutViewport">
-        <div className="Layout">
-          <div className="LayoutContainer">
-            <div className="LayoutBar LayoutHeader">
+      <div style={LayoutViewport}>
+        <Layout>
+          <LayoutContainer>
+            <LayoutHeader>
               Header
-            </div>
-            <div className="LayoutContent">
-              <div className="ContentBlock-1">Content Block #1</div>
-              <div className="ContentBlock-2">Content Block #2</div>
-            </div>
-            <div className="LayoutBar LayoutFooter">
+            </LayoutHeader>
+            <LayoutContent>
+              <div style={ContentBlock1}>Content Block #1</div>
+              <div style={ContentBlock2}>Content Block #2</div>
+            </LayoutContent>
+            <LayoutFooter>
               Footer
-            </div>
-          </div>
-        </div>
+            </LayoutFooter>
+          </LayoutContainer>
+        </Layout>
       </div>
     </ReactSpecimen>
   </Page>
