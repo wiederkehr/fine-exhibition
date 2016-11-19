@@ -21,7 +21,7 @@ class EditPage extends Component {
         <LayoutHeader>
           <Header back={true}>Edit</Header>
         </LayoutHeader>
-        <LayoutContent>
+        <LayoutContent className="EditPageContent">
           <Form />
         </LayoutContent>
       </LayoutContainer>

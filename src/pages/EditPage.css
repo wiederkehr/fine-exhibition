@@ -1,3 +1,4 @@
-.EditPage {
-
+.EditPageContent {
+  display: flex;
+  flex-direction: column;
 }

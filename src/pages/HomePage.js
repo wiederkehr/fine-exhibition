@@ -10,7 +10,7 @@ class HomePage extends Component {
     const style = {marginBottom: '10px'}
     return (
       <LayoutContainer>
-        <LayoutContent>
+        <LayoutContent className="HomePageContent">
           <Link className="Button" style={style} to="/edit">Track Emotion</Link>
           <Link className="Button" to="/view" disabled={true}>View History</Link>
         </LayoutContent>

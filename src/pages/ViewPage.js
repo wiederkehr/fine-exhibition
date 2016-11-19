@@ -12,7 +12,7 @@ class ViewPage extends Component {
         <LayoutHeader>
           <Header back={true}>View</Header>
         </LayoutHeader>
-        <LayoutContent>
+        <LayoutContent className="ViewPageContent">
           <p>The visualization history will show up here.</p>
         </LayoutContent>
       </LayoutContainer>

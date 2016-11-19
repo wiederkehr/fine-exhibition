@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import classNames from 'classnames';
 import './Layout.css';
 
 export class Layout extends Component {
@@ -14,8 +14,9 @@ export class Layout extends Component {
 
 export class LayoutContainer extends Component {
   render() {
+    const classes = classNames('LayoutContainer', this.props.className);
     return (
-      <div className="LayoutContainer">
+      <div className={classes}>
         {this.props.children}
       </div>
     );
@@ -24,8 +25,9 @@ export class LayoutContainer extends Component {
 
 export class LayoutContent extends Component {
   render() {
+    const classes = classNames('LayoutContent', this.props.className);
     return (
-      <div className="LayoutContent">
+      <div className={classes}>
       {this.props.children}
       </div>
     );
@@ -34,8 +36,9 @@ export class LayoutContent extends Component {
 
 export class LayoutHeader extends Component {
   render() {
+    const classes = classNames('LayoutBar', 'LayoutHeader', this.props.className);
     return (
-      <div className="LayoutBar LayoutHeader">
+      <div className={classes}>
         {this.props.children}
       </div>
     );
@@ -44,8 +47,9 @@ export class LayoutHeader extends Component {
 
 export class LayoutFooter extends Component {
   render() {
+    const classes = classNames('LayoutBar', 'LayoutFooter', this.props.className);
     return (
-      <div className="LayoutBar LayoutFooter">
+      <div className={classes}>
         {this.props.children}
       </div>
     );
