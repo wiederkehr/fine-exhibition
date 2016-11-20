@@ -30,5 +30,10 @@ export default () => (
                   value="3"
                   onChange={() => {}} />
         </ReactSpecimen>
+        <h2>History</h2>
+        <h3>History Item</h3>
+        <ReactSpecimen  noSource={true} span={3}>
+          <Slider/>
+        </ReactSpecimen>
       </Page>
 );

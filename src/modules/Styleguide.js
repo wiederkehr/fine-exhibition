@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
+import HistoryDoc from '../docs/HistoryDoc';
 import InterfaceDoc from '../docs/InterfaceDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
@@ -28,6 +29,11 @@ class Styleguide extends Component {
           path: '/interface',
           title: 'Interface',
           component: InterfaceDoc
+        },
+        {
+          path: '/history',
+          title: 'History',
+          component: HistoryDoc
         },
         {
           path: '/swiper',
