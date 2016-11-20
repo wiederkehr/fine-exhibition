@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 import './ViewPage.css';
 
@@ -63,13 +64,14 @@ class ViewPage extends Component {
     });
     return (
       <LayoutContainer>
-        <Header back={true}>View</Header>
+        <Header>View</Header>
         <LayoutContent className="ViewPageContent">
           {this.state.records.length < 1 ? "Loading emotions…" : null }
           <ul>
             {records}
           </ul>
         </LayoutContent>
+        <Footer/>
       </LayoutContainer>
     );
   }
