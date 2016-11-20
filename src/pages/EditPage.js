@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { LayoutContainer, LayoutContent, LayoutHeader } from '../components/Layout';
-import Header from '../components/Header';
+import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Header } from '../components/Header';
 import Form from '../components/Form';
 
 import './EditPage.css';
@@ -18,9 +18,7 @@ class EditPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <LayoutHeader>
-          <Header back={true}>Edit</Header>
-        </LayoutHeader>
+        <Header back={true}>Edit</Header>
         <LayoutContent className="EditPageContent">
           <Form />
         </LayoutContent>

@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-
-import BackLink from './BackLink';
+import { Link } from 'react-router';
+import { LayoutHeader } from '../components/Layout';
 
 import './Header.css';
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     return (
-      <div className="Header">
+      <LayoutHeader className="Header">
         <span className="HeaderAction">
         { this.props.back ? <BackLink to="/" /> : null }
         </span>
         <span className="HeaderTitle">{this.props.children}</span>
-      </div>
+      </LayoutHeader>
+    );
+  }
+};
+
+export class BackLink extends Component {
+  render() {
+    return (
+      <Link className="BackLink" to={this.props.to}>Back</Link>
     );
   }
 }
-
-export default Header;

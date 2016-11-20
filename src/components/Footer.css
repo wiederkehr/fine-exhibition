@@ -1,0 +1,13 @@
+.Footer {
+  background-color: #95ACCB;
+  display: flex;
+}
+
+.FooterAction {
+  color: #fff;
+  font-size: 12px;
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}

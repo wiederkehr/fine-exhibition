@@ -3,22 +3,26 @@ import { Page, ReactSpecimen } from 'catalog';
 
 import Button from '../components/Button';
 import Slider from '../components/Slider';
-import Header from '../components/Header';
-import BackLink from '../components/BackLink';
+import { Header, BackLink} from '../components/Header';
+import { Footer, FooterAction} from '../components/Footer';
 
 
 export default () => (
       <Page>
         <h2>Header</h2>
         <ReactSpecimen  noSource={true} span={3}>
-          <Header back={false} title='Title'/>
+          <Header back={false}>Title</Header>
         </ReactSpecimen>
         <ReactSpecimen  noSource={true} span={3}>
-          <Header back={true} title='Title With Button'/>
+          <Header back={true}>Title</Header>
         </ReactSpecimen>
         <h3>Header Actions</h3>
         <ReactSpecimen  noSource={true} span={3}>
           <BackLink to="/backlink"/>
+        </ReactSpecimen>
+        <h2>Footer</h2>
+        <ReactSpecimen  noSource={true} span={3}>
+          <Footer />
         </ReactSpecimen>
         <h2>Button</h2>
         <ReactSpecimen  noSource={true} span={3}>
@@ -29,11 +33,6 @@ export default () => (
           <Slider name="Slider"
                   value="3"
                   onChange={() => {}} />
-        </ReactSpecimen>
-        <h2>History</h2>
-        <h3>History Item</h3>
-        <ReactSpecimen  noSource={true} span={3}>
-          <Slider/>
         </ReactSpecimen>
       </Page>
 );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { LayoutContainer, LayoutContent, LayoutHeader } from '../components/Layout';
-import Header from '../components/Header';
+import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Header } from '../components/Header';
 
 import './ViewPage.css';
 
@@ -63,9 +63,7 @@ class ViewPage extends Component {
     });
     return (
       <LayoutContainer>
-        <LayoutHeader>
-          <Header back={true}>View</Header>
-        </LayoutHeader>
+        <Header back={true}>View</Header>
         <LayoutContent className="ViewPageContent">
           {this.state.records.length < 1 ? "Loading emotions…" : null }
           <ul>
