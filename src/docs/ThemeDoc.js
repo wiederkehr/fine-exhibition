@@ -9,8 +9,8 @@ export default () => (
           colors={
             [
               {name:"white", value:'#fff'},
-              {name:"light-turquois", value:'#4AD9E2'},
-              {name:"dark-turquois", value:'#2FA3AA'}
+              {name:"light-blue", value:'#95ACCB'},
+              {name:"dark-blue", value:'#546D8E'}
             ]
           }
         />

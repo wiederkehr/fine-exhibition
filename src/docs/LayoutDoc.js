@@ -10,12 +10,12 @@ const LayoutViewport = {
 }
 
 const ContentBlock1 = {
-  backgroundColor: '#4AD9E2',
+  backgroundColor: '#95ACCB',
   height: '500px'
 }
 
 const ContentBlock2 = {
-  backgroundColor: '#2FA3AA',
+  backgroundColor: '#546D8E',
   height: '500px'
 }
 
