@@ -8,19 +8,22 @@ export class Header extends Component {
   render() {
     return (
       <LayoutHeader className="Header">
-        <span className="HeaderAction">
-        { this.props.back ? <BackLink to="/" /> : null }
-        </span>
         <span className="HeaderTitle">{this.props.children}</span>
+        <span className="HeaderActionLeft">
+        { this.props.left ? <HeaderAction to={this.props.left.to}>{this.props.left.label}</HeaderAction> : null }
+        </span>
+        <span className="HeaderActionRight">
+        { this.props.right ? <HeaderAction to={this.props.right.to}>{this.props.right.label}</HeaderAction> : null }
+        </span>
       </LayoutHeader>
     );
   }
 };
 
-export class BackLink extends Component {
+export class HeaderAction extends Component {
   render() {
     return (
-      <Link className="BackLink" to={this.props.to}>Back</Link>
+      <Link className="HeaderAction" to={this.props.to}>{this.props.children}</Link>
     );
   }
-}
+};

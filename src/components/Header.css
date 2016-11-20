@@ -9,12 +9,19 @@
   text-transform: uppercase;
 }
 
-.HeaderAction {
+.HeaderActionLeft {
   position: absolute;
   left: 20px;
+  top: 0;
 }
 
-.BackLink {
+.HeaderActionRight {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.HeaderAction {
   color: #999;
   font-size: 12px;
   text-decoration: none;
