@@ -24,9 +24,9 @@
 }
 
 .LayoutHeader {
-  background: #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .LayoutFooter {
-  background: #eee;
+  border-top: 1px solid #eee;
 }

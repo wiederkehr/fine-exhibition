@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LayoutContainer, LayoutContent, LayoutHeader, LayoutFooter } from '../components/Layout';
+import { LayoutContainer, LayoutContent, LayoutHeader } from '../components/Layout';
 import Header from '../components/Header';
 import Form from '../components/Form';
 
