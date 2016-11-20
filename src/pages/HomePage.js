@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Footer } from '../components/Footer';
 
 import './HomePage.css';
 
@@ -11,9 +12,10 @@ class HomePage extends Component {
     return (
       <LayoutContainer>
         <LayoutContent className="HomePageContent">
-          <Link className="Button" style={style} to="/edit">Track Emotion</Link>
+          <Link className="Button" style={style} to="/add">Add Emotion</Link>
           <Link className="Button" to="/view" disabled={true}>View History</Link>
         </LayoutContent>
+        <Footer/>
       </LayoutContainer>
     );
   }

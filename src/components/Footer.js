@@ -9,9 +9,9 @@ export class Footer extends Component {
     return (
       <LayoutFooter className="Footer">
         <FooterAction to='#'>Home</FooterAction>
-        <FooterAction to='#'>Profile</FooterAction>
-        <FooterAction to='#'>History</FooterAction>
-        <FooterAction to='#'>Add</FooterAction>
+        <FooterAction to='/profile'>Profile</FooterAction>
+        <FooterAction to='/view'>View</FooterAction>
+        <FooterAction to='/add'>Add</FooterAction>
       </LayoutFooter>
     );
   }
@@ -20,7 +20,7 @@ export class Footer extends Component {
 export class FooterAction extends Component {
   render() {
     return (
-      <Link className="FooterAction" to={this.props.to}>{this.props.children}</Link>
+      <Link className="FooterAction" activeClassName="FooterAction--active" to={this.props.to}>{this.props.children}</Link>
     );
   }
 };

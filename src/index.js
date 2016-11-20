@@ -6,7 +6,8 @@ import App from './modules/App';
 import Styleguide from './modules/Styleguide';
 
 import HomePage from './pages/HomePage';
-import EditPage from './pages/EditPage';
+import ProfilePage from './pages/ProfilePage';
+import AddPage from './pages/AddPage';
 import ViewPage from './pages/ViewPage';
 
 import 'normalize.css';
@@ -31,9 +32,16 @@ ReactDOM.render(
         onLeave={() => {}}
       />
       <Route
-        path="/edit"
-        title="Edit"
-        component={EditPage}
+        path="/profile"
+        title="Profile"
+        component={ProfilePage}
+        onEnter={() => {}}
+        onLeave={() => {}}
+      />
+      <Route
+        path="/add"
+        title="Add"
+        component={AddPage}
         onEnter={() => {}}
         onLeave={() => {}}
       />

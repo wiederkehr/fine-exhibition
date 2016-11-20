@@ -1,4 +1,5 @@
 .Footer {
+  border: none;
   background-color: #95ACCB;
   display: flex;
 }
@@ -6,8 +7,13 @@
 .FooterAction {
   color: #fff;
   font-size: 12px;
+  font-weight: bold;
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.FooterAction--active {
+  color: #546D8E;
 }

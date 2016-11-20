@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import Form from '../components/Form';
 
-import './EditPage.css';
+import './AddPage.css';
 
 class EditPage extends Component {
 
@@ -18,10 +19,11 @@ class EditPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header back={true}>Edit</Header>
-        <LayoutContent className="EditPageContent">
+        <Header>Edit</Header>
+        <LayoutContent className="AddPageContent">
           <Form />
         </LayoutContent>
+        <Footer/>
       </LayoutContainer>
     );
   }
