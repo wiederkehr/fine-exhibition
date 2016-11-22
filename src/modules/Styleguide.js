@@ -9,7 +9,6 @@ import ThemeDoc from '../docs/ThemeDoc';
 import SwiperDoc from '../docs/SwiperDoc';
 
 class Styleguide extends Component {
-
   render() {
     return (
       <Catalog
