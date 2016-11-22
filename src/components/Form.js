@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { timeFormat } from 'd3-time-format';
 import { Slider } from './Slider.js';
 import { Button } from './Button.js';
 import './Form.css';
 
-class Form extends Component {
+class AddForm extends Component {
 
   constructor(props) {
     super(props);
@@ -30,13 +31,7 @@ class Form extends Component {
   };
 
   componentDidMount() {
-    // eslint-disable-next-line
-    Date.prototype.toDateInputValue = (function() {
-      var local = new Date(this);
-      local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-      return local.toJSON().slice(0,10);
-    });
-    this.setState({date: new Date().toDateInputValue()})
+    this.setState({date: timeFormat("%Y-%m-%d")(new Date())})
   }
 
   onFormChange(field, event) {
@@ -93,46 +88,52 @@ class Form extends Component {
   }
 
   render() {
-    return (
-      <form className='Form' onSubmit={this.onFormSubmit}>
-        <div className='Input-group'>
-          <input  className='Input-text'
-                  id='emotion'
-                  type='text'
-                  placeholder='Emotion'
-                  onChange={this.onFormChange.bind(null, 'emotion')} />
-          <input  className='Input-text'
-                  id='event'
-                  type='text'
-                  placeholder='Event'
-                  onChange={this.onFormChange.bind(null, 'event')} />
-          <input  className='Input-date'
-                  id='text'
-                  type='date'
-                  value={this.state.date}
-                  onChange={this.onFormChange.bind(null, 'date')} />
-        </div>
-        <div className='Slider-group'>
-          <Slider name='Arousal'
-                  value={this.state.arousal}
-                  onChange={this.onFormChange.bind(null, 'arousal')} />
-          <Slider name='Conduciveness'
-                  value={this.state.conduciveness}
-                  onChange={this.onFormChange.bind(null, 'conduciveness')} />
-          <Slider name='Controllability'
-                  value={this.state.controllability}
-                  onChange={this.onFormChange.bind(null, 'controllability')} />
-          <Slider name='Intensity'
-                  value={this.state.intensity}
-                  onChange={this.onFormChange.bind(null, 'intensity')} />
-          <Slider name='Valence'
-                  value={this.state.valence}
-                  onChange={this.onFormChange.bind(null, 'valence')} />
-        </div>
-        <Button type='submit' disabled={this.state.disabled}>{this.state.status}</Button>
-      </form>
-    );
+    return <Form
+      onSubmit={this.onFormSubmit}
+      onChange={this.onFormChange}
+      {...this.state}
+    />;
   }
 }
 
-export default Form;
+export default AddForm;
+
+export const Form = ({onSubmit, onChange, arousal, conduciveness, controllability, intensity, valence, disabled, status, date}) => (
+  <form className='Form' onSubmit={onSubmit}>
+    <div className='Input-group'>
+      <input  className='Input-text'
+              id='emotion'
+              type='text'
+              placeholder='Emotion'
+              onChange={onChange.bind(null, 'emotion')} />
+      <input  className='Input-text'
+              id='event'
+              type='text'
+              placeholder='Event'
+              onChange={onChange.bind(null, 'event')} />
+      <input  className='Input-date'
+              id='text'
+              type='date'
+              value={date}
+              onChange={onChange.bind(null, 'date')} />
+    </div>
+    <div className='Slider-group'>
+      <Slider name='Arousal'
+              value={arousal}
+              onChange={onChange.bind(null, 'arousal')} />
+      <Slider name='Conduciveness'
+              value={conduciveness}
+              onChange={onChange.bind(null, 'conduciveness')} />
+      <Slider name='Controllability'
+              value={controllability}
+              onChange={onChange.bind(null, 'controllability')} />
+      <Slider name='Intensity'
+              value={intensity}
+              onChange={onChange.bind(null, 'intensity')} />
+      <Slider name='Valence'
+              value={valence}
+              onChange={onChange.bind(null, 'valence')} />
+    </div>
+    <Button type='submit' disabled={disabled}>{status}</Button>
+  </form>
+);
