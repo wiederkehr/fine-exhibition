@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Slider from './Slider.js';
-import Button from './Button.js';
+import { Slider } from './Slider.js';
+import { Button } from './Button.js';
 import './Form.css';
 
 class Form extends Component {
@@ -94,42 +94,42 @@ class Form extends Component {
 
   render() {
     return (
-      <form className="Form" onSubmit={this.onFormSubmit}>
-        <div className="Input-group">
-          <input  className="Input-text"
-                  id="emotion"
-                  type="text"
-                  placeholder="Emotion"
-                  onChange={this.onFormChange.bind(null, "emotion")} />
-          <input  className="Input-text"
-                  id="event"
-                  type="text"
-                  placeholder="Event"
-                  onChange={this.onFormChange.bind(null, "event")} />
-          <input  className="Input-date"
-                  id="text"
-                  type="date"
+      <form className='Form' onSubmit={this.onFormSubmit}>
+        <div className='Input-group'>
+          <input  className='Input-text'
+                  id='emotion'
+                  type='text'
+                  placeholder='Emotion'
+                  onChange={this.onFormChange.bind(null, 'emotion')} />
+          <input  className='Input-text'
+                  id='event'
+                  type='text'
+                  placeholder='Event'
+                  onChange={this.onFormChange.bind(null, 'event')} />
+          <input  className='Input-date'
+                  id='text'
+                  type='date'
                   value={this.state.date}
-                  onChange={this.onFormChange.bind(null, "date")} />
+                  onChange={this.onFormChange.bind(null, 'date')} />
         </div>
-        <div className="Slider-group">
-          <Slider name="Arousal"
+        <div className='Slider-group'>
+          <Slider name='Arousal'
                   value={this.state.arousal}
-                  onChange={this.onFormChange.bind(null, "arousal")} />
-          <Slider name="Conduciveness"
+                  onChange={this.onFormChange.bind(null, 'arousal')} />
+          <Slider name='Conduciveness'
                   value={this.state.conduciveness}
-                  onChange={this.onFormChange.bind(null, "conduciveness")} />
-          <Slider name="Controllability"
+                  onChange={this.onFormChange.bind(null, 'conduciveness')} />
+          <Slider name='Controllability'
                   value={this.state.controllability}
-                  onChange={this.onFormChange.bind(null, "controllability")} />
-          <Slider name="Intensity"
+                  onChange={this.onFormChange.bind(null, 'controllability')} />
+          <Slider name='Intensity'
                   value={this.state.intensity}
-                  onChange={this.onFormChange.bind(null, "intensity")} />
-          <Slider name="Valence"
+                  onChange={this.onFormChange.bind(null, 'intensity')} />
+          <Slider name='Valence'
                   value={this.state.valence}
-                  onChange={this.onFormChange.bind(null, "valence")} />
+                  onChange={this.onFormChange.bind(null, 'valence')} />
         </div>
-        <Button type="submit" disabled={this.state.disabled} label={this.state.status} />
+        <Button type='submit' disabled={this.state.disabled}>{this.state.status}</Button>
       </form>
     );
   }
