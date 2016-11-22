@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { LayoutHeader } from '../components/Layout';
-
 import './Header.css';
 
-export class Header extends Component {
-  render() {
-    return (
-      <LayoutHeader className="Header">
-        <span className="HeaderTitle">{this.props.children}</span>
-        <span className="HeaderActionLeft">
-        { this.props.left ? <HeaderAction to={this.props.left.to}>{this.props.left.label}</HeaderAction> : null }
-        </span>
-        <span className="HeaderActionRight">
-        { this.props.right ? <HeaderAction to={this.props.right.to}>{this.props.right.label}</HeaderAction> : null }
-        </span>
-      </LayoutHeader>
-    );
-  }
-};
+export const Header = ({ left, right, children }) => (
+  <LayoutHeader className="Header">
+    <span className="HeaderTitle">{children}</span>
+    <span className="HeaderActionLeft">
+    { left ? <HeaderAction to={left.to}>{left.label}</HeaderAction> : null }
+    </span>
+    <span className="HeaderActionRight">
+    { right ? <HeaderAction to={right.to}>{right.label}</HeaderAction> : null }
+    </span>
+  </LayoutHeader>
+);
 
-export class HeaderAction extends Component {
-  render() {
-    return (
-      <Link className="HeaderAction" to={this.props.to}>{this.props.children}</Link>
-    );
-  }
-};
+export const HeaderAction = ({ to, children }) => (
+  <Link className="HeaderAction" to={to}>{children}</Link>
+);

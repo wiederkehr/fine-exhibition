@@ -27,19 +27,19 @@ var monthly = function (month) {
 }
 
 export default () => (
-      <Page>
-        <h2>History</h2>
-        <h3>Day</h3>
-        <ReactSpecimen noSource={true}>
-          <HistoryItem>History Item</HistoryItem>
-        </ReactSpecimen>
-        <h3>Weekly Grid</h3>
-        <ReactSpecimen noSource={true}>
-        <WeeklyGrid>{weekly(week_1)}</WeeklyGrid>
-        </ReactSpecimen>
-        <h3>Monthly Grid</h3>
-        <ReactSpecimen noSource={true}>
-          <MonthlyGrid>{monthly(month_1)}</MonthlyGrid>
-        </ReactSpecimen>
-      </Page>
+  <Page>
+    <h2>History</h2>
+    <h3>Day</h3>
+    <ReactSpecimen noSource={true}>
+      <HistoryItem>History Item</HistoryItem>
+    </ReactSpecimen>
+    <h3>Weekly Grid</h3>
+    <ReactSpecimen noSource={true}>
+    <WeeklyGrid>{weekly(week_1)}</WeeklyGrid>
+    </ReactSpecimen>
+    <h3>Monthly Grid</h3>
+    <ReactSpecimen noSource={true}>
+      <MonthlyGrid>{monthly(month_1)}</MonthlyGrid>
+    </ReactSpecimen>
+  </Page>
 );

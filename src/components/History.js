@@ -1,32 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './History.css';
 
-export class HistoryItem extends Component {
-  render() {
-    return (
-      <div className="HistoryItem">
-        {this.props.children}
-      </div>
-    );
-  }
+export const HistoryItem = ({ children }) => {
+  return <div className="HistoryItem">{children}</div>
 }
 
-export class WeeklyGrid extends Component {
-  render() {
-    return (
-      <div className="WeeklyGrid">
-      {this.props.children}
-      </div>
-    );
-  }
+export const WeeklyGrid = ({ children }) => {
+  return <div className="WeeklyGrid">{children}</div>
 }
 
-export class MonthlyGrid extends Component {
-  render() {
-    return (
-      <div className="MonthlyGrid">
-        {this.props.children}
-      </div>
-    );
-  }
+export const MonthlyGrid = ({ children }) => {
+  return <div className="MonthlyGrid">{children}</div>
 }

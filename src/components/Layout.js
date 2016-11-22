@@ -1,57 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import './Layout.css';
 
-export class Layout extends Component {
-  render() {
-    return (
-      <div className="Layout">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export const Layout = ({ children }) => {
+  return <div className="Layout">{children}</div>
+};
 
-export class LayoutContainer extends Component {
-  render() {
-    const classes = classNames('LayoutContainer', this.props.className);
-    return (
-      <div className={classes}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export const LayoutContainer = ({ className, children }) => {
+  const classes = classNames('LayoutContainer', className);
+  return <div className={classes}>{children}</div>
+};
 
-export class LayoutContent extends Component {
-  render() {
-    const classes = classNames('LayoutContent', this.props.className);
-    return (
-      <div className={classes}>
-      {this.props.children}
-      </div>
-    );
-  }
-}
+export const LayoutContent = ({ className, children }) => {
+  const classes = classNames('LayoutContent', className);
+  return <div className={classes}>{children}</div>
+};
 
-export class LayoutHeader extends Component {
-  render() {
-    const classes = classNames('LayoutBar', 'LayoutHeader', this.props.className);
-    return (
-      <div className={classes}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export const LayoutHeader = ({ className, children }) => {
+  const classes = classNames('LayoutBar', 'LayoutHeader', className);
+  return <div className={classes}>{children}</div>
+};
 
-export class LayoutFooter extends Component {
-  render() {
-    const classes = classNames('LayoutBar', 'LayoutFooter', this.props.className);
-    return (
-      <div className={classes}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export const LayoutFooter = ({ className, children }) => {
+  const classes = classNames('LayoutBar', 'LayoutFooter', className);
+  return <div className={classes}>{children}</div>
+};

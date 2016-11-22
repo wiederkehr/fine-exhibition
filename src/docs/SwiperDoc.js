@@ -1,6 +1,6 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
-import Swiper from '../components/Swiper';
+import { Swiper } from '../components/Swiper';
 
 const SwiperViewport = {
   height: '400px',

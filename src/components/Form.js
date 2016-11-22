@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Slider from './Slider.js';
 import Button from './Button.js';
-
 import './Form.css';
 
 class Form extends Component {
