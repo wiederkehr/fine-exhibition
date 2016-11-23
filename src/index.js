@@ -11,6 +11,7 @@ import Styleguide from './modules/Styleguide';
 
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
+import SettingsPage from './pages/SettingsPage';
 import AddPage from './pages/AddPage';
 import ViewPage from './pages/ViewPage';
 
@@ -27,37 +28,26 @@ ReactDOM.render(
       <Route component={App}>
         <Route
           path="/"
-          title="Welcome"
+          title="Home"
           component={HomePage}
-          onEnter={(location, replaceWith) => {}}
-          onLeave={() => {}}
         />
         <IndexRoute
+          title="Home"
           component={HomePage}
-          title="Welcome"
-          onEnter={(location, replaceWith) => {}}
-          onLeave={() => {}}
         />
-        <Route
-          path="/profile"
-          title="Profile"
-          component={ProfilePage}
-          onEnter={() => {}}
-          onLeave={() => {}}
-        />
+        <Route path="/profile">
+          <IndexRoute title="Profile" component={ProfilePage} />
+          <Route path="/profile/settings" title="Settings" component={SettingsPage} />
+        </Route>
         <Route
           path="/add"
           title="Add"
           component={AddPage}
-          onEnter={() => {}}
-          onLeave={() => {}}
         />
         <Route
           path="/view"
           title="View"
           component={ViewPage}
-          onEnter={() => {}}
-          onLeave={() => {}}
         />
       </Route>
       <Route
