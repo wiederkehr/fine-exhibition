@@ -28,7 +28,7 @@
 }
 
 .Button:disabled {
-  background-color: #ddd;
+  background-color: #bbb;
   cursor: default;
-  color: #eee;
+  color: #ddd;
 }
