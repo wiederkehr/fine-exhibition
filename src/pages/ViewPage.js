@@ -23,13 +23,12 @@ class ViewPage extends Component {
   }
 
   getRecords() {
-    var bookId = '5820e4e29f61d803006b2093';
-    var sheetId = 'sheet';
-    var baseUrl = 'https://api.fieldbook.com/v1/';
-    var url = baseUrl + bookId + '/' + sheetId;
-
     var username = process.env.REACT_APP_FIELDBOOK_USER;
     var password = process.env.REACT_APP_FIELDBOOK_KEY;
+    var bookId = process.env.REACT_APP_FIELDBOOK_BOOK;
+    var sheetId = process.env.REACT_APP_FIELDBOOK_SHEET;
+    var baseUrl = 'https://api.fieldbook.com/v1/';
+    var url = baseUrl + bookId + '/' + sheetId;
     var userpass = username + ':' + password;
     var authorization = 'Basic '+ btoa(userpass);
 
