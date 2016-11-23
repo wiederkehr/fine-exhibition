@@ -10,7 +10,7 @@ class SettingsPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header left={{to:'/profile', label:'Back'}}>Settings</Header>
+        <Header left={{to:'/profile', label:'Back'}}>{this.props.route.title}</Header>
         <LayoutContent className="SettingsPageContent">
           <p>Here will be the user settings.</p>
         </LayoutContent>

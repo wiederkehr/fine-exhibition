@@ -92,7 +92,7 @@ class AddPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header>Edit</Header>
+        <Header>{this.props.route.title}</Header>
         <LayoutContent className="AddPageContent">
           <AddForm
             onSubmit={this.onFormSubmit}

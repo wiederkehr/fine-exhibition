@@ -10,7 +10,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header right={{to:'/profile/settings', label:'Settings'}}>Profile</Header>
+        <Header right={{to:'/profile/settings', label:'Settings'}}>{this.props.route.title}</Header>
         <LayoutContent className="ProfilePageContent">
           <p>Here will be the user profile.</p>
         </LayoutContent>

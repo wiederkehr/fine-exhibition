@@ -63,7 +63,7 @@ class ViewPage extends Component {
     });
     return (
       <LayoutContainer>
-        <Header>View</Header>
+        <Header>{this.props.route.title}</Header>
         <LayoutContent className="ViewPageContent">
           {this.state.records.length < 1 ? "Loading emotions…" : null }
           <ul>
