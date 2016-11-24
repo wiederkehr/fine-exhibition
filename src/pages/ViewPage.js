@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { GlyphContainer } from '../components/Glyph';
 
 import './ViewPage.css';
 
@@ -55,20 +56,30 @@ class ViewPage extends Component {
     });
   }
 
+  renderEmotion(record, i) {
+    return (
+      <div key={i}>
+      <GlyphContainer
+        date={record.date}
+        emotion={record.emotion}
+        arousal={record.arousal}
+        conduciveness={record.conduciveness}
+        controllability={record.controllability}
+        intensity={record.intensity}
+        valence={record.valence}
+      />
+      </div>
+    )
+  }
+
   render() {
-    var records = this.state.records.map(function(record) {
-      return (
-        <li key={record.id}>{record.emotion}</li>
-      );
-    });
+    var records = this.state.records.map(this.renderEmotion);
     return (
       <LayoutContainer>
         <Header>{this.props.route.title}</Header>
         <LayoutContent className="ViewPageContent">
           {this.state.records.length < 1 ? "Loading emotions…" : null }
-          <ul>
-            {records}
-          </ul>
+          {records}
         </LayoutContent>
         <Footer/>
       </LayoutContainer>

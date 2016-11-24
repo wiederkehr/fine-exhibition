@@ -13,7 +13,7 @@ const blur = d3.scaleLinear().domain([min, max]).range([maxBlur, 0]);
 const radius = d3.scaleSqrt().domain([min - 1, max]).range([0, maxSize / 2 - maxBlur]);
 const color = d3.scaleLinear().domain([min, max]).range(["#ca0020", "#0571b0"]);
 
-class Glyph extends Component {
+export class Glyph extends Component {
 
   componentDidUpdate() {
     let intensity = this.props.intensity;
@@ -33,20 +33,32 @@ class Glyph extends Component {
 
   render() {
     return (
-      <div className='GlyphContainer'>
-        <svg className='Glyph' width={maxSize} height={maxSize}>
-          <g transform="translate(0,0)">
-            <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation={blur(this.props.controllability)} />
-            </filter>
-            <g transform={"translate(" + maxSize / 2 + "," + maxSize / 2 + ")"}>
-              <circle cx="0" cy="0" r={radius(this.props.intensity)} fill={color(this.props.valence)} filter="url(#blur)" style={{opacity: opacity(this.props.conduciveness)}} />
-            </g>
+      <svg className='Glyph' width={maxSize} height={maxSize}>
+        <g transform="translate(0,0)">
+          <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation={blur(this.props.controllability)} />
+          </filter>
+          <g transform={"translate(" + maxSize / 2 + "," + maxSize / 2 + ")"}>
+            <circle cx="0" cy="0" r={radius(this.props.intensity)} fill={color(this.props.valence)} filter="url(#blur)" style={{opacity: opacity(this.props.conduciveness)}} />
           </g>
-        </svg>
-      </div>
+        </g>
+      </svg>
     )
   }
 }
 
-export default Glyph;
+export const GlyphContainer = ({ date, emotion, arousal, conduciveness, controllability, intensity, valence }) => (
+    <div className='GlyphContainer'>
+      <div className='GlyphTitle'>
+        <div className='GlyphEmotion'>{emotion}</div>
+        <div className='GlyphDate'>{date}</div>
+      </div>
+      <Glyph
+        arousal={arousal}
+        conduciveness={conduciveness}
+        controllability={controllability}
+        intensity={intensity}
+        valence={valence}
+      />
+    </div>
+);

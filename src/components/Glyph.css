@@ -2,3 +2,15 @@
   display: block;
   margin: 0 auto;
 }
+
+.GlyphContainer {
+  position: relative;
+}
+
+.GlyphTitle {
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}

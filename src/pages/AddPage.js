@@ -3,7 +3,7 @@ import { timeFormat } from 'd3-time-format';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import Glyph from '../components/Glyph';
+import { Glyph } from '../components/Glyph';
 import AddForm from '../components/Form';
 
 import './AddPage.css';
