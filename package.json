@@ -10,8 +10,6 @@
     "catalog": "^2.5.0-beta.3",
     "classnames": "^2.2.5",
     "d3": "^4.4.0",
-    "d3-scale": "^1.0.4",
-    "d3-selection": "^1.0.3",
     "d3-time-format": "^2.0.2",
     "history": "^1.12.1",
     "normalize.css": "^5.0.0",
