@@ -7,6 +7,7 @@ import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
 import ThemeDoc from '../docs/ThemeDoc';
 import SwiperDoc from '../docs/SwiperDoc';
+import GlyphDoc from '../docs/GlyphDoc';
 
 class Styleguide extends Component {
   render() {
@@ -54,6 +55,11 @@ class Styleguide extends Component {
           path: '/layout',
           title: 'Layout',
           component: LayoutDoc
+        },
+        {
+          path: '/glyph',
+          title: 'Glyph',
+          component: GlyphDoc
         },
       ]}
       />
