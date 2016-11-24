@@ -3,6 +3,7 @@ import { timeFormat } from 'd3-time-format';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import Glyph from '../components/Glyph';
 import AddForm from '../components/Form';
 
 import './AddPage.css';
@@ -17,11 +18,11 @@ class AddPage extends Component {
       emotion: 'Emotion',
       event: 'Event',
       date: '',
-      arousal: '1',
-      conduciveness: '1',
-      controllability: '1',
-      intensity: '1',
-      valence: '1',
+      arousal: 3,
+      conduciveness: 3,
+      controllability: 3,
+      intensity: 3,
+      valence: 3,
       status: 'Submit',
       disabled: false,
     }
@@ -94,6 +95,13 @@ class AddPage extends Component {
       <LayoutContainer>
         <Header>{this.props.route.title}</Header>
         <LayoutContent className="AddPageContent">
+          <Glyph
+            arousal={this.state.arousal}
+            conduciveness={this.state.conduciveness}
+            controllability={this.state.controllability}
+            intensity={this.state.intensity}
+            valence={this.state.valence}
+          />
           <AddForm
             onSubmit={this.onFormSubmit}
             onChange={this.onFormChange}
