@@ -16,7 +16,7 @@ export class Glyph extends Component {
     this.state = {
       size: null
     }
-    this.handleResize = this.handleResize.bind(this);
+    // this.handleResize = this.handleResize.bind(this);
   }
   handleResize() {
     var node = this.refs.Glyph;
@@ -26,22 +26,23 @@ export class Glyph extends Component {
   componentDidMount() {
     var node = this.refs.Glyph;
     var width = node.parentNode.getBoundingClientRect().width // Currently is 0, but why?
+    width = 200 // Fixed until it's fixed.
     switch( this.props.width ) {
       case undefined:
-        window.addEventListener('resize', this.handleResize);
+        // window.addEventListener('resize', this.handleResize);
         this.setState({ size: width });
       break;
       case '100%':
-        window.addEventListener('resize', this.handleResize);
+        // window.addEventListener('resize', this.handleResize);
         this.setState({ size: width });
       break;
       default:
         this.setState({ size: this.props.width });
     };
   }
-  componentWillUnmount() {
-    window.removeEventListener('resize', () => this.handleResize());
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', () => this.handleResize());
+  // }
   render() {
     const radius = d3.scaleSqrt().domain([min, max]).range([10, this.state.size / 2]);
     return (
