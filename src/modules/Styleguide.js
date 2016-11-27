@@ -5,6 +5,7 @@ import HistoryDoc from '../docs/HistoryDoc';
 import InterfaceDoc from '../docs/InterfaceDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
+import ListDoc from '../docs/ListDoc';
 import ThemeDoc from '../docs/ThemeDoc';
 import SwiperDoc from '../docs/SwiperDoc';
 import GlyphDoc from '../docs/GlyphDoc';
@@ -45,6 +46,11 @@ class Styleguide extends Component {
           path: '/history',
           title: 'History',
           component: HistoryDoc
+        },
+        {
+          path: '/list',
+          title: 'List',
+          component: ListDoc
         },
         {
           path: '/swiper',
