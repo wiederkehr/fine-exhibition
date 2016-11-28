@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router';
 import './List.css';
 
@@ -14,8 +15,8 @@ export const List = ({ children }) => (
   <ul className="List">{ children }</ul>
 );
 
-export const ListItem = ({ to, children }) => (
-  <li className="ListItem">
+export const ListItem = ({ to, className, children }) => (
+  <li className={ classNames('ListItem', className) }>
     <ListLink to={to}>{children}{ to ? <ListLinkAction /> : null}</ListLink>
   </li>
 );

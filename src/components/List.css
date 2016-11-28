@@ -30,6 +30,11 @@
   text-decoration: none;
 }
 
+.ListItem.active .ListLink,
+.ListLink:active {
+  background: #f8f8f8;
+}
+
 .ListLinkAction {
   position: absolute;
   right: 20px;
@@ -39,7 +44,7 @@
 
 .ArrowRight polyline{
     fill: none;
-    stroke: #ddd;
+    stroke: #d8d8d8;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;

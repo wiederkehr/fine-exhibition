@@ -32,6 +32,10 @@ export default () => (
     <ReactSpecimen noSource={true}>
       <ListItem to='/list'>List Item</ListItem>
     </ReactSpecimen>
+    <h3>List Item Active</h3>
+    <ReactSpecimen noSource={true}>
+      <ListItem to='/list' className='active'>List Item</ListItem>
+    </ReactSpecimen>
     <h2>List Link</h2>
     <ReactSpecimen noSource={true}>
       <ListLink to='/list'>List Link</ListLink>
