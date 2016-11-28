@@ -1,0 +1,75 @@
+.Switch {
+  background-color: #95ACCB;
+  background-clip: padding-box;
+  border: 1px solid #95ACCB;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 100ms, border-color 100ms;
+  height: 24px;
+  width: 48px;
+  position: relative;
+}
+
+.Switch.on {
+  background-color: #95ACCB;
+  border-color: #95ACCB;
+}
+
+.Switch.off {
+  background-color: #f0f0f0;
+  border-color: #ddd;
+}
+
+.Switch.disabled {
+  background-color: #f0f0f0;
+  border-color: #ddd;
+  cursor: default;
+}
+
+.SwitchButton {
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #95ACCB;
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  cursor: pointer;
+  display: block;
+  font-family: 'Roboto Mono Regular', monospace;
+  font-size: 10px;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  outline: none !important;
+  text-align: left;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: color 100ms, border-color 100ms, left 100ms, right 100ms, text-indent 100ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.SwitchButton.on {
+  color: #fff;
+  left: auto;
+  right: 0;
+  text-indent: -22px;
+}
+
+.SwitchButton.off {
+  background-color: #fff;
+  border-color: #ddd;
+  color: #aaa;
+  left: 0;
+  right: auto;
+  text-indent: 19px;
+}
+
+.SwitchButton.disabled {
+  background-color: #eee;
+  border-color: #ddd;
+  cursor: default;
+  left: 0;
+  right: auto;
+  font-size: 0;
+  text-indent: -99999px;
+  color: rgba(0,0,0,0);
+}
