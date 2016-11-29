@@ -4,6 +4,8 @@
 
 .ListHeader {
   border-bottom: 1px solid #f0f0f0;
+  color: #999;
+  text-transform: uppercase;
   font-size: 12px;
   line-height: 36px;
   padding: 16px 20px 0;
@@ -15,31 +17,49 @@
 }
 
 .ListItem {
-  list-style: none;
-  position: relative;
-}
-
-.ListLink,
-.ListLink:visited {
   background: #fff;
   border-bottom: 1px solid #f8f8f8;
-  color: #333;
-  display: block;
+  list-style: none;
   line-height: 36px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.ListLinkItem,
+.ListLinkSwitchItem {
+  padding: 0;
+}
+
+.ListLink {
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  display: block;
   padding: 0 20px;
   text-decoration: none;
 }
 
-.ListItem.active .ListLink,
 .ListLink:active {
   background: #f8f8f8;
 }
 
-.ListLinkAction {
+.ListSwitch {
+  position: absolute;
+  top: 5px;
+}
+
+.ListSwitchItem .ListSwitch {
+  right: 20px;
+}
+
+.ListLinkSwitchItem .ListSwitch {
+  right: 50px;
+}
+
+.ListLinkIcon {
   position: absolute;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 2px;
 }
 
 .ArrowRight polyline{
