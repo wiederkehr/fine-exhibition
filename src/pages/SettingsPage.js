@@ -26,7 +26,7 @@ class SettingsPage extends Component {
             </List>
             <ListHeader>References</ListHeader>
             <List>
-              <ListLinkItem to='settings/about'>About this application</ListLinkItem>
+              <ListLinkItem to='settings/about'>About</ListLinkItem>
               <ListLinkItem to='settings/disclaimer'>Disclaimer</ListLinkItem>
               <ListLinkItem to='settings/imprint'>Imprint</ListLinkItem>
             </List>
