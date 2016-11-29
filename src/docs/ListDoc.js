@@ -9,9 +9,9 @@ export default () => (
       <ListGroup>
         <ListHeader>List Item Header</ListHeader>
         <List>
-          <ListItem to='/list'>List Item 1.1</ListItem>
-          <ListItem to='/list'>List Item 1.2</ListItem>
-          <ListItem to='/list'>List Item 1.3</ListItem>
+          <ListItem>List Item 1.1</ListItem>
+          <ListItem>List Item 1.2</ListItem>
+          <ListItem>List Item 1.3</ListItem>
         </List>
         <ListHeader>List Link Item Header</ListHeader>
         <List>
