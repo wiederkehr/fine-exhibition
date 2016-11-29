@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { ListGroup, ListHeader, List, ListItem, ListLinkItem, ListSwitchItem, ListLinkSwitchItem } from '../components/List';
+import { ListGroup, ListHeader, List, ListLinkItem, ListSwitchItem, ListLinkSwitchItem } from '../components/List';
 
 import './SettingsPage.css';
 
