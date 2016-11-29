@@ -12,6 +12,10 @@ import Styleguide from './modules/Styleguide';
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage';
+import SettingsNotificationsPage from './pages/SettingsNotificationsPage';
+import SettingsAboutPage from './pages/SettingsAboutPage';
+import SettingsDisclaimerPage from './pages/SettingsDisclaimerPage';
+import SettingsImprintPage from './pages/SettingsImprintPage';
 import AddPage from './pages/AddPage';
 import ViewPage from './pages/ViewPage';
 
@@ -37,7 +41,13 @@ ReactDOM.render(
         />
         <Route path="/profile">
           <IndexRoute title="Profile" component={ProfilePage} />
-          <Route path="/profile/settings" title="Settings" component={SettingsPage} />
+          <Route path="/profile/settings">
+            <IndexRoute title="Settings" component={SettingsPage} />
+            <Route path="/settings/notifications" title="Notifications" component={SettingsNotificationsPage} />
+            <Route path="/settings/about" title="About" component={SettingsAboutPage} />
+            <Route path="/settings/disclaimer" title="Disclaimer" component={SettingsDisclaimerPage} />
+            <Route path="/settings/imprint" title="Imprint" component={SettingsImprintPage} />
+          </Route>
         </Route>
         <Route
           path="/add"
