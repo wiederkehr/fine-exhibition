@@ -17,6 +17,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.TypeContent {
+  line-height: 1.5;
+}
+
 .LayoutBar {
   flex-shrink: 0;
   height: 44px;
