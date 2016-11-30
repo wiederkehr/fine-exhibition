@@ -3,8 +3,8 @@ import { timeFormat } from 'd3-time-format';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { Glyph } from '../components/Glyph';
 import AddForm from '../components/Form';
+//import { Glyph } from '../components/Glyph';
 
 import './AddPage.css';
 
@@ -95,13 +95,13 @@ class AddPage extends Component {
       <LayoutContainer>
         <Header>{this.props.route.title}</Header>
         <LayoutContent className="AddPageContent">
-          <Glyph
+          {/*<Glyph
             arousal={this.state.arousal}
             conduciveness={this.state.conduciveness}
             controllability={this.state.controllability}
             intensity={this.state.intensity}
             valence={this.state.valence}
-          />
+          />*/}
           <AddForm
             onSubmit={this.onFormSubmit}
             onChange={this.onFormChange}
