@@ -5,22 +5,31 @@ export default () => (
   <Page>
     <h2>Primary Colors</h2>
     <ColorPaletteSpecimen
-      horizontal={true}
       colors={
         [
-          {name:"white", value:'#fff'},
-          {name:"light-blue", value:'#95ACCB'},
-          {name:"dark-blue", value:'#546D8E'}
+          {name:"bright-blue", value:'#D9E9FF'},
+          {name:"highlight-blue", value:'#B8CBE6'},
+          {name:"light-blue", value:'#99AECC'},
+          {name:"midlight-blue", value:'#7D93B3'},
+          {name:"mid-blue", value:'#637A99'},
+          {name:"middark-blue", value:'#4C627F'},
+          {name:"dark-blue", value:'#384B66'},
+          {name:"night-blue", value:'#26354C'},
         ]
       }
     />
-    <h2>Secondary Colors</h2>
+    <h2>Monchrome Colors</h2>
       <ColorPaletteSpecimen
         colors={
           [
-            {name:"light-grey", value:'#eee'},
-            {name:"mid-grey", value:'#ddd'},
-            {name:"dark-grey", value:'#ccc'}
+            {name:"white", value:'#fff'},
+            {name:"bright-grey", value:'#f8f8f8'},
+            {name:"light-grey", value:'#f0f0f0'},
+            {name:"midlight-grey", value:'#ddd'},
+            {name:"mid-grey", value:'#ccc'},
+            {name:"middark-grey", value:'#999'},
+            {name:"dark-grey", value:'#333'},
+            {name:"night-grey", value:'#222'}
           ]
         }
       />
