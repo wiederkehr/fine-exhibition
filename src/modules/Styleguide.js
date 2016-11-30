@@ -17,15 +17,15 @@ class Styleguide extends Component {
       <Catalog
       title='Styleguide'
       theme={{
-        pageHeadingBackground: '#546D8E',
-        brandColor: '#546D8E',
-        sidebarColorActive: '#95ACCB',
-        sidebarColorText: '#546D8E',
-        sidebarColorTextActive: '#95ACCB',
-        sidebarColorHeading: '#546D8E',
-        codeColor: '#546D8E',
-        linkColor: '#546D8E',
-        textMedium: '#546D8E',
+        pageHeadingBackground: '#384B66',
+        brandColor: '#384B66',
+        sidebarColorText: '#333',
+        sidebarColorActive: '#637A99',
+        sidebarColorTextActive: '#637A99',
+        sidebarColorHeading: '#384B66',
+        codeColor: '#333',
+        linkColor: '#384B66',
+        textMedium: '#333',
       }}
       pages={[
         {
