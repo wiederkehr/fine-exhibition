@@ -1,13 +1,12 @@
 .Footer {
-  border: none;
-  background-color: var(--dark-blue);
+  background-color: var(--bright-grey);
+  border-top: 1px solid var(--light-grey);
   display: flex;
 }
 
 .FooterAction {
-  color: var(--bright-blue);
+  color: var(--middark-grey);
   font-size: 12px;
-  font-weight: bold;
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
@@ -15,5 +14,5 @@
 }
 
 .FooterAction--active {
-  color: var(--midlight-blue);
+  color: var(--dark-grey);
 }
