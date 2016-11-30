@@ -1,6 +1,5 @@
 .Layout {
   height: 100%;
-  background: #fff;
 }
 
 .LayoutContainer {
@@ -10,10 +9,10 @@
 }
 
 .LayoutContent {
+  flex-grow: 1;
   overflow-y: scroll;
   overflow-x: hidden;
-  flex-grow: 1;
-  padding: 20px;
+  padding: var(--horizontal-padding);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -25,14 +24,6 @@
   flex-shrink: 0;
   height: 44px;
   line-height: 44px;
-  padding: 0 20px;
+  padding: 0 var(--horizontal-padding);
   vertical-align: middle;
-}
-
-.LayoutHeader {
-  border-bottom: 1px solid #eee;
-}
-
-.LayoutFooter {
-  border-top: 1px solid #eee;
 }

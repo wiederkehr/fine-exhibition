@@ -1,6 +1,6 @@
 .Switch {
-  background-color: #95ACCB;
-  border: 1px solid #95ACCB;
+  background-color: var(--light-blue);
+  border: 1px solid var(--light-blue);
   border-radius: 24px;
   cursor: pointer;
   transition: background-color 100ms, border-color 100ms;
@@ -10,30 +10,30 @@
 }
 
 .Switch.on {
-  background-color: #95ACCB;
-  border-color: #95ACCB;
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
 }
 
 .Switch.off {
-  background-color: #f0f0f0;
-  border-color: #ddd;
+  background-color: var(--light-grey);
+  border-color: var(--midlight-grey);
 }
 
 .Switch.disabled {
-  background-color: #f0f0f0;
-  border-color: #ddd;
+  background-color: var(--light-grey);
+  border-color: var(--midlight-grey);
   cursor: default;
 }
 
 .SwitchButton {
-  background-color: #fff;
+  background-color: var(--white);
   background-clip: padding-box;
-  border: 1px solid #95ACCB;
+  border: 1px solid var(--light-blue);
   border-radius: 24px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   cursor: pointer;
   display: block;
-  font-family: 'Roboto Mono Regular', monospace;
+  font-family: var(--regular-font-family);
   font-size: 10px;
   height: 24px;
   width: 24px;
@@ -47,28 +47,29 @@
 }
 
 .SwitchButton.on {
-  color: #fff;
+  color: var(--white);
   left: auto;
   right: 0;
   text-indent: -22px;
 }
 
 .SwitchButton.off {
-  background-color: #fff;
-  border-color: #ddd;
-  color: #aaa;
+  background-color: var(--white);
+  border-color: var(--midlight-grey);
+  color: var(--middark-grey);
   left: 0;
   right: auto;
   text-indent: 19px;
 }
 
 .SwitchButton.disabled {
-  background-color: #eee;
-  border-color: #ddd;
+  background-color: var(--light-grey);
+  border-color: var(--midlight-grey);
   cursor: default;
   left: 0;
   right: auto;
   font-size: 0;
   text-indent: -99999px;
-  color: rgba(0,0,0,0);
+  color: transparent;
+  box-shadow: none;
 }

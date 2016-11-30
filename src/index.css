@@ -10,14 +10,42 @@
        url('/assets/fonts/roboto/roboto-mono_medium.ttf')  format('truetype')
 }
 
-body {
-  background: #fff;
-  color: #222;
-  font-family: 'Roboto Mono Regular', monospace;
+:root {
+  --bright-blue:    #D9E9FF;
+  --highlight-blue: #B8CBE6;
+  --light-blue:     #99AECC;
+  --midlight-blue:  #7D93B3;
+  --mid-blue:       #637A99;
+  --middark-blue:   #4C627F;
+  --dark-blue:      #384B66;
+  --night-blue:     #26354C;
+
+  --white:          #fff;
+  --bright-grey:    #f8f8f8;
+  --light-grey:     #f0f0f0;
+  --midlight-grey:  #ddd;
+  --mid-grey:       #ccc;
+  --middark-grey:   #999;
+  --dark-grey:      #333;
+  --night-grey:     #222;
+
+  --regular-font-family: 'Roboto Mono Regular', monospace;
+  --bold-font-family: 'Roboto Mono Medium', monospace;
+
+  --horizontal-padding: 20px;
+}
+
+html, body, #root {
+  background: var(--white);
+  color: var(--night-grey);
+  font-family: var(--regular-font-family);
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-html, body, #root {
-  height: 100%;
+a {
+  color: var(--dark-grey);
+  cursor: pointer;
+  text-decoration: none;
 }

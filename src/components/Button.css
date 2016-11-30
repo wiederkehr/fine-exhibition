@@ -1,12 +1,12 @@
 .Button {
-  background-color: #546D8E;
+  background-color: var(--mid-blue);
   background-clip: padding-box;
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   display: block;
-  font-family: 'Roboto Mono Regular', monospace;
+  font-family: var(--regular-font-family);
   font-size: 18px;
   padding: 15px;
   outline: none !important;
@@ -19,16 +19,13 @@
 }
 
 .Button:hover,
+.Button:active,
 .Button:focus {
-  background-color: #95ACCB;
-}
-
-.Button:active {
-  background-color: #95ACCB;
+  background-color: var(--light-blue);
 }
 
 .Button:disabled {
-  background-color: #bbb;
+  background-color: var(--midlight-grey);
+  color: var(--mid-grey);
   cursor: default;
-  color: #ddd;
 }

@@ -1,6 +1,6 @@
 .Header {
-  background-color: #fafafa;
-  border-bottom: 1px solid #e8e8e8;
+  background-color: var(--bright-grey);
+  border-bottom: 1px solid var(--light-grey);
   position: relative;
 }
 
@@ -12,18 +12,18 @@
 
 .HeaderActionLeft {
   position: absolute;
-  left: 20px;
+  left: var(--horizontal-padding);
   top: 0;
 }
 
 .HeaderActionRight {
   position: absolute;
-  right: 20px;
+  right: var(--horizontal-padding);
   top: 0;
 }
 
 .HeaderAction {
-  color: #999;
+  color: var(--middark-grey);
   font-size: 12px;
   text-decoration: none;
   text-transform: uppercase;

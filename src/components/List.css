@@ -1,14 +1,14 @@
 .ListGroup {
-  background: #fff;
+  background: var(--white);
 }
 
 .ListHeader {
-  border-bottom: 1px solid #f0f0f0;
-  color: #999;
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--middark-grey);
   text-transform: uppercase;
   font-size: 12px;
   line-height: 36px;
-  padding: 16px 20px 0;
+  padding: 16px var(--horizontal-padding) 0;
 }
 
 .List {
@@ -17,12 +17,12 @@
 }
 
 .ListItem {
-  background: #fff;
-  border-bottom: 1px solid #f8f8f8;
+  background: var(--white);
+  border-bottom: 1px solid var(--bright-grey);
   list-style: none;
   line-height: 36px;
   position: relative;
-  padding: 0 20px;
+  padding: 0 var(--horizontal-padding);
 }
 
 .ListLinkItem,
@@ -31,16 +31,13 @@
 }
 
 .ListLink {
-  background: #fff;
-  color: #333;
-  cursor: pointer;
+  background: var(--white);
   display: block;
-  padding: 0 20px;
-  text-decoration: none;
+  padding: 0 var(--horizontal-padding);
 }
 
 .ListLink:active {
-  background: #f8f8f8;
+  background: var(--bright-grey);
 }
 
 .ListSwitch {
@@ -49,22 +46,23 @@
 }
 
 .ListSwitchItem .ListSwitch {
-  right: 20px;
+  right: var(--horizontal-padding);
 }
 
 .ListLinkSwitchItem .ListSwitch {
-  right: 50px;
+  right: calc(30px + var(--horizontal-padding));
 }
 
 .ListLinkIcon {
   position: absolute;
-  right: 20px;
+  right: var(--horizontal-padding);
   top: 2px;
 }
 
 .ArrowRight polyline{
     fill: none;
     stroke: #d8d8d8;
+    stroke: var(--midlight-grey);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;

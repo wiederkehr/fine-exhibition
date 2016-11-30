@@ -1,8 +1,8 @@
 .ProfileBanner {
-  background: #384B66;
+  background: var(--dark-blue);
   line-height: 1.5;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px var(--horizontal-padding);
 }
 
 .ProfileAvatar {
@@ -20,36 +20,36 @@
 }
 
 .ProfileName {
-  color: rgba(255,255,255,1);
+  color: var(--white);
   font-size: 24px;
   margin-top: 20px;
 }
 
 .ProfileStatus {
-  color: rgba(255,255,255,0.3);
+  color: var(--mid-blue);
 }
 
 .ProfileCallout {
-  background: #4C627F;
+  background: var(--middark-blue);
   line-height: 1.5;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px var(--horizontal-padding);
 }
 
 .ProfileCalloutLabel {
-  color: rgba(255,255,255,0.3);
+  color: var(--midlight-blue);
 }
 
 .ProfileCalloutValue {
-  color: rgba(255,255,255,1);
+  color: var(--white);
   font-size: 24px;
 }
 
 .ProfileListItem {
-  background: #fff;
-  border-bottom: 1px solid #f8f8f8;
+  background: var(--white);
+  border-bottom: 1px solid var(--bright-grey);
   position: relative;
-  padding: 20px;
+  padding: 20px var(--horizontal-padding);
 }
 
 .ProfileListItemTitel {
