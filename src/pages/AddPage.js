@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { timeFormat } from 'd3-time-format';
+import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
