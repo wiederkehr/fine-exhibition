@@ -26,17 +26,17 @@ export const ListLinkItem = ({ to, children }) => (
   </ListItem>
 );
 
-export const ListSwitchItem = ({ state, children }) => (
+export const ListSwitchItem = ({ name, status, onChange, children }) => (
   <ListItem className='ListSwitchItem'>
     {children}
-    <Switch state={state} className='ListSwitch'/>
+    <Switch name={name} status={status} onChange={onChange} className='ListSwitch'/>
   </ListItem>
 );
 
-export const ListLinkSwitchItem = ({ to, state, children }) => (
+export const ListLinkSwitchItem = ({ to, name, status, onChange, children }) => (
   <ListItem className='ListLinkSwitchItem'>
     <ListLink to={to}>{children}<ListLinkIcon /></ListLink>
-    <Switch state={state} className='ListSwitch'/>
+    <Switch name={name} status={status} onChange={onChange} className='ListSwitch'/>
   </ListItem>
 );
 

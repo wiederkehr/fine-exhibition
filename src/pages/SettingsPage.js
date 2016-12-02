@@ -8,6 +8,17 @@ import './SettingsPage.css';
 
 class SettingsPage extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state={
+      diamonds: false,
+      clouds: false,
+      circles: true,
+    }
+
+  }
+
   render() {
     return (
       <LayoutContainer>
@@ -16,13 +27,19 @@ class SettingsPage extends Component {
           <ListGroup>
             <ListHeader>Interface</ListHeader>
             <List>
-              <ListSwitchItem state='on'>Diamonds</ListSwitchItem>
-              <ListSwitchItem state='off'>Clouds</ListSwitchItem>
-              <ListSwitchItem state='off'>Circles</ListSwitchItem>
+              <ListSwitchItem
+                status={this.state.diamonds}
+                name='diamonds'>Diamonds</ListSwitchItem>
+              <ListSwitchItem
+                status={this.state.clouds}
+                name='clouds'>Clouds</ListSwitchItem>
+              <ListSwitchItem
+                status={this.state.circles}
+                name='circles'>Circles</ListSwitchItem>
             </List>
             <ListHeader>Notifications</ListHeader>
             <List>
-              <ListLinkSwitchItem to='settings/notifications' state='on'>Scheduled Notifications</ListLinkSwitchItem>
+              <ListLinkSwitchItem to='settings/notifications' status='on'>Scheduled Notifications</ListLinkSwitchItem>
             </List>
             <ListHeader>References</ListHeader>
             <List>
