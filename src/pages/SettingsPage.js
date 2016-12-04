@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
-import { MoveIn } from '../components/MoveIn';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ListGroup, ListHeader, List, ListLinkItem, ListSwitchItem, ListLinkSwitchItem } from '../components/List';
@@ -49,9 +48,6 @@ class SettingsPage extends Component {
                 <ListLinkItem to='settings/imprint'>Imprint</ListLinkItem>
               </List>
             </ListGroup>
-            <MoveIn>
-              <span>MoveIn</span>
-            </MoveIn>
           </LayoutContent>
           <Footer/>
         </LayoutContainer>
