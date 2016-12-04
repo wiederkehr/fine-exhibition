@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
-import TransitionGroup from 'react-addons-transition-group';
+import './MoveIn.css';
 
 export class MoveIn extends Component {
 
-  componentWillAppear(callback) {
-    console.log('componentWillAppear');
+  constructor(props) {
+    super(props)
+
+    this.state={
+      status: 'hidden'
+    }
+
   }
 
-  componentDidAppear() {
-    console.log('componentDidAppear');
+  componentDidMount() {
+    this.setState({status:'visible'})
   }
 
-  componentWillLeave(callback) {
-    console.log('componentWillLeave');
-  }
-
-  componentDidLeave() {
-    console.log('componentDidLeave');
+  componentWillUnmount() {
+    this.setState({status:'hidden'})
   }
 
   render() {
     return (
-      <TransitionGroup>
+      <div className={'MoveIn ' + this.state.status}>
         {this.props.children}
-      </TransitionGroup>
+      </div>
     )
   };
 };

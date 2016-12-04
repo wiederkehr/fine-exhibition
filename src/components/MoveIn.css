@@ -1,0 +1,15 @@
+.MoveIn {
+  position: relative;
+  transition: right 300ms;
+  background: rgb(254, 255, 221);
+  padding: 40px;
+  text-align: center;
+}
+
+.hidden {
+  right: -100%;
+}
+
+.visible {
+  right: 0%;
+}
