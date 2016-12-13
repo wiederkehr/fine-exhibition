@@ -6,6 +6,7 @@ import { Slider } from '../components/Slider';
 import { Switch } from '../components/Switch';
 import { Header, HeaderAction} from '../components/Header';
 import { Footer, FooterAction} from '../components/Footer';
+import { Pagination } from '../components/Pagination';
 
 
 export default () => (
@@ -17,17 +18,13 @@ export default () => (
     <ReactSpecimen noSource={true} span={3}>
       <Header left={{to:"/", label:"Back"}} right={{to:"/", label:"Done"}}>Title</Header>
     </ReactSpecimen>
-    <h3>Header Actions</h3>
-    <ReactSpecimen noSource={true} span={3}>
-      <HeaderAction to="/">Action</HeaderAction>
-    </ReactSpecimen>
     <h2>Footer</h2>
     <ReactSpecimen noSource={true} span={3}>
       <Footer />
     </ReactSpecimen>
-    <h3>Footer Actions</h3>
-    <ReactSpecimen noSource={true} span={3} dark>
-      <FooterAction to="/">Action</FooterAction>
+    <h2>Pagination</h2>
+    <ReactSpecimen noSource={true} span={3}>
+      <Pagination />
     </ReactSpecimen>
     <h2>Button</h2>
     <ReactSpecimen noSource={true} span={3}>

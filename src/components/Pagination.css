@@ -1,0 +1,47 @@
+.Pagination {
+  background-color: var(--bright-grey);
+  border-top: 1px solid var(--light-grey);
+  display: flex;
+}
+
+.PaginationAction {
+  color: var(--middark-grey);
+  font-size: 12px;
+  flex-grow: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.PaginationAction--Backward {
+  text-align: left;
+}
+
+.PaginationAction--Forward {
+  text-align: right;
+}
+
+.PaginationDots {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.PaginationDot {
+  margin: auto 5px;
+}
+
+.PaginationDot circle {
+  fill: var(--middark-grey);
+}
+
+.PaginationDot--past circle {
+  fill: var(--middark-grey);
+}
+
+.PaginationDot--active circle {
+  fill: var(--dark-grey);
+}
+
+.PaginationDot--next circle {
+  fill: var(--mid-grey);
+}
