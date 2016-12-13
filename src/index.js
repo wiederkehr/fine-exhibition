@@ -17,6 +17,7 @@ import SettingsAboutPage from './pages/SettingsAboutPage';
 import SettingsDisclaimerPage from './pages/SettingsDisclaimerPage';
 import SettingsImprintPage from './pages/SettingsImprintPage';
 import AddPage from './pages/AddPage';
+import RecordPage from './pages/RecordPage';
 import ViewPage from './pages/ViewPage';
 
 import 'normalize.css';
@@ -53,6 +54,11 @@ ReactDOM.render(
           path="/add"
           title="Add"
           component={AddPage}
+        />
+        <Route
+          path="/record"
+          title="Record"
+          component={RecordPage}
         />
         <Route
           path="/view"

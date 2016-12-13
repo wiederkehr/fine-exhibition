@@ -8,6 +8,7 @@ export const Footer = () => (
     <FooterAction to='#'>Home</FooterAction>
     <FooterAction to='/profile'>Profile</FooterAction>
     <FooterAction to='/view'>View</FooterAction>
+    <FooterAction to='/record'>Record</FooterAction>
     <FooterAction to='/add'>Add</FooterAction>
   </LayoutFooter>
 );

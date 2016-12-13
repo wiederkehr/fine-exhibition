@@ -4,28 +4,29 @@ import { Link } from 'react-router';
 import { LayoutFooter } from '../components/Layout';
 import './Pagination.css';
 
-export const Pagination = () => (
+export const Pagination = ({ forward, backward, dots, activeDot }) => (
   <LayoutFooter className="Pagination">
-    <PaginationBackward>Back</PaginationBackward>
-    <PaginationDots />
-    <PaginationForward>Next</PaginationForward>
+    <PaginationBackward>{backward.label ? backward.label : '← Back'}</PaginationBackward>
+    <PaginationDots dots={dots} activeDot={activeDot}/>
+    <PaginationForward>{forward.label ? forward.label : 'Next →'}</PaginationForward>
   </LayoutFooter>
 );
 
 export const PaginationForward = ({ to, children }) => (
-  <Link className="PaginationAction PaginationAction--Forward" to={to}>{children} →</Link>
+  <Link className="PaginationAction PaginationAction--Forward" to={to}>{children}</Link>
 );
 
 export const PaginationBackward = ({ to, children }) => (
-  <Link className="PaginationAction PaginationAction--Backward" to={to}>← {children}</Link>
+  <Link className="PaginationAction PaginationAction--Backward" to={to}>{children}</Link>
 );
 
-export const PaginationDots = ({ dots }) => (
+export const PaginationDots = ({ dots, activeDot }) => (
   <div className='PaginationDots'>
-    <PaginationDot status={'past'} />
-    <PaginationDot status={'past'}/>
-    <PaginationDot status={'active'}/>
-    <PaginationDot status={'next'}/>
+    {
+      dots.map(function(dot, i) {
+        return <PaginationDot key={i} status={'past'} />
+      })
+    }
   </div>
 );
 

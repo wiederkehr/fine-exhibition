@@ -1,0 +1,4 @@
+.RecordPageContent {
+  display: flex;
+  flex-direction: column;
+}
