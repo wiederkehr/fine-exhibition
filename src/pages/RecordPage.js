@@ -3,7 +3,7 @@ import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
-import AddForm from '../components/Form';
+import { Recorder } from '../components/Recorder';
 
 import './RecordPage.css';
 
@@ -102,25 +102,10 @@ class RecordPage extends Component {
       <LayoutContainer>
         <Header right={{to:'/', label:'Close'}}>{this.props.route.title}</Header>
         <LayoutContent className="RecordPageContent">
-          {/*
-            switch (this.state.activeStep) {
-              case 'Emotion':
-
-                break;
-              case 'Dimensions':
-
-                break;
-              case 'Triggers':
-
-                break;
-              case 'Actions':
-
-                break;
-              case 'Review':
-
-                break;
-            }
-          */}
+          <Recorder
+            steps={this.state.steps}
+            step={'Emotion'}
+          />
         </LayoutContent>
         <Pagination
           forward={{to:'/'}}
