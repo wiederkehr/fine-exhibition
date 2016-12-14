@@ -1,13 +1,17 @@
 @font-face {
-  font-family: 'Roboto Mono Regular';
-  src: url('/assets/fonts/roboto/roboto-mono_regular.woff') format('woff'),
-       url('/assets/fonts/roboto/roboto-mono_regular.ttf')  format('truetype')
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Karla/Karla-Regular.woff') format('woff'),
+       url('/assets/fonts/Karla/Karla-Regular.ttf')  format('truetype')
 }
 
 @font-face {
-  font-family: 'Roboto Mono Medium';
-  src: url('/assets/fonts/roboto/roboto-mono_medium.woff') format('woff'),
-       url('/assets/fonts/roboto/roboto-mono_medium.ttf')  format('truetype')
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/Karla/Karla-Bold.woff') format('woff'),
+       url('/assets/fonts/Karla/Karla-Bold.ttf')  format('truetype')
 }
 
 :root {
@@ -29,8 +33,7 @@
   --dark-grey:      #333;
   --night-grey:     #222;
 
-  --regular-font-family: 'Roboto Mono Regular', monospace;
-  --bold-font-family: 'Roboto Mono Medium', monospace;
+  --regular-font-family: 'Karla', sans-serif;
 
   --horizontal-padding: 20px;
 }
