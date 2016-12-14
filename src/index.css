@@ -15,14 +15,14 @@
 }
 
 :root {
-  --bright-blue:    #D9E9FF;
-  --highlight-blue: #B8CBE6;
-  --light-blue:     #99AECC;
-  --midlight-blue:  #7D93B3;
-  --mid-blue:       #637A99;
-  --middark-blue:   #4C627F;
-  --dark-blue:      #384B66;
-  --night-blue:     #26354C;
+  --bright-accent:    #D9E9FF;
+  --highlight-accent: #B8CBE6;
+  --light-accent:     #99AECC;
+  --midlight-accent:  #7D93B3;
+  --mid-accent:       #637A99;
+  --middark-accent:   #4C627F;
+  --dark-accent:      #384B66;
+  --night-accent:     #26354C;
 
   --white:          #fff;
   --bright-grey:    #f8f8f8;

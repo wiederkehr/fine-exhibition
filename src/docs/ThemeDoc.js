@@ -7,14 +7,14 @@ export default () => (
     <ColorPaletteSpecimen
       colors={
         [
-          {name:"bright-blue", value:'#D9E9FF'},
-          {name:"highlight-blue", value:'#B8CBE6'},
-          {name:"light-blue", value:'#99AECC'},
-          {name:"midlight-blue", value:'#7D93B3'},
-          {name:"mid-blue", value:'#637A99'},
-          {name:"middark-blue", value:'#4C627F'},
-          {name:"dark-blue", value:'#384B66'},
-          {name:"night-blue", value:'#26354C'},
+          {name:"bright-accent", value:'#D9E9FF'},
+          {name:"highlight-accent", value:'#B8CBE6'},
+          {name:"light-accent", value:'#99AECC'},
+          {name:"midlight-accent", value:'#7D93B3'},
+          {name:"mid-accent", value:'#637A99'},
+          {name:"middark-accent", value:'#4C627F'},
+          {name:"dark-accent", value:'#384B66'},
+          {name:"night-accent", value:'#26354C'},
         ]
       }
     />

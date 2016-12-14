@@ -1,5 +1,5 @@
 .Button {
-  background-color: var(--mid-blue);
+  background-color: var(--mid-accent);
   background-clip: padding-box;
   border: none;
   border-radius: 4px;
@@ -21,7 +21,7 @@
 .Button:hover,
 .Button:active,
 .Button:focus {
-  background-color: var(--light-blue);
+  background-color: var(--light-accent);
 }
 
 .Button:disabled {
