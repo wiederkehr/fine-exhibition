@@ -3,7 +3,7 @@ import { Slider } from './Slider.js';
 import { Button } from './Button.js';
 import './Form.css';
 
-class AddForm extends Component {
+export class AddForm extends Component {
   render() {
     return (
       <form className='Form' onSubmit={this.props.onSubmit}>
@@ -46,5 +46,3 @@ class AddForm extends Component {
     )
   }
 }
-
-export default AddForm;
