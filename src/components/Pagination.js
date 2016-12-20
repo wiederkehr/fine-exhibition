@@ -1,30 +1,29 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router';
 import { LayoutFooter } from '../components/Layout';
 import './Pagination.css';
 
-export const Pagination = ({ forward, backward, dots, activeDot }) => (
+export const Pagination = ({ forward, backward, dots, currentDot }) => (
   <LayoutFooter className="Pagination">
-    <PaginationBackward>{backward.label ? backward.label : '← Back'}</PaginationBackward>
-    <PaginationDots dots={dots} activeDot={activeDot}/>
-    <PaginationForward>{forward.label ? forward.label : 'Next →'}</PaginationForward>
+    <PaginationBackward onClick={backward.onClick}>{backward.label ? backward.label : '← Back'}</PaginationBackward>
+    <PaginationDots dots={dots} currentDot={currentDot}/>
+    <PaginationForward onClick={forward.onClick}>{forward.label ? forward.label : 'Next →'}</PaginationForward>
   </LayoutFooter>
 );
 
-export const PaginationForward = ({ to, children }) => (
-  <Link className="PaginationAction PaginationAction--Forward" to={to}>{children}</Link>
+export const PaginationForward = ({ onClick, children }) => (
+  <button className="PaginationAction PaginationAction--Forward" onClick={onClick}>{children}</button>
 );
 
-export const PaginationBackward = ({ to, children }) => (
-  <Link className="PaginationAction PaginationAction--Backward" to={to}>{children}</Link>
+export const PaginationBackward = ({ onClick, children }) => (
+  <button className="PaginationAction PaginationAction--Backward" onClick={onClick}>{children}</button>
 );
 
-export const PaginationDots = ({ dots, activeDot }) => (
+export const PaginationDots = ({ dots, currentDot }) => (
   <div className='PaginationDots'>
     {
       dots.map(function(dot, i) {
-        return <PaginationDot key={i} status={'past'} />
+        return <PaginationDot key={i} status={ currentDot === i ? 'active' : 'passive' } />
       })
     }
   </div>
