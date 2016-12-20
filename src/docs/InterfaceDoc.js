@@ -4,8 +4,8 @@ import { Page, ReactSpecimen } from 'catalog';
 import { Button } from '../components/Button';
 import { Slider } from '../components/Slider';
 import { Switch } from '../components/Switch';
-import { Header, HeaderAction} from '../components/Header';
-import { Footer, FooterAction} from '../components/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { Pagination } from '../components/Pagination';
 
 
