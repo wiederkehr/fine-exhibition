@@ -1,9 +1,19 @@
 .Form {
+
+}
+
+.Slider-group {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   position: relative;
+}
+
+.Input-label {
+  color: var(--middark-grey);
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .Input-text {
