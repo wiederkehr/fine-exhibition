@@ -14,7 +14,12 @@ export class Glyph extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: null
+      size: null,
+      arousal: props.arousal,
+      conduciveness: props.conduciveness,
+      controllability: props.controllability,
+      intensity: props.intensity,
+      valence: props.valence,
     }
     // this.handleResize = this.handleResize.bind(this);
   }
@@ -50,16 +55,16 @@ export class Glyph extends Component {
         <svg ref='Glyph' className='Glyph' width={this.state.size} height={this.state.size}>
           <g>
             <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation={blur(this.props.controllability)} />
+              <feGaussianBlur stdDeviation={blur(this.state.controllability)} />
             </filter>
             <g transform={"translate(" + this.state.size / 2 + "," + this.state.size / 2 + ")"}>
               <circle
-                r={radius(this.props.intensity)}
-                fill={color(this.props.valence)}
+                r={radius(this.state.intensity)}
+                fill={color(this.state.valence)}
                 filter="url(#blur)"
                 style={{
-                  opacity: opacity(this.props.conduciveness),
-                  animationDuration: pulse(this.props.arousal) + 'ms',
+                  opacity: opacity(this.state.conduciveness),
+                  animationDuration: pulse(this.state.arousal) + 'ms',
                 }}
               />
             </g>
