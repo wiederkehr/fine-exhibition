@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import update from 'immutability-helper';
 import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Recorder } from '../components/Recorder';
+import { Recording } from '../components/Recording';
+// import { Glyph } from '../components/Glyph';
 
 import './RecordPage.css';
 
@@ -13,62 +16,84 @@ class RecordPage extends Component {
     super(props);
 
     this.state={
-      name: 'Anna',
-      emotion: 'Emotion',
-      event: 'Event',
-      date: '',
-      arousal: 3,
-      conduciveness: 3,
-      controllability: 3,
-      intensity: 3,
-      valence: 3,
-      status: 'Submit',
-      disabled: false,
-      activeStep: 'Emotion',
+      record: {
+        date: '',
+        name: 'Anna',
+        emotion: false,
+        event: false,
+        trigger: false,
+        action: false,
+        arousal: 3,
+        conduciveness: 3,
+        controllability: 3,
+        intensity: 3,
+        valence: 3,
+      },
       steps: [
         'Emotion',
+        'Event',
         'Dimensions',
         'Triggers',
         'Actions',
-        'Review'
-      ]
+        'Review',
+      ],
+      readyForNextStep: true,
+      readyForPreviousStep: true,
+      currentStep: 0,
+      status: 'Submit',
+      disabled: false,
     }
 
-    this.onFormChange = this.onFormChange.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.sendRecord = this.sendRecord.bind(this);
     this.getResponse = this.getResponse.bind(this);
+    this.forwardStep = this.forwardStep.bind(this);
+    this.backwardStep = this.backwardStep.bind(this);
 
   };
 
   componentDidMount() {
-    this.setState({date: timeFormat("%Y-%m-%d")(new Date())})
+    var newState = update(this.state, {
+      record: {
+        date: { $set: timeFormat("%Y-%m-%d")(new Date()) }
+      }
+    });
+    this.setState(newState);
   }
 
-  onFormChange(field, event) {
-    var stateUpdate = {};
-    stateUpdate[field] = event.target.value;
-    this.setState(stateUpdate);
+  forwardStep() {
+    if (this.state.currentStep < this.state.steps.length - 1) {
+      this.setState({ currentStep: this.state.currentStep + 1 });
+      this.setState({ readyForNextStep: false });
+    }
   }
 
-  onFormSubmit(event) {
+  backwardStep() {
+    if (this.state.currentStep > 0) {
+      this.setState({ currentStep: this.state.currentStep - 1 });
+      this.setState({ readyForNextStep: true });
+    }
+  }
+
+  onChange(field, event) {
+    var newState = update(this.state, {
+      record: {
+        [field]: { $set: event.target.value }
+      }
+    });
+    this.setState(newState);
+    this.setState({ readyForNextStep: true });
+  }
+
+  onSubmit(event) {
     event.preventDefault();
-    this.setState({ status: 'Sending…' }, this.sendRecord);
+    console.log(this.state);
+    // this.setState({ status: 'Sending…' }, this.sendRecord);
   }
 
   sendRecord() {
-    var record = {
-      date: this.state.date,
-      name: this.state.name,
-      emotion: this.state.emotion,
-      event: this.state.event,
-      arousal: this.state.arousal,
-      conduciveness: this.state.conduciveness,
-      controllability: this.state.controllability,
-      intensity: this.state.intensity,
-      valence: this.state.valence
-    };
-
+    var record = this.state.record;
     var username = process.env.REACT_APP_FIELDBOOK_USER;
     var password = process.env.REACT_APP_FIELDBOOK_KEY;
     var bookId = process.env.REACT_APP_FIELDBOOK_BOOK;
@@ -102,15 +127,29 @@ class RecordPage extends Component {
       <LayoutContainer>
         <Header right={{to:'/', label:'Close'}}>{this.props.route.title}</Header>
         <LayoutContent className="RecordPageContent">
+          {/* <Glyph
+            arousal={this.state.record.arousal}
+            conduciveness={this.state.record.conduciveness}
+            controllability={this.state.record.controllability}
+            intensity={this.state.record.intensity}
+            valence={this.state.record.valence}
+          /> */}
+          <Recording
+            record={this.state.record}
+          />
           <Recorder
+            record={this.state.record}
             steps={this.state.steps}
-            step={'Emotion'}
+            step={this.state.currentStep}
+            onChange={this.onChange}
+            onSubmit={this.onChange}
           />
         </LayoutContent>
         <Pagination
-          forward={{to:'/'}}
-          backward={{to:'/'}}
+          forward={{onClick:this.forwardStep}}
+          backward={{onClick:this.backwardStep}}
           dots={this.state.steps}
+          currentDot={this.state.currentStep}
         />
       </LayoutContainer>
     );
