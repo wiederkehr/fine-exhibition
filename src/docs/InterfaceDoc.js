@@ -25,6 +25,10 @@ export default () => (
     <h2>Pagination</h2>
     <ReactSpecimen noSource={true} span={3}>
       <Pagination />
+      <Pagination
+        forward={{onClick:function(){ console.log('Click');}}}
+        backward={{onClick:function(){ console.log('Click');}}}
+      />
     </ReactSpecimen>
     <h2>Button</h2>
     <ReactSpecimen noSource={true} span={3}>
