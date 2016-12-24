@@ -13,6 +13,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding: var(--horizontal-padding);
+  position: relative;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -26,4 +27,5 @@
   line-height: 44px;
   padding: 0 var(--horizontal-padding);
   vertical-align: middle;
+  z-index: 100;
 }
