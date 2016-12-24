@@ -129,15 +129,9 @@ class RecordPage extends Component {
       <LayoutContainer>
         <Header right={{to:'/', label:'Close'}}>{this.props.route.title}</Header>
         <LayoutContent className="RecordPageContent">
-          {/* <Glyph
-            arousal={this.state.record.arousal}
-            conduciveness={this.state.record.conduciveness}
-            controllability={this.state.record.controllability}
-            intensity={this.state.record.intensity}
-            valence={this.state.record.valence}
-          /> */}
           <Recording
             record={this.state.record}
+            step={this.state.currentStep}
           />
           <Recorder
             record={this.state.record}
