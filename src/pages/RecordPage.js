@@ -146,7 +146,7 @@ class RecordPage extends Component {
           />
         </LayoutContent>
         <Pagination
-          forward={{onClick:this.forwardStep}}
+          forward={{onClick:this.forwardStep, onSubmit:this.onSubmit}}
           backward={{onClick:this.backwardStep}}
           dots={this.state.steps}
           currentDot={this.state.currentStep}

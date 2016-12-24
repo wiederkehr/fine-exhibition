@@ -28,7 +28,7 @@ export default () => (
         forward={{onClick:function(){ console.log('Forward');}}}
         backward={{onClick:function(){ console.log('Backward');}}}
         dots={['one','two','three']}
-        currentDot={0}
+        currentDot={1}
       />
     </ReactSpecimen>
     <h2>Button</h2>

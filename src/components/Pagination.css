@@ -12,12 +12,14 @@
   text-transform: uppercase;
 }
 
-.PaginationAction--Backward {
-  text-align: left;
+.PaginationActionLeft {
+  position: absolute;
+  left: var(--horizontal-padding);
 }
 
-.PaginationAction--Forward {
-  text-align: right;
+.PaginationActionRight {
+  position: absolute;
+  right: var(--horizontal-padding);
 }
 
 .PaginationDots {

@@ -1,22 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 import { LayoutFooter } from '../components/Layout';
 import './Pagination.css';
 
-export const Pagination = ({ forward, backward, dots, currentDot }) => (
-  <LayoutFooter className="Pagination">
-    <PaginationBackward onClick={backward.onClick}>{backward.label ? backward.label : '← Back'}</PaginationBackward>
-    <PaginationDots dots={dots} currentDot={currentDot}/>
-    <PaginationForward onClick={forward.onClick}>{forward.label ? forward.label : 'Next →'}</PaginationForward>
-  </LayoutFooter>
-);
+export class Pagination extends Component {
+  render() {
+    const isFirst = this.props.currentDot === 0 ? true : false;
+    const isLast = this.props.currentDot === this.props.dots.length - 1 ? true : false;
 
-export const PaginationForward = ({ onClick, children }) => (
-  <button className="PaginationAction PaginationAction--Forward" onClick={onClick}>{children}</button>
-);
+    const labelBackward = this.props.backward.label ? this.props.backward.label : '← Back';
+    const labelForward = this.props.forward.label ? this.props.forward.label : 'Next →';
 
-export const PaginationBackward = ({ onClick, children }) => (
-  <button className="PaginationAction PaginationAction--Backward" onClick={onClick}>{children}</button>
+    let buttonBackward = null;
+    let buttonForward = null;
+
+    if (isFirst) {
+      buttonBackward = null;
+    } else {
+      buttonBackward = <PaginationAction onClick={this.props.backward.onClick}>{labelBackward}</PaginationAction>;
+    }
+
+    if (isLast) {
+      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit}>Submit ✓</PaginationAction>;
+    } else {
+      buttonForward = <PaginationAction onClick={this.props.forward.onClick}>{labelForward}</PaginationAction>;
+    }
+
+    return (
+      <LayoutFooter className="Pagination">
+        <span className="PaginationActionLeft">
+          {buttonBackward}
+        </span>
+        <PaginationDots dots={this.props.dots} currentDot={this.props.currentDot}/>
+        <span className="PaginationActionRight">
+          {buttonForward}
+        </span>
+      </LayoutFooter>
+    )
+  }
+}
+
+export const PaginationAction = ({ onClick, children }) => (
+  <button className="PaginationAction" onClick={onClick}>{children}</button>
 );
 
 export const PaginationDots = ({ dots, currentDot }) => (
@@ -36,5 +61,4 @@ export const PaginationDot = ({ status }) => {
       <circle r='4' cy='6' cx='6'/>
     </svg>
   )
-
 };
