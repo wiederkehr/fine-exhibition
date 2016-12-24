@@ -24,10 +24,11 @@ export default () => (
     </ReactSpecimen>
     <h2>Pagination</h2>
     <ReactSpecimen noSource={true} span={3}>
-      <Pagination />
       <Pagination
-        forward={{onClick:function(){ console.log('Click');}}}
-        backward={{onClick:function(){ console.log('Click');}}}
+        forward={{onClick:function(){ console.log('Forward');}}}
+        backward={{onClick:function(){ console.log('Backward');}}}
+        dots={['one','two','three']}
+        currentDot={0}
       />
     </ReactSpecimen>
     <h2>Button</h2>
