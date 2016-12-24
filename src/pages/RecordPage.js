@@ -62,14 +62,16 @@ class RecordPage extends Component {
     this.setState(newState);
   }
 
-  forwardStep() {
+  forwardStep(event) {
+    event.preventDefault();
     if (this.state.currentStep < this.state.steps.length - 1) {
       this.setState({ currentStep: this.state.currentStep + 1 });
       this.setState({ readyForNextStep: false });
     }
   }
 
-  backwardStep() {
+  backwardStep(event) {
+    event.preventDefault();
     if (this.state.currentStep > 0) {
       this.setState({ currentStep: this.state.currentStep - 1 });
       this.setState({ readyForNextStep: true });
@@ -142,7 +144,7 @@ class RecordPage extends Component {
             steps={this.state.steps}
             step={this.state.currentStep}
             onChange={this.onChange}
-            onSubmit={this.onChange}
+            onSubmit={this.forwardStep}
           />
         </LayoutContent>
         <Pagination

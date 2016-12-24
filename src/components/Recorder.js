@@ -11,6 +11,7 @@ export class Recorder extends Component {
             <EmotionForm
               record={this.props.record}
               onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
             />
           </div>
         )
@@ -20,6 +21,7 @@ export class Recorder extends Component {
             <EventForm
               record={this.props.record}
               onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
             />
           </div>
         )
@@ -29,6 +31,7 @@ export class Recorder extends Component {
             <DimensionsForm
               record={this.props.record}
               onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
             />
           </div>
         )
@@ -38,6 +41,7 @@ export class Recorder extends Component {
             <TriggerForm
               record={this.props.record}
               onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
             />
           </div>
         )
@@ -47,6 +51,7 @@ export class Recorder extends Component {
             <ActionForm
               record={this.props.record}
               onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
             />
           </div>
         )

@@ -50,7 +50,7 @@ export class AddForm extends Component {
 export class EmotionForm extends Component {
   render() {
     return (
-      <form className='Form'>
+      <form className='Form' onSubmit={this.props.onSubmit}>
         <label className='Input-label'>Emotion</label>
         <input className='Input-text'
                type='text'
@@ -64,7 +64,7 @@ export class EmotionForm extends Component {
 export class EventForm extends Component {
   render() {
     return (
-      <form className='Form'>
+      <form className='Form' onSubmit={this.props.onSubmit}>
         <label className='Input-label'>Event</label>
         <input className='Input-text'
                type='text'
@@ -78,7 +78,7 @@ export class EventForm extends Component {
 export class TriggerForm extends Component {
   render() {
     return (
-      <form className='Form'>
+      <form className='Form' onSubmit={this.props.onSubmit}>
         <label className='Input-label'>Trigger</label>
         <input className='Input-text'
                type='text'
@@ -92,7 +92,7 @@ export class TriggerForm extends Component {
 export class ActionForm extends Component {
   render() {
     return (
-      <form className='Form'>
+      <form className='Form' onSubmit={this.props.onSubmit}>
         <label className='Input-label'>Action</label>
         <input className='Input-text'
                type='text'
@@ -106,7 +106,7 @@ export class ActionForm extends Component {
 export class DimensionsForm extends Component {
   render() {
     return (
-      <form className='Form'>
+      <form className='Form' onSubmit={this.props.onSubmit}>
         <div className='Slider-group'>
           <Slider name='Arousal'
                   value={this.props.record.arousal}
