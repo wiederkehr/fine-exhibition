@@ -12,6 +12,10 @@
   text-transform: uppercase;
 }
 
+.PaginationAction:disabled {
+  color: var(--mid-grey);
+}
+
 .PaginationActionLeft {
   position: absolute;
   left: var(--horizontal-padding);

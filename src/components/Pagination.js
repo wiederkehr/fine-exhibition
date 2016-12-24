@@ -17,13 +17,13 @@ export class Pagination extends Component {
     if (isFirst) {
       buttonBackward = null;
     } else {
-      buttonBackward = <PaginationAction onClick={this.props.backward.onClick}>{labelBackward}</PaginationAction>;
+      buttonBackward = <PaginationAction onClick={this.props.backward.onClick} disabled={!this.props.readyForPreviousStep}>{labelBackward}</PaginationAction>;
     }
 
     if (isLast) {
-      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit}>Submit ✓</PaginationAction>;
+      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit} disabled={!this.props.readyForNextStep}>Submit ✓</PaginationAction>;
     } else {
-      buttonForward = <PaginationAction onClick={this.props.forward.onClick}>{labelForward}</PaginationAction>;
+      buttonForward = <PaginationAction onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>{labelForward}</PaginationAction>;
     }
 
     return (
@@ -40,8 +40,8 @@ export class Pagination extends Component {
   }
 }
 
-export const PaginationAction = ({ onClick, children }) => (
-  <button className="PaginationAction" onClick={onClick}>{children}</button>
+export const PaginationAction = ({ onClick, children, disabled }) => (
+  <button className="PaginationAction" onClick={onClick} disabled={disabled}>{children}</button>
 );
 
 export const PaginationDots = ({ dots, currentDot }) => (

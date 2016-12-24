@@ -66,7 +66,7 @@ class RecordPage extends Component {
     event.preventDefault();
     if (this.state.currentStep < this.state.steps.length - 1) {
       this.setState({ currentStep: this.state.currentStep + 1 });
-      this.setState({ readyForNextStep: false });
+      this.setState({ readyForNextStep: true });
     }
   }
 
@@ -152,6 +152,8 @@ class RecordPage extends Component {
           backward={{onClick:this.backwardStep}}
           dots={this.state.steps}
           currentDot={this.state.currentStep}
+          readyForNextStep={this.state.readyForNextStep}
+          readyForPreviousStep={this.state.readyForPreviousStep}
         />
       </LayoutContainer>
     );
