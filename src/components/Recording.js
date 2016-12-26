@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import './Recording.css';
 
 export class Recording extends Component {
   render() {
-    let marginTop = 0;
+    let positionClass = '';
     switch (this.props.step) {
       case 0:
-        marginTop = 0;
+        positionClass = 'Recording--bottom';
         break;
       case 1:
-        marginTop = 0;
+        positionClass = 'Recording--bottom';
         break;
       case 2:
-        marginTop = 0;
+        positionClass = 'Recording--bottom';
         break;
       case 3:
-        marginTop = '-60vh';
+        positionClass = 'Recording--top';
         break;
       case 4:
-        marginTop = 0;
+        positionClass = 'Recording--bottom';
         break;
       case 5:
-        marginTop = '-40vh';
+        positionClass = 'Recording--center';
         break;
       default:
-        marginTop = 0;
+        positionClass = 'Recording--bottom';
         break;
     }
+    const classes = classNames('Recording', positionClass);
     return (
-      <div className='Recording' style={{marginTop: marginTop}}>
+      <div className={classes}>
         <div className='RecordingTop'></div>
         <div className='RecordingBottom'></div>
       </div>

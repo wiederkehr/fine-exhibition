@@ -5,6 +5,17 @@
   right: 0;
   bottom: 0;
   overflow-y: hidden;
+  transition: top 600ms ease-in-out;
+}
+
+.Recording--top {
+  top: -60%;
+}
+.Recording--center {
+  top: -40%;
+}
+.Recording--bottom {
+  top: 0;
 }
 
 .RecordingTop {
