@@ -10,8 +10,8 @@ export class Recorder extends Component {
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={0}>
               <EmotionForm
                 record={this.props.record}
@@ -26,8 +26,8 @@ export class Recorder extends Component {
 
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={1}>
               <EventForm
                 record={this.props.record}
@@ -41,8 +41,8 @@ export class Recorder extends Component {
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={2}>
               <DimensionsForm
                 record={this.props.record}
@@ -56,8 +56,8 @@ export class Recorder extends Component {
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={3}>
               <TriggerForm
                 record={this.props.record}
@@ -71,8 +71,8 @@ export class Recorder extends Component {
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={4}>
               <ActionForm
                 record={this.props.record}
@@ -86,8 +86,8 @@ export class Recorder extends Component {
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={10}
+            transitionLeaveTimeout={10}>
             <div className='Recorder' key={5}>
               <table style={{marginBottom:'30px', width:'100%'}}>
                 <thead>

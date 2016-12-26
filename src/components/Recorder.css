@@ -9,20 +9,20 @@
 
 /* TRANSITION STYLING*/
 .RecorderTransition-enter {
-  transform: translate3d(100%, 0, 0);
+  /*transform: translate3d( calc(100% + var(--horizontal-padding)), 0, 0);*/
 }
 
 .RecorderTransition-enter.RecorderTransition-enter-active {
   transform: translate3d(0, 0, 0);
-  transition: all 600ms ease-in-out;
+  transition: all 0ms ease-in-out;
 }
 
 .RecorderTransition-leave {
   transform: translate3d(0, 0, 0);
-  transition: all 600ms ease-in-out;
+  transition: all 0ms ease-in-out;
 }
 .RecorderTransition-leave.RecorderTransition-leave-active {
-  transform: translate3d(-100%, 0, 0);
+  /*transform: translate3d(-100%, 0, 0);*/
 }
 
 .Recorder {
