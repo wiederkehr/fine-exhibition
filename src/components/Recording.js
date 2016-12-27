@@ -28,8 +28,28 @@ export class Recording extends Component {
     const classes = classNames('Recording', positionClass);
     return (
       <div className={classes}>
-        <div className='RecordingTop'></div>
-        <div className='RecordingBottom'></div>
+        <RecordingTop />
+        <RecordingBottom />
+      </div>
+    )
+  }
+}
+
+export class RecordingTop extends Component {
+  render() {
+    return (
+      <div className='RecordingTop'>
+        Recording Top
+      </div>
+    )
+  }
+}
+
+export class RecordingBottom extends Component {
+  render() {
+    return (
+      <div className='RecordingBottom'>
+        Recording Bottom
       </div>
     )
   }
