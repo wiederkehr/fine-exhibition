@@ -8,14 +8,20 @@
   transition: top 600ms ease-in-out;
 }
 
-.Recording--sky {
+.Recording--Step-1 {
   top: 0;
 }
-.Recording--both {
-  top: -40%;
+.Recording--Step-1 {
+  top: 0%;
 }
-.Recording--sea {
-  top: -60%;
+.Recording--Step-2 {
+  top: -70%;
+}
+.Recording--Step-3 {
+  top: -20%;
+}
+.Recording--Step-4 {
+  top: -40%;
 }
 
 .Sky {
