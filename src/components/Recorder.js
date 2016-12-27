@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
-import { ActionForm, EmotionForm, EventForm, DimensionsForm, TriggerForm } from '../components/Form';
+import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Form';
 import './Recorder.css';
 
 export class Recorder extends Component {
@@ -23,22 +23,6 @@ export class Recorder extends Component {
         )
       case 1:
         return (
-
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={1}>
-              <EventForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
-            </div>
-          </ReactCSSTransitionGroup>
-        )
-      case 2:
-        return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
             transitionEnterTimeout={10}
@@ -52,7 +36,7 @@ export class Recorder extends Component {
             </div>
           </ReactCSSTransitionGroup>
         )
-      case 3:
+      case 2:
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
@@ -67,7 +51,7 @@ export class Recorder extends Component {
             </div>
           </ReactCSSTransitionGroup>
         )
-      case 4:
+      case 3:
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"
@@ -82,7 +66,7 @@ export class Recorder extends Component {
             </div>
           </ReactCSSTransitionGroup>
         )
-      case 5:
+      case 4:
         return (
           <ReactCSSTransitionGroup
             transitionName="RecorderTransition"

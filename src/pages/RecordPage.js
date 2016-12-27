@@ -20,7 +20,6 @@ class RecordPage extends Component {
         date: '',
         name: 'Anna',
         emotion: false,
-        event: false,
         trigger: false,
         action: false,
         arousal: 3,
@@ -31,7 +30,6 @@ class RecordPage extends Component {
       },
       steps: [
         'Emotion',
-        'Event',
         'Dimensions',
         'Triggers',
         'Actions',

@@ -61,20 +61,6 @@ export class EmotionForm extends Component {
   }
 }
 
-export class EventForm extends Component {
-  render() {
-    return (
-      <form className='Form' onSubmit={this.props.onSubmit}>
-        <label className='Input-label'>Event</label>
-        <input className='Input-text'
-               type='text'
-               value={ this.props.record.event ? this.props.record.event : ''}
-               onChange={this.props.onChange.bind(null, 'event')} />
-      </form>
-    )
-  }
-}
-
 export class TriggerForm extends Component {
   render() {
     return (
