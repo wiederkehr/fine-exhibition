@@ -7,25 +7,22 @@ export class Recording extends Component {
     let positionClass = '';
     switch (this.props.step) {
       case 0:
-        positionClass = 'Recording--bottom';
+        positionClass = 'Recording--sky';
         break;
       case 1:
-        positionClass = 'Recording--bottom';
+        positionClass = 'Recording--sky';
         break;
       case 2:
-        positionClass = 'Recording--bottom';
+        positionClass = 'Recording--sea';
         break;
       case 3:
-        positionClass = 'Recording--top';
+        positionClass = 'Recording--sky';
         break;
       case 4:
-        positionClass = 'Recording--bottom';
-        break;
-      case 5:
-        positionClass = 'Recording--center';
+        positionClass = 'Recording--both';
         break;
       default:
-        positionClass = 'Recording--bottom';
+        positionClass = 'Recording--sky';
         break;
     }
     const classes = classNames('Recording', positionClass);
