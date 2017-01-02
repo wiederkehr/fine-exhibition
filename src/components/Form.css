@@ -11,7 +11,7 @@
 }
 
 .Input-label {
-  color: var(--middark-grey);
+  color: var(--white);
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -19,7 +19,7 @@
 .Input-text {
   background: none;
   border: none;
-  border-bottom: 2px solid var(--midlight-grey);
+  border-bottom: 2px solid var(--white);
   border-radius: 0;
   font-family: var(--regular-font-family);
   margin: 0 0 10px;
@@ -29,14 +29,14 @@
 }
 
 .Input-text:focus {
-  border-color: var(--mid-grey);
+  border-color: var(--white);
 }
 
 .Input-date {
   font-family: var(--regular-font-family);
   background: none;
   border: none;
-  border-bottom: 2px solid var(--midlight-grey);
+  border-bottom: 2px solid var(--white);
   border-radius: 0;
   margin: 0 0 10px;
   outline: 0;
