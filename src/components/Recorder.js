@@ -27,7 +27,7 @@ export class Recorder extends Component {
             transitionName="RecorderTransition"
             transitionEnterTimeout={10}
             transitionLeaveTimeout={10}>
-            <div className='Recorder' key={2}>
+            <div className='Recorder' key={1}>
               <DimensionsForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -42,7 +42,7 @@ export class Recorder extends Component {
             transitionName="RecorderTransition"
             transitionEnterTimeout={10}
             transitionLeaveTimeout={10}>
-            <div className='Recorder' key={3}>
+            <div className='Recorder' key={2}>
               <TriggerForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -57,7 +57,7 @@ export class Recorder extends Component {
             transitionName="RecorderTransition"
             transitionEnterTimeout={10}
             transitionLeaveTimeout={10}>
-            <div className='Recorder' key={4}>
+            <div className='Recorder' key={3}>
               <ActionForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -72,8 +72,8 @@ export class Recorder extends Component {
             transitionName="RecorderTransition"
             transitionEnterTimeout={10}
             transitionLeaveTimeout={10}>
-            <div className='Recorder' key={5}>
-              <table style={{marginBottom:'30px', width:'100%'}}>
+            <div className='Recorder' key={4}>
+              <table style={{marginBottom:'30px', width:'100%', padding: '10px', background: 'rgba(255,255,255,0.7)'}}>
                 <thead>
                   <tr>
                     <th style={{textAlign: 'left'}}>Dimension</th>
