@@ -8,71 +8,56 @@ export class Recorder extends Component {
     switch (this.props.step) {
       case 0:
         return (
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={0}>
+          <RecorderTransition direction={this.props.direction} step={this.props.step}>
+            <div className='Recorder'>
               <EmotionForm
                 record={this.props.record}
                 onChange={this.props.onChange}
                 onSubmit={this.props.onSubmit}
               />
             </div>
-          </ReactCSSTransitionGroup>
+          </RecorderTransition>
         )
       case 1:
         return (
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={1}>
+          <RecorderTransition direction={this.props.direction} step={this.props.step}>
+            <div className='Recorder'>
               <DimensionsForm
                 record={this.props.record}
                 onChange={this.props.onChange}
                 onSubmit={this.props.onSubmit}
               />
             </div>
-          </ReactCSSTransitionGroup>
+          </RecorderTransition>
         )
       case 2:
         return (
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={2}>
+          <RecorderTransition direction={this.props.direction} step={this.props.step}>
+            <div className='Recorder'>
               <TriggerForm
                 record={this.props.record}
                 onChange={this.props.onChange}
                 onSubmit={this.props.onSubmit}
               />
             </div>
-          </ReactCSSTransitionGroup>
+          </RecorderTransition>
         )
       case 3:
         return (
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={3}>
+          <RecorderTransition direction={this.props.direction} step={this.props.step}>
+            <div className='Recorder'>
               <ActionForm
                 record={this.props.record}
                 onChange={this.props.onChange}
                 onSubmit={this.props.onSubmit}
               />
             </div>
-          </ReactCSSTransitionGroup>
+          </RecorderTransition>
         )
       case 4:
         return (
-          <ReactCSSTransitionGroup
-            transitionName="RecorderTransition"
-            transitionEnterTimeout={10}
-            transitionLeaveTimeout={10}>
-            <div className='Recorder' key={4}>
+          <RecorderTransition direction={this.props.direction} step={this.props.step}>
+            <div className='Recorder'>
               <table style={{marginBottom:'30px', width:'100%', padding: '10px', background: 'rgba(255,255,255,0.7)'}}>
                 <thead>
                   <tr>
@@ -93,7 +78,7 @@ export class Recorder extends Component {
                 </tbody>
               </table>
             </div>
-          </ReactCSSTransitionGroup>
+          </RecorderTransition>
         )
       default:
         return (
@@ -101,4 +86,18 @@ export class Recorder extends Component {
         )
     }
   }
+}
+
+const RecorderTransition = ({ direction, step, children }) => {
+  return (
+    <ReactCSSTransitionGroup
+      transitionName={direction==='forward' ? 'RecorderTransitionForward' : 'RecorderTransitionBackward'}
+      transitionEnterTimeout={0}
+      transitionLeaveTimeout={0}
+      component='div'>
+      <div className='RecorderTransition' key={step}>
+        { children }
+      </div>
+    </ReactCSSTransitionGroup>
+  )
 }

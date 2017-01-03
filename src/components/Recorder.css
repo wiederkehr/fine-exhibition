@@ -3,33 +3,52 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
-  position: relative;
-}
-
-
-/* TRANSITION STYLING*/
-.RecorderTransition-enter {
-  /*transform: translate3d( calc(100% + var(--horizontal-padding)), 0, 0);*/
-}
-
-.RecorderTransition-enter.RecorderTransition-enter-active {
-  transform: translate3d(0, 0, 0);
-  transition: all 0ms ease-in-out;
-}
-
-.RecorderTransition-leave {
-  transform: translate3d(0, 0, 0);
-  transition: all 0ms ease-in-out;
-}
-.RecorderTransition-leave.RecorderTransition-leave-active {
-  /*transform: translate3d(-100%, 0, 0);*/
-}
-
-.Recorder {
   position: absolute;
   top: 0;
+  bottom: 0;
+  left: 40px;
+  right: 40px;
+}
+
+.RecorderTransition {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   left: var(--horizontal-padding);
-  width: calc(100% - 2 * var(--horizontal-padding));
-  height: 100%;
-  z-index: 1000px;
+  right: var(--horizontal-padding);
+}
+
+.RecorderTransitionForward-enter {
+  opacity: 0;
+  transform: translate3d( calc(50% + var(--horizontal-padding)), 0, 0);
+}
+
+.RecorderTransitionBackward-enter {
+  opacity: 0;
+  transform: translate3d( calc(-50% - var(--horizontal-padding)), 0, 0);
+}
+
+.RecorderTransitionForward-enter-active,
+.RecorderTransitionBackward-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms ease, opacity 600ms ease;
+  transition-delay: 400ms;
+}
+.RecorderTransitionForward-leave,
+.RecorderTransitionBackward-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms ease, opacity 600ms ease;
+  transition-delay: 0ms;
+}
+
+.RecorderTransitionForward-leave-active {
+  opacity: 0;
+  transform: translate3d( calc(-50% - var(--horizontal-padding)), 0, 0);
+}
+
+.RecorderTransitionBackward-leave-active {
+  opacity: 0;
+  transform: translate3d( calc(50% + var(--horizontal-padding)), 0, 0);
 }
