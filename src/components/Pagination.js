@@ -48,7 +48,17 @@ export const PaginationDots = ({ dots, currentDot }) => (
   <div className='PaginationDots'>
     {
       dots.map(function(dot, i) {
-        return <PaginationDot key={i} status={ currentDot === i ? 'active' : 'passive' } />
+        let status = '';
+        if (currentDot <= i) {
+          status = 'next';
+        };
+        if (currentDot >= i) {
+          status = 'past';
+        };
+        if (currentDot === i) {
+          status = 'active';
+        };
+        return <PaginationDot key={i} status={status} />
       })
     }
   </div>
@@ -57,8 +67,8 @@ export const PaginationDots = ({ dots, currentDot }) => (
 export const PaginationDot = ({ status }) => {
   const classes = classNames('PaginationDot', 'PaginationDot--' + status);
   return (
-    <svg className={classes} width='12' height='12'>
-      <circle r='4' cy='6' cx='6'/>
+    <svg className={classes} width='16' height='16'>
+      <circle r='4' cy='8' cx='8'/>
     </svg>
   )
 };
