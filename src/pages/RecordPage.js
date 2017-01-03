@@ -6,7 +6,6 @@ import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Recorder } from '../components/Recorder';
 import { Recording } from '../components/Recording';
-// import { Glyph } from '../components/Glyph';
 
 import './RecordPage.css';
 
@@ -38,6 +37,7 @@ class RecordPage extends Component {
       readyForNextStep: true,
       readyForPreviousStep: true,
       currentStep: 0,
+      direction: 'forward',
       status: 'Submit',
       disabled: false,
     }
@@ -63,6 +63,7 @@ class RecordPage extends Component {
   forwardStep(event) {
     event.preventDefault();
     if (this.state.currentStep < this.state.steps.length - 1) {
+      this.setState({ direction: 'forward' });
       this.setState({ currentStep: this.state.currentStep + 1 });
       this.setState({ readyForNextStep: true });
     }
@@ -71,6 +72,7 @@ class RecordPage extends Component {
   backwardStep(event) {
     event.preventDefault();
     if (this.state.currentStep > 0) {
+      this.setState({ direction: 'backward' });
       this.setState({ currentStep: this.state.currentStep - 1 });
       this.setState({ readyForNextStep: true });
     }
@@ -135,6 +137,7 @@ class RecordPage extends Component {
             record={this.state.record}
             steps={this.state.steps}
             step={this.state.currentStep}
+            direction={this.state.direction}
             onChange={this.onChange}
             onSubmit={this.forwardStep}
           />
