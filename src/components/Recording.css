@@ -25,39 +25,39 @@
 }
 
 .Sky {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.2);
   height: 80vh;
   transition: background-color 300ms ease;
 }
 .Aura {
   /*Essential*/
-  height: 240px;
+  height: 190px;
   left: 50%;
   position: absolute;
   transform: translate(-50%,-100%);
   width: var(--square);
   /*Cosmetic*/
   background-color: rgba(255,255,255,0.2);
-  color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.2);
   text-align: center;
   padding: 10px;
 }
 .Hummock {
   /*Essential*/
-  height: 200px;
+  min-height: 150px;
   left: 50%;
   position: absolute;
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 40px);
   /*Cosmetic*/
   background-color: rgba(0,0,0,0.1);
-  color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.2);
   text-align: center;
   padding: 10px;
 }
 .Bummock {
   /*Essential*/
-  height: 300px;
+  min-height: 150px;
   left: 50%;
   position: absolute;
   transform: translate(-50%,0);
@@ -77,7 +77,7 @@
   width: 100%;
   /*Cosmetic*/
   background-color: rgba(0,100,255,0.1);
-  color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.2);
   text-align: center;
   padding: 10px;
 }

@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
+import { scaleLinear } from 'd3-scale';
 import classNames from 'classnames';
-import * as d3 from 'd3';
 import './Recording.css';
 
 const min       = 1;
 const max       = 5;
-const color     = d3.scaleLinear().domain([min, max]).range(["#ca0020", "#0571b0"]);
+const color     = scaleLinear().domain([min, max]).range(["#ca0020", "#0571b0"]);
 
 export class Recording extends Component {
   render() {
     const classes = classNames('Recording', 'Recording--Step-' + this.props.step);
     return (
       <div className={classes}>
-        <Sky valence={this.props.record.valence}/>
-        <Hummock />
+        <Sky record={this.props.record} />
+        <Hummock record={this.props.record} />
         <Bummock />
         <Aura />
-        <Wave />
+        <Wave record={this.props.record} />
         <Sea />
       </div>
     )
@@ -26,7 +26,7 @@ export class Recording extends Component {
 export class Sky extends Component {
   render() {
     return (
-      <div className='Sky' style={{ background: color(this.props.valence) }}>Sky</div>
+      <div className='Sky' style={{ background: color(this.props.record.conduciveness) }}>Sky</div>
     )
   }
 }
@@ -40,7 +40,7 @@ export class Aura extends Component {
 export class Hummock extends Component {
   render() {
     return (
-      <div className='Hummock'>Hummock</div>
+      <div className='Hummock'>Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})</div>
     )
   }
 }
@@ -54,7 +54,7 @@ export class Bummock extends Component {
 export class Wave extends Component {
   render() {
     return (
-      <div className='Wave'>Wave</div>
+      <div className='Wave'>Wave (Arousal: {this.props.record.arousal})</div>
     )
   }
 }
