@@ -24,8 +24,14 @@
   top: -40%;
 }
 
+.RecordingLabel {
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  /* DEBUGGING */
+  display: none;
+}
+
 .Sky {
-  color: rgba(255,255,255,0.2);
   height: 80vh;
   transition: background-color 300ms ease;
 }
@@ -38,8 +44,6 @@
   width: var(--square);
   /*Cosmetic*/
   background-color: rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.2);
-  text-align: center;
   padding: 10px;
 }
 .Hummock {
@@ -51,8 +55,6 @@
   width: calc(var(--square) - 40px);
   /*Cosmetic*/
   background-color: rgba(0,0,0,0.1);
-  color: rgba(255,255,255,0.2);
-  text-align: center;
   padding: 10px;
 }
 .Bummock {
@@ -64,9 +66,7 @@
   width: calc(var(--square) - 40px);
   /*Cosmetic*/
   background-color: rgba(0,0,0,0.1);
-  color: rgba(255,255,255,0.3);
-  text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 .Wave {
   /*Essential*/
@@ -77,12 +77,24 @@
   width: 100%;
   /*Cosmetic*/
   background-color: rgba(0,100,255,0.1);
-  color: rgba(255,255,255,0.2);
-  text-align: center;
   padding: 10px;
 }
 .Sea {
-  color: rgba(255,255,255,0.3);
   height: 100vh;
   background: #00484F;
+}
+
+.HummockGlyph {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.HummockGlyphLine {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linejoin: miter;
+  stroke-linecap: square;
 }
