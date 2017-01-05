@@ -39,21 +39,17 @@
 .PaginationDot circle {
   transition: all 300ms ease;
   fill: var(--middark-grey);
-  stroke: var(--middark-grey);
 }
 
 .PaginationDot--past circle {
   fill: var(--middark-grey);
-  stroke: var(--middark-grey);
 }
 
 .PaginationDot--active circle {
   fill: var(--dark-grey);
-  stroke: none;
   r: 6;
 }
 
 .PaginationDot--next circle {
   fill: var(--mid-grey);
-  stroke: var(--mid-grey);
 }

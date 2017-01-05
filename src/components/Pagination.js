@@ -68,7 +68,7 @@ export const PaginationDot = ({ status }) => {
   const classes = classNames('PaginationDot', 'PaginationDot--' + status);
   return (
     <svg className={classes} width='16' height='16'>
-      <circle r='4' cy='8' cx='8'/>
+      <circle r='5' cy='8' cx='8'/>
     </svg>
   )
 };
