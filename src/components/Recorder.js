@@ -10,6 +10,7 @@ export class Recorder extends Component {
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
             <div className='Recorder'>
+              <h2 className='RecorderHeadline'>How are you feeling?</h2>
               <EmotionForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -34,6 +35,7 @@ export class Recorder extends Component {
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
             <div className='Recorder'>
+              <h2 className='RecorderHeadline'>What made you feel that way?</h2>
               <TriggerForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -46,6 +48,7 @@ export class Recorder extends Component {
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
             <div className='Recorder'>
+              <h2 className='RecorderHeadline'>How did you react?</h2>
               <ActionForm
                 record={this.props.record}
                 onChange={this.props.onChange}
@@ -58,6 +61,8 @@ export class Recorder extends Component {
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
             <div className='Recorder'>
+              <h2 className='RecorderHeadline'>{this.props.record.emotion}</h2>
+              <h3 className='RecorderSubheadline'>{this.props.record.date}</h3>
               <table style={{marginBottom:'30px', width:'100%', padding: '10px', background: 'rgba(255,255,255,0.7)'}}>
                 <thead>
                   <tr>
