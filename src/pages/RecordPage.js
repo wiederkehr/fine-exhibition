@@ -95,14 +95,14 @@ class RecordPage extends Component {
   }
 
   sendRecord() {
-    var record = this.state.record;
-    var username = process.env.REACT_APP_FIELDBOOK_USER;
-    var password = process.env.REACT_APP_FIELDBOOK_KEY;
-    var bookId = process.env.REACT_APP_FIELDBOOK_BOOK;
-    var sheetId = process.env.REACT_APP_FIELDBOOK_SHEET;
-    var baseUrl = 'https://api.fieldbook.com/v1/';
-    var url = baseUrl + bookId + '/' + sheetId;
-    var userpass = username + ':' + password;
+    var record        = this.state.record;
+    var username      = process.env.REACT_APP_FIELDBOOK_USER;
+    var password      = process.env.REACT_APP_FIELDBOOK_KEY;
+    var bookId        = process.env.REACT_APP_FIELDBOOK_BOOK;
+    var sheetId       = process.env.REACT_APP_FIELDBOOK_SHEET;
+    var baseUrl       = 'https://api.fieldbook.com/v1/';
+    var url           = baseUrl + bookId + '/' + sheetId;
+    var userpass      = username + ':' + password;
     var authorization = 'Basic '+ btoa(userpass);
 
     var headers = new Headers({
