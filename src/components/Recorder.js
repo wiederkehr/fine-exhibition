@@ -72,7 +72,7 @@ export class Recorder extends Component {
                 </thead>
                 <tbody>
                   <tr><td>Emotion</td><td style={{textAlign: 'right'}}>{this.props.record.emotion}</td></tr>
-                  <tr><td>Event</td><td style={{textAlign: 'right'}}>{this.props.record.event}</td></tr>
+                  <tr><td>Date</td><td style={{textAlign: 'right'}}>{this.props.record.date}</td></tr>
                   <tr><td>Trigger</td><td style={{textAlign: 'right'}}>{this.props.record.trigger}</td></tr>
                   <tr><td>Action</td><td style={{textAlign: 'right'}}>{this.props.record.action}</td></tr>
                   <tr><td>Arousal</td><td style={{textAlign: 'right'}}>{this.props.record.arousal}</td></tr>
