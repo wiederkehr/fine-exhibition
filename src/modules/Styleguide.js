@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
-import HistoryDoc from '../docs/HistoryDoc';
 import InterfaceDoc from '../docs/InterfaceDoc';
 import IntroductionDoc from '../docs/IntroductionDoc';
 import LayoutDoc from '../docs/LayoutDoc';
 import ListDoc from '../docs/ListDoc';
 import ThemeDoc from '../docs/ThemeDoc';
-import SwiperDoc from '../docs/SwiperDoc';
 import GlyphDoc from '../docs/GlyphDoc';
 import ProfileDoc from '../docs/ProfileDoc';
 
@@ -44,19 +42,9 @@ class Styleguide extends Component {
           component: InterfaceDoc
         },
         {
-          path: '/history',
-          title: 'History',
-          component: HistoryDoc
-        },
-        {
           path: '/list',
           title: 'List',
           component: ListDoc
-        },
-        {
-          path: '/swiper',
-          title: 'Swiper',
-          component: SwiperDoc
         },
         {
           path: '/layout',
