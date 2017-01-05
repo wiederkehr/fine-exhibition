@@ -27,7 +27,7 @@ export class Pagination extends Component {
     }
 
     return (
-      <LayoutFooter className="Pagination">
+      <LayoutFooter className="Pagination Pagination--transparent">
         <span className="PaginationActionLeft">
           {buttonBackward}
         </span>

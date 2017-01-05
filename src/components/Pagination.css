@@ -53,3 +53,32 @@
 .PaginationDot--next circle {
   fill: var(--mid-grey);
 }
+
+/* TRANSPARENT PAGINATION */
+.Pagination--transparent {
+  background-color: transparent;
+  border-top: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+}
+.Pagination--transparent .PaginationAction {
+  color: rgba(255,255,255,0.8);
+}
+.Pagination--transparent .PaginationAction:disabled {
+  color: rgba(255,255,255,0.4);
+}
+.Pagination--transparent .PaginationDot circle {
+  fill: rgba(255,255,255,1);
+}
+.Pagination--transparent .PaginationDot--past circle {
+  fill: rgba(255,255,255,0.6);
+}
+.Pagination--transparent .PaginationDot--active circle {
+  fill: rgba(255,255,255,1);
+}
+.Pagination--transparent .PaginationDot--next circle {
+  fill: rgba(255,255,255,0.2);
+}

@@ -28,3 +28,17 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+/* TRANSPARENT HEADER */
+.Header--transparent {
+  background-color: transparent;
+  border-bottom: none;
+  position: absolute;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.Header--transparent .HeaderAction {
+  color: rgba(255,255,255,0.8);
+}
