@@ -1,10 +1,11 @@
 .Header {
   background-color: var(--bright-grey);
   border-bottom: 1px solid var(--light-grey);
-  position: relative;
+  display: flex;
 }
 
 .HeaderTitle {
+  flex-grow: 1;
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -13,18 +14,17 @@
 .HeaderActionLeft {
   position: absolute;
   left: var(--horizontal-padding);
-  top: 0;
 }
 
 .HeaderActionRight {
   position: absolute;
   right: var(--horizontal-padding);
-  top: 0;
 }
 
 .HeaderAction {
   color: var(--middark-grey);
   font-size: 12px;
+  flex-grow: 0;
   text-decoration: none;
   text-transform: uppercase;
 }
