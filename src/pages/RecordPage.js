@@ -127,7 +127,7 @@ class RecordPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header right={{to:'/', label:'Close'}}>{this.props.route.title}</Header>
+        <Header right={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="RecordPageContent">
           <Recording
             record={this.state.record}
