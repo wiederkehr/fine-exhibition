@@ -149,6 +149,7 @@ class RecordPage extends Component {
           currentDot={this.state.currentStep}
           readyForNextStep={this.state.readyForNextStep}
           readyForPreviousStep={this.state.readyForPreviousStep}
+          transparent
         />
       </LayoutContainer>
     );
