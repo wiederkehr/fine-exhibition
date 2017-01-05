@@ -5,6 +5,7 @@ import './Pagination.css';
 
 export class Pagination extends Component {
   render() {
+    const classes = classNames('Pagination', this.props.transparent === true ? 'Pagination--transparent' : null);
     const isFirst = this.props.currentDot === 0 ? true : false;
     const isLast = this.props.currentDot === this.props.dots.length - 1 ? true : false;
 
@@ -25,9 +26,8 @@ export class Pagination extends Component {
     } else {
       buttonForward = <PaginationAction onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>{labelForward}</PaginationAction>;
     }
-
     return (
-      <LayoutFooter className="Pagination Pagination--transparent">
+      <LayoutFooter className={classes}>
         <span className="PaginationActionLeft">
           {buttonBackward}
         </span>
