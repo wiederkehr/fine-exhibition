@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { range, extent } from 'd3-array';
-import { line } from 'd3-shape';
+import { HummockVisualization, WaveVisualization } from './RecordingVisualization.js';
 import classNames from 'classnames';
 import './Recording.css';
 
-const min = 1;
-const max = 5;
-const conduciveness = scaleLinear().domain([min, 3, max]).range(["#FF7D54", "#E5CCC5" , "#B6E2F4"]);
-const valence = scaleLinear().domain([min, 3, max]).range(["#850021", "#c684a3" , "#7eb1d1"]);
-const height = scaleLinear().domain([min, max]).range([50, 100]);
+const conduciveness = scaleLinear().domain([1, 3, 5]).range(["#FF7D54", "#E5CCC5" , "#B6E2F4"]);
 
 export class Recording extends Component {
   render() {
@@ -47,27 +42,14 @@ export class Aura extends Component {
 }
 export class Hummock extends Component {
   render() {
-    let peak = 100 - height(this.props.record.intensity);
-    let middle = 100 - (height(this.props.record.intensity) / 2);
-    let line = "M 50," + peak + " L 1,100 L 100,100, Z";
-    let area = "M 50," + peak + " L 1,100 L 100,100, Z";
-    let control = [
-      "M 0,0",
-      "M 50," + peak + " L 75,100, M 50," + peak + " L 25,100, M 50," + peak + " L 50,100, M 100,100, L 50," + middle,
-      "M 50," + peak + " L 75,100, M 50," + peak + " L 25,100, M 50," + peak + " L 50,100",
-      "M 50," + peak + " L 75,100, M 50," + peak + " L 25,100",
-      "M 50," + peak + " L 75,100",
-      "M 0,0",
-    ];
-
     return (
       <div className='Hummock'>
         <div className='RecordingLabel'>Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})</div>
-        <svg className="RecordingGlyph HummockGlyph" width='101' height='101'>
-          <path className="HummockGlyphArea" d={area} fill={valence(this.props.record.valence)}/>
-          <path className="HummockGlyphLine" d={line} />
-          <path className="HummockGlyphLine" d={control[this.props.record.controllability]} />
-        </svg>
+        <HummockVisualization
+          controllability={this.props.record.controllability}
+          intensity={this.props.record.intensity}
+          valence={this.props.record.valence}
+        />
       </div>
     )
   }
@@ -83,24 +65,10 @@ export class Bummock extends Component {
 }
 export class Wave extends Component {
   render() {
-    let sine = range(0, 10).map(function(k) {
-      var value = [0.5 * k * Math.PI, Math.sin(0.5 * k * Math.PI)];
-      return value;
-    });
-    let xScale = scaleLinear().range([0, 300]).domain(extent(sine, function(d) {
-      return d[0];
-    }));
-    let yScale = scaleLinear().range([50, 0]).domain([-1, 1]);
-    // let line = line()
-    //   .x(function(d) {
-    //     return xScale(d[0]);
-    //   })
-    //   .y(function(d) {
-    //     return yScale(d[1]);
-    //   });
     return (
       <div className='Wave'>
         <div className='RecordingLabel'>Wave (Arousal: {this.props.record.arousal})</div>
+        <WaveVisualization arousal={this.props.record.arousal} />
       </div>
     )
   }

@@ -1,0 +1,14 @@
+.HummockVisualization {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.HummockVisualizationLine {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+}

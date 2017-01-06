@@ -83,18 +83,3 @@
   height: 100vh;
   background: #00484F;
 }
-
-.HummockGlyph {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.HummockGlyphLine {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 2px;
-  stroke-linejoin: miter;
-  stroke-linecap: square;
-}
