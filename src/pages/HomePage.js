@@ -12,7 +12,7 @@ class HomePage extends Component {
     return (
       <LayoutContainer>
         <LayoutContent className="HomePageContent">
-          <Link className="Button" style={style} to="/add">Add Emotion</Link>
+          <Link className="Button" style={style} to="/record">Record Emotion</Link>
           <Link className="Button" to="/view" disabled={true}>View History</Link>
         </LayoutContent>
         <Footer/>
