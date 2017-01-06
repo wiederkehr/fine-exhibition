@@ -12,9 +12,9 @@ export class Recording extends Component {
     return (
       <div className={classes}>
         <Sky record={this.props.record} />
-        <Hummock record={this.props.record} />
-        <Bummock />
-        <Aura />
+        {this.props.step > 0 ? <Hummock record={this.props.record} /> : null}
+        {this.props.step > 1 ? <Bummock /> : null}
+        {this.props.step > 2 ? <Aura /> : null}
         <Wave record={this.props.record} />
         <Sea />
       </div>
