@@ -12,16 +12,16 @@
   top: 0;
 }
 .Recording--Step-1 {
-  top: -50%;
+  top: -60%;
 }
 .Recording--Step-2 {
   top: -70%;
 }
 .Recording--Step-3 {
-  top: -50%;
+  top: -60%;
 }
 .Recording--Step-4 {
-  top: -50%;
+  top: -60%;
 }
 
 .RecordingLabel {
@@ -32,7 +32,7 @@
 }
 
 .Sky {
-  height: 80vh;
+  height: 90vh;
   transition: background-color 300ms ease;
 }
 .Aura {
