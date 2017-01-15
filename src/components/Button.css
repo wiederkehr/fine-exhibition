@@ -1,31 +1,58 @@
 .Button {
-  background-color: var(--mid-accent);
+  background: none;
   background-clip: padding-box;
   border: none;
   border-radius: 4px;
-  color: var(--white);
   cursor: pointer;
-  display: block;
   font-family: var(--regular-font-family);
-  font-size: 18px;
-  padding: 15px;
   outline: none !important;
   box-shadow: none !important;
   text-align: center;
   text-decoration: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.Button:disabled {
+  cursor: default;
+}
 
+.PrimaryButton {
+  background-color: var(--mid-accent);
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  display: block;
+  font-family: var(--regular-font-family);
+  font-size: 18px;
+  padding: 15px;
   transition: background-color 100ms;
+}
+
+.PrimaryButton:hover,
+.PrimaryButton:active,
+.PrimaryButton:focus {
+  background-color: var(--light-accent);
+}
+
+.PrimaryButton:disabled {
+  background-color: var(--midlight-grey);
+  color: var(--mid-grey);
+}
+
+.SecondaryButton {
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  color: var(--white);
+  display: inline-block;
+  font-family: var(--regular-font-family);
+  font-size: 16px;
+  padding: 5px 10px;
 }
 
 .Button:hover,
 .Button:active,
 .Button:focus {
-  background-color: var(--light-accent);
 }
 
 .Button:disabled {
-  background-color: var(--midlight-grey);
-  color: var(--mid-grey);
   cursor: default;
 }
