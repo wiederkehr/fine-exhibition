@@ -1,12 +1,12 @@
 .Footer {
-  background-color: var(--bright-grey);
-  border-top: 1px solid var(--light-grey);
+  background-color: var(--white);
   display: flex;
 }
 
 .FooterAction {
   color: var(--middark-grey);
   font-size: 12px;
+  font-weight: bold;
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
@@ -20,7 +20,6 @@
 /* TRANSPARENT FOOTER */
 .Footer--transparent {
   background-color: transparent;
-  border-top: none;
   position: absolute;
   bottom: 0;
   left: 0;
