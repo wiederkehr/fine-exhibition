@@ -1,5 +1,13 @@
 .HomePageContent {
+  background-color: #C0E6D8;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.HomePageIntroduction {
+  color: var(--white);
+  text-align: center;
+}
+.HomePageIntroduction a {
+  color: var(--white);
 }

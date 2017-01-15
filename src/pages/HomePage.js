@@ -8,12 +8,13 @@ import './HomePage.css';
 class HomePage extends Component {
 
   render() {
-    const style = {marginBottom: '10px'}
     return (
       <LayoutContainer>
         <LayoutContent className="HomePageContent">
-          <Link className="Button" style={style} to="/record">Record Emotion</Link>
-          <Link className="Button" to="/view" disabled={true}>View History</Link>
+          <div className='HomePageIntroduction'>
+            <h2>Bad days build better days.</h2>
+            <p><Link to="/view">Swipe left</Link> to record,<br/> <Link to="/record">swipe right</Link> to review emotions.</p>
+          </div>
         </LayoutContent>
         <Footer/>
       </LayoutContainer>
