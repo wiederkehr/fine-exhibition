@@ -1,5 +1,0 @@
-<svg width="101" height="101">
-  <path d="M 50,25 L 1,100 L 100,100, Z" fill="rgb(198, 132, 163)"></path>
-  <path d="M 50,25 L 1,100 L 100,100, Z" stroke="rgba(255,255,255,1)"></path>
-  <path d="M 50,25 L 75,100, M 50,25 L 25,100" stroke="rgba(255,255,255,1)"></path>
-</svg>
