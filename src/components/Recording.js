@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { scaleLinear } from 'd3-scale';
+import { HummockAsset, WaveAsset } from './RecordingAsset.js';
 import { HummockVisualization, WaveVisualization } from './RecordingVisualization.js';
 import classNames from 'classnames';
 import './Recording.css';
@@ -45,7 +46,7 @@ export class Hummock extends Component {
     return (
       <div className='Hummock'>
         <div className='RecordingLabel'>Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})</div>
-        <HummockVisualization
+        <HummockAsset
           controllability={this.props.record.controllability}
           intensity={this.props.record.intensity}
           valence={this.props.record.valence}
