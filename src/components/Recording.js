@@ -74,6 +74,8 @@ export class Sea extends Component {
   render() {
     return (
       <div className='Sea'>
+        <div className='SeaBackground'></div>
+        <div className='SeaForeground'></div>
       </div>
     )
   }

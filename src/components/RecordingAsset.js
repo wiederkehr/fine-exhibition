@@ -10,7 +10,6 @@ export const AuraAsset = ({ action }) => {
 
 export const HummockAsset = ({ controllability, intensity, valence }) => {
   const filename = "Key_" + valence + "_" + intensity + "_" + controllability;
-  // const filename = 'Key__1_1_1';
   const path = 'assets/vectors/hummock/' + filename + '.svg';
   return <ReactSVG path={ path } />
 };
