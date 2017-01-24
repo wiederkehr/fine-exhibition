@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { HummockAsset, WaveAsset } from './RecordingAsset.js';
-import { HummockVisualization, WaveVisualization } from './RecordingVisualization.js';
+import { HummockAsset } from './RecordingAsset.js';
 import classNames from 'classnames';
 import './Recording.css';
 
@@ -27,7 +26,9 @@ export class Sky extends Component {
   render() {
     return (
       <div className='Sky' style={{ background: conduciveness(this.props.record.conduciveness) }}>
-        <div className='RecordingLabel'>Sky (Conduciveness: {this.props.record.conduciveness})</div>
+        <div className='RecordingLabel'>
+          Sky (Conduciveness: {this.props.record.conduciveness})
+        </div>
       </div>
     )
   }
@@ -36,7 +37,9 @@ export class Aura extends Component {
   render() {
     return (
       <div className='Aura'>
-        <div className='RecordingLabel'>Aura</div>
+        <div className='RecordingLabel'>
+          Aura
+        </div>
       </div>
     )
   }
@@ -45,7 +48,9 @@ export class Hummock extends Component {
   render() {
     return (
       <div className='Hummock'>
-        <div className='RecordingLabel'>Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})</div>
+        <div className='RecordingLabel'>
+          Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})
+        </div>
         <HummockAsset
           controllability={this.props.record.controllability}
           intensity={this.props.record.intensity}
@@ -59,7 +64,9 @@ export class Bummock extends Component {
   render() {
     return (
       <div className='Bummock'>
-        <div className='RecordingLabel'>Bummock</div>
+        <div className='RecordingLabel'>
+          Bummock
+        </div>
       </div>
     )
   }
@@ -68,8 +75,9 @@ export class Wave extends Component {
   render() {
     return (
       <div className='Wave'>
-        <div className='RecordingLabel'>Wave (Arousal: {this.props.record.arousal})</div>
-        <WaveVisualization arousal={this.props.record.arousal} />
+        <div className='RecordingLabel'>
+          Wave (Arousal: {this.props.record.arousal})
+        </div>
       </div>
     )
   }
@@ -78,7 +86,9 @@ export class Sea extends Component {
   render() {
     return (
       <div className='Sea'>
-        <div className='RecordingLabel'>Sea</div>
+        <div className='RecordingLabel'>
+          Sea
+        </div>
       </div>
     )
   }

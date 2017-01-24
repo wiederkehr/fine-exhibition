@@ -1,24 +1,27 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
-import './RecordingAsset.css';
 
-export const HummockAsset = ({ controllability, intensity, valence }) => {
-  let filename = controllability + "_" + intensity + "_" + valence;
-  filename = '1_1_1';
-  return (
-    <div className='HummockAsset'>
-      <ReactSVG
-        path={ "assets/vectors/hummock/Key__" + filename + ".svg" }
-      />
-    </div>
-  );
+export const AuraAsset = ({ action }) => {
+  const filename = action;
+  const path = 'assets/vectors/aura/' + filename + '.svg';
+  return <ReactSVG path={ path } />
 };
 
 export const WaveAsset = ({ arousal }) => {
   const filename = arousal;
-  return (
-    <ReactSVG
-      path={ "assets/vectors/wave/" + filename + ".svg" }
-    />
-  );
+  const path = 'assets/vectors/wave/' + filename + '.svg';
+  return <ReactSVG path={ path } />
+};
+
+export const HummockAsset = ({ controllability, intensity, valence }) => {
+  // const filename = "Key__" + controllability + "_" + intensity + "_" + valence;
+  const filename = 'Key__1_1_1';
+  const path = 'assets/vectors/hummock/' + filename + '.svg';
+  return <ReactSVG path={ path } />
+};
+
+export const BummockAsset = ({ trigger }) => {
+  const filename = trigger;
+  const path = 'assets/vectors/bummock/' + filename + '.svg';
+  return <ReactSVG path={ path } />
 };
