@@ -12,23 +12,16 @@
   top: 0;
 }
 .Recording--Step-1 {
-  top: -60%;
+  top: -50%;
 }
 .Recording--Step-2 {
-  top: -70%;
+  top: -80%;
 }
 .Recording--Step-3 {
-  top: -60%;
+  top: -50%;
 }
 .Recording--Step-4 {
-  top: -60%;
-}
-
-.RecordingLabel {
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-  /* DEBUGGING */
-  display: none;
+  top: -50%;
 }
 
 .Sky {
@@ -36,19 +29,13 @@
   transition: background-color 300ms ease;
 }
 .Aura {
-  /*Essential*/
-  height: 190px;
   left: 50%;
+  line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
   width: var(--square);
-  /*Cosmetic*/
-  background-color: rgba(255,255,255,0.2);
-  padding: 10px;
 }
 .Hummock {
-  /*Essential*/
-  min-height: 100px;
   left: 50%;
   line-height: 0;
   position: absolute;
@@ -56,26 +43,22 @@
   width: calc(var(--square) - 80px);
 }
 .Bummock {
-  /*Essential*/
-  min-height: 150px;
   left: 50%;
+  line-height: 0;
   position: absolute;
   transform: translate(-50%,0);
-  width: calc(var(--square) - 40px);
-  /*Cosmetic*/
-  background-color: rgba(0,0,0,0.1);
-  padding: 20px;
+  width: calc(var(--square) - 80px);
 }
 .Wave {
   /*Essential*/
   height: 40px;
   left: 50%;
+  line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
   width: 100%;
   /*Cosmetic*/
-  background-color: rgba(0,100,255,0.1);
-  padding: 10px;
+  background-color: rgba(255,255,255,0.2);
 }
 .Sea {
   height: 100vh;

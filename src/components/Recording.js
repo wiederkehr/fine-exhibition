@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { HummockAsset } from './RecordingAsset.js';
+import { AuraAsset, HummockAsset, BummockAsset, WaveAsset } from './RecordingAsset.js';
 import classNames from 'classnames';
 import './Recording.css';
 
@@ -12,9 +12,9 @@ export class Recording extends Component {
     return (
       <div className={classes}>
         <Sky record={this.props.record} />
+        {this.props.step > 2 ? <Aura record={this.props.record} /> : null}
         {this.props.step > 0 ? <Hummock record={this.props.record} /> : null}
-        {this.props.step > 1 ? <Bummock /> : null}
-        {this.props.step > 2 ? <Aura /> : null}
+        {this.props.step > 1 ? <Bummock record={this.props.record} /> : null}
         <Wave record={this.props.record} />
         <Sea />
       </div>
@@ -26,9 +26,6 @@ export class Sky extends Component {
   render() {
     return (
       <div className='Sky' style={{ background: conduciveness(this.props.record.conduciveness) }}>
-        <div className='RecordingLabel'>
-          Sky (Conduciveness: {this.props.record.conduciveness})
-        </div>
       </div>
     )
   }
@@ -37,9 +34,7 @@ export class Aura extends Component {
   render() {
     return (
       <div className='Aura'>
-        <div className='RecordingLabel'>
-          Aura
-        </div>
+        <AuraAsset action={this.props.record.action} />
       </div>
     )
   }
@@ -48,9 +43,6 @@ export class Hummock extends Component {
   render() {
     return (
       <div className='Hummock'>
-        <div className='RecordingLabel'>
-          Hummock (Controllability: {this.props.record.controllability}, Valence: {this.props.record.valence}, Intensity: {this.props.record.intensity})
-        </div>
         <HummockAsset
           controllability={this.props.record.controllability}
           intensity={this.props.record.intensity}
@@ -64,9 +56,7 @@ export class Bummock extends Component {
   render() {
     return (
       <div className='Bummock'>
-        <div className='RecordingLabel'>
-          Bummock
-        </div>
+        <BummockAsset action={this.props.record.trigger} />
       </div>
     )
   }
@@ -75,9 +65,7 @@ export class Wave extends Component {
   render() {
     return (
       <div className='Wave'>
-        <div className='RecordingLabel'>
-          Wave (Arousal: {this.props.record.arousal})
-        </div>
+        <WaveAsset action={this.props.record.arousal} />
       </div>
     )
   }
@@ -86,9 +74,6 @@ export class Sea extends Component {
   render() {
     return (
       <div className='Sea'>
-        <div className='RecordingLabel'>
-          Sea
-        </div>
       </div>
     )
   }
