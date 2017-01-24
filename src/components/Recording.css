@@ -52,10 +52,10 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 40px);
+  width: calc(var(--square) - 80px);
   /*Cosmetic*/
   background-color: rgba(0,0,0,0.1);
-  padding: 10px 10px 0;
+  padding: 10px 0 0;
 }
 .Bummock {
   /*Essential*/
