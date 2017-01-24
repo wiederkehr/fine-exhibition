@@ -50,6 +50,7 @@
   /*Essential*/
   min-height: 100px;
   left: 50%;
+  line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 80px);
