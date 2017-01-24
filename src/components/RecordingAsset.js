@@ -14,8 +14,8 @@ export const WaveAsset = ({ arousal }) => {
 };
 
 export const HummockAsset = ({ controllability, intensity, valence }) => {
-  // const filename = "Key__" + controllability + "_" + intensity + "_" + valence;
-  const filename = 'Key__1_1_1';
+  const filename = "Key_" + valence + "_" + intensity + "_" + controllability;
+  // const filename = 'Key__1_1_1';
   const path = 'assets/vectors/hummock/' + filename + '.svg';
   return <ReactSVG path={ path } />
 };
