@@ -33,32 +33,28 @@
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 40px);
+  width: calc(var(--square) - 100px);
 }
 .Hummock {
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 80px);
+  width: calc(var(--square) - 120px);
 }
 .Bummock {
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,0);
-  width: calc(var(--square) - 80px);
+  width: calc(var(--square) - 120px);
 }
 .Wave {
-  /*Essential*/
-  height: 40px;
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
   width: 100%;
-  /*Cosmetic*/
-  background-color: rgba(255,255,255,0.2);
 }
 .SeaBackground {
   height: 100vh;

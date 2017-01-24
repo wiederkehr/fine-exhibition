@@ -16,13 +16,13 @@ export const HummockAsset = ({ controllability, intensity, valence }) => {
 
 export const BummockAsset = ({ trigger }) => {
   // const filename = trigger;
-  const filename = 'Key_T1_1';
+  const filename = 'Key_T3_1';
   const path = 'assets/vectors/bummock/' + filename + '.svg';
   return <ReactSVG path={ path } />
 };
 
 export const WaveAsset = ({ arousal }) => {
-  const filename = arousal;
+  const filename = 'Waves_' + arousal;
   const path = 'assets/vectors/wave/' + filename + '.svg';
   return <ReactSVG path={ path } />
 };

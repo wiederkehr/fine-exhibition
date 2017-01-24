@@ -65,7 +65,7 @@ export class Wave extends Component {
   render() {
     return (
       <div className='Wave'>
-        <WaveAsset action={this.props.record.arousal} />
+        <WaveAsset arousal={this.props.record.arousal} />
       </div>
     )
   }

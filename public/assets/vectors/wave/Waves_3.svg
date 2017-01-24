@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="375px" height="55px" viewBox="0 0 375 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Waves_3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="52.5005221%" y1="218.147233%" x2="52.5005208%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.177224864" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="43.0895835%" y1="164.158163%" x2="43.0895833%" y2="17.8375196%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0.177224864" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Waves_3">
+            <g>
+                <path d="M1.13686838e-13,14.4121094 C17.7207031,23.7128906 49.1054688,7.48046875 73.363682,11.0426527 C98.7449467,14.7697505 110.826793,4.14798576 153.398438,11.21875 C195.238281,18.1679688 213.382813,4 240.671875,4 C275.590935,4 280.126953,18.1679688 300.820313,18.1679688 C321.513672,18.1679688 329.599609,7.48046875 344.888672,7.48046875 C367.17384,7.48046875 375,14.4121094 375,14.4121094 L375,55 L0,55 L1.13686838e-13,14.4121094 Z" id="Bckgnd-Copy-8" fill-opacity="0.9" fill="url(#linearGradient-1)" transform="translate(187.500000, 29.500000) scale(-1, 1) translate(-187.500000, -29.500000) "></path>
+                <path d="M46.9570312,18.9980469 C67.9238281,18.9980469 70.6113281,0 116.056641,0 C170.54225,0 215.193787,21.9779154 298.070313,8.71679688 C335.091797,2.79296875 375,18.9375 375,18.9375 L375,55 L5.68434189e-14,55 L0,8.71679688 C0,8.71679688 25.9902344,18.9980469 46.9570312,18.9980469 Z" id="Bckgnd-Copy-9" fill-opacity="0.7" fill="url(#linearGradient-2)" transform="translate(187.500000, 27.500000) scale(-1, 1) translate(-187.500000, -27.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
