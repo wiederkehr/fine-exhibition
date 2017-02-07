@@ -8,7 +8,7 @@ import ListDoc from '../docs/ListDoc';
 import ThemeDoc from '../docs/ThemeDoc';
 import GlyphDoc from '../docs/GlyphDoc';
 import ProfileDoc from '../docs/ProfileDoc';
-import AssetDoc from '../docs/AssetDoc';
+import SceneDoc from '../docs/SceneDoc';
 
 class Styleguide extends Component {
   render() {
@@ -58,14 +58,14 @@ class Styleguide extends Component {
           component: GlyphDoc
         },
         {
+          path: '/scene',
+          title: 'Scene',
+          component: SceneDoc
+        },
+        {
           path: '/profile',
           title: 'Profile',
           component: ProfileDoc
-        },
-        {
-          path: '/asset',
-          title: 'Asset',
-          component: AssetDoc
         },
       ]}
       />
