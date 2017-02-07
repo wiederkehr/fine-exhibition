@@ -34,7 +34,7 @@ export class Aura extends Component {
   render() {
     return (
       <div className='Aura'>
-        <AuraAsset action={this.props.record.action} />
+        <AuraAsset action={ 'A_Engage' } />
       </div>
     )
   }
@@ -56,7 +56,7 @@ export class Bummock extends Component {
   render() {
     return (
       <div className='Bummock'>
-        <BummockAsset action={this.props.record.trigger} />
+        <BummockAsset trigger={ 'T1_1' } />
       </div>
     )
   }
