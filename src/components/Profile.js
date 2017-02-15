@@ -25,8 +25,8 @@ export const ProfileStatus = ({ children }) => (
 
 export const ProfileCallout = () => (
   <div className="ProfileCallout">
-    <ProfileCalloutLabel>Dominant emotion in last 30 days</ProfileCalloutLabel>
     <ProfileCalloutValue>Fuchsing</ProfileCalloutValue>
+    <ProfileCalloutLabel>Dominant emotion in last 30 days</ProfileCalloutLabel>
   </div>
 );
 

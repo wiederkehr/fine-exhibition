@@ -1,5 +1,5 @@
 .ProfileBanner {
-  background: var(--dark-accent);
+  background: var(--night-grey);
   line-height: 1.5;
   text-align: center;
   padding: 40px var(--horizontal-padding);
@@ -26,18 +26,18 @@
 }
 
 .ProfileStatus {
-  color: var(--mid-accent);
+  color: var(--neutral-grey);
 }
 
 .ProfileCallout {
-  background: var(--middark-accent);
+  background: var(--dark-grey);
   line-height: 1.5;
   text-align: center;
   padding: 40px var(--horizontal-padding);
 }
 
 .ProfileCalloutLabel {
-  color: var(--midlight-accent);
+  color: var(--neutral-grey);
 }
 
 .ProfileCalloutValue {
