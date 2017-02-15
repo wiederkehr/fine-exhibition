@@ -61,7 +61,7 @@ ReactDOM.render(
         />
       </Route>
       <Route
-        path="/docs"
+        path="/styleguide"
         component={Styleguide}
       />
       <Route
