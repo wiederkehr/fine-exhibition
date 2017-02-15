@@ -1,6 +1,6 @@
 .Switch {
-  background-color: var(--light-accent);
-  border: 1px solid var(--light-accent);
+  background-color: var(--middark-grey);
+  border: 1px solid var(--middark-grey);
   border-radius: 24px;
   cursor: pointer;
   transition: background-color 300ms, border-color 300ms;
@@ -10,8 +10,8 @@
 }
 
 .Switch.on {
-  background-color: var(--light-accent);
-  border-color: var(--light-accent);
+  background-color: var(--middark-grey);
+  border-color: var(--middark-grey);
 }
 
 .Switch.off {
@@ -28,7 +28,7 @@
 .SwitchButton {
   background-color: var(--white);
   background-clip: padding-box;
-  border: 1px solid var(--light-accent);
+  border: 1px solid var(--middark-grey);
   border-radius: 24px;
   color: transparent;
   cursor: pointer;
