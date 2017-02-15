@@ -1,11 +1,11 @@
 .Footer {
   background-color: var(--white);
-  display: flex;
   box-shadow: 0 -1px 0px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
 }
 
 .FooterAction {
-  color: var(--middark-grey);
+  color: var(--dark-grey);
   font-size: 12px;
   font-weight: bold;
   flex-grow: 1;
@@ -15,17 +15,17 @@
 }
 
 .FooterAction--active {
-  color: var(--dark-grey);
+  color: var(--neutral-grey);
 }
 
 /* TRANSPARENT FOOTER */
 .Footer--transparent {
   background-color: transparent;
-  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   top: auto;
+  position: absolute;
 }
 .Footer--transparent .FooterAction {
   color: rgba(255,255,255,0.8);
