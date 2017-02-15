@@ -1,8 +1,8 @@
 .ListGroup {
-  background: var(--white);
 }
 
 .ListHeader {
+  background: var(--bright-grey);
   border-bottom: 1px solid var(--light-grey);
   color: var(--middark-grey);
   text-transform: uppercase;
@@ -18,9 +18,9 @@
 
 .ListItem {
   background: var(--white);
-  border-bottom: 1px solid var(--bright-grey);
+  border-bottom: 1px solid var(--light-grey);
   list-style: none;
-  line-height: 36px;
+  line-height: 44px;
   position: relative;
   padding: 0 var(--horizontal-padding);
 }
@@ -42,7 +42,8 @@
 
 .ListSwitch {
   position: absolute;
-  top: 5px;
+  top: 50%;
+  transform: translate( 0, -50%);
 }
 
 .ListSwitchItem .ListSwitch {
@@ -54,9 +55,11 @@
 }
 
 .ListLinkIcon {
+  line-height: 1;
   position: absolute;
   right: var(--horizontal-padding);
-  top: 2px;
+  top: 50%;
+  transform: translate( 0, -50%);
 }
 
 .ArrowRight polyline{
