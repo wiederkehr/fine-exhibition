@@ -29,7 +29,6 @@
   text-transform: uppercase;
 }
 
-/* TRANSPARENT HEADER */
 .Header--transparent {
   background-color: transparent;
   border-bottom: none;
