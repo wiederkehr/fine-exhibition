@@ -16,6 +16,8 @@ import SettingsNotificationsPage from './pages/SettingsNotificationsPage';
 import SettingsAboutPage from './pages/SettingsAboutPage';
 import SettingsDisclaimerPage from './pages/SettingsDisclaimerPage';
 import SettingsImprintPage from './pages/SettingsImprintPage';
+import SettingsDataImportPage from './pages/SettingsDataImportPage';
+import SettingsDataExportPage from './pages/SettingsDataExportPage';
 import RecordPage from './pages/RecordPage';
 import ViewPage from './pages/ViewPage';
 
@@ -47,6 +49,8 @@ ReactDOM.render(
             <Route path="/settings/about" title="About" component={SettingsAboutPage} />
             <Route path="/settings/disclaimer" title="Disclaimer" component={SettingsDisclaimerPage} />
             <Route path="/settings/imprint" title="Imprint" component={SettingsImprintPage} />
+            <Route path="/settings/import" title="Import" component={SettingsDataImportPage} />
+            <Route path="/settings/export" title="Export" component={SettingsDataExportPage} />
           </Route>
         </Route>
         <Route

@@ -9,3 +9,21 @@
 }
 .SettingsDisclaimerPageContent {
 }
+.SettingsDataImportPageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.SettingsDataImportPageContent .Button {
+  margin: 0 auto;
+}
+.SettingsDataExportPageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.SettingsDataExportPageContent .Button {
+  margin: 0 auto;
+}
