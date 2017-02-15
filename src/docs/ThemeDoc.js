@@ -27,7 +27,8 @@ export default () => (
             {name:"light-grey", value:'#f0f0f0'},
             {name:"midlight-grey", value:'#ddd'},
             {name:"mid-grey", value:'#ccc'},
-            {name:"middark-grey", value:'#999'},
+            {name:"neutral-grey", value:'#999'},
+            {name:"middark-grey", value:'#555'},
             {name:"dark-grey", value:'#333'},
             {name:"night-grey", value:'#222'}
           ]
