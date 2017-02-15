@@ -37,17 +37,16 @@ export default () => (
       <Button type="button">Button</Button>
     </ReactSpecimen>
     <h2>Switch</h2>
-    <h3>Switch Active</h3>
+    <h3>Switch Active and Passive</h3>
     <ReactSpecimen noSource span={3}>
-      <Switch state="on">Active</Switch>
+      <Switch status="on">Active</Switch>
     </ReactSpecimen>
-    <h3>Switch Passive</h3>
     <ReactSpecimen noSource span={3}>
-      <Switch state="off">Passive</Switch>
+      <Switch status="off" disabled>Passive</Switch>
     </ReactSpecimen>
     <h3>Switch Disabled</h3>
     <ReactSpecimen noSource span={3}>
-      <Switch state="disabled">Disabled</Switch>
+      <Switch status="disabled">Disabled</Switch>
     </ReactSpecimen>
     <h2>Slider</h2>
     <ReactSpecimen noSource span={3} dark>
