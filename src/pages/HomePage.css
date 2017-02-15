@@ -8,6 +8,10 @@
   color: var(--white);
   text-align: center;
 }
+.HomePageIntroduction h1 {
+  line-height: 1.25;
+  letter-spacing: -1px;
+}
 .HomePageIntroduction a {
   color: var(--white);
 }
