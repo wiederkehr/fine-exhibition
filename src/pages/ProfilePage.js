@@ -11,7 +11,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header right={{to:'/profile/settings', label:'Settings'}}>{this.props.route.title}</Header>
+        <Header right={{to:'/profile/settings', label:'Settings'}} transparent />
         <LayoutContent className="ProfilePageContent">
           <ProfileBanner />
           <ProfileCallout />
