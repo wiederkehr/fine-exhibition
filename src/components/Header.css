@@ -1,6 +1,6 @@
 .Header {
   background-color: var(--white);
-  border-bottom: 1px solid var(--light-grey);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   display: flex;
 }
 
@@ -31,7 +31,7 @@
 
 .Header--transparent {
   background-color: transparent;
-  border-bottom: none;
+  box-shadow: none;
   position: absolute;
   bottom: auto;
   left: 0;

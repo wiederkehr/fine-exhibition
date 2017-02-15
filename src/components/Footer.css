@@ -1,6 +1,6 @@
 .Footer {
   background-color: var(--white);
-  border-top: 1px solid var(--light-grey);
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.08);
   display: flex;
 }
 
@@ -18,9 +18,9 @@
   color: var(--neutral-grey);
 }
 
-/* TRANSPARENT FOOTER */
 .Footer--transparent {
   background-color: transparent;
+  box-shadow: none;
   bottom: 0;
   left: 0;
   right: 0;
