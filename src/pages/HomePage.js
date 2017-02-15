@@ -11,8 +11,8 @@ class HomePage extends Component {
     return (
       <LayoutContainer>
         <LayoutContent className="HomePageContent">
-          <div className='HomePageIntroduction'>
-            <h2>Bad days build better days.</h2>
+          <div className='HomePageIntroduction TypeContent'>
+            <h1>Bad days build<br/> better days.</h1>
             <p><Link to="/view">Swipe left</Link> to record,<br/> <Link to="/record">swipe right</Link> to review emotions.</p>
           </div>
         </LayoutContent>
