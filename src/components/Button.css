@@ -16,7 +16,7 @@
 }
 
 .PrimaryButton {
-  background-color: var(--mid-accent);
+  background-color: var(--dark-grey);
   border: none;
   border-radius: 4px;
   color: var(--white);
@@ -30,7 +30,7 @@
 .PrimaryButton:hover,
 .PrimaryButton:active,
 .PrimaryButton:focus {
-  background-color: var(--light-accent);
+  background-color: var(--middark-grey);
 }
 
 .PrimaryButton:disabled {
