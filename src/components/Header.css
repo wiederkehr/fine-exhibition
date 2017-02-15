@@ -1,5 +1,5 @@
 .Header {
-  background-color: var(--bright-grey);
+  background-color: var(--white);
   border-bottom: 1px solid var(--light-grey);
   display: flex;
 }
