@@ -1,9 +1,30 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
-import { Aura, Hummock, Bummock, Wave } from '../components/Scene.js';
+import { Scene, Aura, Hummock, Bummock, Wave } from '../components/Scene.js';
+
+const LayoutViewport = {
+  height: '667px',
+  width: '375px',
+  overflow: 'hidden'
+}
 
 export default () => (
   <Page>
+    <h2>Full Scene</h2>
+    <ReactSpecimen noSource={true}>
+      <div style={LayoutViewport}>
+        <Scene
+          record={{
+            arousal:3,
+            controllability:4,
+            intensity:3,
+            valence:2,
+            trigger:'T1_1',
+            action:'A_Engage'
+          }}
+        />
+      </div>
+    </ReactSpecimen>
     <h2>Hummock</h2>
     <ReactSpecimen noSource={true}>
       <Hummock

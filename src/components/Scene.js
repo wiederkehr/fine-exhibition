@@ -3,6 +3,19 @@ import ReactSVG from 'react-svg';
 import { scaleLinear } from 'd3-scale';
 import './Scene.css';
 
+export const Scene = ({ record }) => {
+  return (
+    <div className='Scene'>
+      <Sky record={ record } />
+      <Aura record={ record } />
+      <Hummock record={ record } />
+      <Bummock record={ record } />
+      <Wave record={ record } />
+      <Sea />
+    </div>
+  )
+};
+
 export const Sky = ({ record }) => {
   const conduciveness = scaleLinear().domain([1, 3, 5]).range(["#FF7D54", "#E5CCC5" , "#B6E2F4"]);
   return (
