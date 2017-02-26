@@ -12,8 +12,19 @@
   top: 0;
 }
 .Detail-1 {
-  top: -50%;
+  top: -60%;
 }
 .Detail-2 {
   top: -80%;
+}
+
+.EmotionHeader {
+  color: #fff;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%,-100%);
+  width: 100%;
 }

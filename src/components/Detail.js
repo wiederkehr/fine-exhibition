@@ -13,8 +13,16 @@ export class Detail extends Component {
         <Hummock record={this.props.record} />
         {this.props.detail > 0 ? <Bummock record={this.props.record} /> : null}
         <Wave record={this.props.record} />
+        <EmotionHeader emotion='Frustrated' date='18 November, 2016'/>
         <Sea />
       </div>
     )
   }
 };
+
+export const EmotionHeader = ( props ) => (
+  <div className='EmotionHeader'>
+    <h1 className='EmotionName'>{props.emotion}</h1>
+    <span className='EmotionDate'>{props.date}</span>
+  </div>
+);
