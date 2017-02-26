@@ -8,18 +8,18 @@
   transition: top 600ms ease-in-out;
 }
 
-.Recording--Step-1 {
-  top: 0;
+.Recording--Step-0 {
+  top: -10%;
 }
 .Recording--Step-1 {
-  top: -50%;
+  top: -60%;
 }
 .Recording--Step-2 {
   top: -80%;
 }
 .Recording--Step-3 {
-  top: -50%;
+  top: -60%;
 }
 .Recording--Step-4 {
-  top: -50%;
+  top: -30%;
 }
