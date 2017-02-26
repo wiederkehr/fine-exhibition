@@ -1,0 +1,19 @@
+.Detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  transition: top 600ms ease-in-out;
+}
+
+.Detail-0 {
+  top: 0;
+}
+.Detail-1 {
+  top: -50%;
+}
+.Detail-2 {
+  top: -80%;
+}
