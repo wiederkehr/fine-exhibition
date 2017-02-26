@@ -10,6 +10,7 @@ import App from './modules/App';
 import Styleguide from './modules/Styleguide';
 
 import HomePage from './pages/HomePage';
+import HistoryPage from './pages/HistoryPage';
 import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage';
 import SettingsNotificationsPage from './pages/SettingsNotificationsPage';
@@ -40,6 +41,11 @@ ReactDOM.render(
         <IndexRoute
           title="Home"
           component={HomePage}
+        />
+        <Route
+          path="/history"
+          title="History"
+          component={HistoryPage}
         />
         <Route path="/profile">
           <IndexRoute title="Profile" component={ProfilePage} />

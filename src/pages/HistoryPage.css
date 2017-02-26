@@ -1,0 +1,4 @@
+.HistoryPageContent {
+  display: flex;
+  flex-direction: column;
+}
