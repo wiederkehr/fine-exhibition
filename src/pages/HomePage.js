@@ -13,7 +13,7 @@ class HomePage extends Component {
         <LayoutContent className="HomePageContent">
           <div className='HomePageIntroduction TypeContent'>
             <h1>Bad days build<br/> better days.</h1>
-            <p><Link to="/view">Swipe left</Link> to record,<br/> <Link to="/record">swipe right</Link> to review emotions.</p>
+            <p><Link to="/record">Swipe left</Link> to record,<br/> <Link to="/history">swipe right</Link> to review emotions.</p>
           </div>
         </LayoutContent>
         <Footer/>
