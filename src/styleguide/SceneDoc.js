@@ -10,54 +10,47 @@ const LayoutViewport = {
 
 export default () => (
   <Page>
-    <h2>Full Scene</h2>
+    <h2>Hummock</h2>
     <ReactSpecimen noSource={true}>
-      <div style={LayoutViewport}>
-        <Scene
+      <div style={{height: '200px'}}>
+        <Hummock
           record={{
-            arousal:3,
             controllability:4,
             intensity:3,
-            valence:2,
-            trigger:'T1_1',
+            valence:2
+          }}
+        />
+    </div>
+    </ReactSpecimen>
+    <h2>Bummock</h2>
+    <ReactSpecimen noSource={true}>
+      <div style={{height: '200px'}}>
+        <Bummock
+          record={{
+            trigger:'T1_1'
+          }}
+        />
+      </div>
+    </ReactSpecimen>
+    <h2>Aurora</h2>
+    <ReactSpecimen noSource={true} dark={true}>
+      <div style={{height: '200px'}}>
+        <Aura
+          record={{
             action:'A_Engage'
           }}
         />
       </div>
     </ReactSpecimen>
-    <h2>Hummock</h2>
-    <ReactSpecimen noSource={true}>
-      <Hummock
-        record={{
-          controllability:4,
-          intensity:3,
-          valence:2
-        }}
-      />
-    </ReactSpecimen>
-    <h2>Bummock</h2>
-    <ReactSpecimen noSource={true}>
-      <Bummock
-        record={{
-          trigger:'T1_1'
-        }}
-      />
-    </ReactSpecimen>
-    <h2>Aurora</h2>
-    <ReactSpecimen noSource={true} dark={true}>
-      <Aura
-        record={{
-          action:'A_Engage'
-        }}
-      />
-    </ReactSpecimen>
     <h2>Wave</h2>
     <ReactSpecimen noSource={true} dark={true}>
-      <Wave
-        record={{
-          arousal:3
-        }}
-      />
+      <div style={{height: '200px'}}>
+        <Wave
+          record={{
+            arousal:3
+          }}
+        />
+      </div>
     </ReactSpecimen>
   </Page>
 );
