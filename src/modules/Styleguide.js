@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Catalog } from 'catalog';
 
-import InterfaceDoc from '../docs/InterfaceDoc';
-import IntroductionDoc from '../docs/IntroductionDoc';
-import LayoutDoc from '../docs/LayoutDoc';
-import ListDoc from '../docs/ListDoc';
-import ThemeDoc from '../docs/ThemeDoc';
-import GlyphDoc from '../docs/GlyphDoc';
-import ProfileDoc from '../docs/ProfileDoc';
-import SceneDoc from '../docs/SceneDoc';
+import InterfaceDoc from '../styleguide/InterfaceDoc';
+import IntroductionDoc from '../styleguide/IntroductionDoc';
+import LayoutDoc from '../styleguide/LayoutDoc';
+import ListDoc from '../styleguide/ListDoc';
+import ThemeDoc from '../styleguide/ThemeDoc';
+import GlyphDoc from '../styleguide/GlyphDoc';
+import ProfileDoc from '../styleguide/ProfileDoc';
+import SceneDoc from '../styleguide/SceneDoc';
 
 class Styleguide extends Component {
   render() {
