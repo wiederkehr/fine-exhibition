@@ -1,14 +1,17 @@
-.Sky {
-  height: 100vh;
-  transition: background-color 300ms ease;
-}
 .Aura {
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 100px);
+  width: calc(var(--square) - 80px);
 }
+.Aura .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
 .Hummock {
   left: 50%;
   line-height: 0;
@@ -16,6 +19,13 @@
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 120px);
 }
+.Hummock .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
 .Bummock {
   left: 50%;
   line-height: 0;
@@ -23,12 +33,29 @@
   transform: translate(-50%,0);
   width: calc(var(--square) - 120px);
 }
+.Bummock .injected-svg {
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
 .Wave {
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
   width: 100%;
+}
+.Wave .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
+.Sky {
+  height: 100vh;
+  transition: background-color 300ms ease;
 }
 .SeaBackground {
   height: 100vh;
