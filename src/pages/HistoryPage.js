@@ -3,6 +3,7 @@ import { Detail } from '../components/Detail.js';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Timeline, TimelineItem } from '../components/History';
 
 import './HistoryPage.css';
 
@@ -13,16 +14,14 @@ class HistoryPage extends Component {
       <LayoutContainer>
         <Header right={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="HistoryPageContent">
-          <Detail
-            record={{
-              arousal: 2,
-              conduciveness: 4,
-              controllability: 3,
-              intensity: 2,
-              valence: 2
-            }}
-            detail={0}
-          />
+          <Timeline>
+            <TimelineItem />
+            <TimelineItem />
+            <TimelineItem />
+            <TimelineItem />
+            <TimelineItem />
+            <TimelineItem />
+          </Timeline>
         </LayoutContent>
         <Footer/>
       </LayoutContainer>
