@@ -33,12 +33,12 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route component={App}>
-        <Route
-          path="/"
+        <IndexRoute
           title="Home"
           component={HomePage}
         />
-        <IndexRoute
+        <Route
+          path="/"
           title="Home"
           component={HomePage}
         />
