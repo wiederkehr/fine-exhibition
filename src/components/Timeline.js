@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './History.css';
+import './Timeline.css';
 
-export const History = ( props ) => (
-  <div className='History'>{ props.children }</div>
+export const TimelineWrapper = ( props ) => (
+  <div className='TimelineWrapper'>{ props.children }</div>
 )
 
 export const Timeline = ( props ) => (
