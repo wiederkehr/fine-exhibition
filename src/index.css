@@ -37,6 +37,7 @@
   --regular-font-family: 'Karla', sans-serif;
 
   --horizontal-padding: 20px;
+  --layoutbar-height: 44px;
   --square: calc(100% - 2 * var(--horizontal-padding));
 }
 

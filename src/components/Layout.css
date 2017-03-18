@@ -23,8 +23,8 @@
 
 .LayoutBar {
   flex-shrink: 0;
-  height: 44px;
-  line-height: 44px;
+  height: var(--layoutbar-height);
+  line-height: var(--layoutbar-height);
   padding: 0 var(--horizontal-padding);
   vertical-align: middle;
   z-index: 100;
