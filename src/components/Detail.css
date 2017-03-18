@@ -26,7 +26,7 @@
   text-align: center;
   top: 50%;
   transform: translate(-50%,-100%);
-  width: 100%;
+  width: calc(100% - var(--horizontal-padding) * 2);
 }
 
 .EmotionName {
