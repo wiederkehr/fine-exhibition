@@ -9,13 +9,13 @@
 }
 
 .Detail-0 {
-  top: calc(var(--layoutbar-height) * -1);
+  top: -43px;
 }
 .Detail-1 {
-  top: calc(-60% - var(--layoutbar-height) * -1);
+  top: calc(-40% - 43px);
 }
 .Detail-2 {
-  top: calc(-60% - var(--layoutbar-height) * -1);
+  top: calc(-40% - 43px);
 }
 
 .EmotionHeader {
