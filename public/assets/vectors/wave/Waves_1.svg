@@ -1,1 +1,22 @@
-<svg width="375" height="55" viewBox="0 0 375 55" xmlns="http://www.w3.org/2000/svg"><title>Waves_1</title><defs><linearGradient x1="38.654%" y1="197.445%" x2="42.255%" y2="50%" id="a"><stop stop-color="#FFF" stop-opacity=".177" offset="0%"/><stop stop-color="#FFF" offset="100%"/></linearGradient></defs><path d="M0 36.643S151.899 25.01 240.672 22.475C329.445 19.939 375 0 375 0v55H0V36.643z" transform="matrix(-1 0 0 1 375 0)" fill="url(#a)" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="41px" viewBox="0 0 375 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Waves_1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="38.6536458%" y1="197.445278%" x2="42.2546875%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.177224864" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="25.522396%" y1="-106.945274%" x2="25.522396%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Waves_1">
+            <path d="M0,29.6425781 C0,29.6425781 151.899026,18.0106462 240.671875,15.4746094 C329.444724,12.9385725 375,0 375,0 L375,41 L0,41 L0,29.6425781 Z" fill="url(#linearGradient-1)" transform="translate(187.500000, 20.500000) scale(-1, 1) translate(-187.500000, -20.500000) "></path>
+            <path d="M0,33.804559 C0,33.804559 14.0517578,27.1533203 56.6191406,27.1533203 C78.1859747,27.1533203 160.169181,35.3242449 234.798828,33.804559 C307.468907,32.3247759 344.509766,34.0766602 375,27.1533203 C375,27.1533203 375,41 375,41 L0,41 L0,33.804559 Z" id="Rectangle-2" fill="url(#linearGradient-2)"></path>
+        </g>
+    </g>
+</svg>

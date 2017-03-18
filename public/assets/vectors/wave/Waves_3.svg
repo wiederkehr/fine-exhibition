@@ -1,1 +1,27 @@
-<svg width="375" height="55" viewBox="0 0 375 55" xmlns="http://www.w3.org/2000/svg"><title>Waves_3</title><defs><linearGradient x1="52.501%" y1="218.147%" x2="52.501%" y2="50%" id="a"><stop stop-color="#FFF" stop-opacity=".177" offset="0%"/><stop stop-color="#FFF" offset="100%"/></linearGradient><linearGradient x1="43.09%" y1="164.158%" x2="43.09%" y2="17.838%" id="b"><stop stop-color="#FFF" stop-opacity=".177" offset="0%"/><stop stop-color="#FFF" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path d="M0 14.412c17.72 9.3 49.105-6.932 73.364-3.37 25.38 3.728 37.463-6.894 80.034.177C195.238 18.168 213.383 4 240.672 4c34.919 0 39.455 14.168 60.148 14.168 20.694 0 28.78-10.688 44.069-10.688 22.285 0 30.111 6.932 30.111 6.932V55H0V14.412z" fill-opacity=".9" fill="url(#a)" transform="matrix(-1 0 0 1 375 0)"/><path d="M46.957 18.998C67.924 18.998 70.611 0 116.057 0c54.485 0 99.137 21.978 182.013 8.717C335.092 2.793 375 18.937 375 18.937V55H0V8.717s25.99 10.281 46.957 10.281z" fill-opacity=".7" fill="url(#b)" transform="matrix(-1 0 0 1 375 0)"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="48px" viewBox="0 0 375 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Waves_3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="57.60625%" y1="-86.8607955%" x2="55.8286458%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.177224864" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="46.615625%" y1="-121.691895%" x2="40.2755208%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0.177224864" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="25.522396%" y1="-106.945274%" x2="25.522396%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Waves_3">
+            <path d="M1.13686838e-13,14.4121094 C17.7207031,23.7128906 49.1054688,7.48046875 73.363682,11.0426527 C98.7449467,14.7697505 110.826793,4.14798576 153.398438,11.21875 C195.238281,18.1679688 213.382813,4 240.671875,4 C275.590935,4 280.126953,18.1679688 300.820313,18.1679688 C321.513672,18.1679688 329.599609,7.48046875 344.888672,7.48046875 C367.17384,7.48046875 375,14.4121094 375,14.4121094 L375,48 L0,48 L1.13686838e-13,14.4121094 Z" id="Bckgnd-Copy-8" fill-opacity="0.9" fill="url(#linearGradient-1)" transform="translate(187.500000, 26.000000) scale(-1, 1) translate(-187.500000, -26.000000) "></path>
+            <path d="M46.9570312,18.9980469 C67.9238281,18.9980469 70.6113281,0 116.056641,0 C170.54225,0 215.193787,21.9779154 298.070313,8.71679687 C335.091797,2.79296875 375,18.9375 375,18.9375 L375,48 L-5.68434189e-14,48 L-5.68434189e-14,8.71679687 C-5.68434189e-14,8.71679687 25.9902344,18.9980469 46.9570312,18.9980469 Z" id="Bckgnd-Copy-9" fill-opacity="0.7" fill="url(#linearGradient-2)" transform="translate(187.500000, 24.000000) scale(-1, 1) translate(-187.500000, -24.000000) "></path>
+            <path d="M1.05693232e-13,40.804559 C1.05693232e-13,40.804559 14.0517578,34.1533203 56.6191406,34.1533203 C78.1859747,34.1533203 160.169181,42.3242449 234.798828,40.804559 C307.468907,39.3247759 346.607422,39.3955078 375,30.7910156 C375,30.7910156 375,48 375,48 L1.05693232e-13,48 L1.05693232e-13,40.804559 Z" id="Rectangle-2" fill="url(#linearGradient-3)"></path>
+        </g>
+    </g>
+</svg>
