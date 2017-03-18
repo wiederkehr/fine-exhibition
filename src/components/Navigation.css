@@ -4,13 +4,15 @@
 .NavigationActionLeft {
   position: absolute;
   left: var(--horizontal-padding);
-  top: 40%;
+  transform: translate(0,-100%);
+  top: 50%;
 }
 
 .NavigationActionRight {
   position: absolute;
   right: var(--horizontal-padding);
-  top: 40%;
+  transform: translate(0,-100%);
+  top: 50%;
 }
 
 .NavigationAction {
