@@ -92,7 +92,7 @@ class HistoryPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header right={{to:'/', label:'Close'}} transparent />
+        <Header left={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="HistoryPageContent">
           <Detail
             detail={this.state.detail}
