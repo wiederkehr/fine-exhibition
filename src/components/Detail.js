@@ -13,7 +13,7 @@ export class Detail extends Component {
         <Hummock record={this.props.record} />
         {this.props.detail > 0 ? <Bummock record={this.props.record} /> : null}
         <Wave record={this.props.record} />
-        <EmotionHeader emotion='Frustrated' date='18 November, 2016'/>
+        <EmotionHeader emotion={this.props.record.emotion} date={this.props.record.date}/>
         <Sea />
       </div>
     )
