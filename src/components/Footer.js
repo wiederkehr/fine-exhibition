@@ -10,7 +10,7 @@ export const Footer = ( transparent ) => {
     <LayoutFooter className={classes}>
       <FooterAction to='#'>Home</FooterAction>
       <FooterAction to='/profile'>Profile</FooterAction>
-      <FooterAction to='/view'>View</FooterAction>
+      <FooterAction to='/history'>History</FooterAction>
       <FooterAction to='/record'>Record</FooterAction>
     </LayoutFooter>
   );
