@@ -1,0 +1,35 @@
+.Navigation {
+}
+
+.NavigationActionLeft {
+  position: absolute;
+  left: var(--horizontal-padding);
+  top: 40%;
+}
+
+.NavigationActionRight {
+  position: absolute;
+  right: var(--horizontal-padding);
+  top: 40%;
+}
+
+.NavigationAction {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+.NavigationArrow {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.NavigationArrow polyline {
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 2px;
+}

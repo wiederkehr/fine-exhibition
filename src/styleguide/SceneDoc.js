@@ -1,12 +1,6 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
-import { Scene, Aura, Hummock, Bummock, Wave } from '../components/Scene.js';
-
-const LayoutViewport = {
-  height: '667px',
-  width: '375px',
-  overflow: 'hidden'
-}
+import { Aura, Hummock, Bummock, Wave } from '../components/Scene.js';
 
 export default () => (
   <Page>
