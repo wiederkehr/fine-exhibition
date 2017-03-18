@@ -9,13 +9,13 @@
 }
 
 .Detail-0 {
-  top: 0;
+  top: calc(var(--layoutbar-height) * -1);
 }
 .Detail-1 {
-  top: -60%;
+  top: calc(-60% - var(--layoutbar-height) * -1);
 }
 .Detail-2 {
-  top: -80%;
+  top: calc(-60% - var(--layoutbar-height) * -1);
 }
 
 .EmotionHeader {
@@ -27,4 +27,12 @@
   top: 50%;
   transform: translate(-50%,-100%);
   width: 100%;
+}
+
+.EmotionName {
+  margin-bottom: 0.33em;
+}
+
+.EmotionDate {
+  text-transform: uppercase;
 }
