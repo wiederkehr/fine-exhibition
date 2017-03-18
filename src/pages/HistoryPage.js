@@ -26,6 +26,7 @@ class HistoryPage extends Component {
           valence: 3
         },
       ],
+      detail: 0,
       currentDay: 0
     }
 
@@ -94,7 +95,7 @@ class HistoryPage extends Component {
         <Header right={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="HistoryPageContent">
           <Detail
-            detail={0}
+            detail={this.state.detail}
             record={this.state.records[this.state.currentDay]}
           />
           <Navigation
