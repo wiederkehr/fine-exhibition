@@ -71,7 +71,7 @@ class HistoryPage extends Component {
 
   setRecordsState(records) {
     this.setState({
-      records: records
+      records: records.reverse()
     });
   }
 
