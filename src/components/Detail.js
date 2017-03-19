@@ -25,10 +25,27 @@ export const EmotionHeader = ( props ) => {
   const parseTime = timeParse("%Y-%M-%d");
   const formatTime = timeFormat("%B %d, %Y");
   const formattedDate = formatTime(parseTime(props.date))
-  return (
+
+  const emotionAndDate = (
     <div className='EmotionHeader'>
       <h1 className='EmotionName'>{props.emotion}</h1>
       <span className='EmotionDate'>{formattedDate}</span>
     </div>
   );
+
+  const emotionLoading = (
+    <div className='EmotionHeader'>
+      <span className='EmotionLoading'>…Loading Feels…</span>
+    </div>
+  );
+
+  let output = null;
+
+  if(props.date && props.emotion) {
+    output = emotionAndDate;
+  }else{
+    output = emotionLoading;
+  };
+
+  return output;
 }
