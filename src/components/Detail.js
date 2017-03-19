@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { timeParse, timeFormat } from 'd3';
 import { Sky, Sea, Aura, Hummock, Bummock, Wave } from './Scene.js';
 import classNames from 'classnames';
 import './Detail.css';
@@ -20,9 +21,14 @@ export class Detail extends Component {
   }
 };
 
-export const EmotionHeader = ( props ) => (
-  <div className='EmotionHeader'>
-    <h1 className='EmotionName'>{props.emotion}</h1>
-    <span className='EmotionDate'>{props.date}</span>
-  </div>
-);
+export const EmotionHeader = ( props ) => {
+  const parseTime = timeParse("%Y-%M-%d");
+  const formatTime = timeFormat("%B %d, %Y");
+  const formattedDate = formatTime(parseTime(props.date))
+  return (
+    <div className='EmotionHeader'>
+      <h1 className='EmotionName'>{props.emotion}</h1>
+      <span className='EmotionDate'>{formattedDate}</span>
+    </div>
+  );
+}
