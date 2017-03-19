@@ -1,0 +1,31 @@
+.DetailScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  transition: top 600ms ease-in-out;
+}
+
+.DetailScene-0 {
+  top: -43px;
+}
+.DetailScene-1 {
+  top: calc(-40% - 43px);
+}
+.DetailScene-2 {
+  top: calc(-40% - 43px);
+}
+
+.DetailScene-2 .Aura {
+  left: 35%;
+}
+
+.DetailScene-2 .Hummock {
+  left: 35%;
+}
+
+.DetailScene-2 .Bummock {
+  left: 35%;
+}

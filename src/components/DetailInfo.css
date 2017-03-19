@@ -1,4 +1,4 @@
-.Detail {
+.DetailInfo {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,14 +8,18 @@
   transition: top 600ms ease-in-out;
 }
 
-.Detail-0 {
-  top: -43px;
+.DetailInfo-0 {
 }
-.Detail-1 {
-  top: calc(-40% - 43px);
+.DetailInfo-1 {
 }
-.Detail-2 {
-  top: calc(-40% - 43px);
+.DetailInfo-2 {
+}
+
+.DetailIcon line{
+  fill: none;
+  stroke: rgba(255,255,255,0.5);
+  stroke-width: 3px;
+  stroke-linecap: round;
 }
 
 .EmotionHeader {
@@ -37,6 +41,18 @@
   text-transform: uppercase;
 }
 
-.EmotionLoading {
+.EmotionNote {
+
+}
+
+.EmotionDescription {
+
+}
+
+.EmotionAction {
+
+}
+
+.EmotionTrigger {
 
 }

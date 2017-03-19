@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
-import { EmotionHeader } from './Detail.js';
+import { EmotionHeader } from './DetailInfo.js';
 import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Form';
 import './Recorder.css';
 
@@ -63,8 +63,7 @@ export class Recorder extends Component {
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
             <div className='Recorder'>
               <EmotionHeader
-                emotion={this.props.record.emotion}
-                date={this.props.record.date}
+                record={this.props.record}
               />
             </div>
           </RecorderTransition>
