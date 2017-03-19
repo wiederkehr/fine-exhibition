@@ -18,9 +18,9 @@ class RecordPage extends Component {
       record: {
         date: '',
         name: 'Anna',
-        emotion: false,
-        trigger: false,
-        action: false,
+        emotion: '',
+        trigger: '',
+        action: '',
         arousal: 3,
         conduciveness: 3,
         controllability: 3,
