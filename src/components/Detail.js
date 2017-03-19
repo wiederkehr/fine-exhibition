@@ -22,7 +22,7 @@ export class Detail extends Component {
 };
 
 export const EmotionHeader = ( props ) => {
-  const parseTime = timeParse("%Y-%M-%d");
+  const parseTime = timeParse("%Y-%m-%d");
   const formatTime = timeFormat("%B %d, %Y");
   const formattedDate = formatTime(parseTime(props.date))
 
