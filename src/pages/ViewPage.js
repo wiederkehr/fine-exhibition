@@ -81,7 +81,7 @@ class ViewPage extends Component {
           {this.state.records.length < 1 ? "Loading emotions…" : null }
           {records}
         </LayoutContent>
-        <Footer/>
+        <Footer border/>
       </LayoutContainer>
     );
   }

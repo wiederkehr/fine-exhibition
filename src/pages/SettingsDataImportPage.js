@@ -16,7 +16,7 @@ class SettingsDataImportPage extends Component {
           <p>You can import data using a simple CSV file.</p>
           <Button type="button">Upload Data</Button>
         </LayoutContent>
-        <Footer/>
+        <Footer border/>
       </LayoutContainer>
     );
   }

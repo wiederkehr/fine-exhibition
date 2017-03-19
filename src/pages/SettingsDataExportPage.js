@@ -16,7 +16,7 @@ class SettingsDataExportPage extends Component {
           <p>You can export your data as a CSV file.</p>
           <Button type="button">Download Data</Button>
         </LayoutContent>
-        <Footer/>
+        <Footer border/>
       </LayoutContainer>
     );
   }

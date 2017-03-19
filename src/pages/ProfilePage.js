@@ -21,7 +21,7 @@ class ProfilePage extends Component {
           <ProfileListItem emotion='Intensity' adjective='intense' most='12.3.2016' least='07.3.2016'/>
           <ProfileListItem emotion='Valence' adjective='valence' most='12.3.2016' least='07.3.2016'/>
         </LayoutContent>
-        <Footer/>
+        <Footer border/>
       </LayoutContainer>
     );
   }

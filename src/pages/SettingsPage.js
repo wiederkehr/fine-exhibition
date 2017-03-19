@@ -31,7 +31,7 @@ class SettingsPage extends Component {
               </List>
             </ListGroup>
           </LayoutContent>
-          <Footer/>
+          <Footer border/>
         </LayoutContainer>
     );
   }
