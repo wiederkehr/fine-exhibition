@@ -1,7 +1,10 @@
 .Footer {
   background-color: var(--white);
-  box-shadow: 0 -1px 0 rgba(240,240,240,1);
   display: flex;
+}
+
+.Footer--border {
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.08);
 }
 
 .FooterAction {

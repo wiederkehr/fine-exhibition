@@ -4,8 +4,12 @@ import { Link } from 'react-router';
 import { LayoutFooter } from '../components/Layout';
 import './Footer.css';
 
-export const Footer = ( transparent ) => {
-  const classes = classNames('Footer', transparent === true ? 'Footer--transparent' : null);
+export const Footer = ({border, transparent}) => {
+  const classes = classNames({
+    'Footer' : true,
+    'Footer--border' : border,
+    'Footer--transparent' : transparent,
+  });
   return (
     <LayoutFooter className={classes}>
       <FooterAction to='#'>Home</FooterAction>
