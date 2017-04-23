@@ -3,16 +3,6 @@ import { timeParse, timeFormat } from 'd3';
 import classNames from 'classnames';
 import './DetailInfo.css';
 
-const DetailIcon = () => (
-  <svg className='DetailIcon' width='24' height='24'>
-    <g>
-      <line x1="2" y1="2" x2="22" y2="2"/>
-      <line x1="2" y1="8" x2="22" y2="8"/>
-      <line x1="2" y1="14" x2="12" y2="14"/>
-    </g>
-  </svg>
-);
-
 export const EmotionHeader = ( props ) => {
   const parseTime = timeParse("%Y-%m-%d");
   const formatTime = timeFormat("%B %d, %Y");
