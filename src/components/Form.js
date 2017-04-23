@@ -1,71 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Slider } from './Slider.js';
 import './Form.css';
 
-export class EmotionForm extends Component {
-  render() {
-    return (
-      <form className='Form' onSubmit={this.props.onSubmit}>
-        <label className='Input-label'>Emotion</label>
-        <input className='Input-text'
-               type='text'
-               value={ this.props.record.emotion ? this.props.record.emotion : ''}
-               onChange={this.props.onChange.bind(null, 'emotion')} />
-      </form>
-    )
-  }
-}
+export const EmotionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <label className='Input-label'>Emotion</label>
+    <input className='Input-text'
+           type='text'
+           value={ props.record.emotion ? props.record.emotion : ''}
+           onChange={props.onChange.bind(null, 'emotion')} />
+  </form>
+);
 
-export class TriggerForm extends Component {
-  render() {
-    return (
-      <form className='Form' onSubmit={this.props.onSubmit}>
-        <label className='Input-label'>Trigger</label>
-        <input className='Input-text'
-               type='text'
-               value={ this.props.record.trigger ? this.props.record.trigger : ''}
-               onChange={this.props.onChange.bind(null, 'trigger')} />
-      </form>
-    )
-  }
-}
+export const TriggerForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <label className='Input-label'>Trigger</label>
+    <input className='Input-text'
+           type='text'
+           value={ props.record.trigger ? props.record.trigger : ''}
+           onChange={props.onChange.bind(null, 'trigger')} />
+  </form>
+);
 
-export class ActionForm extends Component {
-  render() {
-    return (
-      <form className='Form' onSubmit={this.props.onSubmit}>
-        <label className='Input-label'>Action</label>
-        <input className='Input-text'
-               type='text'
-               value={ this.props.record.action ? this.props.record.action : ''}
-               onChange={this.props.onChange.bind(null, 'action')} />
-      </form>
-    )
-  }
-}
+export const ActionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <label className='Input-label'>Action</label>
+    <input className='Input-text'
+           type='text'
+           value={ props.record.action ? props.record.action : ''}
+           onChange={props.onChange.bind(null, 'action')} />
+  </form>
+);
 
-export class DimensionsForm extends Component {
-  render() {
-    return (
-      <form className='Form' onSubmit={this.props.onSubmit}>
-        <div className='Slider-group'>
-          <Slider name='Arousal'
-                  value={this.props.record.arousal}
-                  onChange={this.props.onChange.bind(null, 'arousal')} />
-          <Slider name='Conduciveness'
-                  value={this.props.record.conduciveness}
-                  onChange={this.props.onChange.bind(null, 'conduciveness')} />
-          <Slider name='Controllability'
-                  value={this.props.record.controllability}
-                  onChange={this.props.onChange.bind(null, 'controllability')} />
-          <Slider name='Intensity'
-                  value={this.props.record.intensity}
-                  onChange={this.props.onChange.bind(null, 'intensity')} />
-          <Slider name='Valence'
-                  value={this.props.record.valence}
-                  onChange={this.props.onChange.bind(null, 'valence')} />
-        </div>
-      </form>
-    )
-  }
-}
+export const DimensionsForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <div className='Slider-group'>
+      <Slider name='Arousal'
+              value={props.record.arousal}
+              onChange={props.onChange.bind(null, 'arousal')} />
+      <Slider name='Conduciveness'
+              value={props.record.conduciveness}
+              onChange={props.onChange.bind(null, 'conduciveness')} />
+      <Slider name='Controllability'
+              value={props.record.controllability}
+              onChange={props.onChange.bind(null, 'controllability')} />
+      <Slider name='Intensity'
+              value={props.record.intensity}
+              onChange={props.onChange.bind(null, 'intensity')} />
+      <Slider name='Valence'
+              value={props.record.valence}
+              onChange={props.onChange.bind(null, 'valence')} />
+    </div>
+  </form>
+);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { EmotionHeader } from './DetailInfo.js';
-import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Form';
+import { ActionRecorder, EmotionRecorder, DimensionsRecorder, TriggerRecorder } from '../components/Recorders';
 import './Recorder.css';
 
 export class Recorder extends Component {
@@ -10,52 +10,41 @@ export class Recorder extends Component {
       case 0:
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
-            <div className='Recorder'>
-              <h2 className='RecorderHeadline'>How are you feeling?</h2>
-              <EmotionForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
-            </div>
+            <EmotionRecorder
+              record={this.props.record}
+              onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
+            />
           </RecorderTransition>
         )
       case 1:
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
-            <div className='Recorder'>
-              <DimensionsForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
-            </div>
+            <DimensionsRecorder
+              record={this.props.record}
+              onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
+            />
           </RecorderTransition>
         )
       case 2:
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
-            <div className='Recorder'>
-              <h2 className='RecorderHeadline'>What made you feel that way?</h2>
-              <TriggerForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
-            </div>
+            <TriggerRecorder
+              record={this.props.record}
+              onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
+            />
           </RecorderTransition>
         )
       case 3:
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
-            <div className='Recorder'>
-              <h2 className='RecorderHeadline'>How did you react?</h2>
-              <ActionForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
-            </div>
+            <ActionRecorder
+              record={this.props.record}
+              onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
+            />
           </RecorderTransition>
         )
       case 4:
