@@ -30,13 +30,6 @@ const EmotionNote = ( props ) => {
   );
 }
 
-
-const EmotionDescription = ( props ) => (
-  <div className='EmotionDescription'>
-    <p>{ props.text ? props.text : 'Emotion Description'}</p>
-  </div>
-);
-
 const EmotionAction = ( props ) => (
   <div className='EmotionAction'>
     <p>{ props.text ? props.text : 'Emotion Actions'}</p>
@@ -63,7 +56,6 @@ export class DetailInfo extends Component {
       <div className={classes}>
         {header}
         {this.props.level > 0 ? <EmotionNote text={this.props.record.event} /> : null}
-        {this.props.level > 1 ? <EmotionDescription text={this.props.record.description} /> : null}
         {this.props.level > 1 ? <EmotionAction text={this.props.record.action} /> : null}
         {this.props.level > 1 ? <EmotionTrigger text={this.props.record.trigger} /> : null}
       </div>
