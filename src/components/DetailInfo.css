@@ -9,10 +9,13 @@
 }
 
 .DetailInfo-0 {
+  top: -43px;
 }
 .DetailInfo-1 {
+  top: calc(-40% - 43px);
 }
 .DetailInfo-2 {
+  top: calc(-40% - 43px);
 }
 
 .EmotionHeader {
@@ -35,7 +38,13 @@
 }
 
 .EmotionNote {
-
+  bottom: 0px;
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  width: calc(100% - var(--horizontal-padding) * 2);
 }
 
 .EmotionDescription {

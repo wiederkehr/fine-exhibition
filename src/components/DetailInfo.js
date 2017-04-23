@@ -22,27 +22,30 @@ const EmotionHeaderLoading = () => (
   </div>
 );
 
-const EmotionNote = ( text ) => (
-  <div className='EmotionNote'>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
-);
+const EmotionNote = ( props ) => {
+  return (
+    <div className='EmotionNote'>
+      <p>{ props.text ? props.text : false}</p>
+    </div>
+  );
+}
 
-const EmotionDescription = ( text ) => (
+
+const EmotionDescription = ( props ) => (
   <div className='EmotionDescription'>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>{ props.text ? props.text : 'Emotion Description'}</p>
   </div>
 );
 
-const EmotionAction = ( text ) => (
+const EmotionAction = ( props ) => (
   <div className='EmotionAction'>
-    <p>Yell, Insult, Fight</p>
+    <p>{ props.text ? props.text : 'Emotion Actions'}</p>
   </div>
 );
 
-const EmotionTrigger = ( text ) => (
+const EmotionTrigger = ( props ) => (
   <div className='EmotionTrigger'>
-    <p>Yell, Insult, Fight</p>
+    <p>{ props.text ? props.text : 'Emotion Triggers'}</p>
   </div>
 );
 
@@ -59,8 +62,8 @@ export class DetailInfo extends Component {
     return (
       <div className={classes}>
         {header}
-        {this.props.level > 0 ? <EmotionNote text={this.props.record.note} /> : null}
-        {this.props.level > 1 ? <EmotionDescription text={this.props.record.note} /> : null}
+        {this.props.level > 0 ? <EmotionNote text={this.props.record.event} /> : null}
+        {this.props.level > 1 ? <EmotionDescription text={this.props.record.description} /> : null}
         {this.props.level > 1 ? <EmotionAction text={this.props.record.action} /> : null}
         {this.props.level > 1 ? <EmotionTrigger text={this.props.record.trigger} /> : null}
       </div>

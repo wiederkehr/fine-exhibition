@@ -28,7 +28,7 @@ class HistoryPage extends Component {
           valence: 3
         },
       ],
-      level: 1,
+      level: 0,
       currentDay: 0
     }
 
