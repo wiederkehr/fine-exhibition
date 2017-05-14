@@ -1,18 +1,53 @@
-import React from 'react';
-import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Form';
+import React, { Component } from 'react';
+import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Forms';
+import { Button, SecondaryButton } from '../components/Button';
 import './Recorder.css';
 
-export const EmotionRecorder = ( props ) => {
-  return (
-    <div className='Recorder'>
-      <h2 className='RecorderHeadline'>How are you feeling?</h2>
-      <EmotionForm
-        record={props.record}
-        onChange={props.onChange}
-        onSubmit={props.onSubmit}
-      />
+export class EmotionRecorder extends Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      predefined: true
+    }
+    this.togglePredefined = this.togglePredefined.bind(this);
+  };
+
+  togglePredefined() {
+    this.setState({ predefined: !this.state.predefined });
+  };
+
+  render() {
+    const SelfdefinedEmotion = (
+      <div className='Recorder'>
+        <h2 className='RecorderHeadline'>How are you feeling?</h2>
+        <EmotionForm
+          record={this.props.record}
+          onChange={this.props.onChange}
+          onSubmit={this.props.onSubmit}
+        />
+        <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
     </div>
-  )
+    )
+
+    const PredefinedEmotion = (
+      <div className='Recorder'>
+        <h2 className='RecorderHeadline'>Here are a few basic emotions:</h2>
+        <ul>
+          <li>Joy</li>
+          <li>Trust</li>
+          <li>Fear</li>
+          <li>Surprise</li>
+          <li>Sadness</li>
+          <li>Disgust</li>
+          <li>Anger</li>
+          <li>Anticipation</li>
+        </ul>
+        <SecondaryButton onClick={this.togglePredefined}>Done</SecondaryButton>
+      </div>
+    )
+
+    return this.state.predefined ? SelfdefinedEmotion : PredefinedEmotion;
+  }
 }
 
 export const DimensionsRecorder = ( props ) => {
