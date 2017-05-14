@@ -4,7 +4,6 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { DetailScene } from '../components/DetailScene';
 import { DetailInfo } from '../components/DetailInfo';
-import { DetailIcon } from '../components/DetailIcon';
 import { Navigation } from '../components/Navigation';
 
 import './HistoryPage.css';

@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { EmotionHeader } from './DetailInfo.js';
+import React from 'react';
 import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Form';
 import './Recorder.css';
 
