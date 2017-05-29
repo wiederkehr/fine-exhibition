@@ -79,6 +79,7 @@ class RecordPage extends Component {
   }
 
   onChange(field, event) {
+    console.log(field+':', event.target.value);
     var newState = update(this.state, {
       record: {
         [field]: { $set: event.target.value }
