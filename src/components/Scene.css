@@ -36,10 +36,33 @@
   width: calc(var(--square) - 120px);
   transition: all 400ms;
 }
-.Bummock .injected-svg {
+.Bummock .injected-svg,
+.Bummock--1 .injected-svg {
   height: auto;
   position: absolute;
   width: 100%;
+}
+
+.Bummock--2 .injected-svg {
+  width: 90%;
+}
+.Bummock--2 div:first-of-type > div > .injected-svg {
+  left: 0;
+}
+.Bummock--2 div:last-of-type > div > .injected-svg {
+  right: 0;
+}
+
+.Bummock--3 .injected-svg {
+  width: 80%;
+  left: 10%;
+}
+.Bummock--3 div:first-of-type > div > .injected-svg {
+  left: 0;
+}
+.Bummock--3 div:last-of-type > div > .injected-svg {
+  left: auto;
+  right: 0;
 }
 
 .Wave {

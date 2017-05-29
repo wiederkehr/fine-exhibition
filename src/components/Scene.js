@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
+import classNames from 'classnames';
 import { scaleLinear } from 'd3-scale';
 import './Scene.css';
 
@@ -55,7 +56,7 @@ export const Bummock = ({ record }) => {
   });
 
   return (
-    <div className='Bummock'>
+    <div className={ classNames('Bummock', 'Bummock--' + triggers.length) }>
       { allTriggers }
     </div>
   )
