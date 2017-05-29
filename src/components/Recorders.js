@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Forms';
-import { Button, SecondaryButton } from '../components/Button';
+import { SecondaryButton } from '../components/Button';
+import { SelectorList, Selector } from '../components/Selector';
 import './Recorder.css';
 
 export class EmotionRecorder extends Component {
@@ -10,9 +11,15 @@ export class EmotionRecorder extends Component {
       predefined: true
     }
     this.togglePredefined = this.togglePredefined.bind(this);
+    this.selectEmotion = this.selectEmotion.bind(this);
   };
 
   togglePredefined() {
+    this.setState({ predefined: !this.state.predefined });
+  };
+
+  selectEmotion(label) {
+    console.log(label);
     this.setState({ predefined: !this.state.predefined });
   };
 
@@ -31,17 +38,16 @@ export class EmotionRecorder extends Component {
     const PredefinedEmotion = (
       <div className='Recorder'>
         <h2 className='RecorderHeadline'>Here are a few basic emotions:</h2>
-        <ul>
-          <li>Joy</li>
-          <li>Trust</li>
-          <li>Fear</li>
-          <li>Surprise</li>
-          <li>Sadness</li>
-          <li>Disgust</li>
-          <li>Anger</li>
-          <li>Anticipation</li>
-        </ul>
-        <SecondaryButton onClick={this.togglePredefined}>Done</SecondaryButton>
+        <SelectorList>
+          <Selector onClick={this.selectEmotion}>Joy</Selector>
+          <Selector onClick={this.selectEmotion}>Trust</Selector>
+          <Selector onClick={this.selectEmotion}>Fear</Selector>
+          <Selector onClick={this.selectEmotion}>Surprise</Selector>
+          <Selector onClick={this.selectEmotion}>Sadness</Selector>
+          <Selector onClick={this.selectEmotion}>Disgust</Selector>
+          <Selector onClick={this.selectEmotion}>Anger</Selector>
+          <Selector onClick={this.selectEmotion}>Anticipation</Selector>
+        </SelectorList>
       </div>
     )
 
