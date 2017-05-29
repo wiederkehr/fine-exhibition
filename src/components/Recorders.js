@@ -23,7 +23,6 @@ export class EmotionRecorder extends Component {
         <EmotionForm
           record={this.props.record}
           onChange={this.props.onChange}
-          onSubmit={this.props.onSubmit}
         />
         <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
     </div>
@@ -56,7 +55,6 @@ export const DimensionsRecorder = ( props ) => {
       <DimensionsForm
         record={props.record}
         onChange={props.onChange}
-        onSubmit={props.onSubmit}
       />
     </div>
   )
@@ -69,7 +67,6 @@ export const TriggerRecorder = ( props ) => {
       <TriggerForm
         record={props.record}
         onChange={props.onChange}
-        onSubmit={props.onSubmit}
       />
     </div>
   )
@@ -82,7 +79,6 @@ export const ActionRecorder = ( props ) => {
       <ActionForm
         record={props.record}
         onChange={props.onChange}
-        onSubmit={props.onSubmit}
       />
     </div>
   )

@@ -13,7 +13,6 @@ export class Recorder extends Component {
             <EmotionRecorder
               record={this.props.record}
               onChange={this.props.onChange}
-              onSubmit={this.props.onSubmit}
             />
           </RecorderTransition>
         )
@@ -23,7 +22,6 @@ export class Recorder extends Component {
             <DimensionsRecorder
               record={this.props.record}
               onChange={this.props.onChange}
-              onSubmit={this.props.onSubmit}
             />
           </RecorderTransition>
         )
@@ -33,7 +31,6 @@ export class Recorder extends Component {
             <TriggerRecorder
               record={this.props.record}
               onChange={this.props.onChange}
-              onSubmit={this.props.onSubmit}
             />
           </RecorderTransition>
         )
@@ -43,7 +40,6 @@ export class Recorder extends Component {
             <ActionRecorder
               record={this.props.record}
               onChange={this.props.onChange}
-              onSubmit={this.props.onSubmit}
             />
           </RecorderTransition>
         )

@@ -3,7 +3,7 @@ import { Slider } from './Slider.js';
 import './Form.css';
 
 export const EmotionForm = ( props ) => (
-  <form className='Form' onSubmit={props.onSubmit}>
+  <form className='Form'>
     <label className='Input-label'>Emotion</label>
     <input className='Input-text'
            type='text'
@@ -13,7 +13,7 @@ export const EmotionForm = ( props ) => (
 );
 
 export const TriggerForm = ( props ) => (
-  <form className='Form' onSubmit={props.onSubmit}>
+  <form className='Form'>
     <label className='Input-label'>Trigger</label>
     <input className='Input-text'
            type='text'
@@ -23,7 +23,7 @@ export const TriggerForm = ( props ) => (
 );
 
 export const ActionForm = ( props ) => (
-  <form className='Form' onSubmit={props.onSubmit}>
+  <form className='Form'>
     <label className='Input-label'>Action</label>
     <input className='Input-text'
            type='text'
@@ -33,7 +33,7 @@ export const ActionForm = ( props ) => (
 );
 
 export const DimensionsForm = ( props ) => (
-  <form className='Form' onSubmit={props.onSubmit}>
+  <form className='Form'>
     <div className='Slider-group'>
       <Slider name='Arousal'
               value={props.record.arousal}
