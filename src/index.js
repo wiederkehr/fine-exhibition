@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-
-import reducer from './reducers';
 
 import App from './modules/App';
 import Styleguide from './modules/Styleguide';
@@ -25,60 +21,56 @@ import ViewPage from './pages/ViewPage';
 import 'normalize.css';
 import './index.css';
 
-const store = createStore(reducer);
-
 const NotFound = () => (<div className="App-content"><p>404.. This page is not found!</p></div>)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route component={App}>
-        <IndexRoute
-          title="Home"
-          component={HomePage}
-        />
-        <Route
-          path="/"
-          title="Home"
-          component={HomePage}
-        />
-        <Route
-          path="/history"
-          title="History"
-          component={HistoryPage}
-        />
-        <Route path="/profile">
-          <IndexRoute title="Profile" component={ProfilePage} />
-          <Route path="/profile/settings">
-            <IndexRoute title="Settings" component={SettingsPage} />
-            <Route path="/settings/notifications" title="Notifications" component={SettingsNotificationsPage} />
-            <Route path="/settings/about" title="About" component={SettingsAboutPage} />
-            <Route path="/settings/disclaimer" title="Disclaimer" component={SettingsDisclaimerPage} />
-            <Route path="/settings/imprint" title="Imprint" component={SettingsImprintPage} />
-            <Route path="/settings/import" title="Import" component={SettingsDataImportPage} />
-            <Route path="/settings/export" title="Export" component={SettingsDataExportPage} />
-          </Route>
+  <Router history={browserHistory}>
+    <Route component={App}>
+      <IndexRoute
+        title="Home"
+        component={HomePage}
+      />
+      <Route
+        path="/"
+        title="Home"
+        component={HomePage}
+      />
+      <Route
+        path="/history"
+        title="History"
+        component={HistoryPage}
+      />
+      <Route path="/profile">
+        <IndexRoute title="Profile" component={ProfilePage} />
+        <Route path="/profile/settings">
+          <IndexRoute title="Settings" component={SettingsPage} />
+          <Route path="/settings/notifications" title="Notifications" component={SettingsNotificationsPage} />
+          <Route path="/settings/about" title="About" component={SettingsAboutPage} />
+          <Route path="/settings/disclaimer" title="Disclaimer" component={SettingsDisclaimerPage} />
+          <Route path="/settings/imprint" title="Imprint" component={SettingsImprintPage} />
+          <Route path="/settings/import" title="Import" component={SettingsDataImportPage} />
+          <Route path="/settings/export" title="Export" component={SettingsDataExportPage} />
         </Route>
-        <Route
-          path="/record"
-          title="Record"
-          component={RecordPage}
-        />
-        <Route
-          path="/view"
-          title="View"
-          component={ViewPage}
-        />
       </Route>
       <Route
-        path="/styleguide"
-        component={Styleguide}
+        path="/record"
+        title="Record"
+        component={RecordPage}
       />
       <Route
-        path='*'
-        component={NotFound}
+        path="/view"
+        title="View"
+        component={ViewPage}
       />
-    </Router>
-  </Provider>,
+    </Route>
+    <Route
+      path="/styleguide"
+      component={Styleguide}
+    />
+    <Route
+      path='*'
+      component={NotFound}
+    />
+  </Router>,
   document.getElementById('root')
 );
