@@ -66,3 +66,62 @@ export class ToggleGroup extends Component {
     );
   };
 };
+
+export class SelectGroup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedIndices: [],
+      selectedValues: [],
+      options: this.props.options
+    };
+    this.toggleButton = this.toggleButton.bind(this);
+  };
+
+  toggleButton(event, index) {
+
+    let newIndices = this.state.selectedIndices.slice();
+    let position = newIndices.indexOf(index);
+    position === -1 ? newIndices.push(index) : newIndices.splice(position, 1);
+    newIndices.length > 3 ? newIndices.shift() : false;
+
+    let newValues = [];
+    newIndices.map((index) => {
+      newValues.push(this.state.options[index]);
+    });
+
+    this.setState({
+      selectedIndices: newIndices,
+      selectedValues: newValues
+    });
+
+    let newEvent = {target: {value: newValues}};
+    this.props.onChange(newEvent);
+  };
+
+  render() {
+
+    let allButtons = this.state.options.map((option, i) => {
+
+      let position = this.state.selectedIndices.indexOf(i);
+      let isActive = null;
+      position === -1 ? isActive = false : isActive = true;
+
+      return (
+        <ToggleButtonRow key={i}>
+          <ToggleButton
+            index={i}
+            value={option}
+            onClick={this.toggleButton}
+            isActive={isActive}/>
+        </ToggleButtonRow>
+      )
+    });
+
+    return (
+      <div className="ToggleGroup">
+        { allButtons }
+      </div>
+    );
+  };
+};

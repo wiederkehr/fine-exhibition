@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slider } from './Slider.js';
-import { ToggleGroup } from '../components/Toggle.js';
+import { ToggleGroup, SelectGroup } from '../components/Toggle.js';
 import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
@@ -17,7 +17,6 @@ export const EmotionSelectionForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <ToggleGroup
       onChange={props.onChange.bind(null, 'emotion')}
-      multiselect={false}
       options={[
         'Joy',
         'Trust',
@@ -60,15 +59,14 @@ export const DimensionsForm = ( props ) => (
 
 export const TriggerForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
-    <ToggleGroup
+    <SelectGroup
       onChange={props.onChange.bind(null, 'trigger')}
-      multiselect={true}
       options={[
         'Person',
         'Place',
-        'Nature',
+        'Thing',
         'Activity',
-        'Not sure'
+        'Other'
       ]} />
   </form>
 );
@@ -77,7 +75,6 @@ export const ActionForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <ToggleGroup
       onChange={props.onChange.bind(null, 'action')}
-      multiselect={false}
       options={[
         'Engage',
         'Suppress',
