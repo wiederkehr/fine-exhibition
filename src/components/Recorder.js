@@ -58,9 +58,7 @@ export class Recorder extends Component {
           </RecorderTransition>
         )
       default:
-        return (
-          <div className='Recorder'>Default</div>
-        )
+        return <div className='Recorder'>Default</div>
     }
   }
 }
