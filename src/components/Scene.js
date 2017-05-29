@@ -45,12 +45,18 @@ export const Hummock = ({ record }) => {
 };
 
 export const Bummock = ({ record }) => {
-  // const filename = trigger;
-  const filename = 'T1_1';
-  const path = 'assets/vectors/bummock/' + filename + '.svg';
+  const triggers = record.trigger;
+  const allTriggers = triggers.map((trigger, i) => {
+    const filename = 'T' + ( 3 - i) + '_' + record.trigger[i];
+    const path = 'assets/vectors/bummock/' + filename + '.svg';
+    return (
+      <ReactSVG path={ path } key={ i }/>
+    )
+  });
+
   return (
     <div className='Bummock'>
-      <ReactSVG path={ path } />
+      { allTriggers }
     </div>
   )
 };
