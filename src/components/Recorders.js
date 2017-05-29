@@ -35,6 +35,7 @@ export class EmotionRecorder extends Component {
           onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
         />
+        <SecondaryButton onClick={this.togglePredefined}>Go back</SecondaryButton>
       </div>
     );
 
