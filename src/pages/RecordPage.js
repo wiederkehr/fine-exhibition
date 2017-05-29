@@ -90,7 +90,6 @@ class RecordPage extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    // console.log(this.state);
     this.setState({ status: 'Sending…' }, this.sendRecord);
   }
 
