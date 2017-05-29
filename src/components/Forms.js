@@ -1,5 +1,6 @@
 import React from 'react';
 import { Slider } from './Slider.js';
+import { ToggleButton } from '../components/Button';
 import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
@@ -9,6 +10,19 @@ export const EmotionEntryForm = ( props ) => (
            type='text'
            value={ props.record.emotion ? props.record.emotion : ''}
            onChange={props.onChange.bind(null, 'emotion')} />
+  </form>
+);
+
+export const EmotionSelectionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Joy</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Trust</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Fear</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Surprise</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Sadness</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Disgust</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Anger</ToggleButton>
+    <ToggleButton onClick={props.onChange.bind(null, 'emotion')}>Anticipation</ToggleButton>
   </form>
 );
 

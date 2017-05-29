@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
-import { ActionForm, EmotionForm, DimensionsForm, TriggerForm } from '../components/Forms';
+import { ActionForm, EmotionEntryForm, EmotionSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
 import { SecondaryButton } from '../components/Button';
-import { SelectorList, Selector } from '../components/Selector';
 import './Recorder.css';
 
 export class EmotionRecorder extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      predefined: true
-    }
+    this.state = {predefined: true};
     this.togglePredefined = this.togglePredefined.bind(this);
-    this.selectEmotion = this.selectEmotion.bind(this);
   };
 
   togglePredefined() {
-    this.setState({ predefined: !this.state.predefined });
-  };
-
-  selectEmotion(label) {
-    console.log(label);
     this.setState({ predefined: !this.state.predefined });
   };
 
@@ -27,30 +18,25 @@ export class EmotionRecorder extends Component {
     const SelfdefinedEmotion = (
       <div className='Recorder'>
         <h2 className='RecorderHeadline'>How are you feeling?</h2>
-        <EmotionForm
+        <EmotionEntryForm
           record={this.props.record}
           onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
         />
         <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
-    </div>
-    )
+      </div>
+    );
 
     const PredefinedEmotion = (
       <div className='Recorder'>
         <h2 className='RecorderHeadline'>Here are a few basic emotions:</h2>
-        <SelectorList>
-          <Selector onClick={this.selectEmotion}>Joy</Selector>
-          <Selector onClick={this.selectEmotion}>Trust</Selector>
-          <Selector onClick={this.selectEmotion}>Fear</Selector>
-          <Selector onClick={this.selectEmotion}>Surprise</Selector>
-          <Selector onClick={this.selectEmotion}>Sadness</Selector>
-          <Selector onClick={this.selectEmotion}>Disgust</Selector>
-          <Selector onClick={this.selectEmotion}>Anger</Selector>
-          <Selector onClick={this.selectEmotion}>Anticipation</Selector>
-        </SelectorList>
+        <EmotionSelectionForm
+          record={this.props.record}
+          onChange={this.props.onChange}
+          onSubmit={this.props.onSubmit}
+        />
       </div>
-    )
+    );
 
     return this.state.predefined ? SelfdefinedEmotion : PredefinedEmotion;
   }
