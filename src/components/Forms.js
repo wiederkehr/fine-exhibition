@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slider } from './Slider.js';
-import { ToggleGroup } from '../components/Button';
+import { ToggleGroup } from '../components/Toggle.js';
 import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
