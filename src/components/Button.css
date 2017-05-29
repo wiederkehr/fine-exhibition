@@ -52,7 +52,7 @@
   border: 2px solid var(--white);
   border-radius: 4px;
   color: var(--white);
-  display: inline-block;
+  display: block;
   font-family: var(--regular-font-family);
   font-size: 16px;
   padding: 5px 10px;
