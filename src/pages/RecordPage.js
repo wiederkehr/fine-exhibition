@@ -19,7 +19,7 @@ class RecordPage extends Component {
         date: '',
         name: 'Anna',
         emotion: '',
-        trigger: '',
+        trigger: [],
         action: '',
         arousal: 3,
         conduciveness: 3,
