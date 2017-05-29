@@ -33,7 +33,7 @@
   color: transparent;
   cursor: pointer;
   display: block;
-  font-family: var(--regular-font-family);
+  font-family: var(--font-family);
   font-size: 0;
   height: 24px;
   width: 24px;

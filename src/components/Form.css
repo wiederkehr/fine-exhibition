@@ -18,7 +18,7 @@
   border-bottom: 2px solid var(--white);
   border-radius: 0;
   color: var(--white);
-  font-family: var(--regular-font-family);
+  font-family: var(--font-family);
   margin: 0 0 10px;
   outline: 0;
   padding: 5px 0;
@@ -30,7 +30,7 @@
 }
 
 .Input-date {
-  font-family: var(--regular-font-family);
+  font-family: var(--font-family);
   background: none;
   border: none;
   border-bottom: 2px solid var(--white);
