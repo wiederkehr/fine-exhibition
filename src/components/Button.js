@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import './Button.css';
 
-export const Button = ({ disabled, onClick, type, style, children }) => (
+export const PrimaryButton = ({ disabled, onClick, type, style, children }) => (
   <button
     className={ classNames('Button', 'PrimaryButton') }
     disabled={disabled}

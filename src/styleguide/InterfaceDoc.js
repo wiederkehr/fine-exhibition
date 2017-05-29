@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page, ReactSpecimen } from 'catalog';
 
-import { Button } from '../components/Button';
+import { PrimaryButton } from '../components/Button';
 import { Slider } from '../components/Slider';
 import { Switch } from '../components/Switch';
 import { Header } from '../components/Header';
@@ -32,9 +32,9 @@ export default () => (
         transparent={false}
       />
     </ReactSpecimen>
-    <h2>Button</h2>
+    <h2>PrimaryButton</h2>
     <ReactSpecimen noSource span={3}>
-      <Button type="button">Button</Button>
+      <PrimaryButton type="button">PrimaryButton</PrimaryButton>
     </ReactSpecimen>
     <h2>Switch</h2>
     <h3>Switch Active and Passive</h3>
