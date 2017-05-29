@@ -25,8 +25,7 @@ export const Sky = ({ record }) => {
 };
 
 export const Aura = ({ record }) => {
-  // const filename = record.action;
-  const filename = 'A_Engage';
+  const filename = 'A_' + record.action;
   const path = 'assets/vectors/aura/' + filename + '.svg';
   return (
     <div className='Aura'>
