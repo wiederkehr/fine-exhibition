@@ -34,6 +34,7 @@
   --s: 5px;
   --m: 10px;
   --l: 20px;
+  text-align: center;
 }
 
 .LayoutRow.Top-s { margin-top: var(--s)}
