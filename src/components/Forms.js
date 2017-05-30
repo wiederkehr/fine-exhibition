@@ -5,11 +5,12 @@ import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
-    <input className='Input-text'
-           type='text'
-           value={ props.record.emotion ? props.record.emotion : ''}
-           placeholder='Type Emotion'
-           onChange={props.onChange.bind(null, 'emotion')} />
+    <input
+      className='Input-text'
+      type='text'
+      value={ props.record.emotion ? props.record.emotion : ''}
+      placeholder='Type Emotion'
+      onChange={props.onChange.bind(null, 'emotion')} />
   </form>
 );
 
@@ -27,6 +28,23 @@ export const EmotionSelectionForm = ( props ) => (
         'Disgust',
         'Anger',
         'Anticipation'
+      ]} />
+  </form>
+);
+
+export const EmotionSubSelectionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <ToggleGroup
+      onChange={props.onChange.bind(null, 'emotion')}
+      selection={props.record.emotion}
+      options={[
+        'Love',
+        'Serenity',
+        'Delight',
+        'Pride',
+        'Optimism',
+        'Morbidness',
+        'Guilt'
       ]} />
   </form>
 );

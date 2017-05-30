@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
-import { ActionForm, EmotionEntryForm, EmotionSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
+import { ActionForm, EmotionEntryForm, EmotionSelectionForm, EmotionSubSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
 import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
+import { ToggleButton } from '../components/Toggle';
 import './Recorder.css';
 
 export class EmotionRecorder extends Component {
   constructor(props) {
     super(props);
-    this.state = {predefined: true};
-    this.togglePredefined = this.togglePredefined.bind(this);
+    this.state = {
+      type: 'entry',
+      selection: null
+    };
+    this.toggleType = this.toggleType.bind(this);
   };
 
-  togglePredefined() {
-    this.setState({ predefined: !this.state.predefined });
+  toggleType(t) {
+    this.setState({ type: t });
   };
 
   render() {
-    const SelfdefinedEmotion = (
+
+    const EmotionEntry = (
       <div className='Recorder'>
         <h2 className='RecorderHeadline'>How're ya feeling?</h2>
         <EmotionEntryForm
@@ -25,26 +30,67 @@ export class EmotionRecorder extends Component {
           onSubmit={this.props.onSubmit}
         />
         <LayoutRow top='l'>
-          <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
+          <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
         </LayoutRow>
       </div>
     );
 
-    const PredefinedEmotion = (
+    const EmotionSelection = (
       <div className='Recorder'>
         <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
         <EmotionSelectionForm
           record={this.props.record}
-          onChange={this.props.onChange}
+          onChange={(field, event) => {
+            this.setState({ selection: event.target.value });
+            this.props.onChange(field, event);
+            this.toggleType('subselection');
+          }}
+          onSubmit={this.props.onSubmit}
+        />
+      </div>
+    );
+
+    const EmotionSubSelection = (
+      <div className='Recorder'>
+        <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
+        <LayoutRow top='l' bottom='l'>
+          <ToggleButton
+            value={this.state.selection}
+            disabled={true}
+            onClick={false}
+            isActive={true}/>
+        </LayoutRow>
+        <EmotionSubSelectionForm
+          record={this.props.record}
+          onChange={(field, event) => {
+            this.props.onChange(field, event);
+            this.toggleType('entry');
+          }}
           onSubmit={this.props.onSubmit}
         />
         <LayoutRow top='l'>
-          <SecondaryButton onClick={this.togglePredefined}>Go back</SecondaryButton>
+          <SecondaryButton
+            onClick={() => {
+              this.props.onChange('emotion', {target: {value: this.state.selection}});
+              this.toggleType('entry');
+            }}
+          >
+            Nope
+          </SecondaryButton>
         </LayoutRow>
       </div>
     );
 
-    return this.state.predefined ? SelfdefinedEmotion : PredefinedEmotion;
+    switch (this.state.type) {
+      case 'entry':
+        return EmotionEntry
+      case 'selection':
+        return EmotionSelection
+      case 'subselection':
+        return EmotionSubSelection
+      default:
+        return EmotionEntry
+    }
   }
 }
 
