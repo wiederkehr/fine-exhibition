@@ -32,7 +32,7 @@ export const DimensionSlider = ({ name, value, labels, onChange }) => (
       min={1}
       max={5}
       handle={handle}
-      defaultValue={3}
+      defaultValue={value}
       tipFormatter={(value) => { return labels[value-1]; }}
       onChange={(value) => {
         let newEvent = {target: { value: value}}
