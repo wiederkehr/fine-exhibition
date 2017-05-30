@@ -4,6 +4,9 @@ import { EmotionHeader } from './DetailInfo.js';
 import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
 import { ToggleButton } from '../components/Toggle';
+
+import { Emotions } from '../content/Emotions';
+
 import './Recorder.css';
 
 export class EmotionRecorder extends Component {
@@ -13,101 +16,6 @@ export class EmotionRecorder extends Component {
       type: 'entry',
       selection: null
     };
-    this.emotions = [
-        {
-          primary: 'Joy',
-          secondary: [
-            'Love',
-          	'Serenity',
-          	'Delight',
-          	'Pride',
-          	'Optimism',
-          	'Morbidness',
-          	'Guilt',
-          ]
-        },
-        {
-          primary: 'Trust',
-          secondary: [
-            'Admiration',
-          	'Acceptance',
-          	'Submission',
-          	'Love',
-          	'Curiosity',
-          	'Fatalism',
-          	'Submission',
-          ]
-        },
-        {
-          primary: 'Fear',
-          secondary: [
-            'Anxiety',
-            'Terror',
-            'Submission',
-            'Apprehension',
-            'Guilt',
-            'Despair',
-            'Worry',
-          ]
-        },
-        {
-          primary: 'Surprise',
-          secondary: [
-            'Awe',
-            'Distraction',
-            'Amazement',
-            'Disappointment',
-            'Curiosity',
-            'Outrage',
-          ]
-        },
-        {
-          primary: 'Sadness',
-          secondary: [
-            'Remorse',
-          	'Regret',
-          	'Disappointment',
-          	'Pensiveness',
-          	'Despair',
-          	'Pity',
-          	'Nostalgia',
-          ]
-        },
-        {
-          primary: 'Disgust',
-          secondary: [
-            'Envy',
-            'Remorse',
-            'Boredom',
-            'Loathing',
-            'Cynicism',
-            'Contempt',
-            'Shame',
-          ]
-        },
-        {
-          primary: 'Anger',
-          secondary: [
-            'Rage',
-            'Annoyance',
-            'Aggressiveness',
-            'Contempt',
-            'Pride',
-            'Irritation',
-          ]
-        },
-        {
-          primary: 'Anticipation',
-          secondary: [
-            'Anxiety',
-            'Aggression',
-            'Optimism',
-            'Interest',
-            'Fatalism',
-            'Cynicism',
-          ]
-        }
-    ];
     this.toggleType = this.toggleType.bind(this);
   };
 
@@ -116,12 +24,12 @@ export class EmotionRecorder extends Component {
   };
 
   getPrimaryEmotions() {
-    let primaryEmotions = this.emotions.map((emotion) => { return emotion.primary });
+    let primaryEmotions = Emotions.map((emotion) => { return emotion.primary });
     return primaryEmotions;
   };
 
   getSecondaryEmotions(primaryEmotion) {
-    let secondaryEmotions = this.emotions.filter((emotion) => {
+    let secondaryEmotions = Emotions.filter((emotion) => {
       return emotion.primary === primaryEmotion;
     })
     return secondaryEmotions[0].secondary;
@@ -163,7 +71,7 @@ export class EmotionRecorder extends Component {
         return (
           <div className='Recorder Recorder--EmotionSubSelection'>
             <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
-            <LayoutRow top='l' bottom='l'>
+            <LayoutRow top='s' bottom='l'>
               <ToggleButton
                 value={this.state.selection}
                 disabled={true}
