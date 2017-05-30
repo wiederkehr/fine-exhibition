@@ -18,9 +18,16 @@ export const Scene = ({ record }) => {
 };
 
 export const Sky = ({ record }) => {
-  const conduciveness = scaleLinear().domain([1, 3, 5]).range(["#FF7D54", "#E5CCC5" , "#B6E2F4"]);
+  const conduciveness = scaleLinear().domain([0, 1, 3, 5]).range(["#FF5627", "#FF7D54", "#E5CCC5" , "#B6E2F4"]);
+  const topColor = conduciveness(record.conduciveness);
+  const bottomColor = conduciveness(record.conduciveness - 1);
   return (
-    <div className='Sky' style={{ background: conduciveness(record.conduciveness) }}>
+    <div
+      className='Sky'
+      style={{
+        background: "linear-gradient(" + topColor + " 50%, " + bottomColor + ")"
+      }}
+    >
     </div>
   )
 };
