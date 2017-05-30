@@ -25,6 +25,12 @@
   width: 100%;
 }
 
+.Emotion-Input-text {
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .Input-text:focus {
   border-color: var(--white);
 }

@@ -6,7 +6,7 @@ import './Form.css';
 export const EmotionEntryForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <input
-      className='Input-text'
+      className='Input-text Emotion-Input-text'
       type='text'
       value={ props.record.emotion ? props.record.emotion : ''}
       placeholder='Type Emotion'
