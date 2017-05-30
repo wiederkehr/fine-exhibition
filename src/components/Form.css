@@ -29,6 +29,11 @@
   border-color: var(--white);
 }
 
+.Input-text::-webkit-input-placeholder {
+  color: var(--white);
+  opacity: 0.5;
+}
+
 .Input-date {
   font-family: var(--font-family);
   background: none;

@@ -5,10 +5,10 @@ import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
-    <label className='Input-label'>Emotion</label>
     <input className='Input-text'
            type='text'
            value={ props.record.emotion ? props.record.emotion : ''}
+           placeholder='Type Emotion'
            onChange={props.onChange.bind(null, 'emotion')} />
   </form>
 );
