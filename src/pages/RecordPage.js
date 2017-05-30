@@ -58,7 +58,7 @@ class RecordPage extends Component {
       }
     });
     this.setState(newState);
-  }
+  };
 
   forwardStep(event) {
     event.preventDefault();
@@ -67,7 +67,7 @@ class RecordPage extends Component {
       this.setState({ currentStep: this.state.currentStep + 1 });
       this.setState({ readyForNextStep: true });
     }
-  }
+  };
 
   backwardStep(event) {
     event.preventDefault();
@@ -76,7 +76,7 @@ class RecordPage extends Component {
       this.setState({ currentStep: this.state.currentStep - 1 });
       this.setState({ readyForNextStep: true });
     }
-  }
+  };
 
   onChange(field, event) {
     console.log(field+':', event.target.value);
@@ -87,12 +87,12 @@ class RecordPage extends Component {
     });
     this.setState(newState);
     this.setState({ readyForNextStep: true });
-  }
+  };
 
   onSubmit(event) {
     event.preventDefault();
     this.setState({ status: 'Sending…' }, this.sendRecord);
-  }
+  };
 
   sendRecord() {
     var record        = this.state.record;
@@ -118,11 +118,11 @@ class RecordPage extends Component {
 
     fetch(request).then(this.getResponse);
 
-  }
+  };
 
   getResponse(response) {
     this.setState({ status: 'Sent ✔︎', disabled: true });
-  }
+  };
 
   render() {
     return (
@@ -153,7 +153,7 @@ class RecordPage extends Component {
         />
       </LayoutContainer>
     );
-  }
+  };
 }
 
 export default RecordPage;
