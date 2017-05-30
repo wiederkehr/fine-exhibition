@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider } from './Slider.js';
+import { DimensionSlider } from './Slider.js';
 import { ToggleGroup, SelectGroup } from '../components/Toggle.js';
 import './Form.css';
 
@@ -35,26 +35,26 @@ export const EmotionSubSelectionForm = ( props ) => (
 export const DimensionsForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <div className='Slider-group'>
-      <Slider
-        name='Arousal'
+      <DimensionSlider
+        name='How intense was it?'
         value={props.record.arousal}
         onChange={props.onChange.bind(null, 'arousal')} />
-      <Slider
-        name='Conduciveness'
-        value={props.record.conduciveness}
-        onChange={props.onChange.bind(null, 'conduciveness')} />
-      <Slider
-        name='Controllability'
+      <DimensionSlider
+        name='How controllable was it?'
         value={props.record.controllability}
         onChange={props.onChange.bind(null, 'controllability')} />
-      <Slider
-        name='Intensity'
-        value={props.record.intensity}
-        onChange={props.onChange.bind(null, 'intensity')} />
-      <Slider
-        name='Valence'
+      <DimensionSlider
+        name='How pleasant was it?'
         value={props.record.valence}
         onChange={props.onChange.bind(null, 'valence')} />
+      <DimensionSlider
+        name='How aroused was your body?'
+        value={props.record.intensity}
+        onChange={props.onChange.bind(null, 'intensity')} />
+      <DimensionSlider
+        name='How conducive is it?'
+        value={props.record.conduciveness}
+        onChange={props.onChange.bind(null, 'conduciveness')} />
     </div>
   </form>
 );

@@ -1,49 +1,65 @@
-.Slider {
+.DimensionSlider {
+  margin: 0 0 20px;
 }
 
-.Slider-label {
+.DimensionSlider-label {
+  color: var(--white);
   display: block;
+  margin: 0 0 5px;
   position: relative;
 }
 
-.Slider-label-key {
-  color: var(--white);
+/* RC SLIDER OVERRIDES*/
+.rc-slider {
+  height: 14px;
+  padding: 5px 0;
+  border-radius: 6px;
 }
-
-.Slider-label-value {
-  color: var(--white);
-  position: absolute;
-  right: 0;
-}
-
-input[type=range] {
-  -webkit-appearance: none;
-  margin: 10px 0;
-  width: 100%;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
+.rc-slider-rail {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 6px;
   height: 2px;
-  cursor: pointer;
-  background: var(--white);
-  border-radius: 2px;
 }
-input[type=range]::-webkit-slider-thumb {
-  height: 18px;
-  width: 18px;
-  border-radius: 10px;
-  background: var(--white);
-  border: 2px solid var(--white);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -8px;
+.rc-slider-track {
+  background-color: rgba(255,255,255,1);
+  border-radius: 6px;
+  height: 2px;
 }
-input[type=range]:focus {
-  outline: none;
+.rc-slider-handle {
+  margin-left: -7px;
+  margin-top: -6px;
+  width: 14px;
+  height: 14px;
+  border: solid 2px #00484F;
+  background-color: #fff;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: var(--white);
+.rc-slider-handle:hover {
+  border-color: #00484F;
 }
-input[type=range]:focus::-webkit-slider-thumb{
-  background: var(--white);
+.rc-slider-handle:active {
+  border-color: #00484F;
+  box-shadow: none;
+}
+
+/* RC TOOLTIP OVERRIDES*/
+.rc-slider-tooltip-placement-top {
+  padding: 4px 0 8px 0;
+}
+.rc-slider-tooltip-inner {
+  padding: 6px 20px;
+  min-width: 24px;
+  height: 24px;
+  font-size: 12px;
+  color: #00484F;
+  font-weight: 700;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow {
+  bottom: 4px;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px 4px 0;
+  border-top-color: #fff;
 }
