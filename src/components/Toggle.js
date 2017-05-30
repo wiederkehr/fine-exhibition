@@ -39,6 +39,14 @@ export class ToggleGroup extends Component {
     this.toggleButton = this.toggleButton.bind(this);
   };
 
+  componentDidMount() {
+    let position = this.state.options.indexOf(this.props.selection);
+    this.setState({
+      selectedIndex: position === -1 ? null : position,
+      selectedValue: position === -1 ? null : this.state.options[position]
+    });
+  };
+
   toggleButton(event, index) {
     this.props.onChange(event);
     this.setState({
@@ -76,6 +84,22 @@ export class SelectGroup extends Component {
       options: this.props.options
     };
     this.toggleButton = this.toggleButton.bind(this);
+  };
+
+  componentDidMount() {
+
+    let selectedIndices = [];
+    let selectedValues = [];
+    this.props.selection.map((value) => {
+      let position = this.state.options.indexOf(value);
+      position === -1 ? null : selectedIndices.push(position);
+      position === -1 ? null : selectedValues.push(this.state.options[position]);
+    });
+
+    this.setState({
+      selectedIndices: selectedIndices,
+      selectedValues: selectedValues
+    });
   };
 
   toggleButton(event, index) {
