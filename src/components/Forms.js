@@ -1,6 +1,9 @@
 import React from 'react';
 import { DimensionSlider } from './Slider.js';
 import { ToggleGroup, SelectGroup } from '../components/Toggle.js';
+
+import { Dimensions, Triggers, Actions } from '../content/Record';
+
 import './Form.css';
 
 export const EmotionEntryForm = ( props ) => (
@@ -38,27 +41,27 @@ export const DimensionsForm = ( props ) => (
       <DimensionSlider
         name='How intense was it?'
         value={props.record.intensity}
-        labels={['Barely noticed', 'A slow burn', 'It had my attention', 'Almost overcoming me', 'Off the charts']}
+        labels={Dimensions.intensity}
         onChange={props.onChange.bind(null, 'intensity')} />
       <DimensionSlider
         name='How pleasant was it?'
         value={props.record.valence}
-        labels={['Hated the feeling', 'Uncomfortable', 'It was fine', 'It felt nice', 'On top of the world']}
+        labels={Dimensions.valence}
         onChange={props.onChange.bind(null, 'valence')} />
       <DimensionSlider
         name='How controllable was it?'
         value={props.record.controllability}
-        labels={['I lost it', 'Barely a hold on it', 'Wasn’t easy (to contain)', 'Mostly kept it together', 'Kept it cool']}
+        labels={Dimensions.controllability}
         onChange={props.onChange.bind(null, 'controllability')} />
       <DimensionSlider
         name='How aroused was your body?'
         value={props.record.arousal}
-        labels={['Flatlined', 'Meh.', 'Steady pulse', 'Broke a sweat', 'Heart was out of my chest']}
+        labels={Dimensions.arousal}
         onChange={props.onChange.bind(null, 'arousal')} />
       <DimensionSlider
         name='How conducive is it?'
         value={props.record.conduciveness}
-        labels={['Missed the target completely', 'Not close', 'On the right track', 'Almost on point', 'Bullseye!']}
+        labels={Dimensions.conduciveness}
         onChange={props.onChange.bind(null, 'conduciveness')} />
     </div>
   </form>
@@ -69,13 +72,7 @@ export const TriggerForm = ( props ) => (
     <SelectGroup
       onChange={props.onChange.bind(null, 'trigger')}
       selection={props.record.trigger}
-      options={[
-        'Person',
-        'Place',
-        'Thing',
-        'Activity',
-        'Other'
-      ]} />
+      options={Triggers} />
   </form>
 );
 
@@ -84,13 +81,6 @@ export const ActionForm = ( props ) => (
     <ToggleGroup
       onChange={props.onChange.bind(null, 'action')}
       selection={props.record.action}
-      options={[
-        'Engage',
-        'Suppress',
-        'Savor',
-        'Withdraw',
-        'Fight',
-        'Other'
-      ]} />
+      options={Actions} />
   </form>
 );

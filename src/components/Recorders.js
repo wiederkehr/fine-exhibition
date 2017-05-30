@@ -5,7 +5,7 @@ import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
 import { ToggleButton } from '../components/Toggle';
 
-import { Emotions } from '../content/Emotions';
+import { Emotions } from '../content/Record';
 
 import './Recorder.css';
 

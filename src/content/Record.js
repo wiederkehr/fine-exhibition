@@ -93,3 +93,58 @@ export const Emotions = [
     ]
   }
 ];
+
+export const Dimensions = {
+  intensity: [
+    'Barely noticed',
+    'A slow burn',
+    'It had my attention',
+    'Almost overcoming me',
+    'Off the charts'
+  ],
+  valence: [
+    'Hated the feeling',
+    'Uncomfortable',
+    'It was fine',
+    'It felt nice',
+    'On top of the world'
+  ],
+  controllability: [
+    'I lost it',
+    'Barely a hold on it',
+    'Wasn’t easy (to contain)',
+    'Mostly kept it together',
+    'Kept it cool'
+  ],
+  arousal: [
+    'Flatlined',
+    'Meh.',
+    'Steady pulse',
+    'Broke a sweat',
+    'Heart was out of my chest'
+  ],
+  conduciveness: [
+    'Missed the target completely',
+    'Not close',
+    'On the right track',
+    'Almost on point',
+    'Bullseye!'
+  ]
+};
+
+export const Triggers = [
+  'Person',
+  'Place',
+  'Thing',
+  'Activity',
+  'Other'
+];
+
+export const Actions = [
+  'Engage',
+  'Suppress',
+  'Savor',
+  'Withdraw',
+  'Fight',
+  'Other'
+];
