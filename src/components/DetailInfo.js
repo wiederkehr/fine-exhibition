@@ -47,7 +47,7 @@ export class DetailInfo extends Component {
     const classes = classNames('DetailInfo', 'DetailInfo-' + this.props.level);
     let header = '';
     if(this.props.record.date && this.props.record.emotion) {
-      header = <EmotionHeader record={this.props.record}/>;
+      header = <EmotionHeader record={this.props.record} />;
     }else{
       header = <EmotionHeaderLoading />;
     };
