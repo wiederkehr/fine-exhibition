@@ -29,3 +29,16 @@
   vertical-align: middle;
   z-index: 100;
 }
+
+.LayoutRow {
+  --s: 5px;
+  --m: 10px;
+  --l: 20px;
+}
+
+.LayoutRow.Top-s { margin-top: var(--s)}
+.LayoutRow.Top-m { margin-top: var(--m)}
+.LayoutRow.Top-l { margin-top: var(--l)}
+.LayoutRow.Bottom-s { margin-bottom: var(--s)}
+.LayoutRow.Bottom-m { margin-bottom: var(--m)}
+.LayoutRow.Bottom-l { margin-bottom: var(--l)}

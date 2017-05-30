@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import { LayoutRow } from '../components/Layout';
 import './Toggle.css';
 
 export class ToggleButton extends Component {
@@ -23,10 +24,6 @@ export class ToggleButton extends Component {
     );
   };
 };
-
-export const ToggleButtonRow = ({ children }) => (
-  <div className='ToggleButtonRow'>{children}</div>
-);
 
 export class ToggleGroup extends Component {
   constructor(props) {
@@ -53,13 +50,13 @@ export class ToggleGroup extends Component {
       <div className="ToggleGroup">
         {this.state.options.map((option, i) => {
           return (
-            <ToggleButtonRow key={i}>
+            <LayoutRow key={i} top='s' bottom='s'>
               <ToggleButton
                 index={i}
                 value={option}
                 onClick={this.toggleButton}
                 isActive={(this.state.selectedIndex === i)}/>
-            </ToggleButtonRow>
+            </LayoutRow>
           )
         })}
       </div>
@@ -127,13 +124,13 @@ export class SelectGroup extends Component {
       position === -1 ? isActive = false : isActive = true;
 
       return (
-        <ToggleButtonRow key={i}>
+        <LayoutRow key={i} top='s' bottom='s'>
           <ToggleButton
             index={i}
             value={option}
             onClick={this.toggleButton}
             isActive={isActive}/>
-        </ToggleButtonRow>
+        </LayoutRow>
       )
     });
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ActionForm, EmotionEntryForm, EmotionSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
 import { SecondaryButton } from '../components/Button';
+import { LayoutRow } from '../components/Layout';
 import './Recorder.css';
 
 export class EmotionRecorder extends Component {
@@ -17,25 +18,29 @@ export class EmotionRecorder extends Component {
   render() {
     const SelfdefinedEmotion = (
       <div className='Recorder'>
-        <h2 className='RecorderHeadline'>How are you feeling?</h2>
+        <h2 className='RecorderHeadline'>How're ya feeling?</h2>
         <EmotionEntryForm
           record={this.props.record}
           onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
         />
-        <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
+        <LayoutRow top='l'>
+          <SecondaryButton onClick={this.togglePredefined}>Not sure… help?</SecondaryButton>
+        </LayoutRow>
       </div>
     );
 
     const PredefinedEmotion = (
       <div className='Recorder'>
-        <h2 className='RecorderHeadline'>Here are a few basic emotions:</h2>
+        <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
         <EmotionSelectionForm
           record={this.props.record}
           onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
         />
-        <SecondaryButton onClick={this.togglePredefined}>Go back</SecondaryButton>
+        <LayoutRow top='l'>
+          <SecondaryButton onClick={this.togglePredefined}>Go back</SecondaryButton>
+        </LayoutRow>
       </div>
     );
 

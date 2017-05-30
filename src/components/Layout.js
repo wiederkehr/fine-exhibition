@@ -25,3 +25,8 @@ export const LayoutFooter = ({ className, children }) => {
   const classes = classNames('LayoutBar', 'LayoutFooter', className);
   return <div className={classes}>{children}</div>
 };
+
+export const LayoutRow = ({ top, bottom, className, children }) => {
+  const classes = classNames('LayoutRow', 'Top-' + top, 'Bottom-' + bottom, className);
+  return <div className={classes}>{children}</div>
+};
