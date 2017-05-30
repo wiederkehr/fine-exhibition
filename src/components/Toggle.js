@@ -18,6 +18,7 @@ export class ToggleButton extends Component {
       <input
         className={ classNames('ToggleButton', this.props.isActive ? 'ToggleButton--On' : 'ToggleButton--Off') }
         type='button'
+        disabled={this.props.disabled}
         value={this.props.value}
         onClick={this.handleClick}
       />
