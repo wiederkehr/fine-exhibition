@@ -200,7 +200,7 @@ export class EmotionRecorder extends Component {
 export const DimensionsRecorder = ( props ) => {
   return (
     <div className='Recorder Recorder--Dimensions'>
-      <h2 className='RecorderHeadline'>What does this feel like?</h2>
+      <h2 className='RecorderHeadline'>How does this feel?</h2>
       <DimensionsForm
         record={props.record}
         onChange={props.onChange}
