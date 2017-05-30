@@ -10,12 +10,8 @@
   right: 40px;
 }
 
-.Recorder--EmotionEntry {
-  top: 10%;
-}
-.Recorder--EmotionSelection {
-  top: 10%;
-}
+.Recorder--EmotionEntry,
+.Recorder--EmotionSelection,
 .Recorder--EmotionSubSelection {
   top: 10%;
 }
