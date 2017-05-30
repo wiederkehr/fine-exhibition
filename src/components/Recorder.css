@@ -2,12 +2,34 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 40px;
   right: 40px;
+}
+
+.Recorder--EmotionEntry {
+  top: 10%;
+}
+.Recorder--EmotionSelection {
+  top: 10%;
+}
+.Recorder--EmotionSubSelection {
+  top: 10%;
+}
+.Recorder--Dimensions {
+  top: 30%;
+}
+.Recorder--Trigger {
+  top: 30%;
+}
+.Recorder--Action {
+  top: 10%;
+}
+.Recorder--Review {
+  top: 10%;
 }
 
 .RecorderHeadline,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ActionForm, EmotionEntryForm, EmotionSelectionForm, EmotionSubSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
+import { EmotionHeader } from './DetailInfo.js';
 import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
 import { ToggleButton } from '../components/Toggle';
@@ -130,7 +131,7 @@ export class EmotionRecorder extends Component {
     switch (this.state.type) {
       case 'entry':
         return (
-          <div className='Recorder'>
+          <div className='Recorder Recorder--EmotionEntry'>
             <h2 className='RecorderHeadline'>How're ya feeling?</h2>
             <EmotionEntryForm
               record={this.props.record}
@@ -144,7 +145,7 @@ export class EmotionRecorder extends Component {
         )
       case 'selection':
         return (
-          <div className='Recorder'>
+          <div className='Recorder Recorder--EmotionSelection'>
             <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
             <EmotionSelectionForm
               record={this.props.record}
@@ -160,7 +161,7 @@ export class EmotionRecorder extends Component {
         )
       case 'subselection':
         return (
-          <div className='Recorder'>
+          <div className='Recorder Recorder--EmotionSubSelection'>
             <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
             <LayoutRow top='l' bottom='l'>
               <ToggleButton
@@ -194,11 +195,12 @@ export class EmotionRecorder extends Component {
         return null
     }
   }
-}
+};
 
 export const DimensionsRecorder = ( props ) => {
   return (
-    <div className='Recorder'>
+    <div className='Recorder Recorder--Dimensions'>
+      <h2 className='RecorderHeadline'>What does this feel like?</h2>
       <DimensionsForm
         record={props.record}
         onChange={props.onChange}
@@ -206,11 +208,11 @@ export const DimensionsRecorder = ( props ) => {
       />
     </div>
   )
-}
+};
 
 export const TriggerRecorder = ( props ) => {
   return (
-    <div className='Recorder'>
+    <div className='Recorder Recorder--Trigger'>
       <h2 className='RecorderHeadline'>What made you feel that way?</h2>
       <TriggerForm
         record={props.record}
@@ -219,11 +221,11 @@ export const TriggerRecorder = ( props ) => {
       />
     </div>
   )
-}
+};
 
 export const ActionRecorder = ( props ) => {
   return (
-    <div className='Recorder'>
+    <div className='Recorder Recorder--Action'>
       <h2 className='RecorderHeadline'>How did you react?</h2>
       <ActionForm
         record={props.record}
@@ -232,4 +234,12 @@ export const ActionRecorder = ( props ) => {
       />
     </div>
   )
-}
+};
+
+export const ReviewRecorder = ( props ) => {
+  return (
+    <div className='Recorder Recorder--Review'>
+      <EmotionHeader record={props.record} />
+    </div>
+  )
+};
