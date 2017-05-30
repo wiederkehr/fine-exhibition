@@ -32,19 +32,11 @@ export class ToggleGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedIndex: null,
-      selectedValue: null,
-      options: this.props.options
+      options: this.props.options,
+      selectedValue: this.props.selection,
+      selectedIndex: this.props.options.indexOf(this.props.selection),
     };
     this.toggleButton = this.toggleButton.bind(this);
-  };
-
-  componentDidMount() {
-    let position = this.state.options.indexOf(this.props.selection);
-    this.setState({
-      selectedIndex: position === -1 ? null : position,
-      selectedValue: position === -1 ? null : this.state.options[position]
-    });
   };
 
   toggleButton(event, index) {
@@ -79,26 +71,22 @@ export class SelectGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      options: this.props.options,
+      selectedValues: this.props.selection,
       selectedIndices: [],
-      selectedValues: [],
-      options: this.props.options
     };
     this.toggleButton = this.toggleButton.bind(this);
   };
 
   componentDidMount() {
 
-    let selectedIndices = [];
-    let selectedValues = [];
-    this.props.selection.map((value) => {
+    let selectedIndices = this.state.selectedValues.map((value) => {
       let position = this.state.options.indexOf(value);
-      position === -1 ? null : selectedIndices.push(position);
-      position === -1 ? null : selectedValues.push(this.state.options[position]);
+      return position === -1 ? null : position;
     });
 
     this.setState({
-      selectedIndices: selectedIndices,
-      selectedValues: selectedValues
+      selectedIndices: selectedIndices
     });
   };
 
@@ -106,12 +94,19 @@ export class SelectGroup extends Component {
 
     let newIndices = this.state.selectedIndices.slice();
     let position = newIndices.indexOf(index);
-    position === -1 ? newIndices.push(index) : newIndices.splice(position, 1);
-    newIndices.length > 3 ? newIndices.shift() : false;
 
-    let newValues = [];
-    newIndices.map((index) => {
-      newValues.push(this.state.options[index]);
+    if(position === -1){
+      newIndices.push(index)
+    }else{
+      newIndices.splice(position, 1)
+    };
+
+    if(newIndices.length > 3){
+      newIndices.shift()
+    };
+
+    let newValues = newIndices.map((index) => {
+      return this.state.options[index];
     });
 
     this.setState({
