@@ -37,24 +37,24 @@ export const DimensionsForm = ( props ) => (
     <div className='Slider-group'>
       <DimensionSlider
         name='How intense was it?'
-        value={props.record.arousal}
-        labels={['Flatlined', 'Meh.', 'Steady pulse', 'Broke a sweat', 'Heart was out of my chest']}
-        onChange={props.onChange.bind(null, 'arousal')} />
-      <DimensionSlider
-        name='How controllable was it?'
-        value={props.record.controllability}
-        labels={['I lost it', 'Barely a hold on it', 'Wasn’t easy (to contain)', 'Mostly kept it together', 'Kept it cool']}
-        onChange={props.onChange.bind(null, 'controllability')} />
+        value={props.record.intensity}
+        labels={['Barely noticed', 'A slow burn', 'It had my attention', 'Almost overcoming me', 'Off the charts']}
+        onChange={props.onChange.bind(null, 'intensity')} />
       <DimensionSlider
         name='How pleasant was it?'
         value={props.record.valence}
         labels={['Hated the feeling', 'Uncomfortable', 'It was fine', 'It felt nice', 'On top of the world']}
         onChange={props.onChange.bind(null, 'valence')} />
       <DimensionSlider
+        name='How controllable was it?'
+        value={props.record.controllability}
+        labels={['I lost it', 'Barely a hold on it', 'Wasn’t easy (to contain)', 'Mostly kept it together', 'Kept it cool']}
+        onChange={props.onChange.bind(null, 'controllability')} />
+      <DimensionSlider
         name='How aroused was your body?'
-        value={props.record.intensity}
-        labels={['Barely noticed', 'A slow burn', 'It had my attention', 'Almost overcoming me', 'Off the charts']}
-        onChange={props.onChange.bind(null, 'intensity')} />
+        value={props.record.arousal}
+        labels={['Flatlined', 'Meh.', 'Steady pulse', 'Broke a sweat', 'Heart was out of my chest']}
+        onChange={props.onChange.bind(null, 'arousal')} />
       <DimensionSlider
         name='How conducive is it?'
         value={props.record.conduciveness}
