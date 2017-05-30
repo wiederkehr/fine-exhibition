@@ -38,22 +38,27 @@ export const DimensionsForm = ( props ) => (
       <DimensionSlider
         name='How intense was it?'
         value={props.record.arousal}
+        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
         onChange={props.onChange.bind(null, 'arousal')} />
       <DimensionSlider
         name='How controllable was it?'
         value={props.record.controllability}
+        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
         onChange={props.onChange.bind(null, 'controllability')} />
       <DimensionSlider
         name='How pleasant was it?'
         value={props.record.valence}
+        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
         onChange={props.onChange.bind(null, 'valence')} />
       <DimensionSlider
         name='How aroused was your body?'
         value={props.record.intensity}
+        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
         onChange={props.onChange.bind(null, 'intensity')} />
       <DimensionSlider
         name='How conducive is it?'
         value={props.record.conduciveness}
+        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
         onChange={props.onChange.bind(null, 'conduciveness')} />
     </div>
   </form>

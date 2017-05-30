@@ -7,6 +7,7 @@ import 'rc-slider/assets/index.css';
 import './Slider.css';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const SliderWithTooltip = createSliderWithTooltip(Slider);
 const Handle = Slider.Handle;
 
 const handle = (props) => {
@@ -24,18 +25,19 @@ const handle = (props) => {
   );
 };
 
-export const DimensionSlider = ({ name, value, onChange }) => (
+export const DimensionSlider = ({ name, value, labels, onChange }) => (
   <div className="DimensionSlider">
     <label className="DimensionSlider-label">{name}</label>
-    <Slider
+    <SliderWithTooltip
       min={1}
       max={5}
       handle={handle}
+      defaultValue={3}
+      tipFormatter={(value) => { return labels[value-1]; }}
       onChange={(value) => {
         let newEvent = {target: { value: value}}
         onChange(newEvent)
       }}
-      defaultValue={3}
     />
   </div>
 );
