@@ -38,27 +38,27 @@ export const DimensionsForm = ( props ) => (
       <DimensionSlider
         name='How intense was it?'
         value={props.record.arousal}
-        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
+        labels={['Flatlined', 'Meh.', 'Steady pulse', 'Broke a sweat', 'Heart was out of my chest']}
         onChange={props.onChange.bind(null, 'arousal')} />
       <DimensionSlider
         name='How controllable was it?'
         value={props.record.controllability}
-        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
+        labels={['I lost it', 'Barely a hold on it', 'Wasn’t easy (to contain)', 'Mostly kept it together', 'Kept it cool']}
         onChange={props.onChange.bind(null, 'controllability')} />
       <DimensionSlider
         name='How pleasant was it?'
         value={props.record.valence}
-        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
+        labels={['Hated the feeling', 'Uncomfortable', 'It was fine', 'It felt nice', 'On top of the world']}
         onChange={props.onChange.bind(null, 'valence')} />
       <DimensionSlider
         name='How aroused was your body?'
         value={props.record.intensity}
-        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
+        labels={['Barely noticed', 'A slow burn', 'It had my attention', 'Almost overcoming me', 'Off the charts']}
         onChange={props.onChange.bind(null, 'intensity')} />
       <DimensionSlider
         name='How conducive is it?'
         value={props.record.conduciveness}
-        labels={['terrible', 'sad', 'fine', 'great', 'terrific']}
+        labels={['Missed the target completely', 'Not close', 'On the right track', 'Almost on point', 'Bullseye!']}
         onChange={props.onChange.bind(null, 'conduciveness')} />
     </div>
   </form>
