@@ -19,16 +19,7 @@ export const EmotionSelectionForm = ( props ) => (
     <ToggleGroup
       onChange={props.onChange.bind(null, 'emotion')}
       selection={props.record.emotion}
-      options={[
-        'Joy',
-        'Trust',
-        'Fear',
-        'Surprise',
-        'Sadness',
-        'Disgust',
-        'Anger',
-        'Anticipation'
-      ]} />
+      options={props.options} />
   </form>
 );
 
@@ -37,15 +28,7 @@ export const EmotionSubSelectionForm = ( props ) => (
     <ToggleGroup
       onChange={props.onChange.bind(null, 'emotion')}
       selection={props.record.emotion}
-      options={[
-        'Love',
-        'Serenity',
-        'Delight',
-        'Pride',
-        'Optimism',
-        'Morbidness',
-        'Guilt'
-      ]} />
+      options={props.options} />
   </form>
 );
 

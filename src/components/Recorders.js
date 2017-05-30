@@ -12,6 +12,101 @@ export class EmotionRecorder extends Component {
       type: 'entry',
       selection: null
     };
+    this.emotions = [
+        {
+          primary: 'Joy',
+          secondary: [
+            'Love',
+          	'Serenity',
+          	'Delight',
+          	'Pride',
+          	'Optimism',
+          	'Morbidness',
+          	'Guilt',
+          ]
+        },
+        {
+          primary: 'Trust',
+          secondary: [
+            'Admiration',
+          	'Acceptance',
+          	'Submission',
+          	'Love',
+          	'Curiosity',
+          	'Fatalism',
+          	'Submission',
+          ]
+        },
+        {
+          primary: 'Fear',
+          secondary: [
+            'Anxiety',
+            'Terror',
+            'Submission',
+            'Apprehension',
+            'Guilt',
+            'Despair',
+            'Worry',
+          ]
+        },
+        {
+          primary: 'Surprise',
+          secondary: [
+            'Awe',
+            'Distraction',
+            'Amazement',
+            'Disappointment',
+            'Curiosity',
+            'Outrage',
+          ]
+        },
+        {
+          primary: 'Sadness',
+          secondary: [
+            'Remorse',
+          	'Regret',
+          	'Disappointment',
+          	'Pensiveness',
+          	'Despair',
+          	'Pity',
+          	'Nostalgia',
+          ]
+        },
+        {
+          primary: 'Disgust',
+          secondary: [
+            'Envy',
+            'Remorse',
+            'Boredom',
+            'Loathing',
+            'Cynicism',
+            'Contempt',
+            'Shame',
+          ]
+        },
+        {
+          primary: 'Anger',
+          secondary: [
+            'Rage',
+            'Annoyance',
+            'Aggressiveness',
+            'Contempt',
+            'Pride',
+            'Irritation',
+          ]
+        },
+        {
+          primary: 'Anticipation',
+          secondary: [
+            'Anxiety',
+            'Aggression',
+            'Optimism',
+            'Interest',
+            'Fatalism',
+            'Cynicism',
+          ]
+        }
+    ];
     this.toggleType = this.toggleType.bind(this);
   };
 
@@ -19,77 +114,84 @@ export class EmotionRecorder extends Component {
     this.setState({ type: t });
   };
 
+  getPrimaryEmotions() {
+    let primaryEmotions = this.emotions.map((emotion) => { return emotion.primary });
+    return primaryEmotions;
+  };
+
+  getSecondaryEmotions(primaryEmotion) {
+    let secondaryEmotions = this.emotions.filter((emotion) => {
+      return emotion.primary === primaryEmotion;
+    })
+    return secondaryEmotions[0].secondary;
+  };
+
   render() {
-
-    const EmotionEntry = (
-      <div className='Recorder'>
-        <h2 className='RecorderHeadline'>How're ya feeling?</h2>
-        <EmotionEntryForm
-          record={this.props.record}
-          onChange={this.props.onChange}
-          onSubmit={this.props.onSubmit}
-        />
-        <LayoutRow top='l'>
-          <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
-        </LayoutRow>
-      </div>
-    );
-
-    const EmotionSelection = (
-      <div className='Recorder'>
-        <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
-        <EmotionSelectionForm
-          record={this.props.record}
-          onChange={(field, event) => {
-            this.setState({ selection: event.target.value });
-            this.props.onChange(field, event);
-            this.toggleType('subselection');
-          }}
-          onSubmit={this.props.onSubmit}
-        />
-      </div>
-    );
-
-    const EmotionSubSelection = (
-      <div className='Recorder'>
-        <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
-        <LayoutRow top='l' bottom='l'>
-          <ToggleButton
-            value={this.state.selection}
-            disabled={true}
-            onClick={false}
-            isActive={true}/>
-        </LayoutRow>
-        <EmotionSubSelectionForm
-          record={this.props.record}
-          onChange={(field, event) => {
-            this.props.onChange(field, event);
-            this.toggleType('entry');
-          }}
-          onSubmit={this.props.onSubmit}
-        />
-        <LayoutRow top='l'>
-          <SecondaryButton
-            onClick={() => {
-              this.props.onChange('emotion', {target: {value: this.state.selection}});
-              this.toggleType('entry');
-            }}
-          >
-            Nope
-          </SecondaryButton>
-        </LayoutRow>
-      </div>
-    );
-
     switch (this.state.type) {
       case 'entry':
-        return EmotionEntry
+        return (
+          <div className='Recorder'>
+            <h2 className='RecorderHeadline'>How're ya feeling?</h2>
+            <EmotionEntryForm
+              record={this.props.record}
+              onChange={this.props.onChange}
+              onSubmit={this.props.onSubmit}
+            />
+            <LayoutRow top='l'>
+              <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
+            </LayoutRow>
+          </div>
+        )
       case 'selection':
-        return EmotionSelection
+        return (
+          <div className='Recorder'>
+            <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
+            <EmotionSelectionForm
+              record={this.props.record}
+              onChange={(field, event) => {
+                this.setState({ selection: event.target.value });
+                this.props.onChange(field, event);
+                this.toggleType('subselection');
+              }}
+              onSubmit={this.props.onSubmit}
+              options={this.getPrimaryEmotions()}
+            />
+          </div>
+        )
       case 'subselection':
-        return EmotionSubSelection
+        return (
+          <div className='Recorder'>
+            <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
+            <LayoutRow top='l' bottom='l'>
+              <ToggleButton
+                value={this.state.selection}
+                disabled={true}
+                onClick={false}
+                isActive={true}/>
+            </LayoutRow>
+            <EmotionSubSelectionForm
+              record={this.props.record}
+              onChange={(field, event) => {
+                this.props.onChange(field, event);
+                this.toggleType('entry');
+              }}
+              onSubmit={this.props.onSubmit}
+              options={this.getSecondaryEmotions(this.state.selection)}
+            />
+            <LayoutRow top='l'>
+              <SecondaryButton
+                onClick={() => {
+                  this.props.onChange('emotion', {target: {value: this.state.selection}});
+                  this.toggleType('entry');
+                }}
+              >
+                Nope
+              </SecondaryButton>
+            </LayoutRow>
+          </div>
+        )
       default:
-        return EmotionEntry
+        return null
     }
   }
 }
