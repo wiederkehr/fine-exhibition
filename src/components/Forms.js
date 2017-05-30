@@ -17,6 +17,7 @@ export const EmotionSelectionForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <ToggleGroup
       onChange={props.onChange.bind(null, 'emotion')}
+      selection={props.record.emotion}
       options={[
         'Joy',
         'Trust',
@@ -61,6 +62,7 @@ export const TriggerForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <SelectGroup
       onChange={props.onChange.bind(null, 'trigger')}
+      selection={props.record.trigger}
       options={[
         'Person',
         'Place',
@@ -75,6 +77,7 @@ export const ActionForm = ( props ) => (
   <form className='Form' onSubmit={props.onSubmit}>
     <ToggleGroup
       onChange={props.onChange.bind(null, 'action')}
+      selection={props.record.action}
       options={[
         'Engage',
         'Suppress',
