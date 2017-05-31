@@ -1,3 +1,10 @@
+.Sky {
+  height: 100vh;
+  position: relative;
+  transition: background-color 300ms ease;
+  z-index: 10;
+}
+
 .Aura {
   left: 50%;
   line-height: 0;
@@ -5,6 +12,7 @@
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 80px);
   transition: all 400ms;
+  z-index: 20;
 }
 .Aura .injected-svg {
   bottom: 0;
@@ -20,6 +28,7 @@
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 120px);
   transition: all 400ms;
+  z-index: 30;
 }
 .Hummock .injected-svg {
   bottom: 0;
@@ -35,6 +44,7 @@
   transform: translate(-50%,0);
   width: calc(var(--square) - 120px);
   transition: all 400ms;
+  z-index: 30;
 }
 .Bummock .injected-svg,
 .Bummock--1 .injected-svg {
@@ -71,6 +81,7 @@
   position: absolute;
   transform: translate(-50%,-100%);
   width: 100%;
+  z-index: 40;
 }
 .Wave .injected-svg {
   bottom: 0;
@@ -79,19 +90,19 @@
   width: 100%;
 }
 
-.Sky {
-  height: 100vh;
-  transition: background-color 300ms ease;
-}
 .SeaBackground {
+  background: linear-gradient(rgba(0,72,79,1) 0%, rgba(0,87,94,1) 30%);
   height: 100vh;
-  background: #00484F;
+  position: relative;
+  z-index: 10;
 }
 .SeaForeground {
-  background: linear-gradient(rgba(0,65,71,1) 0%, rgba(0,72,79,.5) 30%);
+  background: linear-gradient(rgba(0,72,79,1) 0%, rgba(0,87,94,.5) 30%);
   position: absolute;
   height: 100vh;
   top: 100vh;
   left: 0;
   right: 0;
+  z-index: 40;
+}
 }

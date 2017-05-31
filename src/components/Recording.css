@@ -6,6 +6,7 @@
   bottom: 0;
   overflow-y: hidden;
   transition: top 600ms ease-in-out;
+  z-index: 0;
 }
 
 .Recording--Step-0 {
