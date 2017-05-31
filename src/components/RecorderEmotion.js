@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { ActionForm, EmotionEntryForm, EmotionSelectionForm, EmotionSubSelectionForm, DimensionsForm, TriggerForm } from '../components/Forms';
-import { EmotionHeader } from './DetailInfo.js';
 import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
 import { ToggleButton } from '../components/Toggle';
+import { ToggleGroup } from '../components/Toggle';
+import { Emotions } from '../content/Options';
 
-import { Emotions } from '../content/Record';
-
-import './Recorder.css';
+import './Form.css';
 
 export class EmotionRecorder extends Component {
   constructor(props) {
@@ -105,49 +103,31 @@ export class EmotionRecorder extends Component {
   }
 };
 
-export const DimensionsRecorder = ( props ) => {
-  return (
-    <div className='Recorder Recorder--Dimensions'>
-      <h2 className='RecorderHeadline'>How does this feel?</h2>
-      <DimensionsForm
-        record={props.record}
-        onChange={props.onChange}
-        onSubmit={props.onSubmit}
-      />
-    </div>
-  )
-};
+const EmotionEntryForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <input
+      className='Input-text Emotion-Input-text'
+      type='text'
+      value={ props.record.emotion ? props.record.emotion : ''}
+      placeholder='Type Emotion'
+      onChange={props.onChange.bind(null, 'emotion')} />
+  </form>
+);
 
-export const TriggerRecorder = ( props ) => {
-  return (
-    <div className='Recorder Recorder--Trigger'>
-      <h2 className='RecorderHeadline'>What made you feel that way?</h2>
-      <TriggerForm
-        record={props.record}
-        onChange={props.onChange}
-        onSubmit={props.onSubmit}
-      />
-    </div>
-  )
-};
+const EmotionSelectionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <ToggleGroup
+      onChange={props.onChange.bind(null, 'emotion')}
+      selection={props.record.emotion}
+      options={props.options} />
+  </form>
+);
 
-export const ActionRecorder = ( props ) => {
-  return (
-    <div className='Recorder Recorder--Action'>
-      <h2 className='RecorderHeadline'>How did you react?</h2>
-      <ActionForm
-        record={props.record}
-        onChange={props.onChange}
-        onSubmit={props.onSubmit}
-      />
-    </div>
-  )
-};
-
-export const ReviewRecorder = ( props ) => {
-  return (
-    <div className='Recorder Recorder--Review'>
-      <EmotionHeader record={props.record} />
-    </div>
-  )
-};
+const EmotionSubSelectionForm = ( props ) => (
+  <form className='Form' onSubmit={props.onSubmit}>
+    <ToggleGroup
+      onChange={props.onChange.bind(null, 'emotion')}
+      selection={props.record.emotion}
+      options={props.options} />
+  </form>
+);

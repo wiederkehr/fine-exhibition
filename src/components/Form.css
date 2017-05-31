@@ -1,17 +1,3 @@
-.Slider-group {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
-  position: relative;
-}
-
-.Input-label {
-  color: var(--white);
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
 .Input-text {
   background: none;
   border: none;
@@ -38,16 +24,4 @@
 .Input-text::-webkit-input-placeholder {
   color: var(--white);
   opacity: 0.5;
-}
-
-.Input-date {
-  font-family: var(--font-family);
-  background: none;
-  border: none;
-  border-bottom: 2px solid var(--white);
-  border-radius: 0;
-  margin: 0 0 10px;
-  outline: 0;
-  padding: 5px 0;
-  width: 100%;
 }

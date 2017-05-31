@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
-import { EmotionRecorder, DimensionsRecorder, TriggerRecorder, ActionRecorder, ReviewRecorder } from '../components/Recorders';
+import { EmotionRecorder } from '../components/RecorderEmotion';
+import { DimensionRecorder } from '../components/RecorderDimension';
+import { TriggerRecorder } from '../components/RecorderTrigger';
+import { ActionRecorder } from '../components/RecorderAction';
+import { ReviewRecorder } from '../components/RecorderReview';
 import './Recorder.css';
 
 export class Recorder extends Component {
@@ -19,7 +23,7 @@ export class Recorder extends Component {
       case 1:
         return (
           <RecorderTransition direction={this.props.direction} step={this.props.step}>
-            <DimensionsRecorder
+            <DimensionRecorder
               record={this.props.record}
               onChange={this.props.onChange}
               onSubmit={this.props.onSubmit}
@@ -56,7 +60,7 @@ export class Recorder extends Component {
         return null
     }
   }
-}
+};
 
 const RecorderTransition = ({ direction, step, children }) => {
   return (
@@ -70,4 +74,4 @@ const RecorderTransition = ({ direction, step, children }) => {
       </div>
     </ReactCSSTransitionGroup>
   )
-}
+};
