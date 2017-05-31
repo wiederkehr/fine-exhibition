@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { SecondaryButton } from '../components/Button';
 import { LayoutRow } from '../components/Layout';
 import { ToggleButton } from '../components/Toggle';
 import { ToggleGroup } from '../components/Toggle';
 import { Emotions } from '../content/Options';
 
+import './RecorderEmotion.css';
 import './Form.css';
 
 export class EmotionRecorder extends Component {
@@ -37,65 +39,71 @@ export class EmotionRecorder extends Component {
     switch (this.state.type) {
       case 'entry':
         return (
-          <div className='Recorder Recorder--EmotionEntry'>
-            <h2 className='RecorderHeadline'>How're ya feeling?</h2>
-            <EmotionEntryForm
-              record={this.props.record}
-              onChange={this.props.onChange}
-              onSubmit={this.props.onSubmit}
-            />
-            <LayoutRow top='l'>
-              <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
-            </LayoutRow>
-          </div>
+          <RecorderTransition name='EmotionEntryTransition'>
+            <div className='Recorder Recorder--EmotionEntry' key={this.state.type}>
+              <h2 className='RecorderHeadline'>How're ya feeling?</h2>
+              <EmotionEntryForm
+                record={this.props.record}
+                onChange={this.props.onChange}
+                onSubmit={this.props.onSubmit}
+              />
+              <LayoutRow top='l'>
+                <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
+              </LayoutRow>
+            </div>
+          </RecorderTransition>
         )
       case 'selection':
         return (
-          <div className='Recorder Recorder--EmotionSelection'>
-            <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
-            <EmotionSelectionForm
-              record={this.props.record}
-              onChange={(field, event) => {
-                this.setState({ selection: event.target.value });
-                this.props.onChange(field, event);
-                this.toggleType('subselection');
-              }}
-              onSubmit={this.props.onSubmit}
-              options={this.getPrimaryEmotions()}
-            />
-          </div>
+          <RecorderTransition name='EmotionSelectionTransition'>
+            <div className='Recorder Recorder--EmotionSelection' key={this.state.type}>
+              <h2 className='RecorderHeadline'>Here are some basic emotions:</h2>
+              <EmotionSelectionForm
+                record={this.props.record}
+                onChange={(field, event) => {
+                  this.setState({ selection: event.target.value });
+                  this.props.onChange(field, event);
+                  this.toggleType('subselection');
+                }}
+                onSubmit={this.props.onSubmit}
+                options={this.getPrimaryEmotions()}
+              />
+            </div>
+          </RecorderTransition>
         )
       case 'subselection':
         return (
-          <div className='Recorder Recorder--EmotionSubSelection'>
-            <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
-            <LayoutRow top='s' bottom='l'>
-              <ToggleButton
-                value={this.state.selection}
-                disabled={true}
-                onClick={false}
-                isActive={true}/>
-            </LayoutRow>
-            <EmotionSubSelectionForm
-              record={this.props.record}
-              onChange={(field, event) => {
-                this.props.onChange(field, event);
-                this.toggleType('entry');
-              }}
-              onSubmit={this.props.onSubmit}
-              options={this.getSecondaryEmotions(this.state.selection)}
-            />
-            <LayoutRow top='l'>
-              <SecondaryButton
-                onClick={() => {
-                  this.props.onChange('emotion', {target: {value: this.state.selection}});
+          <RecorderTransition name='EmotionSubSelectionTransition'>
+            <div className='Recorder Recorder--EmotionSubSelection' key={this.state.type}>
+              <h2 className='RecorderHeadline'>Wanna be more specific?</h2>
+              <LayoutRow top='s' bottom='l'>
+                <ToggleButton
+                  value={this.state.selection}
+                  disabled={true}
+                  onClick={false}
+                  isActive={true}/>
+              </LayoutRow>
+              <EmotionSubSelectionForm
+                record={this.props.record}
+                onChange={(field, event) => {
+                  this.props.onChange(field, event);
                   this.toggleType('entry');
                 }}
-              >
-                Nope
-              </SecondaryButton>
-            </LayoutRow>
-          </div>
+                onSubmit={this.props.onSubmit}
+                options={this.getSecondaryEmotions(this.state.selection)}
+              />
+              <LayoutRow top='l'>
+                <SecondaryButton
+                  onClick={() => {
+                    this.props.onChange('emotion', {target: {value: this.state.selection}});
+                    this.toggleType('entry');
+                  }}
+                >
+                  Nope
+                </SecondaryButton>
+              </LayoutRow>
+            </div>
+        </RecorderTransition>
         )
       default:
         return null
@@ -131,3 +139,15 @@ const EmotionSubSelectionForm = ( props ) => (
       options={props.options} />
   </form>
 );
+
+const RecorderTransition = ({ name, children }) => {
+  return (
+    <ReactCSSTransitionGroup
+      transitionName={name}
+      transitionEnterTimeout={0}
+      transitionLeaveTimeout={0}
+      component='div'>
+        { children }
+    </ReactCSSTransitionGroup>
+  )
+};

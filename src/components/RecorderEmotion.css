@@ -1,0 +1,62 @@
+.EmotionEntryTransition-enter {
+  opacity: 0;
+  transform: translate3d( 0, -100px, 0);
+}
+.EmotionEntryTransition-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 100ms;
+}
+.EmotionEntryTransition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 0ms;
+}
+.EmotionEntryTransition-leave-active {
+  opacity: 0;
+  transform: translate3d( 0, 100px, 0);
+}
+
+.EmotionSelectionTransition-enter {
+  opacity: 0;
+  transform: translate3d( 0, 100px, 0);
+}
+.EmotionSelectionTransition-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 100ms;
+}
+.EmotionSelectionTransition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 0ms;
+}
+.EmotionSelectionTransition-leave-active {
+  opacity: 0;
+  transform: translate3d( 0, -100px, 0);
+}
+
+.EmotionSubSelectionTransition-enter {
+  opacity: 0;
+  transform: translate3d( 0, 100px, 0);
+}
+.EmotionSubSelectionTransition-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 100ms;
+}
+.EmotionSubSelectionTransition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms, opacity 600ms;
+  transition-delay: 0ms;
+}
+.EmotionSubSelectionTransition-leave-active {
+  opacity: 0;
+  transform: translate3d( 0, -100px, 0);
+}
