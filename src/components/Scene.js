@@ -79,10 +79,32 @@ export const Wave = ({ record }) => {
   )
 };
 
+const random = (m, n) => {
+  return Math.floor( Math.random() * (n - m + 1) ) + m;
+};
+
+const Bubble = () => {
+  const size = random(40,80) / 10;
+  const style = {
+    top: random(20,80) + '%',
+    left: random(0,95) + '%',
+    width: size + 'px',
+    height: size + 'px',
+    animationDelay: random(0,30)/10 + 's',
+  }
+  return <span className='SeaBubble' style={style}></span>
+};
+
 export const Sea = () => {
+
+  const bubbles = [];
+  for(let i = 0; i <= 10; i++) {
+    bubbles.push(<Bubble key={i} />);
+  }
+
   return (
     <div className='Sea'>
-      <div className='SeaBackground'></div>
+      <div className='SeaBackground'>{ bubbles }</div>
       <div className='SeaForeground'></div>
     </div>
   )
