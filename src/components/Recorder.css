@@ -35,7 +35,7 @@
   text-align: center;
 }
 
-.RecorderTransition {
+.RecorderTransition{
   position: absolute;
   top: 0;
   bottom: 0;
@@ -43,7 +43,7 @@
   right: var(--horizontal-padding);
 }
 
-.RecorderTransitionForward-enter {
+.RecorderTransitionForward-enter{
   opacity: 0;
   transform: translate3d( calc(50% + var(--horizontal-padding)), 0, 0);
 }
@@ -68,7 +68,7 @@
   transition-delay: 0ms;
 }
 
-.RecorderTransitionForward-leave-active {
+.RecorderTransitionForward-leave-active{
   opacity: 0;
   transform: translate3d( calc(-50% - var(--horizontal-padding)), 0, 0);
 }
