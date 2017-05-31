@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
 import { DetailScene } from '../components/DetailScene';
 import { DetailInfo } from '../components/DetailInfo';
-import { Navigation } from '../components/Navigation';
 
 import './HistoryPage.css';
 
@@ -93,7 +90,6 @@ class HistoryPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header left={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="HistoryPageContent">
           <DetailScene
             level={this.state.level}
@@ -103,14 +99,7 @@ class HistoryPage extends Component {
             level={this.state.level}
             record={this.state.records[this.state.currentDay]}
           />
-          <Navigation
-            days={this.state.records}
-            currentDay={this.state.currentDay}
-            forward={{onClick:this.forwardDay}}
-            backward={{onClick:this.backwardDay}}
-          />
         </LayoutContent>
-        <Footer/>
       </LayoutContainer>
     );
   }

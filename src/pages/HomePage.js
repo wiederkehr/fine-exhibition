@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
-import { Footer } from '../components/Footer';
 
 import './HomePage.css';
 
@@ -16,7 +15,6 @@ class HomePage extends Component {
             <p><Link to="/record">Swipe left</Link> to record,<br/> <Link to="/history">swipe right</Link> to review emotions.</p>
           </div>
         </LayoutContent>
-        <Footer/>
       </LayoutContainer>
     );
   }

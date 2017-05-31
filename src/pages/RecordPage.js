@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import update from 'immutability-helper';
 import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
-import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Recorder } from '../components/Recorder';
 import { Recording } from '../components/Recording';
@@ -127,7 +126,6 @@ class RecordPage extends Component {
   render() {
     return (
       <LayoutContainer>
-        <Header left={{to:'/', label:'Close'}} transparent />
         <LayoutContent className="RecordPageContent">
           <Recording
             record={this.state.record}

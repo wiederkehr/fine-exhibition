@@ -1,5 +1,5 @@
-# Emotion Tracker
-Simple tool to track emotions for the design research project by Anna and Benjamin Wiederkehr.
+# Fine Exhibition
+Exhibition version of the Fine application for tracking and visualizing emotions.
 
 ## Motivation
 
@@ -14,5 +14,4 @@ Currently this tool logs all the records in the same Fieldbook sheet. This makes
 * Javascript Application with [React](http://reactjs.org)
 * React Application based on [Create React App](https://github.com/facebookincubator/create-react-app)
 * CSS based on [Normalize](https://necolas.github.io/normalize.css/)
-* Static hosting with [Now](https://zeit.co/now)
 * Database and API with [Fieldbook](https://fieldbook.com)
