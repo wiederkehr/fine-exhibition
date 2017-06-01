@@ -48,6 +48,7 @@ class RecordPage extends Component {
     this.getResponse = this.getResponse.bind(this);
     this.forwardStep = this.forwardStep.bind(this);
     this.backwardStep = this.backwardStep.bind(this);
+    this.restartSteps = this.restartSteps.bind(this);
 
   };
 
@@ -63,19 +64,33 @@ class RecordPage extends Component {
   forwardStep(event) {
     event.preventDefault();
     if (this.state.currentStep < this.state.steps.length - 1) {
-      this.setState({ direction: 'forward' });
-      this.setState({ currentStep: this.state.currentStep + 1 });
-      this.setState({ readyForNextStep: true });
+      this.setState({
+        direction: 'forward',
+        currentStep: this.state.currentStep + 1,
+        readyForNextStep: true
+      });
     };
   };
 
   backwardStep(event) {
     event.preventDefault();
     if (this.state.currentStep > 0) {
-      this.setState({ direction: 'backward' });
-      this.setState({ currentStep: this.state.currentStep - 1 });
-      this.setState({ readyForNextStep: true });
+      this.setState({
+        direction: 'backward',
+        currentStep: this.state.currentStep - 1,
+        readyForNextStep: true
+      });
     };
+  };
+
+  restartSteps(event) {
+    event.preventDefault();
+    this.setState({
+      direction: 'backward',
+      currentStep: 0,
+      readyForNextStep: true,
+      pagination: true
+    });
   };
 
   onChange(field, event) {
@@ -142,9 +157,7 @@ class RecordPage extends Component {
       />
     );
 
-    const confirmation = (
-      <Confirmation>Sent ✓</Confirmation>
-    );
+    const confirmation = <Confirmation restart={this.restartSteps}/>;
 
     return (
       <LayoutContainer>
