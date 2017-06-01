@@ -84,8 +84,7 @@ class RecordPage extends Component {
     };
   };
 
-  restartSteps(event) {
-    event.preventDefault();
+  restartSteps() {
     browserHistory.push('/');
   };
 
