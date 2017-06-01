@@ -8,12 +8,6 @@
   top: auto;
 }
 
-.ConfirmationMessage {
-  color: rgba(255,255,255,0.8);
-  text-align: center;
-  flex-grow: 1;
-}
-
 .ConfirmationAction {
   color: rgba(255,255,255,0.8);
   font-size: 12px;
@@ -27,6 +21,7 @@
   background: none;
   box-shadow: none;
   text-decoration: none;
+  padding: 0;
 }
 
 .ConfirmationActionLeft {
@@ -37,4 +32,5 @@
 .ConfirmationActionRight {
   position: absolute;
   right: var(--horizontal-padding);
+  bottom: 0px;
 }

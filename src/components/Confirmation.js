@@ -1,20 +1,18 @@
 import React from 'react';
-import classNames from 'classnames';
 import { LayoutFooter } from '../components/Layout';
+import { CheckmarkIcon } from '../components/Icons';
 import './Confirmation.css';
 
-export const Confirmation = ({ children }) => {
-  const messageClasses = classNames('ConfirmationMessage');
+export const Confirmation = ( props ) => {
   return (
-    <LayoutFooter className={'Confirmation'}>
-      <div className={messageClasses}>{children}</div>
+    <LayoutFooter className='Confirmation'>
       <span className="ConfirmationActionRight">
-        <ConfirmationAction onClick={() => { console.log('Confirmation Click');}}>Restart</ConfirmationAction>
+        <ConfirmationAction onClick={props.restart} />
       </span>
     </LayoutFooter>
   )
 };
 
 const ConfirmationAction = ({ onClick, children }) => (
-  <button className="ConfirmationAction" onClick={onClick}>{children}</button>
+  <button className="ConfirmationAction" onClick={onClick}><CheckmarkIcon /></button>
 );
