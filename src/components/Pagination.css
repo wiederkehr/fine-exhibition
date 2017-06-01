@@ -4,6 +4,18 @@
   display: flex;
 }
 
+.PaginationActionLeft {
+  left: var(--horizontal-padding);
+  display: flex;
+  justify-content: center;
+}
+
+.PaginationActionRight {
+  right: var(--horizontal-padding);
+  display: flex;
+  justify-content: center;
+}
+
 .PaginationAction {
   color: var(--middark-grey);
   font-size: 12px;
@@ -17,20 +29,11 @@
   background: none;
   box-shadow: none;
   text-decoration: none;
+  line-height: 1;
 }
 
 .PaginationAction:disabled {
   color: var(--mid-grey);
-}
-
-.PaginationActionLeft {
-  position: absolute;
-  left: var(--horizontal-padding);
-}
-
-.PaginationActionRight {
-  position: absolute;
-  right: var(--horizontal-padding);
 }
 
 .PaginationDots {
