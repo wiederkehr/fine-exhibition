@@ -1,0 +1,14 @@
+.Notification {
+  background: rgba(255,255,255,0.2);
+  padding: 2px 5px;
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  text-align: center;
+  transform: translate(-50%, 0);
+  border-radius: 3px;
+}
+
+.NotificationMessage {
+  color: #FFF;
+}

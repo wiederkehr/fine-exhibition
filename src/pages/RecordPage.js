@@ -6,6 +6,7 @@ import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Confirmation } from '../components/Confirmation';
+import { Notification } from '../components/Notification';
 import { Recorder } from '../components/Recorder';
 import { Recording } from '../components/Recording';
 import { CloseIcon } from '../components/Icons';
@@ -52,6 +53,7 @@ class RecordPage extends Component {
     this.getResponse = this.getResponse.bind(this);
     this.handleResponse = this.handleResponse.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.clearError = this.clearError.bind(this);
     this.restart = this.restart.bind(this);
 
   };
@@ -115,7 +117,7 @@ class RecordPage extends Component {
     let sheetId       = process.env.REACT_APP_FIELDBOOK_SHEET;
     let baseUrl       = 'https://api.fieldbook.com/v1/';
     let url           = baseUrl + bookId + '/' + sheetId;
-    let userpass      = username + ':' + password;
+    let userpass      = username + '--33:' + password;
     let authorization = 'Basic '+ btoa(userpass);
 
     let headers = new Headers({
@@ -157,6 +159,10 @@ class RecordPage extends Component {
     browserHistory.push('/');
   };
 
+  clearError() {
+    this.setState({ error: false });
+  };
+
   render() {
 
     const pagination = (
@@ -172,7 +178,7 @@ class RecordPage extends Component {
     );
 
     const confirmation = <Confirmation restart={this.restart}/>;
-    const error = <span className='errorMessage'>Sorry, an error occurred.<br/>Please try again.</span>;
+    const error = <Notification clear={this.clearError} type='error'>Sorry, an error occurred. <br/>Please try again.</Notification>;
 
     return (
       <LayoutContainer>

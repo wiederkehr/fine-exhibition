@@ -2,10 +2,3 @@
   display: flex;
   flex-direction: column;
 }
-.errorMessage {
-  color: #fff;
-  position: absolute;
-  top: 12px;
-  width: 100%;
-  text-align: center;
-}
