@@ -117,7 +117,7 @@ class RecordPage extends Component {
     let sheetId       = process.env.REACT_APP_FIELDBOOK_SHEET;
     let baseUrl       = 'https://api.fieldbook.com/v1/';
     let url           = baseUrl + bookId + '/' + sheetId;
-    let userpass      = username + '--33:' + password;
+    let userpass      = username + ':' + password;
     let authorization = 'Basic '+ btoa(userpass);
 
     let headers = new Headers({
