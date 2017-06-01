@@ -1,0 +1,40 @@
+.Confirmation {
+  display: flex;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+}
+
+.ConfirmationMessage {
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  flex-grow: 1;
+}
+
+.ConfirmationAction {
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  font-weight: bold;
+  flex-grow: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.ConfirmationActionLeft {
+  position: absolute;
+  left: var(--horizontal-padding);
+}
+
+.ConfirmationActionRight {
+  position: absolute;
+  right: var(--horizontal-padding);
+}

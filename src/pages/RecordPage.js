@@ -4,6 +4,7 @@ import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
+import { Confirmation } from '../components/Confirmation';
 import { Recorder } from '../components/Recorder';
 import { Recording } from '../components/Recording';
 import { CloseIcon } from '../components/Icons';
@@ -38,6 +39,7 @@ class RecordPage extends Component {
       readyForPreviousStep: true,
       currentStep: 0,
       direction: 'forward',
+      pagination: true,
     }
 
     this.onChange = this.onChange.bind(this);
@@ -90,6 +92,7 @@ class RecordPage extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.sendRecord();
+    this.setState({ pagination: false, readyForNextStep: false });
   };
 
   sendRecord() {
@@ -126,6 +129,23 @@ class RecordPage extends Component {
   };
 
   render() {
+
+    const pagination = (
+      <Pagination
+        forward={{onClick:this.forwardStep, onSubmit:this.onSubmit}}
+        backward={{onClick:this.backwardStep}}
+        dots={this.state.steps}
+        currentDot={this.state.currentStep}
+        readyForNextStep={this.state.readyForNextStep}
+        readyForPreviousStep={this.state.readyForPreviousStep}
+        transparent
+      />
+    );
+
+    const confirmation = (
+      <Confirmation>Sent ✓</Confirmation>
+    );
+
     return (
       <LayoutContainer>
         <Header left={{to:'/', label:<CloseIcon />}} transparent />
@@ -143,15 +163,7 @@ class RecordPage extends Component {
             onSubmit={this.forwardStep}
           />
         </LayoutContent>
-        <Pagination
-          forward={{onClick:this.forwardStep, onSubmit:this.onSubmit}}
-          backward={{onClick:this.backwardStep}}
-          dots={this.state.steps}
-          currentDot={this.state.currentStep}
-          readyForNextStep={this.state.readyForNextStep}
-          readyForPreviousStep={this.state.readyForPreviousStep}
-          transparent
-        />
+        { this.state.pagination ? pagination : confirmation }
       </LayoutContainer>
     );
   };
