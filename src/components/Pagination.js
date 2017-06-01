@@ -9,8 +9,9 @@ export class Pagination extends Component {
     const isFirst = this.props.currentDot === 0 ? true : false;
     const isLast = this.props.currentDot === this.props.dots.length - 1 ? true : false;
 
-    const labelBackward = this.props.backward.label ? this.props.backward.label : '← Back';
-    const labelForward = this.props.forward.label ? this.props.forward.label : 'Next →';
+    const labelForward = 'Next →';
+    const labelBackward = '← Back';
+    const labelSubmit = 'Submit';
 
     let buttonBackward = null;
     let buttonForward = null;
@@ -22,7 +23,7 @@ export class Pagination extends Component {
     }
 
     if (isLast) {
-      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit} disabled={!this.props.readyForNextStep}>Submit ✓</PaginationAction>;
+      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit} disabled={!this.props.readyForNextStep}>{labelSubmit}</PaginationAction>;
     } else {
       buttonForward = <PaginationAction onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>{labelForward}</PaginationAction>;
     }

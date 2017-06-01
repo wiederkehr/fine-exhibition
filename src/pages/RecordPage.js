@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import update from 'immutability-helper';
 import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Recorder } from '../components/Recorder';
 import { Recording } from '../components/Recording';
+import { CloseIcon } from '../components/Icons';
 
 import './RecordPage.css';
 
@@ -36,8 +38,6 @@ class RecordPage extends Component {
       readyForPreviousStep: true,
       currentStep: 0,
       direction: 'forward',
-      status: 'Submit',
-      disabled: false,
     }
 
     this.onChange = this.onChange.bind(this);
@@ -64,7 +64,7 @@ class RecordPage extends Component {
       this.setState({ direction: 'forward' });
       this.setState({ currentStep: this.state.currentStep + 1 });
       this.setState({ readyForNextStep: true });
-    }
+    };
   };
 
   backwardStep(event) {
@@ -73,7 +73,7 @@ class RecordPage extends Component {
       this.setState({ direction: 'backward' });
       this.setState({ currentStep: this.state.currentStep - 1 });
       this.setState({ readyForNextStep: true });
-    }
+    };
   };
 
   onChange(field, event) {
@@ -89,7 +89,7 @@ class RecordPage extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.setState({ status: 'Sending…' }, this.sendRecord);
+    this.sendRecord();
   };
 
   sendRecord() {
@@ -123,12 +123,12 @@ class RecordPage extends Component {
 
   getResponse(response) {
     console.log(response);
-    this.setState({ status: 'Sent ✔︎', disabled: true });
   };
 
   render() {
     return (
       <LayoutContainer>
+        <Header left={{to:'/', label:<CloseIcon />}} transparent />
         <LayoutContent className="RecordPageContent">
           <Recording
             record={this.state.record}
