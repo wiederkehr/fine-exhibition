@@ -3,16 +3,34 @@
   position: relative;
   top: 4px;
 }
-.CloseIcon line{
+.CloseIcon line {
   fill: none;
   stroke: rgba(255,255,255,1);
   stroke-width: 2px;
   stroke-linecap: round;
 }
 
-.DetailIcon line{
+.DetailIcon line {
   fill: none;
   stroke: rgba(255,255,255,0.5);
   stroke-width: 3px;
   stroke-linecap: round;
+}
+
+.ArrowRightIcon {
+  position: relative;
+  top: 6px;
+}
+.ArrowRightIcon polygon {
+  fill: rgba(255,255,255,1);
+  stroke: none;
+}
+
+.ArrowLeftIcon {
+  position: relative;
+  top: 6px;
+}
+.ArrowLeftIcon polygon {
+  fill: rgba(255,255,255,1);
+  stroke: none;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { LayoutFooter } from '../components/Layout';
+import { ArrowRightIcon, ArrowLeftIcon } from '../components/Icons';
 import './Pagination.css';
 
 export class Pagination extends Component {
@@ -9,8 +10,8 @@ export class Pagination extends Component {
     const isFirst = this.props.currentDot === 0 ? true : false;
     const isLast = this.props.currentDot === this.props.dots.length - 1 ? true : false;
 
-    const labelForward = 'Next →';
-    const labelBackward = '← Back';
+    const labelForward = <ArrowRightIcon />;
+    const labelBackward = <ArrowLeftIcon />;
     const labelSubmit = 'Submit';
 
     let buttonBackward = null;
