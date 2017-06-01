@@ -1,3 +1,10 @@
+.CloseIcon line{
+  fill: none;
+  stroke: rgba(255,255,255,1);
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
 .DetailIcon line{
   fill: none;
   stroke: rgba(255,255,255,0.5);
