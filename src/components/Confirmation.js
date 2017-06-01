@@ -4,6 +4,7 @@ import { CheckmarkIcon } from '../components/Icons';
 import './Confirmation.css';
 
 export const Confirmation = ( props ) => {
+  setTimeout(props.restart, 5000)
   return (
     <LayoutFooter className='Confirmation'>
       <span className="ConfirmationActionRight">
