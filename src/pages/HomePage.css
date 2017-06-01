@@ -1,8 +1,18 @@
 .HomePageContent {
-  background-color: #C0E6D8;
+  background: linear-gradient(#CFECF8, #86CBEA);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.HomePageLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .HomePageIntroduction {
   color: var(--white);
