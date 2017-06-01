@@ -21,6 +21,11 @@ ReactDOM.render(
         component={HomePage}
       />
       <Route
+        path="/"
+        title="Home"
+        component={HomePage}
+      />
+      <Route
         path="/history"
         title="History"
         component={HistoryPage}
