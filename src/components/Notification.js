@@ -17,7 +17,7 @@ export const Notification = ( props ) => {
         translateY: -50
       }}
       >
-        <div className='NotificationWrapper'>
+        <div className='NotificationWrapper' key='notification'>
           <div className='Notification'>
             <span className='NotificationMessage'>
               { props.children }
