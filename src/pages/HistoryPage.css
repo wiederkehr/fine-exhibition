@@ -1,5 +1,35 @@
 .HistoryPageContent {
-  display: flex;
-  flex-direction: column;
   padding: 0;
+}
+
+.HistoryHeader {
+  height: 50px;
+  width: 100vw;
+}
+
+.HistoryHeader h1 {
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.HistoryGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.HistoryRecord {
+  background: #eee;
+  border: 2px solid #fff;
+  min-height: 400px;
+  min-width: 20vw;
+  flex-basis: 0;
+  flex-grow: 0;
+  position: relative;
+}
+.HistoryRecord:nth-child(5n) {
+  border-right-width: 4px;
+}
+.HistoryRecord:nth-child(5n+1) {
+  border-left-width: 4px;
 }

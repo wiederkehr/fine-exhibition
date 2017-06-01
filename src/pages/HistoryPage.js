@@ -15,12 +15,78 @@ class HistoryPage extends Component {
           date: false,
           emotion: false,
           trigger: false,
-          action: false,
+          action: 'Engage',
           arousal: 3,
           conduciveness: 3,
           controllability: 3,
           intensity: 3,
-          valence: 3
+          valence: 3,
+        },
+        {
+          action:"Withdraw",
+          arousal:3,
+          conduciveness:4,
+          controllability:3,
+          date:"2017-05-31",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Thing,Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:2,
+          conduciveness:4,
+          controllability:2,
+          date:"2017-05-31",
+          emotion:"Joy",
+          intensity:2,
+          trigger:"Activity",
+          valence:2
+        },
+        {
+          action:"Engage",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:"Trust",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:3,
+          conduciveness:6,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:"Trust",
+          intensity:3,
+          trigger:"Place",
+          valence:3
+        },
+        {
+          action:null,
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:null,
+          intensity:3,
+          trigger:null,
+          valence:3
         }
       ]
     }
@@ -32,7 +98,7 @@ class HistoryPage extends Component {
   };
 
   componentWillMount() {
-    // this.getRecords();
+    //this.getRecords();
   };
 
   getRecords() {
@@ -61,6 +127,7 @@ class HistoryPage extends Component {
   };
 
   getResponse(response) {
+    console.log(response.json());
     return response.json();
   };
 
@@ -71,9 +138,20 @@ class HistoryPage extends Component {
   };
 
   render() {
+    let allRecords = this.state.records.map((record, i) => {
+      return (
+        <div className='HistoryRecord' key={i}>
+          <HistoryScene record={this.state.records[i]} />
+        </div>
+      )
+    });
     return (
       <LayoutContainer>
         <LayoutContent className="HistoryPageContent">
+          <div className="HistoryHeader"><h1>How are you feeling today?</h1></div>
+          <div className='HistoryGrid'>
+            {allRecords}
+          </div>
           {/* <HistoryScene record={this.state.records[0]} /> */}
         </LayoutContent>
       </LayoutContainer>

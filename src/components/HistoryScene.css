@@ -7,54 +7,57 @@
   overflow-y: hidden;
 }
 
-.Sky {
-  height: 100vh;
-  position: relative;
+.HistorySky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   transition: background-color 300ms ease;
   z-index: 10;
 }
 
-.Aura {
+.HistoryAura {
+  bottom: 0;
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 80px);
-  transition: all 400ms;
+  width: calc(20vw - 20px);
   z-index: 20;
 }
-.Aura .injected-svg {
+.HistoryAura .injected-svg {
   bottom: 0;
   height: auto;
   position: absolute;
   width: 100%;
 }
 
-.Hummock {
+.HistoryHummock {
+  bottom: 0;
   left: 50%;
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(var(--square) - 120px);
-  transition: all 400ms;
+  width: calc(20vw - 40px);
   z-index: 30;
 }
-.Hummock .injected-svg {
+.HistoryHummock .injected-svg {
   bottom: 0;
   height: auto;
   position: absolute;
   width: 100%;
 }
 
-.Wave {
-  left: 50%;
+.HistoryWave {
+  bottom: 0;
+  left: -1px;
   line-height: 0;
   position: absolute;
-  transform: translate(-50%,-100%);
-  width: 100%;
+  width: calc(100% + 2px);
   z-index: 40;
 }
-.Wave .injected-svg {
+.HistoryWave .injected-svg {
   bottom: 0;
   height: auto;
   position: absolute;
