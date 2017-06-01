@@ -1,0 +1,62 @@
+.HistoryScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+}
+
+.Sky {
+  height: 100vh;
+  position: relative;
+  transition: background-color 300ms ease;
+  z-index: 10;
+}
+
+.Aura {
+  left: 50%;
+  line-height: 0;
+  position: absolute;
+  transform: translate(-50%,-100%);
+  width: calc(var(--square) - 80px);
+  transition: all 400ms;
+  z-index: 20;
+}
+.Aura .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
+.Hummock {
+  left: 50%;
+  line-height: 0;
+  position: absolute;
+  transform: translate(-50%,-100%);
+  width: calc(var(--square) - 120px);
+  transition: all 400ms;
+  z-index: 30;
+}
+.Hummock .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
+
+.Wave {
+  left: 50%;
+  line-height: 0;
+  position: absolute;
+  transform: translate(-50%,-100%);
+  width: 100%;
+  z-index: 40;
+}
+.Wave .injected-svg {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  width: 100%;
+}
