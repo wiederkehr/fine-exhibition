@@ -41,15 +41,18 @@ class RecordPage extends Component {
       currentStep: 0,
       direction: 'forward',
       pagination: true,
+      error: false,
     }
 
+    this.forwardStep = this.forwardStep.bind(this);
+    this.backwardStep = this.backwardStep.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.sendRecord = this.sendRecord.bind(this);
     this.getResponse = this.getResponse.bind(this);
-    this.forwardStep = this.forwardStep.bind(this);
-    this.backwardStep = this.backwardStep.bind(this);
-    this.restartSteps = this.restartSteps.bind(this);
+    this.handleResponse = this.handleResponse.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
+    this.restart = this.restart.bind(this);
 
   };
 
@@ -84,10 +87,6 @@ class RecordPage extends Component {
     };
   };
 
-  restartSteps() {
-    browserHistory.push('/');
-  };
-
   onChange(field, event) {
     console.log(field+':', event.target.value);
     var newState = update(this.state, {
@@ -101,8 +100,8 @@ class RecordPage extends Component {
 
   onSubmit(event) {
     event.preventDefault();
+    this.setState({ readyForNextStep: false });
     this.sendRecord();
-    this.setState({ pagination: false, readyForNextStep: false });
   };
 
   sendRecord() {
@@ -130,12 +129,32 @@ class RecordPage extends Component {
       body: body
     });
 
-    // fetch(request).then(this.getResponse);
+    fetch(request)
+      .then(this.getResponse)
+      .then(this.handleResponse)
+      .catch(this.handleErrors);
 
   };
 
   getResponse(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    };
+    return response;
+  };
+
+  handleErrors(error) {
+    console.log(error);
+    this.setState({ error: true, readyForNextStep: true });
+  };
+
+  handleResponse(response) {
     console.log(response);
+    this.setState({ pagination: false });
+  };
+
+  restart() {
+    browserHistory.push('/');
   };
 
   render() {
@@ -152,7 +171,8 @@ class RecordPage extends Component {
       />
     );
 
-    const confirmation = <Confirmation restart={this.restartSteps}/>;
+    const confirmation = <Confirmation restart={this.restart}/>;
+    const error = <span className='errorMessage'>Sorry, an error occurred.<br/>Please try again.</span>;
 
     return (
       <LayoutContainer>
@@ -171,6 +191,7 @@ class RecordPage extends Component {
             onSubmit={this.forwardStep}
           />
         </LayoutContent>
+        { this.state.error ? error : null }
         { this.state.pagination ? pagination : confirmation }
       </LayoutContainer>
     );
