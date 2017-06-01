@@ -120,7 +120,7 @@ class RecordPage extends Component {
       body: body
     });
 
-    fetch(request).then(this.getResponse);
+    // fetch(request).then(this.getResponse);
 
   };
 
@@ -148,7 +148,7 @@ class RecordPage extends Component {
 
     return (
       <LayoutContainer>
-        <Header left={{to:'/', label:<CloseIcon />}} transparent />
+        <Header right={{to:'/', label:<CloseIcon />}} transparent />
         <LayoutContent className="RecordPageContent">
           <Recording
             record={this.state.record}
