@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import update from 'immutability-helper';
+import { browserHistory } from 'react-router';
 import { timeFormat } from 'd3';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
@@ -85,12 +86,7 @@ class RecordPage extends Component {
 
   restartSteps(event) {
     event.preventDefault();
-    this.setState({
-      direction: 'backward',
-      currentStep: 0,
-      readyForNextStep: true,
-      pagination: true
-    });
+    browserHistory.push('/');
   };
 
   onChange(field, event) {
