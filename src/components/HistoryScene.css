@@ -21,6 +21,7 @@
   bottom: 0;
   left: 50%;
   line-height: 0;
+  opacity: 0.7;
   position: absolute;
   transform: translate(-50%,-100%);
   width: calc(12.5vw - 20px);
@@ -31,6 +32,9 @@
   height: auto;
   position: absolute;
   width: 100%;
+}
+.HistoryAura--Withdraw {
+  width: calc(12.5vw - 40px);
 }
 
 .HistoryHummock {
@@ -76,7 +80,7 @@
 
 .HistoryEmotionName {
   font-weight: 300;
-  margin: 0 0 2px;
+  margin: 0 0 5px;
 }
 
 .HistoryEmotionDate {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
+import classNames from 'classnames';
 import { timeParse, timeFormat } from 'd3';
 import { scaleLinear } from 'd3-scale';
 import './HistoryScene.css';
@@ -19,7 +20,9 @@ export class HistoryScene extends Component {
 };
 
 const Sky = ({ record }) => {
-  const conduciveness = scaleLinear().domain([0, 1, 3, 5]).range(["#FF5627", "#FF7D54", "#E5CCC5" , "#B6E2F4"]);
+  const conduciveness = scaleLinear()
+    .domain([1, 2, 3, 4, 5])
+    .range(["#FD7D5A", "#F19D89", "#E4CCC6", "#DEE6EA", "#B7E2F3"]);
   const topColor = conduciveness(record.conduciveness);
   const bottomColor = conduciveness(record.conduciveness - 1);
   return (
@@ -37,7 +40,7 @@ const Aura = ({ record }) => {
   const filename = 'A_' + record.action;
   const path = 'assets/vectors/aura/' + filename + '.svg';
   return (
-    <div className='HistoryAura'>
+    <div className={ classNames('HistoryAura', 'HistoryAura--'+record.action) }>
       <ReactSVG path={ path } />
     </div>
   )

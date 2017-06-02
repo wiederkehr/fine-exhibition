@@ -3,16 +3,25 @@
 }
 
 .HistoryHeader {
-  height: 50px;
+  height: 85px;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .HistoryHeader h1 {
   color: #8FBED9;
+  color: #333;
   letter-spacing: -0.5px;
   line-height: 1;
-  margin: 20px 0;
+  margin: 0;
   text-align: center;
+}
+
+.HistoryHeader > h1 > span {
+  border-bottom: 2px solid #ccc;
+  text-transform: lowercase;
 }
 
 .HistoryHeader a {
@@ -46,10 +55,10 @@
   background: #F8F8F8;
 }
 .HistoryRecord:nth-child(8n) {
-  border-right-width: 8px;
+  border-right-width: 0px;
 }
 .HistoryRecord:nth-child(8n+1) {
-  border-left-width: 8px;
+  border-left-width: 0px;
 }
 
 .HistoryOverlay {
