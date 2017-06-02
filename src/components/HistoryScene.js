@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
+import { timeParse, timeFormat } from 'd3';
 import { scaleLinear } from 'd3-scale';
 import './HistoryScene.css';
 
@@ -11,6 +12,7 @@ export class HistoryScene extends Component {
         <Aura record={this.props.record} />
         <Hummock record={this.props.record} />
         <Wave record={this.props.record} />
+        <Header record={this.props.record} />
       </div>
     )
   }
@@ -59,4 +61,17 @@ const Wave = ({ record }) => {
       <ReactSVG path={ path } />
     </div>
   )
+};
+
+const Header = ( props ) => {
+  const parseTime = timeParse("%Y-%m-%d");
+  const formatTime = timeFormat("%B %d, %Y");
+  const formattedDate = formatTime(parseTime(props.record.date))
+
+  return(
+    <div className='HistoryEmotionHeader'>
+      <h2 className='HistoryEmotionName'>{props.record.emotion ? props.record.emotion : 'Fine'}</h2>
+      <span className='HistoryEmotionDate'>{formattedDate}</span>
+    </div>
+  );
 };

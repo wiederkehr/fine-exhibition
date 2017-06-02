@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { LayoutContainer, LayoutContent } from '../components/Layout';
 import { HistoryScene } from '../components/HistoryScene';
+import { CloseIcon } from '../components/Icons';
 
 import './HistoryPage.css';
 
@@ -10,6 +11,7 @@ class HistoryPage extends Component {
     super(props);
 
     this.state={
+      overlay: false,
       records: [
         {
           date: false,
@@ -87,6 +89,39 @@ class HistoryPage extends Component {
           intensity:3,
           trigger:null,
           valence:3
+        },
+        {
+          action:"Fight",
+          arousal:2,
+          conduciveness:4,
+          controllability:2,
+          date:"2017-05-31",
+          emotion:"Joy",
+          intensity:2,
+          trigger:"Activity",
+          valence:2
+        },
+        {
+          action:"Engage",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01",
+          emotion:"Trust",
+          intensity:3,
+          trigger:"Person",
+          valence:3
         }
       ]
     }
@@ -94,6 +129,7 @@ class HistoryPage extends Component {
     this.getRecords=this.getRecords.bind(this);
     this.getResponse=this.getResponse.bind(this);
     this.setRecordsState=this.setRecordsState.bind(this);
+    this.setTimer=this.setTimer.bind(this);
 
   };
 
@@ -123,7 +159,8 @@ class HistoryPage extends Component {
 
     fetch(request)
       .then(this.getResponse)
-      .then(this.setRecordsState);
+      .then(this.setRecordsState)
+      .then(this.setTimer);
   };
 
   getResponse(response) {
@@ -137,22 +174,41 @@ class HistoryPage extends Component {
     });
   };
 
+  setTimer() {
+    // setTimeout(this.getRecords(), 30000);
+  };
+
   render() {
-    let allRecords = this.state.records.map((record, i) => {
-      return (
-        <div className='HistoryRecord' key={i}>
-          <HistoryScene record={this.state.records[i]} />
-        </div>
-      )
-    });
+
+    let row = 8;
+    let rows = Math.ceil(this.state.records.length / row);
+    let empty = rows * row - this.state.records.length;
+    console.log(row, rows, empty);
+
+    let emptyRecords = []
+
+    for (let i = 0; i < empty; i++) {
+      emptyRecords.push(
+        <div className='HistoryRecord HistoryRecord--empty' key={'empty-'+i}></div>
+      );
+    }
+
+    let allRecords = this.state.records.map((record, i) => (
+      <Record record={this.state.records[i]} i={i} />
+    ));
+
     return (
       <LayoutContainer>
         <LayoutContent className="HistoryPageContent">
-          <div className="HistoryHeader"><h1>How are you feeling today?</h1></div>
+          <div className="HistoryHeader">
+            <h1>How are you feeling?</h1>
+            <a onClick={() => { this.setState({overlay: true})}}>Fine.</a>
+          </div>
           <div className='HistoryGrid'>
             {allRecords}
+            {emptyRecords}
           </div>
-          {/* <HistoryScene record={this.state.records[0]} /> */}
+          { this.state.overlay ? <Overlay close={() => { this.setState({overlay: false})}} /> : null }
         </LayoutContent>
       </LayoutContainer>
     );
@@ -160,3 +216,20 @@ class HistoryPage extends Component {
 }
 
 export default HistoryPage;
+
+const Record = ( { record, i }) => (
+  <div className='HistoryRecord' key={'record-'+i}>
+    <HistoryScene record={record} />
+  </div>
+);
+
+const Overlay = ({ close }) => (
+  <div className='HistoryOverlay'>
+    <a className='HistoryOverlayClose' onClick={close}><CloseIcon /></a>
+    <ol>
+      <li>📱 Pick up the iPad.</li>
+      <li>💬 Tell us how you're feeling today.</li>
+      <li>🌄 See your emotion added here.</li>
+    </ol>
+  </div>
+);

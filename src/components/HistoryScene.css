@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .HistorySky {
@@ -23,7 +23,7 @@
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(20vw - 20px);
+  width: calc(12.5vw - 20px);
   z-index: 20;
 }
 .HistoryAura .injected-svg {
@@ -39,7 +39,7 @@
   line-height: 0;
   position: absolute;
   transform: translate(-50%,-100%);
-  width: calc(20vw - 40px);
+  width: calc(12.5vw - 40px);
   z-index: 30;
 }
 .HistoryHummock .injected-svg {
@@ -62,4 +62,23 @@
   height: auto;
   position: absolute;
   width: 100%;
+}
+
+.HistoryEmotionHeader {
+  color: #fff;
+  left: 10px;
+  line-height: 1;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  z-index: 50;
+}
+
+.HistoryEmotionName {
+  font-weight: 300;
+  margin: 0 0 2px;
+}
+
+.HistoryEmotionDate {
+  text-transform: uppercase;
 }
