@@ -61,7 +61,7 @@ class RecordPage extends Component {
   componentDidMount() {
     var newState = update(this.state, {
       record: {
-        date: { $set: timeFormat("%Y-%m-%d")(new Date()) }
+        date: { $set: timeFormat("%Y-%m-%d %H:%M")(new Date()) }
       }
     });
     this.setState(newState);

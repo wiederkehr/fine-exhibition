@@ -29,7 +29,7 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:4,
           controllability:3,
-          date:"2017-05-31",
+          date:"2017-05-31 12:32",
           emotion:"Joy",
           intensity:3,
           trigger:"Thing,Person",
@@ -40,7 +40,7 @@ class HistoryPage extends Component {
           arousal:2,
           conduciveness:4,
           controllability:2,
-          date:"2017-05-31",
+          date:"2017-05-31 12:32",
           emotion:"Joy",
           intensity:2,
           trigger:"Activity",
@@ -51,7 +51,7 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:5,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
           emotion:"Joy",
           intensity:3,
           trigger:"Person",
@@ -62,7 +62,7 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:5,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
           emotion:"Trust",
           intensity:3,
           trigger:"Person",
@@ -73,7 +73,7 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:6,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
           emotion:"Trust",
           intensity:3,
           trigger:"Place",
@@ -84,7 +84,7 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:5,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
           emotion:null,
           intensity:3,
           trigger:null,
@@ -95,7 +95,7 @@ class HistoryPage extends Component {
           arousal:2,
           conduciveness:4,
           controllability:2,
-          date:"2017-05-31",
+          date:"2017-05-31 12:32",
           emotion:"Joy",
           intensity:2,
           trigger:"Activity",
@@ -106,7 +106,40 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:5,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Withdraw",
+          arousal:3,
+          conduciveness:4,
+          controllability:3,
+          date:"2017-05-31 12:32",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Thing,Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:2,
+          conduciveness:4,
+          controllability:2,
+          date:"2017-05-31 12:32",
+          emotion:"Joy",
+          intensity:2,
+          trigger:"Activity",
+          valence:2
+        },
+        {
+          action:"Engage",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01 12:32",
           emotion:"Joy",
           intensity:3,
           trigger:"Person",
@@ -117,7 +150,62 @@ class HistoryPage extends Component {
           arousal:3,
           conduciveness:5,
           controllability:3,
-          date:"2017-06-01",
+          date:"2017-06-01 12:32",
+          emotion:"Trust",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:3,
+          conduciveness:6,
+          controllability:3,
+          date:"2017-06-01 12:32",
+          emotion:"Trust",
+          intensity:3,
+          trigger:"Place",
+          valence:3
+        },
+        {
+          action:null,
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01 12:32",
+          emotion:null,
+          intensity:3,
+          trigger:null,
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:2,
+          conduciveness:4,
+          controllability:2,
+          date:"2017-05-31 12:32",
+          emotion:"Joy",
+          intensity:2,
+          trigger:"Activity",
+          valence:2
+        },
+        {
+          action:"Engage",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01 12:32",
+          emotion:"Joy",
+          intensity:3,
+          trigger:"Person",
+          valence:3
+        },
+        {
+          action:"Fight",
+          arousal:3,
+          conduciveness:5,
+          controllability:3,
+          date:"2017-06-01 12:32",
           emotion:"Trust",
           intensity:3,
           trigger:"Person",
@@ -174,27 +262,28 @@ class HistoryPage extends Component {
     });
   };
 
+  getEmptyRecords(existing) {
+    let row = 8;
+    let rows = Math.ceil(existing / row);
+    let empty = rows * row - existing;
+    let emptyRecords = []
+    for (let i = 0; i < empty; i++) {
+      emptyRecords.push(
+        <RecordEmpty key={'empty-'+i} />
+      );
+    }
+    return emptyRecords;
+  }
+
   setTimer() {
     // setTimeout(this.getRecords(), 30000);
   };
 
   render() {
 
-    let row = 8;
-    let rows = Math.ceil(this.state.records.length / row);
-    let empty = rows * row - this.state.records.length;
-    console.log(row, rows, empty);
-
-    let emptyRecords = []
-
-    for (let i = 0; i < empty; i++) {
-      emptyRecords.push(
-        <div className='HistoryRecord HistoryRecord--empty' key={'empty-'+i}></div>
-      );
-    }
-
-    let allRecords = this.state.records.map((record, i) => (
-      <Record record={this.state.records[i]} i={i} />
+    const emptyRecords = this.getEmptyRecords(this.state.records.length);
+    const allRecords = this.state.records.map((record, i) => (
+      <Record key={'record-'+i} record={this.state.records[i]} />
     ));
 
     return (
@@ -217,10 +306,14 @@ class HistoryPage extends Component {
 
 export default HistoryPage;
 
-const Record = ( { record, i }) => (
-  <div className='HistoryRecord' key={'record-'+i}>
+const Record = ({ record }) => (
+  <div className='HistoryRecord'>
     <HistoryScene record={record} />
   </div>
+);
+
+const RecordEmpty = ( ) => (
+  <div className='HistoryRecord HistoryRecord--empty'></div>
 );
 
 const Overlay = ({ close }) => (

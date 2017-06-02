@@ -34,7 +34,7 @@
 .HistoryRecord {
   background: #FFF;
   border: 4px solid #FFF;
-  border-bottom: none;
+  border-top: none;
   min-height: calc(25vh);
   min-width: 12.5vw;
   flex-basis: 0;
