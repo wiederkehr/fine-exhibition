@@ -12,13 +12,14 @@ class HistoryPage extends Component {
 
     this.state={
       overlay: false,
+      iterator: 0,
       records: [
         {
           date: false,
           emotion: false,
           trigger: false,
           action: 'Engage',
-          arousal: 3,
+          arousal: 1,
           conduciveness: 1,
           controllability: 3,
           intensity: 3,
@@ -26,7 +27,7 @@ class HistoryPage extends Component {
         },
         {
           action:"Suppress",
-          arousal:3,
+          arousal:2,
           conduciveness:2,
           controllability:2,
           date:"2017-05-31 12:32",
@@ -37,7 +38,7 @@ class HistoryPage extends Component {
         },
         {
           action:"Withdraw",
-          arousal:2,
+          arousal:3,
           conduciveness:3,
           controllability:2,
           date:"2017-05-31 12:32",
@@ -48,7 +49,7 @@ class HistoryPage extends Component {
         },
         {
           action:"Savor",
-          arousal:3,
+          arousal:4,
           conduciveness:4,
           controllability:3,
           date:"2017-06-01 12:32",
@@ -59,7 +60,7 @@ class HistoryPage extends Component {
         },
         {
           action:"Fight",
-          arousal:3,
+          arousal:5,
           conduciveness:5,
           controllability:3,
           date:"2017-06-01 12:32",
@@ -218,11 +219,30 @@ class HistoryPage extends Component {
     this.getResponse=this.getResponse.bind(this);
     this.setRecordsState=this.setRecordsState.bind(this);
     this.setTimer=this.setTimer.bind(this);
+    this.tick=this.tick.bind(this);
 
   };
 
   componentWillMount() {
     //this.getRecords();
+  };
+
+  componentDidMount() {
+    this.intervalId = setInterval(() => {
+      this.tick()
+    }, 50);
+  };
+
+  componentWillUnmount(){
+    clearInterval(this.intervalId);
+  };
+
+  tick() {
+    let newIterator = this.state.iterator + 10;
+    if (newIterator > 1880) {
+  		newIterator = 0;
+  	};
+    this.setState({ iterator: newIterator });
   };
 
   getRecords() {
@@ -283,7 +303,7 @@ class HistoryPage extends Component {
 
     const emptyRecords = this.getEmptyRecords(this.state.records.length);
     const allRecords = this.state.records.map((record, i) => (
-      <Record key={'record-'+i} record={this.state.records[i]} />
+      <Record key={'record-'+i} record={this.state.records[i]} iterator={this.state.iterator} />
     ));
     const currentEmotion = this.state.records[0].emotion ? this.state.records[1].emotion : 'fine';
 
@@ -307,9 +327,9 @@ class HistoryPage extends Component {
 
 export default HistoryPage;
 
-const Record = ({ record }) => (
+const Record = ({ record, iterator }) => (
   <div className='HistoryRecord'>
-    <HistoryScene record={record} />
+    <HistoryScene record={record} iterator={iterator} />
   </div>
 );
 
