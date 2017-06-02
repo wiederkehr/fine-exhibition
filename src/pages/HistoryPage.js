@@ -230,7 +230,7 @@ class HistoryPage extends Component {
   componentDidMount() {
     this.intervalId = setInterval(() => {
       this.tick()
-    }, 50);
+    }, 100);
   };
 
   componentWillUnmount(){
@@ -238,7 +238,7 @@ class HistoryPage extends Component {
   };
 
   tick() {
-    let newIterator = this.state.iterator + 10;
+    let newIterator = this.state.iterator + 2;
     if (newIterator > 1880) {
   		newIterator = 0;
   	};
