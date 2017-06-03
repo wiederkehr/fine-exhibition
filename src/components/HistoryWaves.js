@@ -20,7 +20,6 @@ export class HistoryWaves extends Component {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    this.canvas.height = 600 - this.state.record.arousal * 100;
     this.draw(nextProps.iterator);
   };
 
