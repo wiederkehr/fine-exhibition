@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { HistoryScene } from '../components/HistoryScene';
 import { CloseIcon } from '../components/Icons';
 import { Records } from '../content/Records';
 
 import './HistoryPage.css';
 
-class HistoryPage extends Component {
+export class HistoryPage extends Component {
 
   constructor(props) {
     super(props);
@@ -111,24 +111,24 @@ class HistoryPage extends Component {
     const currentEmotion = this.state.records[0].emotion ? this.state.records[1].emotion : 'fine';
 
     return (
-      <LayoutContainer>
-        <LayoutContent className="HistoryPageContent">
-          <div className="HistoryHeader">
-            <h1>Right now, we feel <span>{currentEmotion}</span>.</h1>
-            {/* <a onClick={() => { this.setState({overlay: true})}}>Fine.</a> */}
-          </div>
-          <div className='HistoryGrid'>
-            {allRecords}
-            {emptyRecords}
-          </div>
-          { this.state.overlay ? <Overlay close={() => { this.setState({overlay: false})}} /> : null }
-        </LayoutContent>
-      </LayoutContainer>
+      <Layout>
+        <LayoutContainer>
+          <LayoutContent className="HistoryPageContent">
+            <div className="HistoryHeader">
+              <h1>Right now, we feel <span>{currentEmotion}</span>.</h1>
+              {/* <a onClick={() => { this.setState({overlay: true})}}>Fine.</a> */}
+            </div>
+            <div className='HistoryGrid'>
+              {allRecords}
+              {emptyRecords}
+            </div>
+            { this.state.overlay ? <Overlay close={() => { this.setState({overlay: false})}} /> : null }
+          </LayoutContent>
+        </LayoutContainer>
+      </Layout>
     );
   };
-}
-
-export default HistoryPage;
+};
 
 const Record = ({ record, iterator }) => (
   <div className='HistoryRecord'>

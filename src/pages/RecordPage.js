@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import update from 'immutability-helper';
 import { browserHistory } from 'react-router';
 import { timeFormat } from 'd3';
-import { LayoutContainer, LayoutContent } from '../components/Layout';
+import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Pagination } from '../components/Pagination';
 import { Confirmation } from '../components/Confirmation';
@@ -13,7 +13,7 @@ import { CloseIcon } from '../components/Icons';
 
 import './RecordPage.css';
 
-class RecordPage extends Component {
+export class RecordPage extends Component {
 
   constructor(props) {
     super(props);
@@ -181,27 +181,27 @@ class RecordPage extends Component {
     const error = <Notification clear={this.clearError} type='error'>Sorry, an error occurred. <br/>Please try again.</Notification>;
 
     return (
-      <LayoutContainer>
-        <Header right={{to:'/', label:<CloseIcon />}} transparent />
-        <LayoutContent className="RecordPageContent">
-          <Recording
-            record={this.state.record}
-            step={this.state.currentStep}
-          />
-          <Recorder
-            record={this.state.record}
-            steps={this.state.steps}
-            step={this.state.currentStep}
-            direction={this.state.direction}
-            onChange={this.onChange}
-            onSubmit={this.forwardStep}
-          />
-        </LayoutContent>
-        { this.state.error ? error : null }
-        { this.state.pagination ? pagination : confirmation }
-      </LayoutContainer>
+      <Layout>
+        <LayoutContainer>
+          <Header right={{to:'/', label:<CloseIcon />}} transparent />
+          <LayoutContent className="RecordPageContent">
+            <Recording
+              record={this.state.record}
+              step={this.state.currentStep}
+            />
+            <Recorder
+              record={this.state.record}
+              steps={this.state.steps}
+              step={this.state.currentStep}
+              direction={this.state.direction}
+              onChange={this.onChange}
+              onSubmit={this.forwardStep}
+            />
+          </LayoutContent>
+          { this.state.error ? error : null }
+          { this.state.pagination ? pagination : confirmation }
+        </LayoutContainer>
+      </Layout>
     );
   };
-}
-
-export default RecordPage;
+};
