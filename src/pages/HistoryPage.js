@@ -14,30 +14,35 @@ export class HistoryPage extends Component {
     this.state={
       overlay: false,
       iterator: 0,
-      records: null
+      loadingTime: 0,
+      loadingPercentage: 0,
+      records: []
     }
 
     this.getRecords=this.getRecords.bind(this);
+    this.getDummyRecords=this.getDummyRecords.bind(this);
     this.getResponse=this.getResponse.bind(this);
-    this.setRecordsState=this.setRecordsState.bind(this);
-    this.setTimer=this.setTimer.bind(this);
+    this.handleErrors=this.handleErrors.bind(this);
+    this.handleResponse=this.handleResponse.bind(this);
     this.tick=this.tick.bind(this);
+    this.setLoading=this.setLoading.bind(this);
 
   };
 
   componentWillMount() {
-    this.setState({ records: Records });
-    //this.getRecords();
+    // this.getRecords();
+    this.getDummyRecords();
   };
 
   componentDidMount() {
-    this.intervalId = setInterval(() => {
-      this.tick()
-    }, 100);
+    // this.animationInterval = setInterval(() => {
+    //   this.tick();
+    // }, 100);
   };
 
   componentWillUnmount(){
-    clearInterval(this.intervalId);
+    // clearInterval(this.animationInterval);
+    clearInterval(this.loadingInterval);
   };
 
   tick() {
@@ -46,6 +51,27 @@ export class HistoryPage extends Component {
   		newIterator = 0;
   	};
     this.setState({ iterator: newIterator });
+  };
+
+  setLoading() {
+    let newTime = this.state.loadingTime + 10;
+    let newPercentage = 100 / 3000 * newTime;
+
+    if (newTime > 3000) {
+  		newTime = 0;
+      newPercentage = 0;
+      clearInterval(this.loadingInterval);
+      // this.getRecords();
+      this.getDummyRecords();
+  	}else{
+      newPercentage = 100 / 3000 * newTime;
+    };
+
+    this.setState({
+      loadingTime: newTime,
+      loadingPercentage: newPercentage
+    });
+
   };
 
   getRecords() {
@@ -70,25 +96,43 @@ export class HistoryPage extends Component {
 
     fetch(request)
       .then(this.getResponse)
-      .then(this.setRecordsState)
-      .then(this.setTimer);
+      .then(this.handleResponse)
+      .catch(this.handleErrors);
   };
 
   getResponse(response) {
-    console.log(response.json());
+    if (!response.ok) {
+      throw Error(response.statusText);
+    };
     return response.json();
   };
 
-  setRecordsState(records) {
-    this.setState({
-      records: records.reverse()
-    });
+  handleErrors(error) {
+    console.log(error);
+  };
+
+  handleResponse(response) {
+    console.log(response);
+    this.setState({ records: response.reverse() });
+    this.loadingInterval = setInterval(() => {
+      this.setLoading();
+    }, 100);
+  };
+
+  getDummyRecords() {
+    this.setState({ records: Records });
+    this.loadingInterval = setInterval(() => {
+      this.setLoading();
+    }, 100);
   };
 
   getEmptyRecords(existing) {
-    let row = 8;
+    let row = 10;
     let rows = Math.ceil(existing / row);
     let empty = rows * row - existing;
+    if(rows < 3) { empty += 10 };
+    if(rows < 2) { empty += 10 };
+    if(rows < 1) { empty += 10 };
     let emptyRecords = []
     for (let i = 0; i < empty; i++) {
       emptyRecords.push(
@@ -98,31 +142,28 @@ export class HistoryPage extends Component {
     return emptyRecords;
   }
 
-  setTimer() {
-    // setTimeout(this.getRecords(), 30000);
-  };
-
   render() {
 
     const emptyRecords = this.getEmptyRecords(this.state.records.length);
     const allRecords = this.state.records.map((record, i) => (
       <Record key={'record-'+i} record={this.state.records[i]} iterator={this.state.iterator} />
     ));
-    const currentEmotion = this.state.records[0].emotion ? this.state.records[1].emotion : 'fine';
+    // const currentEmotion = this.state.records[0].emotion ? this.state.records[1].emotion : 'fine';
 
     return (
       <Layout>
         <LayoutContainer>
           <LayoutContent className="HistoryPageContent">
-            <div className="HistoryHeader">
+            {/* <div className="HistoryHeader">
               <h1>Right now, we feel <span>{currentEmotion}</span>.</h1>
-              {/* <a onClick={() => { this.setState({overlay: true})}}>Fine.</a> */}
-            </div>
+              <a onClick={() => { this.setState({overlay: true})}}>Fine.</a>
+            </div> */}
             <div className='HistoryGrid'>
               {allRecords}
               {emptyRecords}
             </div>
             { this.state.overlay ? <Overlay close={() => { this.setState({overlay: false})}} /> : null }
+            <Loader loadingPercentage={this.state.loadingPercentage} />
           </LayoutContent>
         </LayoutContainer>
       </Layout>
@@ -139,6 +180,14 @@ const Record = ({ record, iterator }) => (
 const RecordEmpty = ( ) => (
   <div className='HistoryRecord HistoryRecord--empty'></div>
 );
+
+const Loader = ({ loadingPercentage }) => {
+  return (
+    <div className='HistoryLoader'>
+      <div className='HistoryLoaderPercentage' style={{ width: loadingPercentage + '%'}}></div>
+    </div>
+  )
+};
 
 const Overlay = ({ close }) => (
   <div className='HistoryOverlay'>
