@@ -1,6 +1,6 @@
 {
   "name": "fine-exhibition",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.7.0"
