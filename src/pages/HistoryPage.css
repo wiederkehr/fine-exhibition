@@ -1,5 +1,11 @@
 .HistoryPageContent {
   padding: 0;
+  background-color: #000;
+  cursor:none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .HistoryHeader {
@@ -11,8 +17,7 @@
 }
 
 .HistoryHeader h1 {
-  color: #8FBED9;
-  color: #333;
+  color: #FFF;
   letter-spacing: -0.5px;
   line-height: 1;
   margin: 0;
@@ -20,7 +25,7 @@
 }
 
 .HistoryHeader > h1 > span {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #666;
   text-transform: lowercase;
 }
 
@@ -41,24 +46,44 @@
 }
 
 .HistoryRecord {
-  background: #FFF;
-  border: 4px solid #FFF;
-  border-top: none;
-  min-height: calc(25vh);
-  min-width: 12.5vw;
+  background: #000;
+  border: 4px solid #000;
+  height: 33.333vh;
+  min-width: 10vw;
   flex-basis: 0;
   flex-grow: 0;
   position: relative;
-  padding-bottom: 20%;
 }
 .HistoryRecord--empty {
-  background: #F8F8F8;
+  background: #222;
 }
-.HistoryRecord:nth-child(8n) {
-  border-right-width: 0px;
+.HistoryRecord:nth-child(10n) {
+  border-right-width: 8px;
 }
-.HistoryRecord:nth-child(8n+1) {
-  border-left-width: 0px;
+.HistoryRecord:nth-child(10n+1) {
+  border-left-width: 8px;
+}
+.HistoryRecord:nth-child(-n+10) {
+  border-top-width: 8px;
+}
+.HistoryRecord:nth-last-child(-n+10) {
+  border-bottom-width: 8px;
+}
+
+.HistoryLoader {
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.HistoryLoaderPercentage {
+  background: rgba(255, 255, 255, 1);
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .HistoryOverlay {
