@@ -13,7 +13,8 @@ export class HistoryScene extends Component {
         <Sky record={this.props.record} />
         <Aura record={this.props.record} />
         <Hummock record={this.props.record} />
-        <HistoryWaves record={this.props.record} iterator={this.props.iterator} />
+        <Wave record={this.props.record} />
+        {/* <HistoryWaves record={this.props.record} iterator={this.props.iterator} /> */}
         <Header record={this.props.record} />
       </div>
     )
