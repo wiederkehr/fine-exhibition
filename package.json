@@ -28,7 +28,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "release": "npm version minor --tag-version-prefix=release- && git push --follow-tags",
-    "patch": "npm version --tag-version-prefix=patch- && git push --follow-tags",
+    "patch": "npm version patch --tag-version-prefix=patch- && git push --follow-tags",
     "deploy": "rm -rf build && PUBLIC_URL=http://fine-exhibition.annawiederkehr.com/ react-scripts build && rsync -av build/* mebenj9@benjaminwiederkehr.com:/home/mebenj9/www/fine-exhibition.annawiederkehr.com/"
   }
 }
