@@ -14,7 +14,7 @@ export class HomePage extends Component {
             <Link to="/record" className='HomePageLink'>
               <div className='HomePageIntroduction TypeContent'>
                 <h1>How are you feeling?</h1>
-                <p>Tab to record an emotion.</p>
+                <span className='Button SecondaryButton'>Tab to record an emotion.</span>
               </div>
             </Link>
           </LayoutContent>
