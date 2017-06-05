@@ -27,6 +27,14 @@
 .Recorder--Review {
   top: 10%;
 }
+@media screen and (min-width: 40em) {
+  .Recorder--Dimensions {
+    top: 40%;
+  }
+  .Recorder--Trigger {
+    top: 40%;
+  }
+}
 
 .RecorderHeadline,
 .RecorderSubheadline {
