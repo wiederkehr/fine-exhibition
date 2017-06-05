@@ -1,14 +1,4 @@
-.DetailScene {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  position: absolute;
-  transition: top 600ms ease-in-out;
-}
-
-.DetailEmotionHeader {
+.EmotionHeader--Slim {
   color: #fff;
   left: 10px;
   line-height: 1;
@@ -18,12 +8,12 @@
   z-index: 50;
 }
 
-.DetailEmotionName {
+.EmotionName--Slim {
   font-weight: 300;
   margin: 0 0 5px;
 }
 
-.DetailEmotionDate {
+.EmotionDate--Slim {
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;

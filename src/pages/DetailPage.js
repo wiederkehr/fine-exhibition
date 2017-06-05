@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
-import { DetailScene } from '../components/DetailScene';
+import { Air, Water, Sky, Sea, Aura, Hummock, Bummock, Wave } from '../components/Scene';
+import { EmotionHeader } from '../components/EmotionHeader';
 import { Records } from '../content/Records';
 
 import './DetailPage.css';
@@ -11,7 +12,9 @@ export class DetailPage extends Component {
     super(props);
 
     this.state={
-      records: []
+      records: [],
+      width: '0',
+      height: '0'
     }
 
     this.getRecords=this.getRecords.bind(this);
@@ -19,6 +22,7 @@ export class DetailPage extends Component {
     this.getResponse=this.getResponse.bind(this);
     this.handleErrors=this.handleErrors.bind(this);
     this.handleResponse=this.handleResponse.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
   };
 
@@ -26,6 +30,19 @@ export class DetailPage extends Component {
     // this.getRecords();
     this.getDummyRecords();
   };
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
 
   getRecords() {
     var username = process.env.REACT_APP_FIELDBOOK_USER;
@@ -76,7 +93,13 @@ export class DetailPage extends Component {
   render() {
     const allRecords = this.state.records.map((record, i) => (
       <div className='DetailRecord' key={'record-'+i}>
-        <DetailScene record={this.state.records[i]} />
+        <Air style={{ height: this.state.height }}>
+          <Sky record={record} />
+          <Aura record={record} />
+          <Hummock record={record} />
+          <Wave record={record} />
+          <EmotionHeader record={record} />
+        </Air>
       </div>
     ));
     return (
