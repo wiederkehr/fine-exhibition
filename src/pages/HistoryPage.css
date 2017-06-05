@@ -64,7 +64,7 @@
   border-left-width: 8px;
 }
 .HistoryRecord:nth-child(-n+10) {
-  border-top-width: 8px;
+  border-top-width: 10px;
 }
 .HistoryRecord:nth-last-child(-n+10) {
   border-bottom-width: 8px;
