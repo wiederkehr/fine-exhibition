@@ -10,23 +10,38 @@ export class Pagination extends Component {
     const isFirst = this.props.currentDot === 0 ? true : false;
     const isLast = this.props.currentDot === this.props.dots.length - 1 ? true : false;
 
-    const labelForward = <ArrowRightIcon />;
-    const labelBackward = <ArrowLeftIcon />;
-    const labelSubmit = 'Submit';
-
     let buttonBackward = null;
     let buttonForward = null;
 
     if (isFirst) {
       buttonBackward = null;
     } else {
-      buttonBackward = <PaginationAction onClick={this.props.backward.onClick} disabled={!this.props.readyForPreviousStep}>{labelBackward}</PaginationAction>;
+      buttonBackward = (
+        <PaginationAction
+          onClick={this.props.backward.onClick}
+          disabled={!this.props.readyForPreviousStep}>
+          <ArrowLeftIcon />
+          <span className='PaginationActionLabel'>Back</span>
+        </PaginationAction>
+      );
     }
 
     if (isLast) {
-      buttonForward = <PaginationAction onClick={this.props.forward.onSubmit} disabled={!this.props.readyForNextStep}>{labelSubmit}</PaginationAction>;
+      buttonForward = (
+        <PaginationAction
+          onClick={this.props.forward.onSubmit}
+          disabled={!this.props.readyForNextStep}>
+          Submit
+        </PaginationAction>
+      );
     } else {
-      buttonForward = <PaginationAction onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>{labelForward}</PaginationAction>;
+      buttonForward = (
+        <PaginationAction
+          onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>
+          <span className='PaginationActionLabel'>Next</span>
+          <ArrowRightIcon />
+        </PaginationAction>
+      );
     }
     return (
       <LayoutFooter className={classes}>

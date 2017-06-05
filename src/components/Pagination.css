@@ -5,15 +5,17 @@
 }
 
 .PaginationActionLeft {
-  left: var(--horizontal-padding);
   display: flex;
-  justify-content: center;
+  flex-basis: 100px;
+  justify-content: flex-start;
+  left: var(--horizontal-padding);
 }
 
 .PaginationActionRight {
-  right: var(--horizontal-padding);
   display: flex;
-  justify-content: center;
+  flex-basis: 100px;
+  justify-content: flex-end;
+  right: var(--horizontal-padding);
 }
 
 .PaginationAction {
@@ -30,10 +32,21 @@
   box-shadow: none;
   text-decoration: none;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 40em) {
+  .PaginationAction {
+    font-size: 16px;
+  }
 }
 
 .PaginationAction:disabled {
   color: var(--mid-grey);
+}
+
+.PaginationActionLabel {
+  margin: 0 5px;
 }
 
 .PaginationDots {
@@ -78,6 +91,9 @@
 }
 .Pagination--transparent .PaginationAction:disabled {
   color: rgba(255,255,255,0.4);
+}
+.Pagination--transparent .PaginationAction polygon{
+  fill: rgba(255,255,255,0.8);
 }
 .Pagination--transparent .PaginationDot circle {
   fill: rgba(255,255,255,1);
