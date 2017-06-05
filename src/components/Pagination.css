@@ -6,7 +6,6 @@
 
 .PaginationAction {
   display: flex;
-  flex-basis: 100px;
   flex-grow: 1;
   height: var(--layoutbar-height);
 }
@@ -22,15 +21,13 @@
 }
 
 .PaginationActionButton {
-  display: block;
   color: var(--middark-grey);
   font-size: 12px;
   font-weight: bold;
-  flex-grow: 0;
   text-decoration: none;
   text-transform: uppercase;
-  cursor: pointer;
   display: flex;
+  flex-basis: 100px;
   align-items: center;
 }
 @media screen and (min-width: 40em) {
@@ -38,12 +35,20 @@
     font-size: 16px;
   }
 }
-
 .PaginationActionButton:disabled {
   color: var(--mid-grey);
 }
 
+.PaginationActionLeft .PaginationActionButton{
+  justify-content: flex-start;
+}
+
+.PaginationActionRight .PaginationActionButton{
+  justify-content: flex-end;
+}
+
 .PaginationActionLabel {
+  display: block;
   margin: 0 5px;
 }
 
