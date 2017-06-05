@@ -11,7 +11,6 @@
   position: absolute;
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 80px);
-  transition: all 400ms;
   z-index: 20;
 }
 .Aura .injected-svg {
@@ -27,7 +26,6 @@
   position: absolute;
   transform: translate(-50%,-100%);
   width: calc(var(--square) - 120px);
-  transition: all 400ms;
   z-index: 30;
 }
 .Hummock .injected-svg {
@@ -43,7 +41,6 @@
   position: absolute;
   transform: translate(-50%,0);
   width: calc(var(--square) - 120px);
-  transition: all 400ms;
   z-index: 30;
 }
 .Bummock .injected-svg,
