@@ -4,18 +4,28 @@ import classNames from 'classnames';
 import { scaleLinear } from 'd3-scale';
 import './Scene.css';
 
-export const Scene = ({ record }) => {
-  return (
-    <div className='Scene'>
+export const Scene = ({ record }) => (
+  <div className='Scene'>
+    <Air>
       <Sky record={ record } />
       <Aura record={ record } />
       <Hummock record={ record } />
-      <Bummock record={ record } />
       <Wave record={ record } />
+    </Air>
+    <Water>
+      <Bummock record={ record } />
       <Sea />
-    </div>
-  )
-};
+    </Water>
+  </div>
+);
+
+export const Air = ({ children, style }) => (
+  <div className='Air' style={style}>{ children }</div>
+);
+
+export const Water = ({ children, style }) => (
+  <div className='Water' style={style}>{ children }</div>
+);
 
 export const Sky = ({ record }) => {
   const conduciveness = scaleLinear()
@@ -38,7 +48,7 @@ export const Aura = ({ record }) => {
   const filename = 'A_' + record.action;
   const path = 'assets/vectors/aura/' + filename + '.svg';
   return (
-    <div className='Aura'>
+    <div className={ classNames('Aura', 'Aura--'+record.action) }>
       <ReactSVG path={ path } />
     </div>
   )

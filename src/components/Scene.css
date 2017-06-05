@@ -1,15 +1,27 @@
-.Sky {
-  height: 100vh;
+.Air {
   position: relative;
+}
+
+.Water {
+  position: relative;
+}
+
+.Sky {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
   transition: background-color 300ms ease;
   z-index: 10;
 }
 
 .Aura {
+  bottom: 0;
   left: 50%;
   line-height: 0;
   position: absolute;
-  transform: translate(-50%,-100%);
+  transform: translateX(-50%);
   width: calc(var(--square) - 80px);
   z-index: 20;
 }
@@ -19,12 +31,37 @@
   position: absolute;
   width: 100%;
 }
+.Aura--Withdraw {
+  width: calc(var(--square) - 120px);
+}
+.Aura--Other {
+  bottom: 100px;
+}
+.Aura--Suppress {
+  bottom: 100px;
+}
+
+.Wave {
+  bottom: 0;
+  left: 0;
+  line-height: 0;
+  position: absolute;
+  right: 0;
+  z-index: 40;
+}
+.Wave .injected-svg {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
 
 .Hummock {
+  bottom: 0;
   left: 50%;
   line-height: 0;
   position: absolute;
-  transform: translate(-50%,-100%);
+  transform: translateX(-50%);
   width: calc(var(--square) - 120px);
   z-index: 30;
 }
@@ -39,7 +76,7 @@
   left: 50%;
   line-height: 0;
   position: absolute;
-  transform: translate(-50%,0);
+  transform: translateX(-50%);
   width: calc(var(--square) - 120px);
   z-index: 30;
 }
@@ -72,36 +109,34 @@
   right: 0;
 }
 
-.Wave {
+.Sea {
+  top: 0;
   left: 0;
-  line-height: 0;
-  position: absolute;
   right: 0;
-  z-index: 40;
-  transform: translate(0,-100%);
-}
-.Wave .injected-svg {
   bottom: 0;
-  left: 0;
   position: absolute;
-  width: 100%;
 }
 
 .SeaBackground {
   background: linear-gradient(rgba(0,72,79,1) 0%, rgba(0,87,94,1) 30%);
-  height: 100vh;
-  position: relative;
-  z-index: 10;
-}
-.SeaForeground {
-  background: linear-gradient(rgba(0,72,79,1) 0%, rgba(0,87,94,.5) 30%);
-  position: absolute;
-  height: 100vh;
-  top: 100vh;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.SeaForeground {
+  background: linear-gradient(rgba(0,72,79,1) 0%, rgba(0,87,94,.5) 30%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
   z-index: 40;
 }
+
 .SeaBubble {
   opacity: 0;
   position: absolute;
@@ -109,6 +144,7 @@
   animation: bubbles 3s ease-in infinite;
   border-radius: 100%;
 }
+
 @keyframes bubbles {
   0% {
     opacity: 0;
