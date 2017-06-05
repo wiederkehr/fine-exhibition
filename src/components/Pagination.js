@@ -17,39 +17,39 @@ export class Pagination extends Component {
       buttonBackward = null;
     } else {
       buttonBackward = (
-        <PaginationAction
+        <PaginationActionButton
           onClick={this.props.backward.onClick}
           disabled={!this.props.readyForPreviousStep}>
           <ArrowLeftIcon />
           <span className='PaginationActionLabel'>Back</span>
-        </PaginationAction>
+        </PaginationActionButton>
       );
     }
 
     if (isLast) {
       buttonForward = (
-        <PaginationAction
+        <PaginationActionButton
           onClick={this.props.forward.onSubmit}
           disabled={!this.props.readyForNextStep}>
           Submit
-        </PaginationAction>
+        </PaginationActionButton>
       );
     } else {
       buttonForward = (
-        <PaginationAction
+        <PaginationActionButton
           onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>
           <span className='PaginationActionLabel'>Next</span>
           <ArrowRightIcon />
-        </PaginationAction>
+        </PaginationActionButton>
       );
     }
     return (
       <LayoutFooter className={classes}>
-        <span className="PaginationActionLeft">
+        <span className="PaginationAction PaginationActionLeft">
           {buttonBackward}
         </span>
         <PaginationDots dots={this.props.dots} currentDot={this.props.currentDot}/>
-        <span className="PaginationActionRight">
+        <span className="PaginationAction PaginationActionRight">
           {buttonForward}
         </span>
       </LayoutFooter>
@@ -57,8 +57,8 @@ export class Pagination extends Component {
   }
 }
 
-export const PaginationAction = ({ onClick, children, disabled }) => (
-  <button className="PaginationAction" onClick={onClick} disabled={disabled}>{children}</button>
+export const PaginationActionButton = ({ onClick, children, disabled }) => (
+  <a className="PaginationActionButton" onClick={onClick} disabled={disabled}>{children}</a>
 );
 
 export const PaginationDots = ({ dots, currentDot }) => (

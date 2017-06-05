@@ -4,21 +4,24 @@
   display: flex;
 }
 
-.PaginationActionLeft {
+.PaginationAction {
   display: flex;
   flex-basis: 100px;
+  height: var(--layoutbar-height);
+}
+
+.PaginationActionLeft {
   justify-content: flex-start;
   left: var(--horizontal-padding);
 }
 
 .PaginationActionRight {
-  display: flex;
-  flex-basis: 100px;
   justify-content: flex-end;
   right: var(--horizontal-padding);
 }
 
-.PaginationAction {
+.PaginationActionButton {
+  display: block;
   color: var(--middark-grey);
   font-size: 12px;
   font-weight: bold;
@@ -26,22 +29,16 @@
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-  outline: none;
-  border: none;
-  background: none;
-  box-shadow: none;
-  text-decoration: none;
-  line-height: 1;
   display: flex;
   align-items: center;
 }
 @media screen and (min-width: 40em) {
-  .PaginationAction {
+  .PaginationActionButton {
     font-size: 16px;
   }
 }
 
-.PaginationAction:disabled {
+.PaginationActionButton:disabled {
   color: var(--mid-grey);
 }
 
@@ -86,13 +83,13 @@
   right: 0;
   top: auto;
 }
-.Pagination--transparent .PaginationAction {
+.Pagination--transparent .PaginationActionButton {
   color: rgba(255,255,255,0.8);
 }
-.Pagination--transparent .PaginationAction:disabled {
+.Pagination--transparent .PaginationActionButton:disabled {
   color: rgba(255,255,255,0.4);
 }
-.Pagination--transparent .PaginationAction polygon{
+.Pagination--transparent .PaginationActionButton polygon{
   fill: rgba(255,255,255,0.8);
 }
 .Pagination--transparent .PaginationDot circle {
