@@ -20,6 +20,8 @@
   text-decoration: none !important;
   text-transform: uppercase;
   width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: border 200ms ease, background-color 200ms ease;
 }
