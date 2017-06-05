@@ -17,39 +17,39 @@ export class Pagination extends Component {
       buttonBackward = null;
     } else {
       buttonBackward = (
-        <PaginationActionButton
+        <PaginationAction
           onClick={this.props.backward.onClick}
           disabled={!this.props.readyForPreviousStep}>
-          <ArrowLeftIcon />
-          <span className='PaginationActionLabel'>Back</span>
-        </PaginationActionButton>
+          <div className='PaginationActionIcon'><ArrowLeftIcon /></div>
+          <div className='PaginationActionLabel'>Back</div>
+        </PaginationAction>
       );
     }
 
     if (isLast) {
       buttonForward = (
-        <PaginationActionButton
+        <PaginationAction
           onClick={this.props.forward.onSubmit}
           disabled={!this.props.readyForNextStep}>
-          Submit
-        </PaginationActionButton>
+          <div className='PaginationActionLabel'>Submit</div>
+        </PaginationAction>
       );
     } else {
       buttonForward = (
-        <PaginationActionButton
+        <PaginationAction
           onClick={this.props.forward.onClick} disabled={!this.props.readyForNextStep}>
-          <span className='PaginationActionLabel'>Next</span>
-          <ArrowRightIcon />
-        </PaginationActionButton>
+          <div className='PaginationActionLabel'>Next</div>
+          <div className='PaginationActionIcon'><ArrowRightIcon /></div>
+        </PaginationAction>
       );
     }
     return (
       <LayoutFooter className={classes}>
-        <span className="PaginationAction PaginationActionLeft">
+        <span className="PaginationActionLeft">
           {buttonBackward}
         </span>
         <PaginationDots dots={this.props.dots} currentDot={this.props.currentDot}/>
-        <span className="PaginationAction PaginationActionRight">
+        <span className="PaginationActionRight">
           {buttonForward}
         </span>
       </LayoutFooter>
@@ -57,8 +57,8 @@ export class Pagination extends Component {
   }
 }
 
-export const PaginationActionButton = ({ onClick, children, disabled }) => (
-  <a className="PaginationActionButton" onClick={onClick} disabled={disabled}>{children}</a>
+export const PaginationAction = ({ onClick, children, disabled }) => (
+  <a className="PaginationAction" onClick={onClick} disabled={disabled}>{children}</a>
 );
 
 export const PaginationDots = ({ dots, currentDot }) => (
