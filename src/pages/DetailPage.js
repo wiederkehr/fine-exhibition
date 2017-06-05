@@ -74,13 +74,16 @@ export class DetailPage extends Component {
   };
 
   render() {
+    const allRecords = this.state.records.map((record, i) => (
+      <div className='DetailRecord' key={'record-'+i}>
+        <DetailScene record={this.state.records[i]} />
+      </div>
+    ));
     return (
       <Layout>
         <LayoutContainer>
           <LayoutContent className="DetailPageContent">
-            <div className='DetailRecord'>
-              <DetailScene record={this.state.records[3]} />
-            </div>
+            {allRecords}
           </LayoutContent>
         </LayoutContainer>
       </Layout>
