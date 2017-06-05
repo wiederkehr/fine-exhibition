@@ -7,6 +7,7 @@
 .PaginationAction {
   display: flex;
   flex-basis: 100px;
+  flex-grow: 1;
   height: var(--layoutbar-height);
 }
 
