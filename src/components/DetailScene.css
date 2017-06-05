@@ -8,24 +8,23 @@
   transition: top 600ms ease-in-out;
 }
 
-.DetailScene-0 {
-  top: -43px;
-}
-.DetailScene-1 {
-  top: calc(-40% - 43px);
-}
-.DetailScene-2 {
-  top: calc(-40% - 43px);
-}
-
-.DetailScene-2 .Aura {
-  left: 35%;
+.DetailEmotionHeader {
+  color: #fff;
+  left: 10px;
+  line-height: 1;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  z-index: 50;
 }
 
-.DetailScene-2 .Hummock {
-  left: 35%;
+.DetailEmotionName {
+  font-weight: 300;
+  margin: 0 0 5px;
 }
 
-.DetailScene-2 .Bummock {
-  left: 35%;
+.DetailEmotionDate {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
