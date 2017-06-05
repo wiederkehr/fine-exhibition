@@ -43,6 +43,12 @@
   --square: calc(100% - 2 * var(--horizontal-padding));
 }
 
+@media screen and (min-width: 40em) {
+  :root {
+    --square: 60%;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
