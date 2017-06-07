@@ -1,13 +1,22 @@
 .DimensionSlider {
-  margin: 0 0 20px;
+  text-align: left;
 }
 
 .DimensionSlider-label {
   color: var(--white);
   display: block;
+  font-size: 1em;
   margin: 0 0 5px;
   position: relative;
 }
+
+@media screen and (min-width: 40em) {
+  .DimensionSlider-label {
+    margin: 0 0 0.75em;
+    font-size: 1.25em;
+  }
+}
+
 
 /* RC SLIDER OVERRIDES*/
 .rc-slider {
@@ -26,18 +35,18 @@
   height: 2px;
 }
 .rc-slider-handle {
-  margin-left: -7px;
-  margin-top: -6px;
-  width: 14px;
-  height: 14px;
-  border: solid 2px #00484F;
+  margin-left: -12px;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+  border: solid 2px rgba(0,87,94,1);
   background-color: #fff;
 }
 .rc-slider-handle:hover {
-  border-color: #00484F;
+  border-color: rgba(0,87,94,1);
 }
 .rc-slider-handle:active {
-  border-color: #00484F;
+  border-color: rgba(0,87,94,1);
   box-shadow: none;
 }
 
