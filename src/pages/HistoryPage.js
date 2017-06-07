@@ -30,8 +30,8 @@ export class HistoryPage extends Component {
   };
 
   componentWillMount() {
-    // this.getRecords();
-    this.getDummyRecords();
+    this.getRecords();
+    // this.getDummyRecords();
   };
 
   componentDidMount() {
@@ -61,8 +61,8 @@ export class HistoryPage extends Component {
   		newTime = 0;
       newPercentage = 0;
       clearInterval(this.loadingInterval);
-      // this.getRecords();
-      this.getDummyRecords();
+      this.getRecords();
+      // this.getDummyRecords();
   	}else{
       newPercentage = 100 / 3000 * newTime;
     };

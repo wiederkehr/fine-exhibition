@@ -27,8 +27,8 @@ export class DetailPage extends Component {
   };
 
   componentWillMount() {
-    // this.getRecords();
-    this.getDummyRecords();
+    this.getRecords();
+    // this.getDummyRecords();
   };
 
   componentDidMount() {
