@@ -19,9 +19,12 @@
   text-align: center;
 }
 .HomePageIntroduction h1 {
+  font-size: 4em;
   line-height: 1.25;
   letter-spacing: -1px;
+  margin: 0 0 1em;
 }
-.HomePageIntroduction a {
+.HomePageIntroduction span {
   color: var(--white);
+  font-size: 1.5em;
 }
