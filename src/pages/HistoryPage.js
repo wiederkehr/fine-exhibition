@@ -94,14 +94,14 @@ export class HistoryPage extends Component {
 
   handleResponse(response) {
     console.log(response);
-    this.setState({ records: response.reverse() });
+    this.setState({ records: response.reverse().slice(0,30) });
     this.loadingInterval = setInterval(() => {
       this.setLoading();
     }, 100);
   };
 
   getDummyRecords() {
-    this.setState({ records: Records });
+    this.setState({ records: Records.reverse().slice(0,30) });
     this.loadingInterval = setInterval(() => {
       this.setLoading();
     }, 100);
