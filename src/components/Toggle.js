@@ -125,7 +125,7 @@ export class SelectGroup extends Component {
       position === -1 ? isActive = false : isActive = true;
 
       return (
-        <LayoutRow key={i} top='s' bottom='s'>
+        <LayoutRow key={i} top='m' bottom='m'>
           <ToggleButton
             index={i}
             value={option}
