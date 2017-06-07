@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { HistoryScene } from '../components/HistoryScene';
-import { CloseIcon } from '../components/Icons';
 import { Records } from '../content/Records';
 
 import './HistoryPage.css';
@@ -139,7 +138,6 @@ export class HistoryPage extends Component {
               {allRecords}
               {emptyRecords}
             </div>
-            { this.state.overlay ? <Overlay close={() => { this.setState({overlay: false})}} /> : null }
             <Loader loadingPercentage={this.state.loadingPercentage} />
           </LayoutContent>
         </LayoutContainer>
