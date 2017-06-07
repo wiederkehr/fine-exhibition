@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmotionHeader } from '../components/DetailInfo';
+import { EmotionHeader } from '../components/EmotionHeader';
 
 export const ReviewRecorder = ( props ) => {
   return (

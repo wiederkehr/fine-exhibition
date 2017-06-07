@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Air, Sky, Aura, Hummock, Wave } from '../components/Scene';
-import { EmotionHeader } from '../components/EmotionHeader';
+import { EmotionHeaderSlim } from '../components/EmotionHeader';
 import { Records } from '../content/Records';
 
 import './DetailPage.css';
@@ -105,7 +105,7 @@ export class DetailPage extends Component {
             <Aura record={this.state.record} />
             <Hummock record={this.state.record} />
             <Wave record={this.state.record} />
-            <EmotionHeader record={this.state.record} />
+            <EmotionHeaderSlim record={this.state.record} />
           </Air>
         </div>
       )

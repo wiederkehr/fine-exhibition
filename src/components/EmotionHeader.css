@@ -1,20 +1,47 @@
-.EmotionHeader--Slim {
+.EmotionHeader {
   color: #fff;
-  left: 10px;
+  left: 50%;
   line-height: 1;
   position: absolute;
+  text-align: center;
+  transform: translate(-50%,0%);
+  width: calc(100% - var(--horizontal-padding) * 2);
+}
+
+.EmotionName {
+  margin-bottom: 0.33em;
+}
+
+.EmotionDate {
+  display: block;
+  text-transform: uppercase;
+}
+
+.EmotionTime {
+  display: block;
+  text-transform: uppercase;
+}
+
+.EmotionHeader--Slim {
+  left: 10px;
   text-align: left;
   top: 10px;
   z-index: 50;
+  transform: none;
+  width: auto;
 }
 
 .EmotionName--Slim {
   font-weight: 300;
-  margin: 0 0 5px;
+  margin-bottom: 0.33em;
 }
 
 .EmotionDate--Slim {
   font-size: 14px;
   font-weight: 300;
+}
+
+.EmotionTime--Slim {
+  display: block;
   text-transform: uppercase;
 }

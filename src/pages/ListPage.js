@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Air, Sky, Aura, Hummock, Wave } from '../components/Scene';
-import { EmotionHeader } from '../components/EmotionHeader';
+import { EmotionHeaderSlim } from '../components/EmotionHeader';
 import { Records } from '../content/Records';
 
 import './ListPage.css';
@@ -100,7 +100,7 @@ export class ListPage extends Component {
             <Aura record={record} />
             <Hummock record={record} />
             <Wave record={record} />
-            <EmotionHeader record={record} />
+            <EmotionHeaderSlim record={record} />
           </Air>
         </Link>
       </div>
