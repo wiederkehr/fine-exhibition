@@ -97,9 +97,9 @@ export class DetailPage extends Component {
   };
 
   getImage() {
-    var thisUrl = this.state.id;
+    var detailId = this.state.id;
     var baseUrl = 'https://fine-screenshots.annawiederkehr.com/';
-    var url = baseUrl + thisUrl;
+    var url = baseUrl + '?detailId=' + detailId;
 
     var headers = new Headers({
       'Accept': 'image/png'
