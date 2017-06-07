@@ -1,4 +1,4 @@
-.HistoryPageContent {
+.GridPageContent {
   padding: 0;
   background-color: #000;
   cursor:none;
@@ -8,13 +8,13 @@
   user-select: none;
 }
 
-.HistoryGrid {
+.GridGrid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.HistoryRecord {
+.GridRecord {
   background: #000;
   border: 4px solid #000;
   height: 33.333vh;
@@ -23,23 +23,23 @@
   flex-grow: 0;
   position: relative;
 }
-.HistoryRecord--empty {
+.GridRecord--empty {
   background: #222;
 }
-.HistoryRecord:nth-child(10n) {
+.GridRecord:nth-child(10n) {
   border-right-width: 8px;
 }
-.HistoryRecord:nth-child(10n+1) {
+.GridRecord:nth-child(10n+1) {
   border-left-width: 8px;
 }
-.HistoryRecord:nth-child(-n+10) {
+.GridRecord:nth-child(-n+10) {
   border-top-width: 10px;
 }
-.HistoryRecord:nth-last-child(-n+10) {
+.GridRecord:nth-last-child(-n+10) {
   border-bottom-width: 8px;
 }
 
-.HistoryLoader {
+.GridLoader {
   background: linear-gradient(90deg, #FD7D5A, #DEE6EA, #B7E2F3);
   height: 2px;
   position: absolute;
@@ -48,7 +48,7 @@
   right: 0;
 }
 
-.HistoryLoaderPercentage {
+.GridLoaderPercentage {
   background: #000;
   height: 2px;
   position: absolute;

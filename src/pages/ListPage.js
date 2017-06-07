@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Air, Sky, Aura, Hummock, Wave } from '../components/Scene';
 import { EmotionHeader } from '../components/EmotionHeader';
 import { Records } from '../content/Records';
 
-import './DetailPage.css';
+import './ListPage.css';
 
-export class DetailPage extends Component {
+export class ListPage extends Component {
 
   constructor(props) {
     super(props);
 
     this.state={
-      id: props.params.recordID,
-      record: null,
+      records: [],
       width: '0',
       height: '0'
     };
@@ -51,7 +51,7 @@ export class DetailPage extends Component {
     var bookId = process.env.REACT_APP_FIELDBOOK_BOOK;
     var sheetId = process.env.REACT_APP_FIELDBOOK_SHEET;
     var baseUrl = 'https://api.fieldbook.com/v1/';
-    var url = baseUrl + bookId + '/' + sheetId + '/' + this.state.id;
+    var url = baseUrl + bookId + '/' + sheetId;
     var userpass = username + ':' + password;
     var authorization = 'Basic '+ btoa(userpass);
 
@@ -84,27 +84,32 @@ export class DetailPage extends Component {
 
   handleResponse(response) {
     console.log(response);
-    this.setState({ record: response });
+    this.setState({ records: response.reverse() });
   };
 
   getDummyRecords() {
-    this.setState({ record: Records.reverse().splice(0,1)[0] });
+    this.setState({ records: Records });
   };
 
   render() {
+    const allRecords = this.state.records.map((record, i) => (
+      <div className='DetailRecord' key={'record-'+i}>
+        <Link to={ "/detail/" + record.id.replace('Sheet ','')}>
+          <Air style={{ height: this.state.height }}>
+            <Sky record={record} />
+            <Aura record={record} />
+            <Hummock record={record} />
+            <Wave record={record} />
+            <EmotionHeader record={record} />
+          </Air>
+        </Link>
+      </div>
+    ));
     return (
       <Layout>
         <LayoutContainer>
-          <LayoutContent className="DetailPageContent">
-            <div className='DetailRecord'>
-              <Air style={{ height: this.state.height }}>
-                <Sky record={this.state.record} />
-                <Aura record={this.state.record} />
-                <Hummock record={this.state.record} />
-                <Wave record={this.state.record} />
-                <EmotionHeader record={this.state.record} />
-              </Air>
-            </div>
+          <LayoutContent className="ListPageContent">
+            {allRecords}
           </LayoutContent>
         </LayoutContainer>
       </Layout>

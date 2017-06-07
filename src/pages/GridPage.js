@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
-import { HistoryScene } from '../components/HistoryScene';
+import { GridScene } from '../components/GridScene';
 import { Records } from '../content/Records';
 
-import './HistoryPage.css';
+import './GridPage.css';
 
-export class HistoryPage extends Component {
+export class GridPage extends Component {
 
   constructor(props) {
     super(props);
@@ -27,7 +27,7 @@ export class HistoryPage extends Component {
 
   componentWillMount() {
     // this.getRecords();
-    this.getDummyRecords();
+    this.getDummyRecords(Records);
   };
 
   componentWillUnmount(){
@@ -43,7 +43,7 @@ export class HistoryPage extends Component {
       newPercentage = 0;
       clearInterval(this.loadingInterval);
       // this.getRecords();
-      this.getDummyRecords();
+      this.getDummyRecords(Records);
   	}else{
       newPercentage = 100 / 3000 * newTime;
     };
@@ -100,8 +100,8 @@ export class HistoryPage extends Component {
     }, 100);
   };
 
-  getDummyRecords() {
-    this.setState({ records: Records.reverse().slice(0,30) });
+  getDummyRecords(response) {
+    this.setState({ records: response.reverse().slice(0,30) });
     this.loadingInterval = setInterval(() => {
       this.setLoading();
     }, 100);
@@ -133,8 +133,8 @@ export class HistoryPage extends Component {
     return (
       <Layout>
         <LayoutContainer>
-          <LayoutContent className="HistoryPageContent">
-            <div className='HistoryGrid'>
+          <LayoutContent className="GridPageContent">
+            <div className='GridGrid'>
               {allRecords}
               {emptyRecords}
             </div>
@@ -147,20 +147,20 @@ export class HistoryPage extends Component {
 };
 
 const Record = ({ record, iterator }) => (
-  <div className='HistoryRecord'>
-    <HistoryScene record={record} iterator={iterator} />
+  <div className='GridRecord'>
+    <GridScene record={record} iterator={iterator} />
   </div>
 );
 
 const RecordEmpty = ( ) => (
-  <div className='HistoryRecord HistoryRecord--empty'></div>
+  <div className='GridRecord GridRecord--empty'></div>
 );
 
 const Loader = ({ loadingPercentage }) => {
   return (
-    <div className='HistoryLoader'>
+    <div className='GridLoader'>
       <div
-        className='HistoryLoaderPercentage'
+        className='GridLoaderPercentage'
         style={{
           width: 100 - loadingPercentage + '%'
         }}></div>
