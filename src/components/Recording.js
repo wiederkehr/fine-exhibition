@@ -6,7 +6,7 @@ import './Recording.css';
 export class Recording extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: '0', height: '0' };
+    this.state = { width: '0', height: '0', lifted: false };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -29,6 +29,7 @@ export class Recording extends Component {
       <div className={classes}>
         <Air style={{ height: this.state.height }}>
           <Sky record={this.props.record} />
+          {this.props.step === 0 ? <Fog /> : null}
           {this.props.step > 2 ? <Aura record={this.props.record} /> : null}
           {this.props.step > 0 ? <Hummock record={this.props.record} /> : null}
           <Wave record={this.props.record} />
@@ -41,3 +42,7 @@ export class Recording extends Component {
     )
   }
 };
+
+const Fog = () => (
+  <div className='Fog'></div>
+);

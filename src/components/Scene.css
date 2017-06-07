@@ -16,6 +16,16 @@
   z-index: 10;
 }
 
+.Fog {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(#CFECF8, #86CBEA);
+  z-index: 15;
+}
+
 .Aura {
   bottom: 0;
   left: 50%;
