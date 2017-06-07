@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import './DetailInfo.css';
 
 export const EmotionHeader = ( props ) => {
-  const parseTime = timeParse("%Y-%m-%d");
-  const formatTime = timeFormat("%B %d, %Y");
+  const parseTime = timeParse("%Y-%m-%d %H:%M");
+  const formatTime = timeFormat("%B %d, %Y ・ %H:%M");
   const formattedDate = formatTime(parseTime(props.record.date))
 
   return(

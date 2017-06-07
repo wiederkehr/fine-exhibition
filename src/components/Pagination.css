@@ -33,10 +33,10 @@
 }
 @media screen and (min-width: 40em) {
   .PaginationAction {
-    font-size: 16px;
+    font-size: 1em;
   }
   .PaginationActionLabel {
-    width: 86px;
+    min-width: 86px;
   }
 }
 .PaginationAction:disabled {
