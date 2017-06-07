@@ -45,7 +45,7 @@
   width: calc(var(--square) - 120px);
 }
 .Aura--Engage {
-  width: calc(var(--square) - 40px);
+  width: calc(var(--square) + 60px);
 }
 
 .Wave {
