@@ -23,8 +23,8 @@
   color: var(--white);
   display: block;
   font-family: var(--font-family);
-  font-size: 18px;
-  padding: 15px;
+  font-size: 1em;
+  padding: 5px 10px;
   transition: background-color 100ms;
 }
 
@@ -45,7 +45,7 @@
   color: var(--white);
   display: inline-block;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 1.25em;
   font-weight: var(--bold-font-weight);
   padding: 5px 10px;
 }
@@ -56,4 +56,14 @@
 }
 
 .SecondaryButton:disabled {
+}
+
+@media screen and (min-width: 40em) {
+  .PrimaryButton {
+    font-size: 1.25em;
+  }
+  .SecondaryButton {
+    font-size: 1.25em;
+    padding: 10px 20px;
+  }
 }
