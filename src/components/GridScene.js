@@ -21,8 +21,8 @@ export class GridScene extends Component {
 
 const Sky = ({ record }) => {
   const conduciveness = scaleLinear()
-    .domain([1, 3, 5])
-    .range(["#FD7D5A", "#DEE6EA", "#B7E2F3"]);
+    .domain([1, 2, 3, 4, 5])
+    .range(["#FD7D5A", "#F19D89", "#EAD4CD", "#D2E2EA", "#A8D3EF"]);
   const topColor = conduciveness(record.conduciveness);
   const bottomColor = conduciveness(record.conduciveness - 1);
   return (
