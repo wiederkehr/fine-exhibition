@@ -23,6 +23,10 @@ export class DetailPage extends Component {
     this.getResponse=this.getResponse.bind(this);
     this.handleErrors=this.handleErrors.bind(this);
     this.handleResponse=this.handleResponse.bind(this);
+    this.getImage=this.getImage.bind(this);
+    this.getImageResponse=this.getImageResponse.bind(this);
+    this.handleImageErrors=this.handleImageErrors.bind(this);
+    this.handleImageResponse=this.handleImageResponse.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
   };
@@ -89,6 +93,47 @@ export class DetailPage extends Component {
   handleResponse(response) {
     console.log(response);
     this.setState({ record: response });
+    this.getImage()
+  };
+
+  getImage() {
+    var thisUrl = this.state.id;
+    var baseUrl = 'https://fine-screenshots.annawiederkehr.com/';
+    var url = baseUrl + thisUrl;
+
+    var headers = new Headers({
+      'Accept': 'image/png'
+      // 'Accept': 'application/json',
+    });
+
+    var request = new Request(url, {
+      method: 'GET',
+      headers: headers
+    })
+
+    console.log(request);
+
+    fetch(request)
+      .then(this.getImageResponse)
+      .then(this.handleImageResponse)
+      .catch(this.handleImageErrors);
+  };
+
+  getImageResponse(response) {
+    console.log(response);
+    if (!response.ok) {
+      throw Error(response.statusText);
+    };
+    return response.json();
+  };
+
+  handleImageErrors(error) {
+    console.log(error);
+  };
+
+  handleImageResponse(response) {
+    console.log(response);
+    this.setState({ image: response });
   };
 
   getDummyRecord() {
@@ -116,7 +161,9 @@ export class DetailPage extends Component {
       <Layout>
         <LayoutContainer>
           <LayoutContent className="DetailPageContent">
-            { record }
+            <Air style={{ height: this.state.height }}>
+              { record }
+            </Air>
           </LayoutContent>
         </LayoutContainer>
       </Layout>
