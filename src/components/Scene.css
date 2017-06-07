@@ -34,11 +34,8 @@
 .Aura--Withdraw {
   width: calc(var(--square) - 120px);
 }
-.Aura--Other {
-  bottom: 100px;
-}
-.Aura--Suppress {
-  bottom: 100px;
+.Aura--Engage {
+  width: calc(var(--square) - 40px);
 }
 
 .Wave {

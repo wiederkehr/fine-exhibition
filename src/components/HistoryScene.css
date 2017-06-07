@@ -36,11 +36,8 @@
 .HistoryAura--Withdraw {
   width: calc(100% - 30px);
 }
-.HistoryAura--Other {
-  bottom: 20px;
-}
-.HistoryAura--Suppress {
-  bottom: 20px;
+.HistoryAura--Engage {
+  width: 100%;
 }
 
 .HistoryHummock {
