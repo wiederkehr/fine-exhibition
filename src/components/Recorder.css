@@ -80,11 +80,24 @@
 
 @media screen and (min-width: 40em) {
   .Recorder {
-    left: 120px;
-    right: 120px;
+    left: 160px;
+    right: 160px;
+  }
+  .Recorder--EmotionEntry,
+  .Recorder--EmotionSelection,
+  .Recorder--EmotionSubSelection {
+    top: 0;
+    justify-content: center;
   }
   .Recorder--Dimensions {
     top: 40%;
+    justify-content: center;
+  }
+  .Recorder--Action {
+    top: 10%;
+  }
+  .Recorder--Review {
+    top: 10%;
   }
   .Recorder--Trigger {
     top: 40%;
