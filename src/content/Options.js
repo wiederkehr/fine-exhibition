@@ -112,7 +112,7 @@ export const Dimensions = {
   controllability: [
     'I lost it',
     'Barely a hold on it',
-    'Wasn’t easy (to contain)',
+    'Wasn’t easy to contain',
     'Mostly kept it together',
     'Kept it cool'
   ],
