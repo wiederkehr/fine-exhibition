@@ -26,8 +26,8 @@ export class GridPage extends Component {
   };
 
   componentWillMount() {
-    // this.getRecords();
-    this.getDummyRecords(Records);
+    this.getRecords();
+    // this.getDummyRecords(Records);
   };
 
   componentWillUnmount(){
@@ -42,8 +42,8 @@ export class GridPage extends Component {
   		newTime = 0;
       newPercentage = 0;
       clearInterval(this.loadingInterval);
-      // this.getRecords();
-      this.getDummyRecords(Records);
+      this.getRecords();
+      // this.getDummyRecords(Records);
   	}else{
       newPercentage = 100 / 3000 * newTime;
     };
