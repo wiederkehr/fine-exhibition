@@ -41,12 +41,13 @@ export class EmotionRecorder extends Component {
         return (
           <RecorderTransition name='EmotionEntryTransition'>
             <div className='Recorder Recorder--EmotionEntry' key={this.state.type}>
-              <h2 className='RecorderHeadline'>How're ya feeling?</h2>
-              <EmotionEntryForm
-                record={this.props.record}
-                onChange={this.props.onChange}
-                onSubmit={this.props.onSubmit}
-              />
+              <LayoutRow bottom='l'>
+                <EmotionEntryForm
+                  record={this.props.record}
+                  onChange={this.props.onChange}
+                  onSubmit={this.props.onSubmit}
+                />
+              </LayoutRow>
               <LayoutRow top='l'>
                 <SecondaryButton onClick={this.toggleType.bind(null, 'selection')}>Not sure… help?</SecondaryButton>
               </LayoutRow>
@@ -83,15 +84,17 @@ export class EmotionRecorder extends Component {
                   onClick={false}
                   isActive={true}/>
               </LayoutRow>
-              <EmotionSubSelectionForm
-                record={this.props.record}
-                onChange={(field, event) => {
-                  this.props.onChange(field, event);
-                  this.toggleType('entry');
-                }}
-                onSubmit={this.props.onSubmit}
-                options={this.getSecondaryEmotions(this.state.selection)}
-              />
+              <LayoutRow top='s' bottom='l'>
+                <EmotionSubSelectionForm
+                  record={this.props.record}
+                  onChange={(field, event) => {
+                    this.props.onChange(field, event);
+                    this.toggleType('entry');
+                  }}
+                  onSubmit={this.props.onSubmit}
+                  options={this.getSecondaryEmotions(this.state.selection)}
+                />
+              </LayoutRow>
               <LayoutRow top='l'>
                 <SecondaryButton
                   onClick={() => {
