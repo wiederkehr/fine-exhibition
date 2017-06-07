@@ -30,7 +30,7 @@ export const Water = ({ children, style }) => (
 export const Sky = ({ record }) => {
   const conduciveness = scaleLinear()
     .domain([1, 2, 3, 4, 5])
-    .range(["#FD7D5A", "#F19D89", "#EAD4CD", "#D2E2EA", "#A8D3EF"]);
+    .range(["#FD7D5A", "#F19D89", "#E1DFE6", "#B8D7E6", "#90CAF0"]);
   const topColor = conduciveness(record.conduciveness);
   const bottomColor = conduciveness(record.conduciveness - 1);
   return (
