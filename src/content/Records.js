@@ -11,7 +11,7 @@ export const Records = [
     valence: 3,
   },
   {
-    action:"Suppress",
+    action:"Fight",
     arousal:2,
     conduciveness:2,
     controllability:2,
@@ -22,7 +22,7 @@ export const Records = [
     valence:4
   },
   {
-    action:"Withdraw",
+    action:"Other",
     arousal:3,
     conduciveness:3,
     controllability:2,
@@ -44,7 +44,7 @@ export const Records = [
     valence:3
   },
   {
-    action:"Fight",
+    action:"Suppress",
     arousal:5,
     conduciveness:5,
     controllability:3,
@@ -55,7 +55,7 @@ export const Records = [
     valence:3
   },
   {
-    action:"Other",
+    action:"Withdraw",
     arousal:3,
     conduciveness:5,
     controllability:3,
