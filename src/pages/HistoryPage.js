@@ -164,7 +164,7 @@ const Loader = ({ loadingPercentage }) => {
       <div
         className='HistoryLoaderPercentage'
         style={{
-          width: loadingPercentage + '%'
+          width: 100 - loadingPercentage + '%'
         }}></div>
     </div>
   )

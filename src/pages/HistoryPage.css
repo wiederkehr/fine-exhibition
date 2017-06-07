@@ -40,6 +40,7 @@
 }
 
 .HistoryLoader {
+  background: linear-gradient(90deg, #FD7D5A, #DEE6EA, #B7E2F3);
   height: 2px;
   position: absolute;
   top: 0;
@@ -48,9 +49,9 @@
 }
 
 .HistoryLoaderPercentage {
-  background: rgba(255, 255, 255, 1);
+  background: #000;
   height: 2px;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
