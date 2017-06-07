@@ -12,8 +12,6 @@ export class HistoryPage extends Component {
     super(props);
 
     this.state={
-      overlay: false,
-      iterator: 0,
       loadingTime: 0,
       loadingPercentage: 0,
       records: []
@@ -24,33 +22,17 @@ export class HistoryPage extends Component {
     this.getResponse=this.getResponse.bind(this);
     this.handleErrors=this.handleErrors.bind(this);
     this.handleResponse=this.handleResponse.bind(this);
-    this.tick=this.tick.bind(this);
     this.setLoading=this.setLoading.bind(this);
 
   };
 
   componentWillMount() {
-    this.getRecords();
-    // this.getDummyRecords();
-  };
-
-  componentDidMount() {
-    // this.animationInterval = setInterval(() => {
-    //   this.tick();
-    // }, 100);
+    // this.getRecords();
+    this.getDummyRecords();
   };
 
   componentWillUnmount(){
-    // clearInterval(this.animationInterval);
     clearInterval(this.loadingInterval);
-  };
-
-  tick() {
-    let newIterator = this.state.iterator + 2;
-    if (newIterator > 1880) {
-  		newIterator = 0;
-  	};
-    this.setState({ iterator: newIterator });
   };
 
   setLoading() {
@@ -61,8 +43,8 @@ export class HistoryPage extends Component {
   		newTime = 0;
       newPercentage = 0;
       clearInterval(this.loadingInterval);
-      this.getRecords();
-      // this.getDummyRecords();
+      // this.getRecords();
+      this.getDummyRecords();
   	}else{
       newPercentage = 100 / 3000 * newTime;
     };
@@ -148,16 +130,11 @@ export class HistoryPage extends Component {
     const allRecords = this.state.records.map((record, i) => (
       <Record key={'record-'+i} record={this.state.records[i]} iterator={this.state.iterator} />
     ));
-    // const currentEmotion = this.state.records[0].emotion ? this.state.records[1].emotion : 'fine';
 
     return (
       <Layout>
         <LayoutContainer>
           <LayoutContent className="HistoryPageContent">
-            {/* <div className="HistoryHeader">
-              <h1>Right now, we feel <span>{currentEmotion}</span>.</h1>
-              <a onClick={() => { this.setState({overlay: true})}}>Fine.</a>
-            </div> */}
             <div className='HistoryGrid'>
               {allRecords}
               {emptyRecords}
@@ -184,18 +161,11 @@ const RecordEmpty = ( ) => (
 const Loader = ({ loadingPercentage }) => {
   return (
     <div className='HistoryLoader'>
-      <div className='HistoryLoaderPercentage' style={{ width: loadingPercentage + '%'}}></div>
+      <div
+        className='HistoryLoaderPercentage'
+        style={{
+          width: loadingPercentage + '%'
+        }}></div>
     </div>
   )
 };
-
-const Overlay = ({ close }) => (
-  <div className='HistoryOverlay'>
-    <a className='HistoryOverlayClose' onClick={close}><CloseIcon /></a>
-    <ol>
-      <li>📱 Pick up the iPad.</li>
-      <li>💬 Tell us how you're feeling today.</li>
-      <li>🌄 See your emotion added here.</li>
-    </ol>
-  </div>
-);

@@ -3,7 +3,6 @@ import ReactSVG from 'react-svg';
 import classNames from 'classnames';
 import { timeParse, timeFormat } from 'd3';
 import { scaleLinear } from 'd3-scale';
-import { HistoryWaves } from '../components/HistoryWaves';
 import './HistoryScene.css';
 
 export class HistoryScene extends Component {
@@ -14,7 +13,6 @@ export class HistoryScene extends Component {
         <Aura record={this.props.record} />
         <Hummock record={this.props.record} />
         <Wave record={this.props.record} />
-        {/* <HistoryWaves record={this.props.record} iterator={this.props.iterator} /> */}
         <Header record={this.props.record} />
       </div>
     )

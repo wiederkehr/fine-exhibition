@@ -8,37 +8,6 @@
   user-select: none;
 }
 
-.HistoryHeader {
-  height: 85px;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.HistoryHeader h1 {
-  color: #FFF;
-  letter-spacing: -0.5px;
-  line-height: 1;
-  margin: 0;
-  text-align: center;
-}
-
-.HistoryHeader > h1 > span {
-  border-bottom: 2px solid #666;
-  text-transform: lowercase;
-}
-
-.HistoryHeader a {
-  font-size: 1.25em;
-  text-decoration: none;
-  position: absolute;
-  right: 10px;
-  top: 25px;
-  color: #ccc;
-  border-bottom: 2px solid #ddd;
-}
-
 .HistoryGrid {
   display: flex;
   flex-direction: row;
@@ -84,32 +53,4 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.HistoryOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-.HistoryOverlay ol {
-  font-size: 2em;
-  line-height: 1.5;
-}
-
-.HistoryOverlayClose {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-
-.HistoryOverlay .CloseIcon line {
-  stroke: #333;
 }
