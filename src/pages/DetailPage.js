@@ -18,8 +18,8 @@ export class DetailPage extends Component {
       height: '0'
     };
 
-    this.getRecords=this.getRecords.bind(this);
-    this.getDummyRecords=this.getDummyRecords.bind(this);
+    this.getRecord=this.getRecord.bind(this);
+    this.getDummyRecord=this.getDummyRecord.bind(this);
     this.getResponse=this.getResponse.bind(this);
     this.handleErrors=this.handleErrors.bind(this);
     this.handleResponse=this.handleResponse.bind(this);
@@ -28,8 +28,12 @@ export class DetailPage extends Component {
   };
 
   componentWillMount() {
-    this.getRecords();
-    // this.getDummyRecords();
+    if(this.state.id) {
+      this.getRecord(this.state.id);
+    }else{
+      // this.getDummyRecord();
+      this.getRecord(166);
+    };
   };
 
   componentDidMount() {
@@ -45,13 +49,13 @@ export class DetailPage extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
-  getRecords() {
+  getRecord(id) {
     var username = process.env.REACT_APP_FIELDBOOK_USER;
     var password = process.env.REACT_APP_FIELDBOOK_KEY;
     var bookId = process.env.REACT_APP_FIELDBOOK_BOOK;
     var sheetId = process.env.REACT_APP_FIELDBOOK_SHEET;
     var baseUrl = 'https://api.fieldbook.com/v1/';
-    var url = baseUrl + bookId + '/' + sheetId + '/' + this.state.id;
+    var url = baseUrl + bookId + '/' + sheetId + '/' + id;
     var userpass = username + ':' + password;
     var authorization = 'Basic '+ btoa(userpass);
 
@@ -87,24 +91,32 @@ export class DetailPage extends Component {
     this.setState({ record: response });
   };
 
-  getDummyRecords() {
+  getDummyRecord() {
     this.setState({ record: Records.reverse().splice(0,1)[0] });
   };
 
   render() {
+    let record = null;
+    if(this.state.record){
+      record = (
+        <div className='DetailRecord'>
+          <Air style={{ height: this.state.height }}>
+            <Sky record={this.state.record} />
+            <Aura record={this.state.record} />
+            <Hummock record={this.state.record} />
+            <Wave record={this.state.record} />
+            <EmotionHeader record={this.state.record} />
+          </Air>
+        </div>
+      )
+    }else{
+      record = <div className='DetailRecord DetailRecord--empty'></div>
+    }
     return (
       <Layout>
         <LayoutContainer>
           <LayoutContent className="DetailPageContent">
-            <div className='DetailRecord'>
-              <Air style={{ height: this.state.height }}>
-                <Sky record={this.state.record} />
-                <Aura record={this.state.record} />
-                <Hummock record={this.state.record} />
-                <Wave record={this.state.record} />
-                <EmotionHeader record={this.state.record} />
-              </Air>
-            </div>
+            { record }
           </LayoutContent>
         </LayoutContainer>
       </Layout>
