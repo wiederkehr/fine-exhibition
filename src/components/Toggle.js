@@ -51,7 +51,7 @@ export class ToggleGroup extends Component {
       <div className="ToggleGroup">
         {this.state.options.map((option, i) => {
           return (
-            <LayoutRow key={i} top='s' bottom='s'>
+            <LayoutRow key={i} top='m' bottom='m'>
               <ToggleButton
                 index={i}
                 value={option}
