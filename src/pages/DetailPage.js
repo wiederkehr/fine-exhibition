@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Air, Sky, Aura, Hummock, Wave } from '../components/Scene';
 import { EmotionHeaderSlim } from '../components/EmotionHeader';
@@ -141,13 +142,20 @@ export class DetailPage extends Component {
 
   render() {
     let record = null;
+    let image = null;
     if(this.state.record.arousal){
       record = <DetailRecord height={this.state.height} record={this.state.record} />;
+      image = "%PUBLIC_URL%/static_emotion_" + this.state.id + ".png"
     }else{
       record = <EmptyRecord height={this.state.height} />;
     };
     return (
       <Layout>
+        <Helmet>
+          <title>{ "Fine・Detail・" + this.state.record.emotion}</title>
+          <meta property="og:title" content={ "Fine・Detail・" + this.state.record.emotion} />
+          <meta property="og:image" content={image} />
+        </Helmet>
         <LayoutContainer>
           <LayoutContent className="DetailPageContent">
             { record }

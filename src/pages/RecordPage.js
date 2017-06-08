@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import update from 'immutability-helper';
 import { browserHistory } from 'react-router';
 import { timeFormat } from 'd3';
@@ -182,6 +183,9 @@ export class RecordPage extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Fine・Record</title>
+        </Helmet>
         <LayoutContainer>
           <Header right={{to:'/', label:<CloseIcon />}} transparent />
           <LayoutContent className="RecordPageContent">

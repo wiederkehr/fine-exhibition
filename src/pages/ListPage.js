@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { Air, Sky, Aura, Hummock, Wave } from '../components/Scene';
@@ -107,6 +108,9 @@ export class ListPage extends Component {
     ));
     return (
       <Layout>
+        <Helmet>
+          <title>Fine・List</title>
+        </Helmet>
         <LayoutContainer>
           <LayoutContent className="ListPageContent">
             {allRecords}

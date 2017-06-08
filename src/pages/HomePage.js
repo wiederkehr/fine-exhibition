@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 
@@ -9,6 +10,9 @@ export class HomePage extends Component {
   render() {
     return (
       <Layout>
+        <Helmet>
+          <title>Fine・Home</title>
+        </Helmet>
         <LayoutContainer>
           <LayoutContent className="HomePageContent">
             <Link to="/record" className='HomePageLink'>

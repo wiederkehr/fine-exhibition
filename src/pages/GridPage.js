@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { GridScene } from '../components/GridScene';
 import { Records } from '../content/Records';
@@ -132,6 +133,9 @@ export class GridPage extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Fine・Grid</title>
+        </Helmet>
         <LayoutContainer>
           <LayoutContent className="GridPageContent">
             <div className='GridGrid'>
