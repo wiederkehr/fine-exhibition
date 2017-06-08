@@ -93,7 +93,7 @@ export class DetailPage extends Component {
   handleResponse(response) {
     console.log(response);
     this.setState({ record: response });
-    this.getImage();
+    // this.getImage();
   };
 
   getImage() {
