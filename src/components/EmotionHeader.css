@@ -10,6 +10,7 @@
 
 .EmotionName {
   margin-bottom: 0.33em;
+  text-transform: capitalize;
 }
 
 .EmotionDate {
