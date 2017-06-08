@@ -46,7 +46,7 @@ export const Sky = ({ record }) => {
 
 export const Aura = ({ record }) => {
   const filename = 'A_' + record.action;
-  const path = 'assets/vectors/aura/' + filename + '.svg';
+  const path = '/assets/vectors/aura/' + filename + '.svg';
   return (
     <div className={ classNames('Aura', 'Aura--'+record.action) }>
       <ReactSVG path={ path } />
@@ -56,7 +56,7 @@ export const Aura = ({ record }) => {
 
 export const Hummock = ({ record }) => {
   const filename = "Key_" + record.valence + "_" + record.intensity + "_" + record.controllability;
-  const path = 'assets/vectors/hummock/' + filename + '.svg';
+  const path = '/assets/vectors/hummock/' + filename + '.svg';
   return (
     <div className='Hummock'>
       <ReactSVG path={ path } />
@@ -68,7 +68,7 @@ export const Bummock = ({ record }) => {
   const triggers = record.trigger;
   const allTriggers = triggers.map((trigger, i) => {
     const filename = 'T' + ( 3 - i) + '_' + record.trigger[i];
-    const path = 'assets/vectors/bummock/' + filename + '.svg';
+    const path = '/assets/vectors/bummock/' + filename + '.svg';
     return (
       <ReactSVG path={ path } key={ i }/>
     )
@@ -83,7 +83,7 @@ export const Bummock = ({ record }) => {
 
 export const Wave = ({ record }) => {
   const filename = 'Waves_' + record.arousal;
-  const path = 'assets/vectors/wave/' + filename + '.svg';
+  const path = '/assets/vectors/wave/' + filename + '.svg';
   return (
     <div className='Wave'>
       <ReactSVG path={ path } />
