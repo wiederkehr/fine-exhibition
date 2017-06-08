@@ -108,7 +108,8 @@ export class DetailPage extends Component {
 
     var request = new Request(url, {
       method: 'GET',
-      headers: headers
+      headers: headers,
+      mode: 'no-cors'
     })
 
     console.log(request);
