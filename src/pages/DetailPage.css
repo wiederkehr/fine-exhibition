@@ -1,3 +1,21 @@
 .DetailPageContent {
   padding: 0;
 }
+
+.EmptyRecord {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(#CFECF8, #86CBEA);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmotionLoading {
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+}

@@ -13,7 +13,7 @@ export class DetailPage extends Component {
 
     this.state={
       id: props.params.recordID,
-      record: null,
+      record: {},
       width: '0',
       height: '0'
     };
@@ -93,7 +93,7 @@ export class DetailPage extends Component {
   handleResponse(response) {
     console.log(response);
     this.setState({ record: response });
-    this.getImage()
+    this.getImage();
   };
 
   getImage() {
@@ -111,8 +111,6 @@ export class DetailPage extends Component {
       headers: headers,
       mode: 'no-cors'
     })
-
-    console.log(request);
 
     fetch(request)
       .then(this.getImageResponse)
@@ -143,31 +141,39 @@ export class DetailPage extends Component {
 
   render() {
     let record = null;
-    if(this.state.record){
-      record = (
-        <div className='DetailRecord'>
-          <Air style={{ height: this.state.height }}>
-            <Sky record={this.state.record} />
-            <Aura record={this.state.record} />
-            <Hummock record={this.state.record} />
-            <Wave record={this.state.record} />
-            <EmotionHeaderSlim record={this.state.record} />
-          </Air>
-        </div>
-      )
+    if(this.state.record.arousal){
+      record = <DetailRecord height={this.state.height} record={this.state.record} />;
     }else{
-      record = <div className='DetailRecord DetailRecord--empty'></div>
-    }
+      record = <EmptyRecord height={this.state.height} />;
+    };
     return (
       <Layout>
         <LayoutContainer>
           <LayoutContent className="DetailPageContent">
-            <Air style={{ height: this.state.height }}>
-              { record }
-            </Air>
+            { record }
           </LayoutContent>
         </LayoutContainer>
       </Layout>
     );
   };
 };
+
+const DetailRecord = ({record, height}) => {
+  return (
+    <div className='DetailRecord'>
+      <Air style={{ height: height }}>
+        <Sky record={record} />
+        <Aura record={record} />
+        <Hummock record={record} />
+        <Wave record={record} />
+        <EmotionHeaderSlim record={record} />
+      </Air>
+    </div>
+  )
+}
+
+const EmptyRecord = ({height}) => (
+  <div className='EmptyRecord'>
+    <div className='EmotionLoading'>…Loading Feels…</div>
+  </div>
+);
