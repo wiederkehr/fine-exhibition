@@ -36,7 +36,7 @@ export class DetailPage extends Component {
       this.getRecord(this.state.id);
     }else{
       // this.getDummyRecord();
-      this.getRecord(166);
+      this.getRecord(176);
     };
   };
 
