@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import { interval } from 'd3';
 import { Layout, LayoutContainer, LayoutContent } from '../components/Layout';
 import { GridScene } from '../components/GridScene';
 import { Records } from '../content/Records';
@@ -31,23 +32,25 @@ export class GridPage extends Component {
     // this.getDummyRecords(Records);
   };
 
-  componentWillUnmount(){
-    clearInterval(this.loadingInterval);
+  componentWillUnmount() {
+    this.loadingInterval.stop();
   };
 
-  setLoading() {
-    let newTime = this.state.loadingTime + 10;
+  componentDidMount() {
+  }
+
+  setLoading(elapsed) {
+    let newTime = this.state.loadingTime + 100;
     let newPercentage = 100 / 3000 * newTime;
 
     if (newTime > 3000) {
   		newTime = 0;
       newPercentage = 0;
-      clearInterval(this.loadingInterval);
+      this.loadingInterval.stop();
+      this.loadingInterval = null;
       this.getRecords();
       // this.getDummyRecords(Records);
-  	}else{
-      newPercentage = 100 / 3000 * newTime;
-    };
+  	};
 
     this.setState({
       loadingTime: newTime,
@@ -96,16 +99,12 @@ export class GridPage extends Component {
   handleResponse(response) {
     console.log(response);
     this.setState({ records: response.reverse().slice(0,30) });
-    this.loadingInterval = setInterval(() => {
-      this.setLoading();
-    }, 100);
+    this.loadingInterval = interval(this.setLoading, 1000)
   };
 
   getDummyRecords(response) {
     this.setState({ records: response.reverse().slice(0,30) });
-    this.loadingInterval = setInterval(() => {
-      this.setLoading();
-    }, 100);
+    this.loadingInterval = interval(this.setLoading, 1000)
   };
 
   getEmptyRecords(existing) {
@@ -166,7 +165,8 @@ const Loader = ({ loadingPercentage }) => {
       <div
         className='GridLoaderPercentage'
         style={{
-          width: 100 - loadingPercentage + '%'
+          width: 100 - loadingPercentage + '%',
+          transition: 'width 200ms'
         }}></div>
     </div>
   )
